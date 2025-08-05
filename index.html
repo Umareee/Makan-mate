@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makan Mate - Best food for your taste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'makan-orange': '#FF5722',
+                        'makan-orange-hover': '#E64A19',
+                        'custom-topbar': '#474747',
+                        'custom-navbar': '#F9F9F7',
+                        'custom-logo-bg': '#F9F9F71F',
+                        'custom-text': '#2C2F24',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <!-- Top bar with contact info -->
+        <div class="bg-custom-topbar py-2 px-4">
+            <div class="container mx-156 flex justify-between items-center text-sm">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>62642233 Ext 10-18</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>order@makanmate.com</span>
+                    </div>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main navigation -->
+    <nav class="bg-custom-navbar text-custom-text py-4 px-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center mx-16">
+            <div class="flex items-center space-x-3 ml-8">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
+                </div>
+            </div>
+            <div class="flex-1"></div>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Home</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="#" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
+                    Order Now
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button class="text-custom-text hover:text-makan-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-cover bg-center bg-no-repeat" style=" background-image: url('/images/image\ 110.png');">
+        <div class="container mx-auto px-4 h-screen flex items-center justify-center">
+            <div class="text-center max-w-4xl">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight font-playfair text-custom-text font-normal">
+                    Best food for<br>
+                    your taste
+                </h1>
+                <p class="text-lg md:text-xl text-custom-text mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
+                    Discover delectable cuisine and unforgettable moments<br>
+                    in our welcoming, culinary haven.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#" class="bg-makan-orange text-white px-8 py-3 rounded-full hover:bg-makan-orange-hover transition-colors font-medium text-lg">
+                        Book A Table
+                    </a>
+                    <a href="#" class="border-2 border-custom-text text-custom-text px-8 py-3 rounded-full hover:bg-custom-text hover:text-white transition-colors font-medium text-lg">
+                        Explore Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full opacity-70"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 bg-makan-orange rounded-full opacity-60"></div>
+        <div class="absolute bottom-20 left-20 w-3 h-3 bg-green-400 rounded-full opacity-80"></div>
+        <div class="absolute bottom-40 right-10 w-5 h-5 bg-blue-400 rounded-full opacity-70"></div>
+    </section>
+
+    <!-- Browse Our Menu Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">Browse Our Menu</h2>
+            </div>
+
+            <!-- Menu Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Breakfast Card -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-coffee text-2xl text-custom-text"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-custom-text mb-3">Breakfast</h3>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                        In the new era of technology we look in the future with certainty and pride for our life.
+                    </p>
+                    <a href="#" class="text-makan-orange font-medium hover:text-makan-orange-hover transition-colors text-sm">
+                        Explore Menu
+                    </a>
+                </div>
+
+                <!-- Main Dishes Card -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-utensils text-2xl text-custom-text"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-custom-text mb-3">Main Dishes</h3>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                        In the new era of technology we look in the future with certainty and pride for our life.
+                    </p>
+                    <a href="#" class="text-makan-orange font-medium hover:text-makan-orange-hover transition-colors text-sm">
+                        Explore Menu
+                    </a>
+                </div>
+
+                <!-- Drinks Card -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-wine-glass text-2xl text-custom-text"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-custom-text mb-3">Drinks</h3>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                        In the new era of technology we look in the future with certainty and pride for our life.
+                    </p>
+                    <a href="#" class="text-makan-orange font-medium hover:text-makan-orange-hover transition-colors text-sm">
+                        Explore Menu
+                    </a>
+                </div>
+
+                <!-- Desserts Card -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-birthday-cake text-2xl text-custom-text"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-custom-text mb-3">Desserts</h3>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                        In the new era of technology we look in the future with certainty and pride for our life.
+                    </p>
+                    <a href="#" class="text-makan-orange font-medium hover:text-makan-orange-hover transition-colors text-sm">
+                        Explore Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Food Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+      <div class="relative max-w-lg mx-auto lg:mx-0">
+        <div class="rounded-3xl overflow-hidden shadow-lg">
+          <img
+            src="/images/image 111.png"
+            alt="Delicious Food"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 bg-makan-orange text-white p-6 rounded-2xl shadow-xl w-80 h-60">
+          <h3 class="text-xl font-bold mb-4">Come and visit us</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center">
+              <i class="fas fa-phone text-base mr-3"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-base mr-3"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-base mt-1 mr-3"></i>
+              <div>
+                <p>35-B Fishery Port Road, Jurong</p>
+                <p>Central Fish Market, Singapore,</p>
+                <p>619744</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right side – Content -->
+      <div class="lg:pr-8">
+        <h2 class="text-4xl md:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
+          We provide healthy food for your family.
+        </h2>
+        <div class="space-y-6 text-gray-600 leading-relaxed">
+          <p class="font-medium">
+            Our story began with a vision to create a unique dining experience
+            that merges fine dining, exceptional service, and a vibrant
+            ambiance. Rooted in city's rich culinary culture, we aim to
+            honor our local roots while infusing a global palate.
+          </p>
+          <p class="font-normal">
+            At place, we believe that dining is not just about food, but also about the
+            overall experience. Our staff, renowned for their warmth and dedication,
+            strives to make every visit an unforgettable event.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a
+            href="#"
+            class="inline-block px-8 py-3 border-2 border-makan-orange text-makan-orange rounded-full font-medium transition-colors hover:bg-makan-orange hover:text-white"
+          >
+            More About Us
+          </a>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-left mb-12 max-w-2xl">
+                <h2 class="text-4xl md:text-5xl font-medium text-custom-text leading-tight font-playfair mx-16">
+                    We also offer unique services for your events
+                </h2>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <!-- Caterings Card -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="/images/kebab-set-table 1.png" alt="Caterings" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-normal text-custom-text mb-3">Caterings</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        In the new era of technology we look in the future with certainty for life.
+                    </p>
+                </div>
+
+                <!-- Birthdays Card -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="/images/charming-female-blowing-candles-birthday-cake-after-making-her-wish-party 1.png" alt="Birthdays" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-text mb-3">Birthdays</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        In the new era of technology we look in the future with certainty for life.
+                    </p>
+                </div>
+
+                <!-- Weddings Card -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="/images/happy-man-wife-sunny-day 1.png" alt="Weddings" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-text mb-3">Weddings</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        In the new era of technology we look in the future with certainty for life.
+                    </p>
+                </div>
+
+                <!-- Events Card -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="/images/group-friends-eating-restaurant 1.png" alt="Events" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-text mb-3">Events</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        In the new era of technology we look in the future with certainty for life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fastest Food Delivery Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-1 row-span-2">
+                        <img src="/images/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.png" alt="Chef preparing food" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <div class="col-span-1 mt-4">
+                        <img src="/images/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food 1.png" alt="Delicious Pasta" class="w-full h-48 object-cover rounded-2xl">
+                    </div>
+                    <div class="col-span-1">
+                        <img src="/images/sadj-iron-pot-with-various-salads 1.png" alt="Grilled Meat" class="w-full h-48 object-cover rounded-2xl">
+                    </div>
+                </div>
+
+                <!-- Right side - Content -->
+                <div class="lg:pl-8">
+                    <h2 class="text-4xl md:text-5xl font-medium text-custom-text mb-6 leading-tight font-playfair">
+                        Fastest Food <br>
+                         Delivery in City
+                    </h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Our visual designer lets you quickly and of  drag a down <br> your way to customapps for both keep desktop.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="space-y-4 mb-8">
+                        <!-- Delivery Feature -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-7 h-7 bg-makan-orange rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-white text-sm"></i>
+                            </div>
+                            <span class="text-custom-text font-medium">Delivery within 30 minutes</span>
+                        </div>
+
+                        <!-- Best Offer Feature -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-7 h-7 bg-makan-orange rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-tag text-white text-sm"></i>
+                            </div>
+                            <span class="text-custom-text font-medium">Best Offer & Prices</span>
+                        </div>
+
+                        <!-- Online Services Feature -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-7 h-7 bg-makan-orange rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-laptop text-white text-sm"></i>
+                            </div>
+                            <span class="text-custom-text font-medium">Online Services Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-custom-text mb-4 font-playfair">What Our Customers Say</h2>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto ">
+                <!-- Testimonial 1 -->
+                <div class=" bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-makan-orange mb-4">"The best restaurant"</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Last night, we dined at place and were simply blown away. From the moment we stepped in, we were enveloped in an inviting atmosphere and greeted with warm smiles.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <img src="/images/test-1.png" alt="Sophire Robson" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-custom-text">Sophire Robson</h4>
+                            <p class="text-sm text-gray-500">Los Angeles, CA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class=" bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-makan-orange mb-4">"Simply delicious"</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Place exceeded my expectations on all fronts. The ambiance was cozy and relaxed, making it a perfect venue for our anniversary dinner. Each dish was prepared and beautifully presented.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <img src="/images/test-1.png" alt="Matt Cannon" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-custom-text">Matt Cannon</h4>
+                            <p class="text-sm text-gray-500">San Diego, CA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class=" bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-makan-orange mb-4">"One of a kind restaurant"</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The culinary experience at place is first to none. The atmosphere is vibrant, the food - nothing short of extraordinary. The food was the highlight of our evening. Highly recommended.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <img src="/images/test-1.png" alt="Andy Smith" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-custom-text">Andy Smith</h4>
+                            <p class="text-sm text-gray-500">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Blog & Articles Section -->
+    <section class="py-12 bg-white mx-8">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-custom-text font-playfair">Our Blog & Articles</h2>
+                <a href="#" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors font-medium text-sm">
+                    Read All Articles
+                </a>
+            </div>
+
+            <!-- Blog Articles Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <!-- Featured Article (Large) - Left Side -->
+                <div class="lg:col-span-1">
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden h-full">
+                        <div class="relative h-48 lg:h-64">
+                            <img src="/images/pexels-andra-918581 1.png" alt="Perfect Burger" class="w-full h-full object-cover">
+                            <div class="absolute top-3 left-3 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                                January 3, 2023
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-custom-text mb-2 leading-tight">
+                                The secret tips & tricks to prepare a perfect burger & pizza for our customers
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Right Side Grid - 2x2 -->
+                <div class="lg:col-span-2 grid grid-cols-2 gap-1">
+                    <!-- Article 2 - Top Left -->
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
+                        <div class="relative h-32">
+                            <img src="/images/pexels-suzy-hazelwood-2966196 1.png" alt="French Fries" class="w-full h-full object-cover">
+                            <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                                January 3, 2023
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="text-sm font-bold text-custom-text">
+                                How to prepare the perfect french fries in an air fryer
+                            </h3>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 - Top Right -->
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
+                        <div class="relative h-32">
+                            <img src="/images/pexels-leonardo-luz-13998974 1.png" alt="Chicken Tenders" class="w-full h-full object-cover">
+                            <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                                January 3, 2023
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="text-sm font-bold text-custom-text">
+                                How to prepare delicious chicken tenders
+                            </h3>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 - Bottom Left -->
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
+                        <div class="relative h-32">
+                            <img src="/images/pexels-sebastian-coman-photography-3791088 1.png" alt="Cheesecake" class="w-full h-full object-cover">
+                            <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                                January 3, 2023
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="text-sm font-bold text-custom-text leading-tight">
+                                7 delicious cheesecake recipes you can prepare
+                            </h3>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 - Bottom Right -->
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
+                        <div class="relative h-32">
+                            <img src="/images/pexels-katerina-holmes-5908226 1.png" alt="Pizza Restaurant" class="w-full h-full object-cover">
+                            <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                                January 3, 2023
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="text-sm font-bold text-custom-text leading-tight">
+                                5 great pizza restaurants you should visit this city
+                            </h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Logo and Description -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        In the new era of technology we look into the future with certainty and pride to for our company and.
+                    </p>
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pages Links -->
+                <div class="mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Utility Pages -->
+                <div class="mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Styleguide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Password Protected</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">404 Not Found</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Licenses</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Changelog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">View More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On Instagram -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    Copyright © 2025 Makan Mate. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+        <div class="bg-white w-64 h-full p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+                <button class="text-gray-600" id="close-menu">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+                <a href="#" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close menu when clicking outside
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
