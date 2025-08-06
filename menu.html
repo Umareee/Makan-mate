@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu - Makan Mate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'makan-orange': '#FF5722',
+                        'makan-orange-hover': '#E64A19',
+                        'custom-topbar': '#474747',
+                        'custom-navbar': '#F9F9F7',
+                        'custom-logo-bg': '#F9F9F71F',
+                        'custom-text': '#2C2F24',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <!-- Top bar with contact info -->
+        <div class="bg-custom-topbar py-2 px-4">
+            <div class="container mx-156 flex justify-between items-center text-sm">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>62642233 Ext 10-18</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>order@makanmate.com</span>
+                    </div>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main navigation -->
+    <nav class="bg-custom-navbar text-custom-text py-4 px-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center mx-16">
+            <div class="flex items-center space-x-3 ml-8">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
+                </div>
+            </div>
+            <div class="flex-1"></div>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="menu.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Menu</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="#" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
+                    Order Now
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button class="text-custom-text hover:text-makan-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <section class="relative  py-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16 text-center">
+            <h1 class="text-5xl md:text-6xl font-medium text-black font-playfair mb-6">Our Menu</h1>
+            <p class="text-xl text-black/90 max-w-2xl mx-auto">
+                We consider all the drivers of change gives you the components you need to change to create a truly happening.
+            </p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="menu-category-btn active bg-makan-orange text-white px-6 py-3 rounded-full font-medium transition-all duration-300 border border-gray-300" data-category="all">
+                    All
+                </button>
+                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="breakfast">
+                    Breakfast
+                </button>
+                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="main-dishes">
+                    Main Dishes
+                </button>
+                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="drinks">
+                    Drinks
+                </button>
+                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="desserts">
+                    Desserts
+                </button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto" id="menu-grid">
+                
+                <!-- Breakfast Items -->
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="breakfast">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-daniela-constantini-5591664 1.png" alt="Fried Eggs" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 9.99</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Fried Eggs</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="main-dishes">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-maksim-goncharenok-4773769 1.png" alt="Hawaiian Pizza" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 15.99</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Hawaiian Pizza</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="drinks">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-nadin-sh-12956424 1.png" alt="Martinez Cocktail" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 7.25</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Martinez Cocktail</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="desserts">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-ruslan-khmelevsky-7845121 1.png" alt="Butterscotch Cake" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 20.99</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Butterscotch Cake</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="drinks">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-bam-awey-5335918 1.png" alt="Mint Lemonade" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 5.89</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Mint Lemonade</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="desserts">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-roman-odintsov-5061254 1.png" alt="Chocolate Icecream" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 18.05</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Chocolate Icecream</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <!-- Main Dishes -->
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="main-dishes">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-pixabay-327158 1.png" alt="Cheese Burger" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 12.55</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Cheese Burger</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="desserts">
+                    <div class="relative h-52">
+                        <img src="/images/pexels-nicola-barts-7937386 1.png" alt="Classic Waffles" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-lg font-bold text-makan-orange mb-2">$ 12.99</div>
+                        <h3 class="text-lg font-bold text-custom-text mb-2">Classic Waffles</h3>
+                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Apps Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left side - Text content -->
+                <div class="lg:w-1/3">
+                    <h2 class="text-4xl md:text-5xl font-medium text-custom-text font-playfair mb-6">
+                        You can order through apps
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquet risus tempor semper.
+                    </p>
+                </div>
+                
+                <!-- Right side - App logos grid -->
+                <div class="lg:w-2/3">
+                    <div class="grid grid-cols-3 gap-6 max-w-2xl">
+                        <!-- Row 1 -->
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
+                            <img src="/images/ubereatspng.png" alt="Uber Eats" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
+                            <img src="/images/grubhubpng.png" alt="Grubhub" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
+                            <img src="/images/postmatespng.png" alt="Postmates" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        
+                        <!-- Row 2 - Wider rectangles -->
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20 col-span-1 transform scale-x-110">
+                            <img src="/images/doordash.png" alt="DoorDash" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20 col-span-1 transform scale-x-110 mx-2">
+                            <img src="/images/foodpandapng.png" alt="foodpanda" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20 col-span-1 transform scale-x-110">
+                            <img src="/images/deliveroopng.png" alt="deliveroo" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        
+                        <!-- Row 3 -->
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
+                            <img src="/images/instacart.png" alt="Instacart" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
+                            <img src="/images/justeat.png" alt="Just Eat" class="max-h-8 max-w-full object-contain">
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
+                            <img src="/images/didifood.png" alt="DiDi Food" class="max-h-8 max-w-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Logo and Description -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        In the new era of technology we look into the future with certainty and pride to for our company and.
+                    </p>
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pages Links -->
+                <div class="mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Utility Pages -->
+                <div class="mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Styleguide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Password Protected</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">404 Not Found</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Licenses</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Changelog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">View More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On Instagram -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    Copyright © 2025 Makan Mate. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+        <div class="bg-white w-64 h-full p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+                <button class="text-gray-600" id="close-menu">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+                <a href="#" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close menu when clicking outside
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Menu category filtering
+        const categoryBtns = document.querySelectorAll('.menu-category-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.getAttribute('data-category');
+                
+                // Update active button
+                categoryBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-makan-orange', 'text-white');
+                    b.classList.add('bg-white', 'text-custom-text');
+                });
+                btn.classList.add('active', 'bg-makan-orange', 'text-white');
+                btn.classList.remove('bg-white', 'text-custom-text');
+                
+                // Filter menu items
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
