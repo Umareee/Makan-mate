@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu - Makan Mate</title>
+    <title>Order - Makan Mate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -61,7 +61,6 @@
             </div>
         </div>
     </header>
-
     <!-- Main navigation -->
     <nav class="bg-custom-navbar text-custom-text py-4 px-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex items-center mx-16">
@@ -78,11 +77,11 @@
             <!-- Navigation Links -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
-                <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                <a href="menu.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Menu</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
                 <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
                 <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
-                <a href="#" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
+                <a href="#" class="bg-makan-orange text-white border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
                     Order Now
                 </a>
             </div>
@@ -96,191 +95,41 @@
         </div>
     </nav>
 
-    <!-- Menu Hero Section -->
-    <section class="relative  py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16 text-center">
-            <h1 class="text-5xl md:text-6xl font-medium text-black font-playfair mb-6">Our Menu</h1>
-            <p class="text-xl text-black/90 max-w-2xl mx-auto">
-                We consider all the drivers of change gives you the components you need to change to create a truly happening.
-            </p>
-        </div>
-    </section>
+    <main class="bg-white py-16">
+  <div class="container mx-auto px-6 lg:px-32">
+    <h2 class="text-4xl font-bold font-playfair text-custom-text mb-8">Our Menu</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+      <!-- Sample Menu Card -->
+      <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm border border-gray-200">
+  <h3 class="text-makan-orange font-bold uppercase tracking-wide mb-2">SG60 Mini Party Set</h3>
+  <p class="text-gray-500 text-sm mb-2">starts from</p>
+  <p class="text-4xl font-bold text-custom-text mb-1">$99.00</p>
+  <p class="text-gray-500 text-sm mb-4">($107.91 w/GST)</p>
+  <p class="text-gray-600 text-sm">
+    Throw a fuss-free feast with our Party Sets from just $99, perfect for parties of 10.
+    Packed with crowd-pleasers like Signature Curry Chicken, they great for gatherings,
+    or just a hearty family meal.
+  </p>
+</div>
 
-    <!-- Menu Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16">
-            <!-- Menu Categories -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="menu-category-btn active bg-makan-orange text-white px-6 py-3 rounded-full font-medium transition-all duration-300 border border-gray-300" data-category="all">
-                    All
-                </button>
-                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="breakfast">
-                    Breakfast
-                </button>
-                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="main-dishes">
-                    Main Dishes
-                </button>
-                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="drinks">
-                    Drinks
-                </button>
-                <button class="menu-category-btn bg-white text-custom-text px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300" data-category="desserts">
-                    Desserts
-                </button>
-            </div>
+      <!-- Repeat for more items -->
+     <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm border border-gray-200">
+  <h3 class="text-makan-orange font-bold uppercase tracking-wide mb-2">SG60 Mini Party Set</h3>
+  <p class="text-gray-500 text-sm mb-2">starts from</p>
+  <p class="text-4xl font-bold text-custom-text mb-1">$99.00</p>
+  <p class="text-gray-500 text-sm mb-4">($107.91 w/GST)</p>
+  <p class="text-gray-600 text-sm">
+    Throw a fuss-free feast with our Party Sets from just $99, perfect for parties of 10.
+    Packed with crowd-pleasers like Signature Curry Chicken, they great for gatherings,
+    or just a hearty family meal.
+  </p>
+</div>
 
-            <!-- Menu Items Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto" id="menu-grid">
-                
-                <!-- Breakfast Items -->
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="breakfast">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-daniela-constantini-5591664 1.png" alt="Fried Eggs" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 9.99</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Fried Eggs</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </div>
+</main>
 
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="main-dishes">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-maksim-goncharenok-4773769 1.png" alt="Hawaiian Pizza" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 15.99</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Hawaiian Pizza</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-                <!-- Drinks -->
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="drinks">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-nadin-sh-12956424 1.png" alt="Martinez Cocktail" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 7.25</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Martinez Cocktail</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-                <!-- Desserts -->
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="desserts">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-ruslan-khmelevsky-7845121 1.png" alt="Butterscotch Cake" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 20.99</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Butterscotch Cake</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="drinks">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-bam-awey-5335918 1.png" alt="Mint Lemonade" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 5.89</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Mint Lemonade</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="desserts">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-roman-odintsov-5061254 1.png" alt="Chocolate Icecream" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 18.05</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Chocolate Icecream</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-                <!-- Main Dishes -->
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="main-dishes">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-pixabay-327158 1.png" alt="Cheese Burger" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 12.55</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Cheese Burger</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-                <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden" data-category="desserts">
-                    <div class="relative h-52">
-                        <img src="/images/pexels-nicola-barts-7937386 1.png" alt="Classic Waffles" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center">
-                        <div class="text-lg font-bold text-makan-orange mb-2">$ 12.99</div>
-                        <h3 class="text-lg font-bold text-custom-text mb-2">Classic Waffles</h3>
-                        <p class="text-gray-600 text-sm">Made with eggs, lettuce, salt, oil and other ingredients.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Delivery Apps Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <!-- Left side - Text content -->
-                <div class="lg:w-1/3">
-                    <h2 class="text-4xl md:text-5xl font-medium text-custom-text font-playfair mb-6">
-                        You can order through apps
-                    </h2>
-                    <p class="text-gray-600 leading-relaxed">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquet risus tempor semper.
-                    </p>
-                </div>
-                
-                <!-- Right side - App logos grid -->
-                <div class="lg:w-2/3">
-                    <div class="grid grid-cols-3 gap-6 max-w-2xl">
-                        <!-- Row 1 -->
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
-                            <img src="/images/ubereatspng.png" alt="Uber Eats" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
-                            <img src="/images/grubhubpng.png" alt="Grubhub" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
-                            <img src="/images/postmatespng.png" alt="Postmates" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        
-                        <!-- Row 2 - Wider rectangles -->
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20 col-span-1 transform scale-x-110">
-                            <img src="/images/doordash.png" alt="DoorDash" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20 col-span-1 transform scale-x-110 mx-2">
-                            <img src="/images/foodpandapng.png" alt="foodpanda" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20 col-span-1 transform scale-x-110">
-                            <img src="/images/deliveroopng.png" alt="deliveroo" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        
-                        <!-- Row 3 -->
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
-                            <img src="/images/instacart.png" alt="Instacart" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
-                            <img src="/images/justeat.png" alt="Just Eat" class="max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-20">
-                            <img src="/images/didifood.png" alt="DiDi Food" class="max-h-8 max-w-full object-contain">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-16">
@@ -319,7 +168,7 @@
                     <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
                         <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
@@ -382,7 +231,7 @@
             </div>
             <nav class="space-y-4">
                 <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
-                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
                 <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
                 <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
                 <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
