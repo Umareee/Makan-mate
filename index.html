@@ -32,39 +32,69 @@
     <!-- Header -->
     <header class="bg-gray-800 text-white">
         <!-- Top bar with contact info -->
-        <div class="bg-custom-topbar py-2 px-4">
-            <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm gap-2 sm:gap-0">
-                <div class="flex items-center space-x-3 sm:space-x-6">
-                    <div class="flex items-center space-x-2">
+        <div class="bg-custom-topbar py-2 px-2">
+            <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+                <!-- Mobile Layout -->
+                <div class="flex sm:hidden justify-between items-start py-1">
+                    <div class="flex items-center space-x-1">
                         <i class="fas fa-phone"></i>
                         <span>62642233 Ext 10-18</span>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-envelope"></i>
-                        <span>order@makanmate.com</span>
+                    <div class="flex flex-col items-end space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-twitter text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-facebook text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-instagram text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-github text-xs"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="flex space-x-2 sm:space-x-3">
-                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
+                <!-- Desktop Layout -->
+                <div class="hidden sm:flex justify-between items-center">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>62642233 Ext 10-18</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Main navigation -->
-    <nav class="bg-custom-navbar text-custom-text py-4 px-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex items-center justify-between">
+    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
                     <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
@@ -96,7 +126,7 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen bg-cover bg-center bg-no-repeat" style=" background-image: url('/images/image\ 110.png');">
-        <div class="container mx-auto px-4 h-screen flex items-center justify-center">
+        <div class="container mx-auto px-2 sm:px-4 h-screen flex items-center justify-center">
             <div class="text-center max-w-4xl">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight font-playfair text-custom-text font-normal">
                     Best food for<br>
@@ -126,7 +156,7 @@
 
     <!-- Browse Our Menu Section -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-2 sm:px-4">
             <!-- Section Title -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">Browse Our Menu</h2>
@@ -195,7 +225,7 @@
 
 <!-- Food Section -->
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-4 lg:px-8">
+  <div class="container mx-auto px-2 sm:px-4 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
       <div class="relative max-w-lg mx-auto lg:mx-0">
         <div class="rounded-3xl overflow-hidden shadow-lg">
@@ -261,7 +291,7 @@
 
     <!-- Services Section -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <!-- Section Title -->
             <div class="text-left mb-8 sm:mb-12 max-w-4xl">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-custom-text leading-tight font-playfair">
@@ -324,7 +354,7 @@
 
     <!-- Fastest Food Delivery Section -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-2 sm:px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-1 row-span-2">
@@ -381,7 +411,7 @@
 
     <!-- Customer Testimonials Section -->
     <section class="py-16">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-2 sm:px-4">
             <!-- Section Title -->
             <div class="text-center mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-custom-text mb-4 font-playfair">What Our Customers Say</h2>
@@ -439,7 +469,7 @@
 
     <!-- Our Blog & Articles Section -->
     <section class="py-12 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <!-- Section Header -->
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
                 <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-custom-text font-playfair">Our Blog & Articles</h2>
@@ -538,7 +568,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-16">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <!-- Logo and Description -->
                 <div class="lg:col-span-1">

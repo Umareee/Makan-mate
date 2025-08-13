@@ -32,30 +32,59 @@
     <!-- Header -->
     <header class="bg-gray-800 text-white">
         <!-- Top bar with contact info -->
-        <div class="bg-custom-topbar py-2 px-4">
-      <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm gap-2 sm:gap-0">
-        <div class="flex items-center space-x-3 sm:space-x-6">
-          <div class="flex items-center space-x-2">
+        <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <!-- Mobile Layout -->
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
             <i class="fas fa-phone"></i>
             <span>62642233 Ext 10-18</span>
           </div>
-          <div class="flex items-center space-x-2">
-            <i class="fas fa-envelope"></i>
-            <span>order@makanmate.com</span>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-twitter text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-facebook text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-instagram text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-github text-xs"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="flex space-x-2 sm:space-x-3">
-          <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-twitter"></i>
+        <!-- Desktop Layout -->
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-phone"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+            <i class="fab fa-twitter text-xs sm:text-sm"></i>
           </a>
-          <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-facebook"></i>
+          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+            <i class="fab fa-facebook text-xs sm:text-sm"></i>
           </a>
-          <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-instagram"></i>
+          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+            <i class="fab fa-instagram text-xs sm:text-sm"></i>
           </a>
-          <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-github"></i>
+          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+            <i class="fab fa-github text-xs sm:text-sm"></i>
           </a>
         </div>
       </div>
@@ -63,20 +92,18 @@
     </header>
 
     <!-- Main navigation -->
-    <nav class="bg-custom-navbar text-custom-text py-4 px-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto flex items-center mx-16">
-            <div class="flex items-center space-x-3 ml-8">
+    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
                     <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
                 </div>
                 <div>
-                    <h1 class="text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
+                    <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
                 </div>
             </div>
-            <div class="flex-1"></div>
-
             <!-- Navigation Links -->
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
                 <a href="about.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">About</a>
                 <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
@@ -88,7 +115,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <div class="md:hidden">
+            <div class="lg:hidden">
                 <button class="text-custom-text hover:text-makan-orange">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
@@ -98,7 +125,7 @@
 
     <!-- About Hero Section -->
     <section class="relative py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16 text-center">
+        <div class="container mx-auto px-2 sm:px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-medium text-black font-playfair mb-6">About Us</h1>
             <p class="text-xl text-black/90 max-w-2xl mx-auto">
                 Discover the story behind Singapore's most beloved culinary destination.
@@ -108,7 +135,7 @@
 
     <!-- Our Story Section -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
                 <div class="relative max-w-lg mx-auto lg:mx-0">
                     <div class="rounded-3xl overflow-hidden shadow-lg">
@@ -142,7 +169,7 @@
                 </div>
                 <!-- Right side – Content -->
                 <div class="lg:pr-8">
-                    <h2 class="text-4xl md:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
                         We provide healthy food for your family.
                     </h2>
                     <div class="space-y-6 text-gray-600 leading-relaxed">
@@ -173,15 +200,15 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-16">
-        <div class="container mx-auto px-4 md:px-8 lg:px-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="container mx-auto px-2 sm:px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <!-- Logo and Description -->
                 <div class="lg:col-span-1">
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
                             <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
                         </div>
-                        <h3 class="text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
                     </div>
                     <p class="text-gray-300 leading-relaxed mb-6">
                         In the new era of technology we look into the future with certainty and pride to for our company and.
@@ -204,7 +231,7 @@
                 </div>
 
                 <!-- Pages Links -->
-                <div class="mx-4">
+                <div class="mx-0 sm:mx-4">
                     <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
@@ -218,7 +245,7 @@
                 </div>
 
                 <!-- Utility Pages -->
-                <div class="mx-4">
+                <div class="mx-0 sm:mx-4">
                     <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
@@ -261,7 +288,7 @@
     </footer>
 
     <!-- Mobile menu (hidden by default) -->
-    <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
         <div class="bg-white w-64 h-full p-6">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
@@ -282,7 +309,7 @@
 
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenuBtn = document.getElementById('close-menu');
 
