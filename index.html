@@ -33,8 +33,8 @@
     <header class="bg-gray-800 text-white">
         <!-- Top bar with contact info -->
         <div class="bg-custom-topbar py-2 px-4">
-            <div class="container mx-156 flex justify-between items-center text-sm">
-                <div class="flex items-center space-x-6">
+            <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm gap-2 sm:gap-0">
+                <div class="flex items-center space-x-3 sm:space-x-6">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-phone"></i>
                         <span>62642233 Ext 10-18</span>
@@ -44,7 +44,7 @@
                         <span>order@makanmate.com</span>
                     </div>
                 </div>
-                <div class="flex space-x-3">
+                <div class="flex space-x-2 sm:space-x-3">
                     <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
                         <i class="fab fa-twitter"></i>
                     </a>
@@ -64,19 +64,17 @@
 
     <!-- Main navigation -->
     <nav class="bg-custom-navbar text-custom-text py-4 px-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto flex items-center mx-16">
-            <div class="flex items-center space-x-3 ml-8">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
                     <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
                 </div>
                 <div>
-                    <h1 class="text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
+                    <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
                 </div>
             </div>
-            <div class="flex-1"></div>
-
             <!-- Navigation Links -->
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
                 <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
@@ -88,7 +86,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <div class="md:hidden">
+            <div class="lg:hidden">
                 <button class="text-custom-text hover:text-makan-orange">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
@@ -100,19 +98,19 @@
     <section class="relative min-h-screen bg-cover bg-center bg-no-repeat" style=" background-image: url('/images/image\ 110.png');">
         <div class="container mx-auto px-4 h-screen flex items-center justify-center">
             <div class="text-center max-w-4xl">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight font-playfair text-custom-text font-normal">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight font-playfair text-custom-text font-normal">
                     Best food for<br>
                     your taste
                 </h1>
-                <p class="text-lg md:text-xl text-custom-text mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
+                <p class="text-base sm:text-lg md:text-xl text-custom-text mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
                     Discover delectable cuisine and unforgettable moments<br>
                     in our welcoming, culinary haven.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#" class="bg-makan-orange text-white px-8 py-3 rounded-full hover:bg-makan-orange-hover transition-colors font-medium text-lg">
+                    <a href="#" class="bg-makan-orange text-white px-6 sm:px-8 py-3 rounded-full hover:bg-makan-orange-hover transition-colors font-medium text-base sm:text-lg">
                         Book A Table
                     </a>
-                    <a href="#" class="border-2 border-custom-text text-custom-text px-8 py-3 rounded-full hover:bg-custom-text hover:text-white transition-colors font-medium text-lg">
+                    <a href="#" class="border-2 border-custom-text text-custom-text px-6 sm:px-8 py-3 rounded-full hover:bg-custom-text hover:text-white transition-colors font-medium text-base sm:text-lg">
                         Explore Menu
                     </a>
                 </div>
@@ -131,17 +129,17 @@
         <div class="container mx-auto px-4">
             <!-- Section Title -->
             <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">Browse Our Menu</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">Browse Our Menu</h2>
             </div>
 
             <!-- Menu Categories Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
                 <!-- Breakfast Card -->
                 <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center">
                     <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-coffee text-2xl text-custom-text"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-custom-text mb-3">Breakfast</h3>
+                    <h3 class="text-base sm:text-lg font-bold text-custom-text mb-3">Breakfast</h3>
                     <p class="text-gray-500 text-sm mb-4 leading-relaxed">
                         In the new era of technology we look in the future with certainty and pride for our life.
                     </p>
@@ -155,7 +153,7 @@
                     <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-utensils text-2xl text-custom-text"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-custom-text mb-3">Main Dishes</h3>
+                    <h3 class="text-base sm:text-lg font-bold text-custom-text mb-3">Main Dishes</h3>
                     <p class="text-gray-500 text-sm mb-4 leading-relaxed">
                         In the new era of technology we look in the future with certainty and pride for our life.
                     </p>
@@ -169,7 +167,7 @@
                     <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-wine-glass text-2xl text-custom-text"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-custom-text mb-3">Drinks</h3>
+                    <h3 class="text-base sm:text-lg font-bold text-custom-text mb-3">Drinks</h3>
                     <p class="text-gray-500 text-sm mb-4 leading-relaxed">
                         In the new era of technology we look in the future with certainty and pride for our life.
                     </p>
@@ -183,7 +181,7 @@
                     <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-birthday-cake text-2xl text-custom-text"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-custom-text mb-3">Desserts</h3>
+                    <h3 class="text-base sm:text-lg font-bold text-custom-text mb-3">Desserts</h3>
                     <p class="text-gray-500 text-sm mb-4 leading-relaxed">
                         In the new era of technology we look in the future with certainty and pride for our life.
                     </p>
@@ -207,9 +205,9 @@
             class="w-full h-auto object-contain"
           />
         </div>
-        <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 lg:translate-x-1/4 lg:translate-y-1/4 md:translate-x-1/6 md:translate-y-1/6 sm:translate-x-2 sm:translate-y-2 bg-makan-orange text-white p-4 md:p-6 rounded-2xl shadow-xl max-w-xs md:max-w-sm">
-          <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Come and visit us</h3>
-          <div class="space-y-2 md:space-y-3 text-xs md:text-sm">
+        <div class="absolute -bottom-4 -right-4 sm:bottom-0 sm:right-0 sm:translate-x-1/4 sm:translate-y-1/4 bg-makan-orange text-white p-3 sm:p-4 md:p-6 rounded-2xl shadow-xl max-w-xs sm:max-w-sm">
+          <h3 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">Come and visit us</h3>
+          <div class="space-y-1 sm:space-y-2 md:space-y-3 text-xs sm:text-sm md:text-sm">
             <div class="flex items-center">
               <i class="fas fa-phone text-sm md:text-base mr-2 md:mr-3"></i>
               <span>62642233 Ext 10-18</span>
@@ -231,7 +229,7 @@
       </div>
       <!-- Right side – Content -->
       <div class="lg:pr-8">
-        <h2 class="text-4xl md:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
           We provide healthy food for your family.
         </h2>
         <div class="space-y-6 text-gray-600 leading-relaxed">
@@ -265,21 +263,21 @@
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-8 lg:px-16">
             <!-- Section Title -->
-            <div class="text-left mb-12 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium text-custom-text leading-tight font-playfair">
+            <div class="text-left mb-8 sm:mb-12 max-w-4xl">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-custom-text leading-tight font-playfair">
                     We also offer unique services for your events
                 </h2>
             </div>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
                 <!-- Caterings Card -->
                 <div class="group cursor-pointer">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/kebab-set-table 1.png" alt="Caterings" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <img src="/images/kebab-set-table 1.png" alt="Caterings" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
                     </div>
-                    <h3 class="text-xl font-normal text-custom-text mb-3">Caterings</h3>
+                    <h3 class="text-lg sm:text-xl font-normal text-custom-text mb-3">Caterings</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         In the new era of technology we look in the future with certainty for life.
                     </p>
@@ -288,10 +286,10 @@
                 <!-- Birthdays Card -->
                 <div class="group cursor-pointer">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/charming-female-blowing-candles-birthday-cake-after-making-her-wish-party 1.png" alt="Birthdays" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <img src="/images/charming-female-blowing-candles-birthday-cake-after-making-her-wish-party 1.png" alt="Birthdays" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-custom-text mb-3">Birthdays</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3">Birthdays</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         In the new era of technology we look in the future with certainty for life.
                     </p>
@@ -300,10 +298,10 @@
                 <!-- Weddings Card -->
                 <div class="group cursor-pointer">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/happy-man-wife-sunny-day 1.png" alt="Weddings" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <img src="/images/happy-man-wife-sunny-day 1.png" alt="Weddings" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-custom-text mb-3">Weddings</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3">Weddings</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         In the new era of technology we look in the future with certainty for life.
                     </p>
@@ -312,10 +310,10 @@
                 <!-- Events Card -->
                 <div class="group cursor-pointer">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/group-friends-eating-restaurant 1.png" alt="Events" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <img src="/images/group-friends-eating-restaurant 1.png" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-custom-text mb-3">Events</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3">Events</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         In the new era of technology we look in the future with certainty for life.
                     </p>
@@ -342,7 +340,7 @@
 
                 <!-- Right side - Content -->
                 <div class="lg:pl-8">
-                    <h2 class="text-4xl md:text-5xl font-medium text-custom-text mb-6 leading-tight font-playfair">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-custom-text mb-6 leading-tight font-playfair">
                         Fastest Food <br>
                          Delivery in City
                     </h2>
@@ -386,14 +384,14 @@
         <div class="container mx-auto px-4">
             <!-- Section Title -->
             <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-custom-text mb-4 font-playfair">What Our Customers Say</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-custom-text mb-4 font-playfair">What Our Customers Say</h2>
             </div>
 
             <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto ">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                 <!-- Testimonial 1 -->
-                <div class=" bg-gray-50 rounded-2xl p-8 shadow-lg">
-                    <h3 class="text-xl font-bold text-makan-orange mb-4">"The best restaurant"</h3>
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
+                    <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"The best restaurant"</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Last night, we dined at place and were simply blown away. From the moment we stepped in, we were enveloped in an inviting atmosphere and greeted with warm smiles.
                     </p>
@@ -407,8 +405,8 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class=" bg-gray-50 rounded-2xl p-8 shadow-lg">
-                    <h3 class="text-xl font-bold text-makan-orange mb-4">"Simply delicious"</h3>
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
+                    <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Simply delicious"</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Place exceeded my expectations on all fronts. The ambiance was cozy and relaxed, making it a perfect venue for our anniversary dinner. Each dish was prepared and beautifully presented.
                     </p>
@@ -422,8 +420,8 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class=" bg-gray-50 rounded-2xl p-8 shadow-lg">
-                    <h3 class="text-xl font-bold text-makan-orange mb-4">"One of a kind restaurant"</h3>
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
+                    <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"One of a kind restaurant"</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         The culinary experience at place is first to none. The atmosphere is vibrant, the food - nothing short of extraordinary. The food was the highlight of our evening. Highly recommended.
                     </p>
@@ -443,26 +441,26 @@
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4 md:px-8 lg:px-16">
             <!-- Section Header -->
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-8 gap-4">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-custom-text font-playfair">Our Blog & Articles</h2>
-                <a href="#" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors font-medium text-sm self-start md:self-auto">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
+                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-custom-text font-playfair">Our Blog & Articles</h2>
+                <a href="#" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors font-medium text-sm self-start sm:self-auto">
                     Read All Articles
                 </a>
             </div>
 
             <!-- Blog Articles Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 max-w-6xl mx-auto">
                 <!-- Featured Article (Large) - Left Side -->
                 <div class="lg:col-span-1">
                     <article class="bg-white rounded-lg shadow-md overflow-hidden h-full">
-                        <div class="relative h-48 lg:h-64">
+                        <div class="relative h-40 sm:h-48 lg:h-64">
                             <img src="/images/pexels-andra-918581 1.png" alt="Perfect Burger" class="w-full h-full object-cover">
                             <div class="absolute top-3 left-3 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
                                 January 3, 2023
                             </div>
                         </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-bold text-custom-text mb-2 leading-tight">
+                        <div class="p-3 sm:p-4">
+                            <h3 class="text-base sm:text-lg font-bold text-custom-text mb-2 leading-tight">
                                 The secret tips & tricks to prepare a perfect burger & pizza for our customers
                             </h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
@@ -473,17 +471,17 @@
                 </div>
 
                 <!-- Right Side Grid - 2x2 -->
-                <div class="lg:col-span-2 grid grid-cols-2 gap-1">
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-1">
                     <!-- Article 2 - Top Left -->
                     <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
-                        <div class="relative h-32">
+                        <div class="relative h-24 sm:h-32">
                             <img src="/images/pexels-suzy-hazelwood-2966196 1.png" alt="French Fries" class="w-full h-full object-cover">
                             <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
                                 January 3, 2023
                             </div>
                         </div>
-                        <div class="p-3">
-                            <h3 class="text-sm font-bold text-custom-text">
+                        <div class="p-2 sm:p-3">
+                            <h3 class="text-xs sm:text-sm font-bold text-custom-text">
                                 How to prepare the perfect french fries in an air fryer
                             </h3>
                         </div>
@@ -491,14 +489,14 @@
 
                     <!-- Article 3 - Top Right -->
                     <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
-                        <div class="relative h-32">
+                        <div class="relative h-24 sm:h-32">
                             <img src="/images/pexels-leonardo-luz-13998974 1.png" alt="Chicken Tenders" class="w-full h-full object-cover">
                             <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
                                 January 3, 2023
                             </div>
                         </div>
-                        <div class="p-3">
-                            <h3 class="text-sm font-bold text-custom-text">
+                        <div class="p-2 sm:p-3">
+                            <h3 class="text-xs sm:text-sm font-bold text-custom-text">
                                 How to prepare delicious chicken tenders
                             </h3>
                         </div>
@@ -506,13 +504,13 @@
 
                     <!-- Article 4 - Bottom Left -->
                     <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
-                        <div class="relative h-32">
+                        <div class="relative h-24 sm:h-32">
                             <img src="/images/pexels-sebastian-coman-photography-3791088 1.png" alt="Cheesecake" class="w-full h-full object-cover">
                             <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
                                 January 3, 2023
                             </div>
                         </div>
-                        <div class="p-3">
+                        <div class="p-2 sm:p-3">
                             <h3 class="text-sm font-bold text-custom-text leading-tight">
                                 7 delicious cheesecake recipes you can prepare
                             </h3>
@@ -521,13 +519,13 @@
 
                     <!-- Article 5 - Bottom Right -->
                     <article class="bg-white rounded-lg shadow-md overflow-hidden h-full mx-1">
-                        <div class="relative h-32">
+                        <div class="relative h-24 sm:h-32">
                             <img src="/images/pexels-katerina-holmes-5908226 1.png" alt="Pizza Restaurant" class="w-full h-full object-cover">
                             <div class="absolute top-2 left-2 bg-white text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
                                 January 3, 2023
                             </div>
                         </div>
-                        <div class="p-3">
+                        <div class="p-2 sm:p-3">
                             <h3 class="text-sm font-bold text-custom-text leading-tight">
                                 5 great pizza restaurants you should visit this city
                             </h3>
@@ -541,14 +539,14 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-16">
         <div class="container mx-auto px-4 md:px-8 lg:px-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <!-- Logo and Description -->
                 <div class="lg:col-span-1">
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
                             <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
                         </div>
-                        <h3 class="text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
                     </div>
                     <p class="text-gray-300 leading-relaxed mb-6">
                         In the new era of technology we look into the future with certainty and pride to for our company and.
@@ -571,7 +569,7 @@
                 </div>
 
                 <!-- Pages Links -->
-                <div class="mx-4">
+                <div class="mx-0 sm:mx-4">
                     <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
@@ -585,7 +583,7 @@
                 </div>
 
                 <!-- Utility Pages -->
-                <div class="mx-4">
+                <div class="mx-0 sm:mx-4">
                     <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
@@ -628,7 +626,7 @@
     </footer>
 
     <!-- Mobile menu (hidden by default) -->
-    <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
         <div class="bg-white w-64 h-full p-6">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
@@ -642,14 +640,14 @@
                 <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
                 <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
                 <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
-                <a href="#" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+                <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
             </nav>
         </div>
     </div>
 
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenuBtn = document.getElementById('close-menu');
 
