@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SG60 Buffet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display', 'serif'],
+            'dm-sans': ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <style>
+    .slider-image {
+      display: none;
+    }
+    .slider-image.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+   <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <!-- Top bar with contact info -->
+        <div class="bg-custom-topbar py-2 px-2">
+            <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+                <!-- Mobile Layout -->
+                <div class="flex sm:hidden justify-between items-start py-1">
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-phone"></i>
+                        <span>62642233 Ext 10-18</span>
+                    </div>
+                    <div class="flex flex-col items-end space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-twitter text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-facebook text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-instagram text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-github text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Desktop Layout -->
+                <div class="hidden sm:flex justify-between items-center">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>62642233 Ext 10-18</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main navigation -->
+    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+                <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+                <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="order.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">
+                    Order Now
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+                <button class="text-custom-text hover:text-makan-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+  <!-- Title -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-playfair font-bold mb-2">SG60 BUFFET</h1>
+    <p class="mb-6 text-gray-600">
+      Join us in A Feast For The Nation as Singapore turns 60; it’s a celebration of our journey with you through the generations.
+    </p>
+
+    <!-- Hero Image Slider -->
+    <div class="mb-8 relative">
+      <img src="images/festive/imgi_1_Main Banner_Desktop.png" class="slider-image active w-full rounded-lg shadow" alt="Slide 1">
+      <img src="images/festive/imgi_1_Main Banner_Desktop.png" class="slider-image w-full rounded-lg shadow" alt="Slide 2">
+      <img src="images/festive/imgi_1_Main Banner_Desktop.png" class="slider-image w-full rounded-lg shadow" alt="Slide 3">
+    </div>
+
+    <!-- NEO 92 Menu -->
+    <h2 class="text-xl font-semibold mb-2">NEO 92 MENU</h2>
+    <div class="mb-8 border rounded">
+      <button class="bg-gray-100 w-full px-4 py-2 flex items-center justify-between text-sm font-medium" onclick="toggleSection('neo92')">
+        <span>Terms and Conditions</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="neo92" class="hidden p-4 text-sm text-gray-700 border-t bg-gray-50">
+        <ul class="list-disc pl-5 space-y-1">
+          <li>All prices are inclusive of GST where applicable.</li>
+          <li>Menu is available with a minimum of 30 pax per order.</li>
+          <li>Images are for illustration purposes only and actual presentation may vary.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+          <img src="images/festive/imgi_5_Local Favourites.jpg" alt="Neo 92 Menu" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">NEO 92 MENU</h3>
+            <p class="text-sm text-gray-500 mb-3">9 courses | min 30 Pax</p>
+            <div class="flex items-center gap-4">
+              <span class="text-lg font-bold">$28.00 <span class="text-sm font-normal">/Pax</span></span>
+              <span class="text-sm text-gray-500">$30.52 <span class="text-xs">w/GST</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SG60 Live Station, DIY Sets & Thematic Setup -->
+    <h2 class="text-xl font-semibold mb-2">SG60 LIVE STATION, DIY SETS & THEMATIC SETUP</h2>
+    <div class="mb-8 border rounded">
+      <button class="bg-gray-100 w-full px-4 py-2 flex items-center justify-between text-sm font-medium" onclick="toggleSection('sg60')">
+        <span>Terms and Conditions</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="sg60" class="hidden p-4 text-sm text-gray-700 border-t bg-gray-50">
+        <ul class="list-disc pl-5 space-y-1">
+          <li>All prices are inclusive of GST where applicable.</li>
+          <li>Images are for illustration purposes only and actual presentation may vary.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+          <img src="images/festive/imgi_6_Something Special.jpg" alt="SG60 Live Station" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">SG60 LIVE STATION</h3>
+          </div>
+        </div>
+        <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+          <img src="images/festive/imgi_7_Hot And Spicy.jpg" alt="SG60 DIY Sets" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">SG60 DIY SETS</h3>
+          </div>
+        </div>
+        <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+          <img src="images/festive/imgi_8_All Day Breakfast.jpg" alt="SG60 Thematic Setup" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">SG60 THEMATIC SETUP</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+
+ // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close menu when clicking outside
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+    // Toggle terms
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      const icon = section.previousElementSibling.querySelector("i");
+      section.classList.toggle("hidden");
+      icon.classList.toggle("fa-chevron-down");
+      icon.classList.toggle("fa-chevron-up");
+    }
+
+    // Hero slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slider-image");
+
+    function showSlide() {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    setInterval(showSlide, 3000); // change every 3s
+  </script>
+
+</body>
+</html>
