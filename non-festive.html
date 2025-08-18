@@ -125,28 +125,78 @@
     </nav>
   <!-- Title -->
   <section class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-playfair font-bold mb-2">SG60 MINI PARTY SET</h1>
-    <p class="mb-6 text-gray-600">
-      Throw a fuss-free feast with our Party Sets from just $99, perfect for parties of 10.
-      Packed with crowd-pleasers like Signature Curry Chicken, they’re great for gatherings, or just a hearty family meal.
-    </p>
+   <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl font-playfair font-bold mb-2">SG60 MINI PARTY SET</h1>
+      <p class="mb-6 text-gray-600 max-w-3xl">
+        Throw a fuss-free feast with our Party Sets from just $99, perfect for parties of 10.
+        Packed with crowd-pleasers like Signature Curry Chicken, they’re great for gatherings, or just a hearty family meal.
+      </p>
+    </div>
+
+    <!-- PDF Button -->
+    <div class="ml-4">
+      <a href="https://cdnnggsgcom.azureedge.net/neogardencomsg/images/uploadimages/Neo%20Garden%20Catering%20Party%20Sets%202025.pdf" 
+         target="_blank" 
+         class="inline-flex items-center bg-makan-orange hover:bg-makan-orange-hover text-white px-4 py-2 rounded-full shadow transition-colors">
+        <i class="fa fa-arrow-circle-down mr-2"></i> PDF
+      </a>
+    </div>
+  </div>
 
     <!-- Terms & Conditions -->
-    <button id="toggle-btn" class="bg-gray-100 px-4 py-2 rounded text-sm font-medium flex items-center gap-2 mb-4">
-      <i class="fa-solid fa-chevron-down"></i> Terms and Conditions
-    </button>
-    <div id="terms-content" class="hidden mb-8 p-4 border border-gray-200 rounded bg-gray-50 text-sm text-gray-700">
-      <p>
-        All prices are inclusive of GST where applicable. Menu is not available on Fridays, Saturdays, Sundays, and public holidays. 
-        Minimum 1 set per order. Images are for illustration purposes only and actual presentation may vary.
-      </p>
+  <div class="mb-8 border rounded">
+      <button class="bg-gray-100 w-full px-4 py-2 flex items-center justify-between text-sm font-medium" onclick="toggleSection('neo92')">
+        <span>Terms and Conditions</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="neo92" class="hidden p-4 text-sm text-gray-700 border-t bg-gray-50">
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Delivery is available with a minimum order of $200</li>
+<li>Menus are available on Mondays to Thursdays</li>
+<li>Menus are not available on public holiday</li>
+<li>Each set serves up to 10 pax</li>
+<li>Full set of disposable wares and serviettes provided</li>
+<li>Food comes in microwavable containers (tables and warmers are not provided), no collection is required after</li>
+In efforts to save our environment, with effect from 1 July 2019, we will not be providing disposable mats. Should you require one, disposable table mats are available upon request at $1.00 ($1.09 w GST) each.
+<li>Food is best consumed within 1 hours</li>
+<li>Menu is not entitled to further discount, unless otherwise stated</li>
+<li>Package prices quoted are subject to GST</li>
+<li>Orders must be placed 5 working days prior to event date</li>
+<li>Delivery charge of $45.00 ($49.05 w/GST) per return trip applicable</li>
+<li>Surcharge of $10.00 ($10.90 w GST) is applicable for delivery to offshore areas (Keppel, Sentosa, Jurong Island) and central area denoted by the first 2 digits of the postal code: Robinson – 01, 04, 05, 06, 07, 08; Marina Square – 03, 17; Orchard 22,23; Bras Basah 18, 19</li>
+<li>Surcharge of $50 - $100 is applicable for delivery to venues without direct lift landing, subject to approval</li>
+<li>Full payment via Credit Card, PayNow &amp; PayLah is required to secure your booking. Note that a 3% administration fees is applicable for Credit Card transaction</li>
+<li>Cancellation of orders by customers must be in writing at least 2 working days before the event date and the following cancellation charges will apply:<p></p>
+</li><li>o	Cancellation made 1 working day (after 12nn) prior to event date: 50% of the total bill will be charged</li>
+<li>o	Cancellation made on the day of the event: 100% of the total bill will be charged</li>
+<li>o	An administrative fee of $100 ($109 w/GST) is applicable for cancellation of orders after payment has been made<p></p>
+</li><li>Due to high demand during the festive period, actual delivery time may vary 30 mins (+/-) from the stipulated delivery time</li>
+<li>Self-collection is available at 2 locations: 30B #02-00 Quality Road Singapore 618826 (West) &amp; 1 Kaki Bukit Road 1, Enterprise One #05-03/04 Singapore 415934 (East)</li>
+<li>Maken Mate reserves the right to exchange dish to another of equivalent value without prior notice, due to seasonality</li>
+</ul>
+      </div>
+
+      <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-6" onclick="selectMenu('NEO 92 MENU', 28, 'images/festive/imgi_5_Local Favourites.jpg')">
+        <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+          <img src="images/festive/imgi_5_Local Favourites.jpg" alt="Neo 92 Menu" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">NEO 92 MENU</h3>
+            <p class="text-sm text-gray-500 mb-3">9 courses | min 30 Pax</p>
+            <div class="flex items-center gap-4">
+              <span class="text-lg font-bold">$28.00 <span class="text-sm font-normal">/Pax</span></span>
+              <span class="text-sm text-gray-500">$30.52 <span class="text-xs">w/GST</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Card -->
-      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <div class="border rounded-lg shadow hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] transition duration-300 overflow-hidden cursor-pointer" onclick="selectMenu('LOCAL FAVOURITES', 99, 'images/festive/imgi_5_Local Favourites.jpg')">
         <div class="relative">
           <img src="images/festive/imgi_5_Local Favourites.jpg" alt="Local Favourites" class="w-full h-48 object-cover">
           <div class="absolute top-0 left-0 bg-yellow-400 text-xs font-bold text-black px-3 py-1">
@@ -163,8 +213,8 @@
         </div>
       </div>
 
-      <!-- More cards (same structure) -->
-      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <!-- More cards -->
+      <div class="border rounded-lg shadow hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] transition duration-300 overflow-hidden cursor-pointer" onclick="selectMenu('SOMETHING SPECIAL', 99, 'images/festive/imgi_5_Local Favourites.jpg')">
         <div class="relative">
           <img src="images/festive/imgi_6_Something Special.jpg" alt="Something Special" class="w-full h-48 object-cover">
           <div class="absolute top-0 left-0 bg-yellow-400 text-xs font-bold text-black px-3 py-1">
@@ -181,7 +231,7 @@
         </div>
       </div>
 
-      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <div class="border rounded-lg shadow hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] transition duration-300 overflow-hidden cursor-pointer" onclick="selectMenu('HOT AND SPICY', 99, 'images/festive/imgi_7_Hot And Spicy.jpg')">
         <div class="relative">
           <img src="images/festive/imgi_7_Hot And Spicy.jpg" alt="Hot and Spicy" class="w-full h-48 object-cover">
           <div class="absolute top-0 left-0 bg-yellow-400 text-xs font-bold text-black px-3 py-1">
@@ -198,7 +248,7 @@
         </div>
       </div>
 
-      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <div class="border rounded-lg shadow hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] transition duration-300 overflow-hidden cursor-pointer" onclick="selectMenu('ALL DAY BREAKFAST', 99, 'images/festive/imgi_8_All Day Breakfast.jpg')">
         <div class="relative">
           <img src="images/festive/imgi_8_All Day Breakfast.jpg" alt="All Day Breakfast" class="w-full h-48 object-cover">
           <div class="absolute top-0 left-0 bg-yellow-400 text-xs font-bold text-black px-3 py-1">
@@ -215,7 +265,7 @@
         </div>
       </div>
 
-      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <div class="border rounded-lg shadow hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] transition duration-300 overflow-hidden cursor-pointer" onclick="selectMenu('AROUND THE WORLD', 128, 'images/festive/imgi_9_Around The World.jpg')">
         <div class="relative">
           <img src="images/festive/imgi_9_Around The World.jpg" alt="Around the World" class="w-full h-48 object-cover">
           <div class="absolute top-0 left-0 bg-yellow-400 text-xs font-bold text-black px-3 py-1">
@@ -342,6 +392,19 @@
         </div>
     </div>
   <script>
+    function selectMenu(name, price, image) {
+  localStorage.setItem("selectedMenu", JSON.stringify({name, price, image}));
+  window.location.href = "menu-selection.html";
+}
+
+      // Toggle terms
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      const icon = section.previousElementSibling.querySelector("i");
+      section.classList.toggle("hidden");
+      icon.classList.toggle("fa-chevron-down");
+      icon.classList.toggle("fa-chevron-up");
+    }
             // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
         const mobileMenu = document.getElementById('mobile-menu');

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menu Selection — Makan Mate</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+            'panel-blue': '#eef7fb',
+            'panel-blue-border': '#e1eef4'
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display','serif'],
+            'dm-sans': ['DM Sans','sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+  <style>
+    body { font-family: "DM Sans", sans-serif; }
+    .left-panel { background: #fafafa; border: 1px solid #eee; }
+    .dotted-hr { border-bottom: 2px dotted #f4a18b; padding-bottom: 8px; display: inline-block; }
+    .cat-title { font-weight: 600; text-transform: uppercase; color: #1f2b2a; font-size: 1rem; }
+    .cat-topline { height: 6px; border-bottom: 1px solid #e1edf3; margin-top:6px; }
+    .category-card { background:#f6fbfd; border:1px solid #e6f0f5; border-radius:6px; }
+    .control-row { display:flex; gap:8px; align-items:center; }
+    .qty-up,
+    .qty-down {
+      width:36px; height:36px; background:#f59b48; border-radius:4px;
+      display:inline-flex; align-items:center; justify-content:center;
+      color:white; cursor:pointer; border:none;
+    }
+    .qty-input {
+      flex: 1;
+      min-width: 80px;
+      max-width: 160px;
+      text-align:center;
+      border:1px solid #ddd;
+      height:36px;
+      border-radius:2px;
+      font-size:14px;
+    }
+    .add-btn { background:#f59b48; color:#fff; border:none; padding:8px 12px; border-radius:4px; cursor:pointer; }
+    .items-list li { color:#4b5a59; }
+    @media (max-width: 1024px) {
+      .qty-input { width:56px; }
+     .qty-up, .qty-down { width:32px; height:32px; }
+    }
+  </style>
+</head>
+<body class="bg-white text-custom-text">
+
+  <!-- HEADER -->
+  <header class="bg-gray-800 text-white">
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2"><i class="fas fa-phone"></i><span>62642233 Ext 10-18</span></div>
+            <div class="flex items-center space-x-2"><i class="fas fa-envelope"></i><span>order@makanmate.com</span></div>
+          </div>
+          <div class="flex space-x-3">
+            <a class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange"><i class="fab fa-twitter"></i></a>
+            <a class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange"><i class="fab fa-facebook"></i></a>
+            <a class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-40">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+          <img src="/images/mate-logo.png" class="w-10 h-10 rounded-full" alt="logo" />
+        </div>
+        <h1 class="text-xl sm:text-2xl font-playfair font-bold text-makan-orange">Makan Mate</h1>
+      </div>
+      <div class="hidden lg:flex items-center space-x-6">
+        <a href="index.html" class="hover:text-makan-orange">Home</a>
+        <a href="menu.html" class="hover:text-makan-orange">Menu</a>
+        <a href="contact.html" class="hover:text-makan-orange">Contact</a>
+        <a href="order.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover">Order Now</a>
+      </div>
+      <div class="lg:hidden"><button id="open-mobile"><i class="fas fa-bars text-xl"></i></button></div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container mx-auto px-4 py-8 max-w-6xl">
+    <h2 class="text-2xl font-playfair font-bold mb-6">Select Your Menus</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- LEFT SIDEBAR -->
+      <aside class="lg:col-span-3 p-4 left-panel">
+        <div class="text-xs text-makan-orange font-semibold mb-3"><span class="dotted-hr">YOUR SELECTION</span></div>
+        <div class="border rounded overflow-hidden">
+          <img id="side-image" src="/images/festive/imgi_6_Something Special.jpg" class="w-full h-28 object-cover" />
+          <div class="px-3 py-3 bg-[whitesmoke]">
+            <div id="side-item-title" class="text-sm font-semibold">SOMETHING SPECIAL</div>
+            <div id="side-price" class="mt-2 text-lg font-bold">$99.00 / Set</div>
+            <div class="text-xs text-gray-500 mt-3">Min 1 Set per order</div>
+            <div class="text-xs text-gray-500 mt-2">Max 0 selection per order</div>
+            <div class="text-[10px] text-gray-400 mt-3">MENU NOT AVAILABLE ON FRIDAY, SATURDAY, SUNDAY AND PUBLIC HOLIDAY</div>
+            <button id="change-selection" class="mt-3 w-full border border-gray-300 rounded text-xs py-2">CHANGE SELECTION</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <section class="lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Example Panel -->
+          <div class="category-card p-0">
+            <div class="px-4 py-3">
+              <div class="cat-title">OH KONICHIWA!</div>
+              <div class="cat-topline"></div>
+              <div class="mt-3 control-row">
+                <button class="qty-down">▼</button>
+                <input class="qty-input" type="number" value="1" min="1" />
+                <button class="qty-up">▲</button>
+                <button class="add-btn ml-auto" data-title="OH KONICHIWA!" data-price="99">ADD</button>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <ul class="items-list list-none space-y-2 text-sm">
+                <li>Garlic Fried Rice</li>
+                <li>Teriyaki Grilled Chicken</li>
+                <li>Teppanyaki Assorted Vegetable</li>
+                <li>Tropical Fruits Platter</li>
+              </ul>
+            </div>
+          </div>
+          <div class="category-card p-0">
+            <div class="px-4 py-3">
+              <div class="cat-title">VEGGIE DELIGHTS</div>
+              <div class="cat-topline"></div>
+              <div class="mt-3 control-row">
+                <button class="qty-down">▼</button>
+                <input class="qty-input" type="number" value="1" min="1" />
+                <button class="qty-up">▲</button>
+                <button class="add-btn ml-auto" data-title="OH KONICHIWA!" data-price="99">ADD</button>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <ul class="items-list list-none space-y-2 text-sm">
+                <li>Garlic Fried Rice</li>
+                <li>Teriyaki Grilled Chicken</li>
+                <li>Teppanyaki Assorted Vegetable</li>
+                <li>Tropical Fruits Platter</li>
+              </ul>
+            </div>
+          </div>
+          <div class="category-card p-0">
+            <div class="px-4 py-3">
+              <div class="cat-title">SO DELICIOUS</div>
+              <div class="cat-topline"></div>
+              <div class="mt-3 control-row">
+                <button class="qty-down">▼</button>
+                <input class="qty-input" type="number" value="1" min="1" />
+                <button class="qty-up">▲</button>
+                <button class="add-btn ml-auto" data-title="OH KONICHIWA!" data-price="99">ADD</button>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <ul class="items-list list-none space-y-2 text-sm">
+                <li>Garlic Fried Rice</li>
+                <li>Teriyaki Grilled Chicken</li>
+                <li>Teppanyaki Assorted Vegetable</li>
+                <li>Tropical Fruits Platter</li>
+              </ul>
+            </div>
+          </div>
+          <div class="category-card p-0">
+            <div class="px-4 py-3">
+              <div class="cat-title">SAWADEE KA!</div>
+              <div class="cat-topline"></div>
+              <div class="mt-3 control-row">
+                <button class="qty-down">▼</button>
+                <input class="qty-input" type="number" value="1" min="1" />
+                <button class="qty-up">▲</button>
+                <button class="add-btn ml-auto" data-title="OH KONICHIWA!" data-price="99">ADD</button>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <ul class="items-list list-none space-y-2 text-sm">
+                <li>Garlic Fried Rice</li>
+                <li>Teriyaki Grilled Chicken</li>
+                <li>Teppanyaki Assorted Vegetable</li>
+                <li>Tropical Fruits Platter</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-6">
+          <button id="next-bottom" class="bg-makan-orange text-white px-6 py-2 rounded hover:bg-makan-orange-hover">NEXT »</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12 mt-8">
+    <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+      © 2025 Makan Mate. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const data = JSON.parse(localStorage.getItem("selectedMenu"));
+  if (data) {
+    document.getElementById("side-item-title").textContent = data.name;
+    document.getElementById("side-price").textContent = `$${data.price.toFixed(2)} / Set`;
+    document.getElementById("side-image").src = data.image;
+  }
+});
+    const cart = [];
+    const sideTitle = document.getElementById('side-item-title');
+    const sidePrice = document.getElementById('side-price');
+    function format(n){ return '$' + Number(n).toFixed(2); }
+
+    // up
+    document.querySelectorAll('.qty-up').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const ip=btn.parentElement.querySelector('.qty-input');
+        ip.value=Math.max(1,Number(ip.value||1)+1);
+      });
+    });
+    // down
+    document.querySelectorAll('.qty-down').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const ip=btn.parentElement.querySelector('.qty-input');
+        ip.value=Math.max(1,Number(ip.value||1)-1);
+      });
+    });
+    // add
+    document.querySelectorAll('.add-btn').forEach(btn=>{
+  btn.addEventListener('click',(e)=>{
+    const panel=e.target.closest('.category-card');
+    const title=btn.getAttribute('data-title');
+    const price=Number(btn.getAttribute('data-price')||0);
+    const qty=Number(panel.querySelector('.qty-input').value||1);
+
+    // Toggle behavior
+    if (btn.classList.contains("added")) {
+      btn.textContent = "ADD";
+      btn.classList.remove("added");
+      btn.style.background = "#f59b48"; // normal orange
+      // remove from cart
+      const idx = cart.findIndex(i => i.title === title);
+      if (idx > -1) cart.splice(idx,1);
+    } else {
+      cart.push({title,price,qty});
+      btn.textContent = "ADDED";
+      btn.classList.add("added");
+      btn.style.background = "#d35400"; // darker orange
+    }
+
+    sideTitle.textContent=title;
+    sidePrice.textContent="$"+price.toFixed(2)+" / Set";
+  });
+});
+
+      btn.addEventListener('click',(e)=>{
+        const panel=e.target.closest('.category-card');
+        const title=btn.getAttribute('data-title');
+        const price=Number(btn.getAttribute('data-price')||0);
+        const qty=Number(panel.querySelector('.qty-input').value||1);
+        cart.push({title,price,qty});
+        sideTitle.textContent=title;
+        sidePrice.textContent=format(price)+' / Set';
+        const old=btn.textContent; btn.textContent='ADDED';
+        setTimeout(()=>btn.textContent=old,700);
+      });
+    // next
+    document.getElementById('next-bottom').addEventListener('click',()=>{
+      if(cart.length===0) return alert('Please add at least one menu set.');
+      const sum=cart.reduce((s,i)=>s+i.price*i.qty,0);
+      const lines=cart.map(i=>`${i.title} x${i.qty} — ${format(i.price*i.qty)}`);
+      alert('Order\n\n'+lines.join('\n')+'\n\nSubtotal: '+format(sum));
+    });
+    // change
+    document.getElementById('change-selection').addEventListener('click',()=>{
+      if(!confirm('Change selection? This will clear the cart.')) return;
+      cart.length=0;
+      sideTitle.textContent='SOMETHING SPECIAL';
+      sidePrice.textContent='$99.00 / Set';
+    });
+  </script>
+</body>
+</html>
