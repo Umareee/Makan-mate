@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Details - Makan Mate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display', 'serif'],
+            'dm-sans': ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+   <!-- ===== header (unchanged) ===== -->
+  <header class="bg-gray-800 text-white">
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <!-- Mobile Layout -->
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
+            <i class="fas fa-phone"></i>
+            <span>62642233 Ext 10-18</span>
+          </div>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter text-xs"></i>
+            </a>
+            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook text-xs"></i>
+            </a>
+            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram text-xs"></i>
+            </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-github text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop Layout -->
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-phone"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== nav (unchanged) ===== -->
+  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair">Makan Mate</h1>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Contact</a>
+        <a href="order.html" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">Order Now</a>
+      </div>
+      <div class="lg:hidden">
+        <button class="text-custom-text hover:text-makan-orange">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-playfair font-bold mb-6">Delivery Details</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- LEFT SIDEBAR - Order Summary -->
+      <aside class="lg:col-span-4 p-6 bg-gray-50 border border-gray-200 rounded-lg h-fit">
+        <div class="text-lg font-bold text-makan-orange mb-4 border-b-2 border-dotted border-orange-300 pb-2">
+          YOUR ORDER SUMMARY
+        </div>
+        
+        <div id="order-summary">
+          <!-- Order items will be dynamically populated here -->
+        </div>
+        
+        <div class="border-t border-gray-300 mt-4 pt-4">
+          <div class="text-lg font-bold">TOTAL: <span id="order-total" class="text-2xl text-makan-orange">$0.00</span></div>
+        </div>
+        
+        <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <div class="text-sm text-blue-800">
+            <i class="fas fa-info-circle mr-2"></i>
+            <strong>Delivery Charge:</strong> $45.00 ($49.05 w/GST) per return trip
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT - Delivery Form -->
+      <section class="lg:col-span-8">
+        <form class="space-y-8" id="delivery-form">
+          <!-- Eco-friendly Options -->
+          <div class="space-y-4 p-6 bg-green-50 border border-green-200 rounded-lg">
+            <h3 class="text-lg font-semibold text-green-800 flex items-center">
+              <i class="fas fa-leaf mr-2"></i>
+              Eco-friendly Options
+            </h3>
+            <div class="space-y-3">
+              <label class="flex items-start space-x-3 cursor-pointer">
+                <input type="checkbox" id="no-cutlery" class="mt-1 w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
+                <div>
+                  <span class="font-medium">I don't need cutlery</span>
+                  <br><span class="text-sm text-gray-600">Thank you for joining our eco-friendly mission</span>
+                </div>
+              </label>
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input type="checkbox" id="no-heatpros" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
+                <span class="font-medium">I don't need HeatPros (self-heating devices)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Personal Information -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-user mr-2 text-makan-orange"></i>
+              Personal Information
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Salutation*</label>
+                <select id="salutation" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+                  <option value="">Select...</option>
+                  <option value="Mr.">Mr.</option>
+                  <option value="Mrs.">Mrs.</option>
+                  <option value="Ms.">Ms.</option>
+                  <option value="Mdm.">Mdm.</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Surname*</label>
+                <input type="text" id="surname" placeholder="Your Surname" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Given Name*</label>
+                <input type="text" id="givenName" placeholder="Your Given Name" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+            </div>
+            <label class="flex items-center space-x-3 mt-4 cursor-pointer">
+              <input type="checkbox" id="corporate-order" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
+              <span class="font-medium">Corporate Order</span>
+            </label>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-phone mr-2 text-makan-orange"></i>
+              Contact Information
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Email Address*</label>
+                <input type="email" id="email" placeholder="your@email.com" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Mobile Number*</label>
+                <input type="tel" id="mobile" maxlength="8" placeholder="Mobile" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Alternative Number*</label>
+                <input type="tel" id="alternative" maxlength="8" placeholder="Home" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing Address -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-home mr-2 text-makan-orange"></i>
+              Billing Address
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Zip Code*</label>
+                <input type="text" id="billing-zipcode" maxlength="6" placeholder="Zip Code" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Unit No.</label>
+                <input type="text" id="billing-unit" placeholder="Unit No." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Block/Home No*</label>
+                <input type="text" id="billing-block" class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100" readonly>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Street Name*</label>
+                <input type="text" id="billing-street" class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100" readonly>
+              </div>
+            </div>
+            <label class="flex items-center space-x-3 mt-4 cursor-pointer">
+              <input type="checkbox" id="landed-house" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
+              <span class="font-medium">Landed House</span>
+            </label>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-truck mr-2 text-makan-orange"></i>
+              Delivery Address
+            </h3>
+            <label class="flex items-center space-x-3 mb-4 cursor-pointer">
+              <input type="checkbox" id="same-address" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
+              <span class="font-medium">Same as Billing Address</span>
+            </label>
+            <div id="delivery-address-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Zip Code*</label>
+                <input type="text" id="delivery-zipcode" maxlength="6" placeholder="Zip Code" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Unit No*</label>
+                <input type="text" id="delivery-unit" placeholder="Unit No." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other Information -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-info-circle mr-2 text-makan-orange"></i>
+              Other Information
+            </h3>
+            <p class="text-sm font-medium mb-3">Is this your first order?*</p>
+            <div class="flex space-x-6">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="firstOrder" value="yes" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
+                <span>Yes</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="firstOrder" value="no" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
+                <span>No</span>
+              </label>
+            </div>
+            <div class="mt-4">
+              <label class="block text-sm font-medium mb-1">Remarks (200 characters)</label>
+              <textarea id="remarks" maxlength="200" rows="3" placeholder="Any special instructions or requests..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"></textarea>
+              <div class="text-xs text-gray-500 mt-1 text-right">
+                <span id="char-count">0</span>/200
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-6">
+            <button type="submit" class="bg-makan-orange hover:bg-makan-orange-hover text-white px-8 py-3 rounded-lg shadow-md transition-colors font-bold text-lg">
+              Next <i class="fa fa-angle-double-right ml-2"></i>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-custom-topbar text-white py-8 mt-12">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-4">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Makan Mate</h3>
+        <p class="text-sm text-gray-300">Your trusted partner for catering services in Singapore.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-makan-orange">Home</a></li>
+          <li><a href="about.html" class="hover:text-makan-orange">About</a></li>
+          <li><a href="menu.html" class="hover:text-makan-orange">Menu</a></li>
+          <li><a href="contact.html" class="hover:text-makan-orange">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Contact Us</h3>
+        <p class="text-sm"><i class="fas fa-phone mr-1"></i> 62642233 Ext 10-18</p>
+        <p class="text-sm"><i class="fas fa-envelope mr-1"></i> order@makanmate.com</p>
+        <div class="flex space-x-3 mt-3">
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-custom-logo-bg hover:text-makan-orange"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-custom-logo-bg hover:text-makan-orange"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-custom-logo-bg hover:text-makan-orange"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-gray-400 text-sm mt-6">© 2025 Makan Mate. All rights reserved.</div>
+  </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Load and display order summary
+  loadOrderSummary();
+  
+  // Setup form functionality
+  setupFormFunctionality();
+});
+
+// Load order summary from localStorage
+function loadOrderSummary() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const orderSummary = document.getElementById('order-summary');
+  const orderTotal = document.getElementById('order-total');
+  
+  if (cart.length === 0) {
+    orderSummary.innerHTML = `
+      <div class="text-gray-500 text-center py-8">
+        <i class="fas fa-shopping-cart text-3xl mb-2"></i><br>
+        No items in your order.<br>
+        <span class="text-sm">Please go back to select your menu items.</span>
+      </div>
+    `;
+    orderTotal.textContent = '$0.00';
+    return;
+  }
+
+  // Calculate total
+  let total = 0;
+  
+  // Render each order item
+  orderSummary.innerHTML = '';
+  cart.forEach(item => {
+    const subtotal = item.price * item.qty;
+    total += subtotal;
+    
+    const orderItem = document.createElement('div');
+    orderItem.className = 'border border-gray-200 rounded-lg overflow-hidden mb-3 bg-white';
+    orderItem.innerHTML = `
+      <img src="${item.image || '/images/festive/imgi_6_Something Special.jpg'}" alt="${item.title}" class="w-full h-20 object-cover" />
+      <div class="p-3 bg-gray-50">
+        <div class="text-sm font-bold text-gray-800 uppercase">${item.title}</div>
+        <div class="text-base font-bold text-gray-900 mt-1">$${item.price.toFixed(2)} / Set</div>
+        <div class="text-xs text-gray-500 mt-1">Qty: ${item.qty}</div>
+        <div class="text-xs text-gray-500">Subtotal: $${subtotal.toFixed(2)}</div>
+      </div>
+    `;
+    orderSummary.appendChild(orderItem);
+  });
+  
+  // Update total
+  orderTotal.textContent = `$${total.toFixed(2)}`;
+}
+
+// Setup form functionality
+function setupFormFunctionality() {
+  // Same address checkbox functionality
+  const sameAddressCheckbox = document.getElementById('same-address');
+  const deliveryFields = document.getElementById('delivery-address-fields');
+  
+  sameAddressCheckbox.addEventListener('change', () => {
+    if (sameAddressCheckbox.checked) {
+      // Copy billing address to delivery address
+      const billingZipcode = document.getElementById('billing-zipcode').value;
+      const billingUnit = document.getElementById('billing-unit').value;
+      
+      document.getElementById('delivery-zipcode').value = billingZipcode;
+      document.getElementById('delivery-unit').value = billingUnit;
+      
+      // Disable delivery fields
+      deliveryFields.querySelectorAll('input').forEach(input => {
+        input.disabled = true;
+        input.classList.add('bg-gray-100');
+      });
+    } else {
+      // Enable delivery fields
+      deliveryFields.querySelectorAll('input').forEach(input => {
+        input.disabled = false;
+        input.classList.remove('bg-gray-100');
+      });
+    }
+  });
+
+  // Zipcode lookup functionality (simplified)
+  document.getElementById('billing-zipcode').addEventListener('blur', function() {
+    if (this.value.length === 6) {
+      // Simulate zipcode lookup
+      setTimeout(() => {
+        document.getElementById('billing-block').value = '123';
+        document.getElementById('billing-street').value = 'Sample Street';
+      }, 500);
+    }
+  });
+
+  // Character count for remarks
+  const remarksTextarea = document.getElementById('remarks');
+  const charCount = document.getElementById('char-count');
+  
+  remarksTextarea.addEventListener('input', () => {
+    charCount.textContent = remarksTextarea.value.length;
+  });
+
+  // Form submission
+  document.getElementById('delivery-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic validation
+    const requiredFields = this.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        field.classList.remove('border-red-500');
+      }
+    });
+    
+    if (!isValid) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
+    // Collect form data
+    const formData = {
+      ecoOptions: {
+        noCutlery: document.getElementById('no-cutlery').checked,
+        noHeatpros: document.getElementById('no-heatpros').checked
+      },
+      personalInfo: {
+        salutation: document.getElementById('salutation').value,
+        surname: document.getElementById('surname').value,
+        givenName: document.getElementById('givenName').value,
+        corporateOrder: document.getElementById('corporate-order').checked
+      },
+      contactInfo: {
+        email: document.getElementById('email').value,
+        mobile: document.getElementById('mobile').value,
+        alternative: document.getElementById('alternative').value
+      },
+      billingAddress: {
+        zipcode: document.getElementById('billing-zipcode').value,
+        unit: document.getElementById('billing-unit').value,
+        block: document.getElementById('billing-block').value,
+        street: document.getElementById('billing-street').value,
+        landedHouse: document.getElementById('landed-house').checked
+      },
+      deliveryAddress: {
+        sameAsBilling: document.getElementById('same-address').checked,
+        zipcode: document.getElementById('delivery-zipcode').value,
+        unit: document.getElementById('delivery-unit').value
+      },
+      otherInfo: {
+        firstOrder: document.querySelector('input[name="firstOrder"]:checked')?.value,
+        remarks: document.getElementById('remarks').value
+      }
+    };
+    
+    // Save to localStorage
+    localStorage.setItem('deliveryFormData', JSON.stringify(formData));
+    
+    // Navigate to next page (you can change this)
+    alert('Form submitted successfully!');
+    // window.location.href = 'payment.html';
+  });
+}
+</script>
+</body>
+</html>
