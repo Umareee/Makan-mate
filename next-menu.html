@@ -123,22 +123,26 @@
   </header>
 
   <!-- Main navigation -->
-  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+ <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
           <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
         </div>
-        <h1 class="text-xl sm:text-2xl font-playfair font-bold text-makan-orange">Makan Mate</h1>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
       </div>
-      <div class="hidden lg:flex items-center space-x-6">
-        <a href="index.html" class="hover:text-makan-orange transition-colors">Home</a>
-        <a href="menu.html" class="hover:text-makan-orange transition-colors">Menu</a>
-        <a href="contact.html" class="hover:text-makan-orange transition-colors">Contact</a>
-        <a href="order.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Order Now</a>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+        <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
       </div>
       <div class="lg:hidden">
-        <button id="open-mobile" class="text-custom-text hover:text-makan-orange">
+        <button class="text-custom-text hover:text-makan-orange">
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
@@ -148,7 +152,7 @@
   <!-- Main Content -->
   <main class="container mx-auto px-4 py-8 max-w-6xl">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      
+
       <!-- LEFT SIDEBAR -->
       <aside class="lg:col-span-3 p-4 bg-gray-50 border border-gray-200 rounded-lg">
         <div class="text-xs text-makan-orange font-semibold mb-3 border-b-2 border-dotted border-orange-300 pb-2">
@@ -162,39 +166,38 @@
 
       <!-- RIGHT CONTENT -->
       <section class="lg:col-span-9">
-        <div class="flex flex-col lg:flex-row gap-6 items-start mb-6">
-          <div class="lg:w-48">
-            <h3 class="text-xl font-playfair font-bold text-custom-text">This goes great with:</h3>
-          </div>
-          <div class="flex-1 relative h-40 lg:h-40 border border-gray-200 rounded-lg overflow-hidden">
-            <!-- Party Sets Banner -->
-            <img src="/images/festive/imgi_2_Main Banner_Mobile.png" alt="party banner" class="w-full h-full object-cover">
-            <div class="banner-content">
-              <div class="text-2xl font-bold text-gray-800 mb-2">PARTY SETS</div>
-              <div class="text-xs text-gray-600 leading-relaxed">Our pretty sharing sets are a curated celebration of beloved local flavours perfect for any gathering. Made with only the finest ingredients, each dish is a refined take on the classics you know and love.</div>
-            </div>
-            <div class="speech-bubble">Sedap!</div>
+        <div class="mb-6">
+          <div class="text-2xl sm:text-3xl font-playfair font-bold text-custom-text mb-2">This goes great with:</div>
+          <div class="w-full h-48 border border-gray-200 rounded-lg overflow-hidden">
+            <img src="/images/festive/imgi_2_Main Banner_Mobile.png" alt="This goes great" class="w-full h-full object-cover" />
           </div>
         </div>
 
         <!-- categories (pills) -->
         <div class="flex flex-wrap gap-2 mb-6" id="pills-row" role="tablist" aria-label="categories">
-          <button class="pill bg-makan-orange text-white border-makan-orange font-bold px-4 py-2 rounded-full text-sm whitespace-nowrap border transition-all duration-200" data-category="heatpro">HEATPRO</button>
+          <button class="pill bg-makan-orange text-white border-makan-orange font-bold px-4 py-2 rounded-full text-sm whitespace-nowrap border transition-all duration-200" data-category="all">ALL</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="heatpro">HEATPRO</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="diy-set">DIY SET</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="diy-addon">DIY SET - ADD ON</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="meat">MEAT</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="deep-fried">DEEP FRIED / DIM SUM</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="pastry">PASTRY</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="sushi">SUSHI / SALAD</button>
-          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="cake">CAKE</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="vegetarian">VEGETARIAN</button>
           <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="drinks">DRINKS</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="seafood">SEAFOOD</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="noodles">NOODLES</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="rice">RICE DISHES</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="soup">SOUP</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="desserts">DESSERTS</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="beverages">BEVERAGES</button>
+          <button class="pill bg-white text-gray-700 border-gray-300 px-4 py-2 rounded-full text-sm whitespace-nowrap border hover:border-makan-orange transition-all duration-200" data-category="condiments">CONDIMENTS</button>
         </div>
 
-        <!-- products centered -->
-        <div class="flex justify-center" id="products-area">
+        <!-- products grid -->
+        <div id="products-area" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 place-items-stretch">
           <!-- HEATPRO Product Card -->
-          <div class="w-64 border border-gray-200 rounded-lg p-3 bg-white shadow-sm" id="heatpro-card">
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card" data-category="heatpro" id="heatpro-card">
             <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
               <img src="/images/festive/imgi_6_Something Special.jpg" alt="HEATPRO" class="w-full h-full object-cover">
             </div>
@@ -210,6 +213,227 @@
                 <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
               </div>
               <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="HEATPRO" data-price="10.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- HEATPRO Product Card 2 -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card" data-category="heatpro" id="heatpro-card-2">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-bam-awey-5335918 1.png" alt="HEATPRO 2" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">HEATPRO DELUXE</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$12.00 ($13.08 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="HEATPRO DELUXE" data-price="12.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- DIY SET Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="diy-set" id="diy-set-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/festive/imgi_5_Local Favourites.jpg" alt="DIY SET" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">DIY SET</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$15.00 ($16.35 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="DIY SET" data-price="15.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- DIY SET Product Card 2 -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="diy-set" id="diy-set-card-2">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-nadin-sh-12956424 1.png" alt="DIY SET 2" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">DIY SET FAMILY</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$18.00 ($19.62 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="DIY SET FAMILY" data-price="18.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- DIY SET ADD ON Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="diy-addon" id="diy-addon-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/festive/imgi_7_Hot And Spicy.jpg" alt="DIY SET ADD ON" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">DIY SET ADD ON</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$8.00 ($8.72 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="DIY SET ADD ON" data-price="8.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- MEAT Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="meat" id="meat-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/festive/imgi_8_All Day Breakfast.jpg" alt="MEAT" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">MEAT</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$12.00 ($13.08 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="MEAT" data-price="12.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- MEAT Product Card 2 -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="meat" id="meat-card-2">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-maksim-goncharenok-4773769 1.png" alt="MEAT 2" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">MEAT PREMIUM</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$14.00 ($15.26 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="MEAT PREMIUM" data-price="14.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- DEEP FRIED / DIM SUM Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="deep-fried" id="deep-fried-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/festive/imgi_9_Around The World.jpg" alt="DEEP FRIED / DIM SUM" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">DEEP FRIED / DIM SUM</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$9.00 ($9.81 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="DEEP FRIED / DIM SUM" data-price="9.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- PASTRY Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="pastry" id="pastry-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-ash-376464 1.png" alt="PASTRY" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">PASTRY</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$7.00 ($7.63 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="PASTRY" data-price="7.00">ADD</button>
+            </div>
+          </div>
+
+          <!-- SUSHI / SALAD Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="sushi" id="sushi-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-ella-olsson-1640772 1.png" alt="SUSHI / SALAD" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">SUSHI / SALAD</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$11.00 ($11.99 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="SUSHI / SALAD" data-price="11.00">ADD</button>
+            </div>
+          </div>
+
+
+          <!-- VEGETARIAN Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="vegetarian" id="vegetarian-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-ash-376464 1.png" alt="VEGETARIAN" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">VEGETARIAN</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$8.50 ($9.27 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="VEGETARIAN" data-price="8.50">ADD</button>
+            </div>
+          </div>
+
+          <!-- DRINKS Product Card -->
+          <div class="w-full max-w-[16rem] border border-gray-200 rounded-lg p-3 bg-white shadow-sm product-card hidden" data-category="drinks" id="drinks-card">
+            <div class="w-full h-28 bg-gray-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+              <img src="/images/pexels-ella-olsson-1640772 1.png" alt="DRINKS" class="w-full h-full object-cover">
+            </div>
+            <div class="font-bold text-sm text-gray-800 text-center mb-2">DRINKS</div>
+            <div class="flex justify-between text-xs text-gray-500 mb-3">
+              <span>$6.00 ($6.54 w/GST)</span>
+              <span>/ Set (Min 1 Set)</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 border border-gray-300 rounded-lg p-1">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down">-</button>
+                <input type="number" value="1" min="1" class="w-9 text-center text-sm font-bold border-none focus:outline-none qty-input">
+                <button class="w-7 h-7 rounded bg-makan-orange text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up">+</button>
+              </div>
+              <button class="bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors add-small" data-title="DRINKS" data-price="6.00">ADD</button>
             </div>
           </div>
         </div>
@@ -357,6 +581,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update total
   totalAmount.textContent = `$${total.toFixed(2)}`;
+
+  // Show all products by default (ALL pill is active initially)
+  document.querySelectorAll('.product-card').forEach(card => card.classList.remove('hidden'));
 });
 
 // Category pill functionality
@@ -367,14 +594,26 @@ document.querySelectorAll('.pill').forEach(pill => {
       p.classList.remove('bg-makan-orange', 'text-white', 'border-makan-orange', 'font-bold');
       p.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
     });
-    
+
     // Add active class to clicked pill
     pill.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
     pill.classList.add('bg-makan-orange', 'text-white', 'border-makan-orange', 'font-bold');
-    
-    // Here you can add logic to show different products based on category
+
     const category = pill.getAttribute('data-category');
-    console.log('Selected category:', category);
+
+    const allCards = document.querySelectorAll('.product-card');
+
+    if (category === 'all') {
+      // Show all products
+      allCards.forEach(card => card.classList.remove('hidden'));
+    return;
+  }
+
+    // Hide all product cards first
+    allCards.forEach(card => card.classList.add('hidden'));
+
+    // Show matching category cards
+    document.querySelectorAll(`.product-card[data-category="${category}"]`).forEach(card => card.classList.remove('hidden'));
   });
 });
 
@@ -428,6 +667,88 @@ document.querySelector('#heatpro-card .add-small').addEventListener('click', (e)
   // Refresh cart display
   location.reload();
 });
+
+// Generic function to handle quantity controls for any product card
+function setupProductCard(cardId) {
+  const card = document.getElementById(cardId);
+  if (!card) return;
+
+  // Quantity down button
+  const qtyDown = card.querySelector('.qty-down');
+  if (qtyDown) {
+    qtyDown.addEventListener('click', () => {
+      const input = card.querySelector('.qty-input');
+      input.value = Math.max(1, Number(input.value) - 1);
+    });
+  }
+
+  // Quantity up button
+  const qtyUp = card.querySelector('.qty-up');
+  if (qtyUp) {
+    qtyUp.addEventListener('click', () => {
+      const input = card.querySelector('.qty-input');
+      input.value = Number(input.value) + 1;
+    });
+  }
+
+  // Add button
+  const addBtn = card.querySelector('.add-small');
+  if (addBtn) {
+    addBtn.addEventListener('click', (e) => {
+      const btn = e.target;
+      const title = btn.getAttribute('data-title');
+      const price = Number(btn.getAttribute('data-price'));
+      const qty = Number(card.querySelector('.qty-input').value);
+      
+      // Get existing cart
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      
+      // Find existing item
+      const idx = cart.findIndex(item => item.title === title);
+      if (idx > -1) {
+        // Update quantity
+        cart[idx].qty += qty;
+      } else {
+        // Add new item
+        cart.push({
+          title: title,
+          price: price,
+          qty: qty,
+          image: card.querySelector('img').src
+        });
+      }
+      
+      // Save cart
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      // Update button
+      btn.textContent = 'ADDED';
+      btn.classList.add('bg-gray-600');
+      btn.disabled = true;
+      
+      // Reset quantity
+      card.querySelector('.qty-input').value = 1;
+      
+      // Refresh cart display
+      location.reload();
+    });
+  }
+}
+
+// Setup all product cards
+setupProductCard('diy-set-card');
+setupProductCard('diy-addon-card');
+setupProductCard('meat-card');
+setupProductCard('deep-fried-card');
+setupProductCard('pastry-card');
+setupProductCard('sushi-card');
+
+setupProductCard('vegetarian-card');
+setupProductCard('drinks-card');
+setupProductCard('heatpro-card');
+setupProductCard('heatpro-card-2');
+setupProductCard('diy-set-card-2');
+setupProductCard('meat-card-2');
 
 // Next button functionality
 document.getElementById('next-bottom').addEventListener('click', () => {
