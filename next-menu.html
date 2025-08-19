@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // render each item dynamically
   preview.innerHTML = "";
-  cart.forEach(item => {
+  cart.forEach((item, index) => {
     const subtotal = item.price * item.qty;
     total += subtotal;
     
@@ -349,6 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="text-base font-bold text-gray-900 mt-1">$${item.price.toFixed(2)} / Set</div>
         <div class="text-xs text-gray-500 mt-1">Qty: ${item.qty}</div>
         <div class="text-xs text-gray-500">Subtotal: $${subtotal.toFixed(2)}</div>
+        ${item.isPreselected ? '<div class="text-xs text-blue-600 mt-1 font-medium">Preselected from menu</div>' : ''}
       </div>
     `;
     preview.appendChild(div);

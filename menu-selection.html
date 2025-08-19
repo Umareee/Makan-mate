@@ -345,7 +345,8 @@
   <!-- JS -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Load cart from localStorage
+  // Load previously selected menu and cart from localStorage
+  loadSelectedMenu();
   loadCart();
   updateCartDisplay();
 });
@@ -362,6 +363,26 @@ function saveCart() {
 
 function loadCart() {
   cart = JSON.parse(localStorage.getItem('cart') || '[]');
+}
+
+// Load and display the previously selected menu from festive/non-festive
+function loadSelectedMenu() {
+  const selectedMenuData = JSON.parse(localStorage.getItem("selectedMenu") || "null");
+  
+  if (selectedMenuData) {
+    // Add the selected menu to cart if not already there
+    const existingIndex = cart.findIndex(item => item.title === selectedMenuData.name);
+    if (existingIndex === -1) {
+      cart.push({
+        title: selectedMenuData.name,
+        price: selectedMenuData.price,
+        qty: 1,
+        image: selectedMenuData.image,
+        isPreselected: true
+      });
+      saveCart();
+    }
+  }
 }
 
 // Update cart display in the aside
@@ -463,7 +484,7 @@ document.querySelectorAll('.add-btn').forEach(btn => {
       cart[idx].qty = Number(cart[idx].qty || 1) + qty;
     } else {
       // Add new item
-      cart.push({title, price, qty, image});
+      cart.push({title, price, qty, image, isPreselected: false});
     }
 
     saveCart();
@@ -496,19 +517,14 @@ document.getElementById('next-bottom').addEventListener('click', () => {
 
 // Change selection: clear cart & preview
 document.getElementById('change-selection').addEventListener('click', () => {
-  if (!confirm('Change selection? This will clear the cart.')) return;
+  if (!confirm('Change selection? This will clear the cart and return you to menu selection.')) return;
   
-  cart = [];
-  saveCart();
-  updateCartDisplay();
+  // Clear localStorage
+  localStorage.removeItem('selectedMenu');
+  localStorage.removeItem('cart');
   
-  // Reset all ADD buttons
-  document.querySelectorAll('.add-btn').forEach(btn => {
-    btn.textContent = 'ADD';
-    btn.classList.remove('bg-gray-600');
-    btn.disabled = false;
-    btn.classList.add('bg-makan-orange', 'hover:bg-makan-orange-hover');
-  });
+  // Redirect back to menu selection
+  window.location.href = 'menu.html';
 });
 
 // Mobile menu toggle
