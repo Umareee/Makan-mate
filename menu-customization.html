@@ -71,6 +71,7 @@
       padding: 0;
     }
   </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-white font-dm-sans text-custom-text">
 
@@ -513,28 +514,28 @@
     // Menu data with images and prices
     const menuData = {
       'main-course': {
-        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 12.99 },
-        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/festive/imgi_6_Something Special.jpg', price: 14.99 }
+        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/menu/imgi_199_Stir-Fried-Fish-Fillet-with-Ginger-Spring-Onions-300x300.png', price: 12.99 },
+        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/menu/imgi_202_Crispy-Tossed-Cereal-Cod-Fish-Fillet-1-300x300.png', price: 14.99 }
       },
       'chicken': {
-        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 18.99 },
-        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 16.99 },
-        'lemon-chicken': { name: 'Lemon Chicken', image: '/images/festive/imgi_9_Around The World.jpg', price: 17.99 }
+        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/menu/imgi_181_Grilled-Black-Pepper-Boneless-Chicken-300x300.png', price: 18.99 },
+        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/menu/imgi_178_chicken-rendang-edit-300x300.png', price: 16.99 },
+        'lemon-chicken': { name: 'Lemon Chicken', image: '/images/menu/imgi_190_Crispy-Lemon-Drizzled-Fish-Fillet-300x300.png', price: 17.99 }
       },
       'vegetable': {
-        'assorted-vegetable': { name: 'Teppanyaki Assorted Vegetable', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 9.99 },
-        'stir-fry-vegetable': { name: 'Stir Fry Mixed Vegetables', image: '/images/festive/imgi_6_Something Special.jpg', price: 8.99 },
-        'steamed-vegetable': { name: 'Steamed Seasonal Vegetables', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 7.99 }
+        'assorted-vegetable': { name: 'Teppanyaki Assorted Vegetable', image: '/images/menu/imgi_205_Sauteed-Nyonya-Chap-Chye-300x300.png', price: 9.99 },
+        'stir-fry-vegetable': { name: 'Stir Fry Mixed Vegetables', image: '/images/menu/imgi_208_Sauteed-Cabbage-with-Black-Fungus-300x300.png', price: 8.99 },
+        'steamed-vegetable': { name: 'Steamed Seasonal Vegetables', image: '/images/menu/imgi_214_Kai-Lan-with-Oyster-Sauce-300x300.png', price: 7.99 }
       },
       'dessert': {
-        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 5.99 },
-        'jelly-longan': { name: 'Jelly w Longan', image: '/images/festive/imgi_9_Around The World.jpg', price: 6.99 },
-        'tropical-fruits': { name: 'Tropical Fruits Platter', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 7.99 }
+        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/menu/imgi_223_Onion-omelette-300x300.png', price: 5.99 },
+        'jelly-longan': { name: 'Jelly w Longan', image: '/images/menu/imgi_229_Chawanmushi-Egg-300x300.png', price: 6.99 },
+        'tropical-fruits': { name: 'Tropical Fruits Platter', image: '/images/menu/imgi_226_Prawn-Omelette-300x300.png', price: 7.99 }
       },
       'drinks': {
-        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/festive/imgi_6_Something Special.jpg', price: 3.99 },
-        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 4.99 },
-        'coconut-water': { name: 'Fresh Coconut Water', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 3.49 }
+        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/menu/imgi_184_Sweet-Sour-Fish-Fillet-300x300.png', price: 3.99 },
+        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/menu/imgi_187_Sze-Chuan-Fish-Fillet-300x300.png', price: 4.99 },
+        'coconut-water': { name: 'Fresh Coconut Water', image: '/images/menu/imgi_196_grilled-sambal-fish-fillet-edit-1-300x300.png', price: 3.49 }
       }
     };
 
@@ -553,6 +554,25 @@
       now.setHours(now.getHours() + 1);
       const timeString = now.toTimeString().slice(0, 5);
       document.getElementById('delivery-time').value = timeString;
+
+      // Read selected item from menu and show in sidebar "Previous Selections"
+      try {
+        const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+        if (selected) {
+          const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
+          if (container) {
+            container.innerHTML = `
+            <div class="flex items-center gap-3">
+              <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
+                <div class="text-xs text-gray-500">Qty: 1 Set</div>
+              </div>
+              <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
+            </div>`;
+          }
+        }
+      } catch {}
       
       updateCartDisplay();
     });
@@ -561,7 +581,6 @@
     function handleSelection(radioButton, category) {
       const selectedValue = radioButton.value;
       const selectedItem = menuData[category][selectedValue];
-      
       // Show image
       const imageContainer = document.getElementById(`${category}-image`);
       const image = imageContainer.querySelector('img');
@@ -569,34 +588,41 @@
       image.alt = selectedItem.name;
       imageContainer.classList.remove('hidden');
       imageContainer.classList.add('visible');
-      
       // Show controls
       const controls = document.getElementById(`${category}-controls`);
       controls.classList.remove('hidden');
-      
       // Update quantity input to match packs
       const qtyInput = document.getElementById(`${category}-qty`);
       qtyInput.value = packs;
       qtyInput.min = packs;
-      
       // Auto add/update cart with default packs
       upsertCart(category);
     }
 
-    // Change quantity
+    // Change quantity with cap packs + 5
     function changeQuantity(category, change) {
       const qtyInput = document.getElementById(`${category}-qty`);
-      const newQty = Math.max(packs, Number(qtyInput.value) + change);
-      qtyInput.value = newQty;
+      const maxQty = packs + 5;
+      let next = Number(qtyInput.value) + change;
+      if (next < packs) next = packs;
+      if (next > maxQty) {
+        next = maxQty;
+        Swal.fire({ icon: 'warning', title: 'Limit reached', text: `You can add up to ${maxQty} (minimum ${packs} + 5).` });
+      }
+      qtyInput.value = next;
       upsertCart(category);
     }
 
-    // Quantity manual input handler
+    // Quantity manual input handler with cap packs + 5
     function onQtyInput(category) {
       const qtyInput = document.getElementById(`${category}-qty`);
+      const maxQty = packs + 5;
       let val = Number(qtyInput.value);
-      if (Number.isNaN(val) || val < packs) {
-        val = packs;
+      if (Number.isNaN(val)) val = packs;
+      if (val < packs) val = packs;
+      if (val > maxQty) {
+        val = maxQty;
+        Swal.fire({ icon: 'warning', title: 'Limit reached', text: `You can add up to ${maxQty} (minimum ${packs} + 5).` });
       }
       qtyInput.value = val;
       upsertCart(category);
@@ -633,7 +659,7 @@
       updateCartDisplay();
     }
 
-    // Upsert selected item into cart for a category
+    // Upsert selected single item into cart for a category
     function upsertCart(category) {
       const qtyInput = document.getElementById(`${category}-qty`);
       const quantity = Math.max(packs, Number(qtyInput?.value || packs));
@@ -719,7 +745,7 @@
     // Next button
     document.getElementById('next-bottom').addEventListener('click', () => {
       if (cart.length === 0) {
-        alert('Please add at least one item to your cart.');
+        Swal.fire({ icon: 'warning', title: 'No items', text: 'Please add at least one item to your cart.' });
         return;
       }
       
@@ -728,7 +754,7 @@
       const deliveryTime = document.getElementById('delivery-time').value;
       
       if (!deliveryDate || !deliveryTime) {
-        alert('Please select delivery date and time.');
+        Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' });
         return;
       }
       
@@ -741,7 +767,7 @@
       }));
       
       // Navigate to next page (you can change this URL as needed)
-      alert('Order submitted successfully!');
+      Swal.fire({ icon: 'success', title: 'Submitted', text: 'Order submitted successfully!' });
       // window.location.href = 'order-confirmation.html';
     });
 

@@ -37,6 +37,7 @@
     .dotted-hr { border-bottom: 2px dotted #f4a18b; padding-bottom: 8px; display: inline-block; }
     .cat-topline { height: 6px; border-bottom: 1px solid #e1edf3; margin-top: 6px; }
   </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-white font-dm-sans text-custom-text">
 
@@ -280,24 +281,24 @@
     // Menu data (reuse from customizable page)
     const menuData = {
       'main-course': {
-        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 12.99 },
-        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/festive/imgi_6_Something Special.jpg', price: 14.99 }
+        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/menu/imgi_161_Bento-Set-A-chicken-300x300.jpg', price: 12.99 },
+        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/menu/imgi_178_chicken-rendang-edit-300x300.png', price: 14.99 }
       },
       'chicken': {
-        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 18.99 },
-        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 16.99 }
+        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/menu/imgi_181_Grilled-Black-Pepper-Boneless-Chicken-300x300.png', price: 18.99 },
+        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/menu/imgi_256_MM-Chicken-Gyoza-300x300.png', price: 16.99 }
       },
       'vegetable': {
-        'assorted-vegetable': { name: 'Teppanyaki Assorted Vegetable', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 9.99 },
-        'stir-fry-vegetable': { name: 'Stir Fry Mixed Vegetables', image: '/images/festive/imgi_6_Something Special.jpg', price: 8.99 }
+        'assorted-vegetable': { name: 'Teppanyaki Assorted Vegetable', image: '/images/menu/imgi_205_Sauteed-Nyonya-Chap-Chye-300x300.png', price: 9.99 },
+        'stir-fry-vegetable': { name: 'Stir Fry Mixed Vegetables', image: '/images/menu/imgi_208_Sauteed-Cabbage-with-Black-Fungus-300x300.png', price: 8.99 }
       },
       'dessert': {
-        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 5.99 },
-        'jelly-longan': { name: 'Jelly w Longan', image: '/images/festive/imgi_9_Around The World.jpg', price: 6.99 }
+        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/menu/imgi_214_Kai-Lan-with-Oyster-Sauce-300x300.png', price: 5.99 },
+        'jelly-longan': { name: 'Jelly w Longan', image: '/images/menu/imgi_217_Sambal-Long-Bean-300x300.png', price: 6.99 }
       },
       'drinks': {
-        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/festive/imgi_6_Something Special.jpg', price: 3.99 },
-        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 4.99 }
+        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/menu/imgi_190_Crispy-Lemon-Drizzled-Fish-Fillet-300x300.png', price: 3.99 },
+        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/menu/imgi_184_Sweet-Sour-Fish-Fillet-300x300.png', price: 4.99 }
       }
     };
 
@@ -311,6 +312,25 @@
       const now = new Date();
       now.setHours(now.getHours() + 1);
       document.getElementById('delivery-time').value = now.toTimeString().slice(0,5);
+
+      // Read selected item from menu and show in sidebar "Previous Selections"
+      try {
+        const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+        if (selected) {
+          const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
+          if (container) {
+            container.innerHTML = `
+            <div class="flex items-center gap-3">
+              <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
+                <div class="text-xs text-gray-500">Qty: 1 Set</div>
+              </div>
+              <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
+            </div>`;
+          }
+        }
+      } catch {}
 
       renderCards();
       updateCartDisplay();
@@ -477,13 +497,19 @@
     }
 
     document.getElementById('next-bottom').addEventListener('click', () => {
-      if (cart.length === 0) { alert('Please add at least one item.'); return; }
+      if (cart.length === 0) { 
+        Swal.fire({ icon: 'warning', title: 'No items', text: 'Please add at least one item.' });
+        return; 
+      }
       const deliveryDate = document.getElementById('delivery-date').value;
       const deliveryTime = document.getElementById('delivery-time').value;
-      if (!deliveryDate || !deliveryTime) { alert('Please select delivery date and time.'); return; }
+      if (!deliveryDate || !deliveryTime) { 
+        Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' });
+        return; 
+      }
       localStorage.setItem('nonCustomizableCart', JSON.stringify(cart));
       localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
-      alert('Selections saved.');
+      Swal.fire({ icon: 'success', title: 'Saved', text: 'Selections saved.' });
     });
 
     // Mobile menu toggle

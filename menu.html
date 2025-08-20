@@ -420,6 +420,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
@@ -450,6 +451,37 @@
         // Menu category filtering
         const categoryBtns = document.querySelectorAll('.menu-category-btn');
         const menuItems = document.querySelectorAll('.menu-item');
+
+        // Map menu item names to whether they are customizable and an ID/image/price
+        const menuClickMap = {
+          'Fried Eggs': { id: 'fried-eggs', customizable: true, image: '/images/pexels-daniela-constantini-5591664 1.png', price: 9.99 },
+          'Hawaiian Pizza': { id: 'hawaiian-pizza', customizable: true, image: '/images/pexels-maksim-goncharenok-4773769 1.png', price: 15.99 },
+          'Martinez Cocktail': { id: 'martinez-cocktail', customizable: false, image: '/images/pexels-nadin-sh-12956424 1.png', price: 7.25 },
+          'Butterscotch Cake': { id: 'butterscotch-cake', customizable: false, image: '/images/pexels-ruslan-khmelevsky-7845121 1.png', price: 20.99 },
+          'Mint Lemonade': { id: 'mint-lemonade', customizable: false, image: '/images/pexels-bam-awey-5335918 1.png', price: 5.89 },
+          'Chocolate Icecream': { id: 'chocolate-icecream', customizable: false, image: '/images/pexels-roman-odintsov-5061254 1.png', price: 18.05 },
+          'Cheese Burger': { id: 'cheese-burger', customizable: true, image: '/images/pexels-pixabay-327158 1.png', price: 12.55 },
+          'Classic Waffles': { id: 'classic-waffles', customizable: false, image: '/images/pexels-nicola-barts-7937386 1.png', price: 12.99 }
+        };
+
+        // Add click behavior to each menu card
+        menuItems.forEach(card => {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', () => {
+            const nameEl = card.querySelector('h3');
+            if (!nameEl) return;
+            const itemName = nameEl.textContent.trim();
+            const map = menuClickMap[itemName];
+            if (!map) {
+              Swal.fire({ icon: 'info', title: 'Coming soon', text: 'This item is not configured yet.' });
+              return;
+            }
+            const selected = { name: itemName, id: map.id, image: map.image, price: map.price };
+            localStorage.setItem('selectedMenuItem', JSON.stringify(selected));
+            const target = map.customizable ? 'menu-customization.html' : 'non-customizable.html';
+            window.location.href = target;
+          });
+        });
 
         categoryBtns.forEach(btn => {
             btn.addEventListener('click', () => {
