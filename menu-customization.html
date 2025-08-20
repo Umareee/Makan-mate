@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menu Customization — Makan Mate</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+            'panel-blue': '#eef7fb',
+            'panel-blue-border': '#e1eef4'
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display','serif'],
+            'dm-sans': ['DM Sans','sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { font-family: "DM Sans", sans-serif; }
+    
+    /* Minimal custom CSS - mostly using Tailwind */
+    .dotted-hr { 
+      border-bottom: 2px dotted #f4a18b; 
+      padding-bottom: 8px; 
+      display: inline-block; 
+    }
+    .cat-topline { 
+      height: 6px; 
+      border-bottom: 1px solid #e1edf3; 
+      margin-top: 6px; 
+    }
+    
+    /* Custom styles for dynamic card behavior */
+    .card-collapsed {
+      transition: all 0.3s ease;
+    }
+    
+    .image-container {
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .image-container.hidden {
+      max-height: 0;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .image-container.visible {
+      max-height: 200px;
+      opacity: 1;
+      margin: 1rem 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+
+  <!-- Header -->
+  <header class="bg-gray-800 text-white">
+    <!-- Top bar with contact info -->
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <!-- Mobile Layout -->
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
+            <i class="fas fa-phone"></i>
+            <span>62642233 Ext 10-18</span>
+          </div>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-twitter text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-facebook text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-instagram text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-github text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop Layout -->
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-phone"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main navigation -->
+  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+        <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
+      </div>
+      <div class="lg:hidden">
+        <button class="text-custom-text hover:text-makan-orange">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container mx-auto px-4 py-8 max-w-6xl">
+    <h2 class="text-2xl font-playfair font-bold mb-6">Customize Your Menu</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- LEFT CONTENT -->
+      <section class="lg:col-span-9 lg:order-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Main Course Card -->
+          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
+            <div class="font-semibold text-custom-text uppercase text-base mb-3">Main Course</div>
+            <div class="cat-topline"></div>
+            
+            <!-- Radio Button Options -->
+            <div class="mt-4 space-y-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="main-course" value="rice-mushroom" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'main-course')">
+                <span class="text-sm">Rice w Mushroom</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="main-course" value="fried-hongkong-mee" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'main-course')">
+                <span class="text-sm">Fried Hong Kong Mee</span>
+              </label>
+            </div>
+            
+            <!-- Dynamic Image Container -->
+            <div class="image-container hidden" id="main-course-image">
+              <img src="" alt="Selected Main Course" class="w-full h-32 object-cover rounded-lg">
+            </div>
+            
+            <!-- Quantity Controls (hidden by default) -->
+            <div class="mt-4 hidden" id="main-course-controls">
+              <div class="flex gap-2 items-center">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('main-course', -1)">▼</button>
+                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="main-course-qty" oninput="onQtyInput('main-course')">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('main-course', 1)">▲</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chicken Card -->
+          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
+            <div class="font-semibold text-custom-text uppercase text-base mb-3">Chicken</div>
+            <div class="cat-topline"></div>
+            
+            <!-- Radio Button Options -->
+            <div class="mt-4 space-y-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="chicken" value="teriyaki-chicken" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'chicken')">
+                <span class="text-sm">Teriyaki Grilled Chicken</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="chicken" value="kung-pao-chicken" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'chicken')">
+                <span class="text-sm">Kung Pao Chicken</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="chicken" value="lemon-chicken" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'chicken')">
+                <span class="text-sm">Lemon Chicken</span>
+              </label>
+            </div>
+            
+            <!-- Dynamic Image Container -->
+            <div class="image-container hidden" id="chicken-image">
+              <img src="" alt="Selected Chicken Dish" class="w-full h-32 object-cover rounded-lg">
+            </div>
+            
+            <!-- Quantity Controls (hidden by default) -->
+            <div class="mt-4 hidden" id="chicken-controls">
+              <div class="flex gap-2 items-center">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('chicken', -1)">▼</button>
+                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="chicken-qty" oninput="onQtyInput('chicken')">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('chicken', 1)">▲</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vegetable Card -->
+          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
+            <div class="font-semibold text-custom-text uppercase text-base mb-3">Vegetable</div>
+            <div class="cat-topline"></div>
+            
+            <!-- Radio Button Options -->
+            <div class="mt-4 space-y-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="vegetable" value="assorted-vegetable" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'vegetable')">
+                <span class="text-sm">Teppanyaki Assorted Vegetable</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="vegetable" value="stir-fry-vegetable" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'vegetable')">
+                <span class="text-sm">Stir Fry Mixed Vegetables</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="vegetable" value="steamed-vegetable" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'vegetable')">
+                <span class="text-sm">Steamed Seasonal Vegetables</span>
+              </label>
+            </div>
+            
+            <!-- Dynamic Image Container -->
+            <div class="image-container hidden" id="vegetable-image">
+              <img src="" alt="Selected Vegetable Dish" class="w-full h-32 object-cover rounded-lg">
+            </div>
+            
+            <!-- Quantity Controls (hidden by default) -->
+            <div class="mt-4 hidden" id="vegetable-controls">
+              <div class="flex gap-2 items-center">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('vegetable', -1)">▼</button>
+                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="vegetable-qty" oninput="onQtyInput('vegetable')">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('vegetable', 1)">▲</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dessert Card -->
+          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
+            <div class="font-semibold text-custom-text uppercase text-base mb-3">Dessert</div>
+            <div class="cat-topline"></div>
+            
+            <!-- Radio Button Options -->
+            <div class="mt-4 space-y-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="dessert" value="jelly-cocktail" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'dessert')">
+                <span class="text-sm">Jelly w Cocktail</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="dessert" value="jelly-longan" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'dessert')">
+                <span class="text-sm">Jelly w Longan</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="dessert" value="tropical-fruits" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'dessert')">
+                <span class="text-sm">Tropical Fruits Platter</span>
+              </label>
+            </div>
+            
+            <!-- Dynamic Image Container -->
+            <div class="image-container hidden" id="dessert-image">
+              <img src="" alt="Selected Dessert" class="w-full h-32 object-cover rounded-lg">
+            </div>
+            
+            <!-- Quantity Controls (hidden by default) -->
+            <div class="mt-4 hidden" id="dessert-controls">
+              <div class="flex gap-2 items-center">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('dessert', -1)">▼</button>
+                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="dessert-qty" oninput="onQtyInput('dessert')">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('dessert', 1)">▲</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drinks Card -->
+          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
+            <div class="font-semibold text-custom-text uppercase text-base mb-3">Drinks</div>
+            <div class="cat-topline"></div>
+            
+            <!-- Radio Button Options -->
+            <div class="mt-4 space-y-2">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="drinks" value="iced-lemon-tea" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'drinks')">
+                <span class="text-sm">Iced Lemon Tea</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="drinks" value="fresh-orange-juice" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'drinks')">
+                <span class="text-sm">Fresh Orange Juice</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="drinks" value="coconut-water" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'drinks')">
+                <span class="text-sm">Fresh Coconut Water</span>
+              </label>
+            </div>
+            
+            <!-- Dynamic Image Container -->
+            <div class="image-container hidden" id="drinks-image">
+              <img src="" alt="Selected Drink" class="w-full h-32 object-cover rounded-lg">
+            </div>
+            
+            <!-- Quantity Controls (hidden by default) -->
+            <div class="mt-4 hidden" id="drinks-controls">
+              <div class="flex gap-2 items-center">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('drinks', -1)">▼</button>
+                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="drinks-qty" oninput="onQtyInput('drinks')">
+                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('drinks', 1)">▲</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-6">
+          <button id="next-bottom" class="bg-makan-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-makan-orange-hover transition-colors">NEXT »</button>
+        </div>
+      </section>
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="lg:col-span-3 lg:order-1 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+        <div class="text-xs text-makan-orange font-semibold mb-3">
+          <span class="dotted-hr">ORDER DETAILS</span>
+        </div>
+        
+        <!-- Delivery Date and Time -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Delivery Date & Time</h4>
+          <div class="space-y-2">
+            <input type="date" id="delivery-date" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange">
+            <input type="time" id="delivery-time" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange">
+          </div>
+        </div>
+        
+        <!-- Previous Selections -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Previous Selections</h4>
+          <div class="bg-white p-3 rounded border border-gray-200 space-y-3">
+            <div class="flex items-center gap-3">
+              <img src="/images/festive/imgi_6_Something Special.jpg" alt="OH KONICHIWA!" class="w-12 h-12 rounded object-cover">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">OH KONICHIWA!</div>
+                <div class="text-xs text-gray-500">Qty: 1 Set</div>
+              </div>
+              <div class="text-sm font-semibold">$99.00</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <img src="/images/festive/imgi_5_Local Favourites.jpg" alt="VEGGIE DELIGHTS" class="w-12 h-12 rounded object-cover">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">VEGGIE DELIGHTS</div>
+                <div class="text-xs text-gray-500">Qty: 1 Set</div>
+              </div>
+              <div class="text-sm font-semibold">$89.00</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Number of Packs -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Number of Packs</h4>
+          <div class="flex gap-2 items-center">
+            <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changePacks(-1)">▼</button>
+            <input class="flex-1 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="10" min="10" id="packs-input">
+            <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changePacks(1)">▲</button>
+          </div>
+          <p class="text-xs text-gray-500 mt-1">Minimum: 10 packs</p>
+        </div>
+        
+        <!-- Cart Summary -->
+        <div class="border-t border-gray-300 pt-4">
+          <h4 class="font-semibold text-custom-text mb-2">Your Selection</h4>
+          <div id="cart-container">
+            <div class="text-gray-500 text-sm text-center py-4">
+              <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+              No items selected yet.
+            </div>
+          </div>
+          <div class="border-t border-gray-300 mt-4 pt-4" id="cart-total" style="display: none;">
+            <div class="text-sm font-semibold">TOTAL: <span id="total-amount" class="text-lg">$0.00</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">About Us</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Our Team</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Events</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Corporate</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Order Now</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Locations</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Us On Instagram -->
+        <div>
+          <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          Copyright © 2025 Makan Mate. All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+    <div class="bg-white w-64 h-full p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+        <button class="text-gray-600" id="close-menu">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+      <nav class="space-y-4">
+        <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+        <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+        <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+        <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+        <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+        <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    // Menu data with images and prices
+    const menuData = {
+      'main-course': {
+        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 12.99 },
+        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/festive/imgi_6_Something Special.jpg', price: 14.99 }
+      },
+      'chicken': {
+        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 18.99 },
+        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 16.99 },
+        'lemon-chicken': { name: 'Lemon Chicken', image: '/images/festive/imgi_9_Around The World.jpg', price: 17.99 }
+      },
+      'vegetable': {
+        'assorted-vegetable': { name: 'Teppanyaki Assorted Vegetable', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 9.99 },
+        'stir-fry-vegetable': { name: 'Stir Fry Mixed Vegetables', image: '/images/festive/imgi_6_Something Special.jpg', price: 8.99 },
+        'steamed-vegetable': { name: 'Steamed Seasonal Vegetables', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 7.99 }
+      },
+      'dessert': {
+        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 5.99 },
+        'jelly-longan': { name: 'Jelly w Longan', image: '/images/festive/imgi_9_Around The World.jpg', price: 6.99 },
+        'tropical-fruits': { name: 'Tropical Fruits Platter', image: '/images/festive/imgi_5_Local Favourites.jpg', price: 7.99 }
+      },
+      'drinks': {
+        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/festive/imgi_6_Something Special.jpg', price: 3.99 },
+        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/festive/imgi_7_Hot And Spicy.jpg', price: 4.99 },
+        'coconut-water': { name: 'Fresh Coconut Water', image: '/images/festive/imgi_8_All Day Breakfast.jpg', price: 3.49 }
+      }
+    };
+
+    // Cart to store selected items
+    let cart = [];
+    let packs = 10;
+
+    // Initialize page
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set minimum date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('delivery-date').min = today;
+      
+      // Set default delivery time to current time + 1 hour
+      const now = new Date();
+      now.setHours(now.getHours() + 1);
+      const timeString = now.toTimeString().slice(0, 5);
+      document.getElementById('delivery-time').value = timeString;
+      
+      updateCartDisplay();
+    });
+
+    // Handle radio button selection
+    function handleSelection(radioButton, category) {
+      const selectedValue = radioButton.value;
+      const selectedItem = menuData[category][selectedValue];
+      
+      // Show image
+      const imageContainer = document.getElementById(`${category}-image`);
+      const image = imageContainer.querySelector('img');
+      image.src = selectedItem.image;
+      image.alt = selectedItem.name;
+      imageContainer.classList.remove('hidden');
+      imageContainer.classList.add('visible');
+      
+      // Show controls
+      const controls = document.getElementById(`${category}-controls`);
+      controls.classList.remove('hidden');
+      
+      // Update quantity input to match packs
+      const qtyInput = document.getElementById(`${category}-qty`);
+      qtyInput.value = packs;
+      qtyInput.min = packs;
+      
+      // Auto add/update cart with default packs
+      upsertCart(category);
+    }
+
+    // Change quantity
+    function changeQuantity(category, change) {
+      const qtyInput = document.getElementById(`${category}-qty`);
+      const newQty = Math.max(packs, Number(qtyInput.value) + change);
+      qtyInput.value = newQty;
+      upsertCart(category);
+    }
+
+    // Quantity manual input handler
+    function onQtyInput(category) {
+      const qtyInput = document.getElementById(`${category}-qty`);
+      let val = Number(qtyInput.value);
+      if (Number.isNaN(val) || val < packs) {
+        val = packs;
+      }
+      qtyInput.value = val;
+      upsertCart(category);
+    }
+
+    // Change packs
+    function changePacks(change) {
+      const packsInput = document.getElementById('packs-input');
+      const newPacks = Math.max(10, Number(packsInput.value) + change);
+      packsInput.value = newPacks;
+      packs = newPacks;
+      
+      // Update all quantity inputs to respect new minimum
+      const categories = ['main-course', 'chicken', 'vegetable', 'dessert', 'drinks'];
+      categories.forEach(category => {
+        const qtyInput = document.getElementById(`${category}-qty`);
+        if (qtyInput && !qtyInput.classList.contains('hidden')) {
+          qtyInput.min = packs;
+          if (Number(qtyInput.value) < packs) {
+            qtyInput.value = packs;
+          }
+        }
+        // If there is a selected item for this category, upsert with new min
+        const radioSelected = document.querySelector(`input[name="${category}"]:checked`);
+        if (radioSelected) {
+          upsertCart(category);
+        }
+      });
+      // Ensure cart items respect new min
+      cart = cart.map(item => ({
+        ...item,
+        quantity: Math.max(item.quantity, packs)
+      }));
+      updateCartDisplay();
+    }
+
+    // Upsert selected item into cart for a category
+    function upsertCart(category) {
+      const qtyInput = document.getElementById(`${category}-qty`);
+      const quantity = Math.max(packs, Number(qtyInput?.value || packs));
+      const radioButton = document.querySelector(`input[name="${category}"]:checked`);
+      if (!radioButton) return;
+      const selectedValue = radioButton.value;
+      const selectedItem = menuData[category][selectedValue];
+      if (!selectedItem) return;
+      const cartItem = {
+        category,
+        name: selectedItem.name,
+        price: selectedItem.price,
+        quantity,
+        image: selectedItem.image
+      };
+      const existingIndex = cart.findIndex(item => item.category === category);
+      if (existingIndex > -1) {
+        cart[existingIndex] = cartItem;
+      } else {
+        cart.push(cartItem);
+      }
+      updateCartDisplay();
+    }
+
+    // Update cart display
+    function updateCartDisplay() {
+      const cartContainer = document.getElementById('cart-container');
+      const cartTotal = document.getElementById('cart-total');
+      const totalAmount = document.getElementById('total-amount');
+      
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="text-gray-500 text-sm text-center py-4">
+            <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+            No items selected yet.
+          </div>
+        `;
+        cartTotal.style.display = 'none';
+        return;
+      }
+      
+      // Show total section
+      cartTotal.style.display = 'block';
+      
+      // Calculate total
+      let total = 0;
+      
+      // Render each cart item
+      cartContainer.innerHTML = '';
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'bg-white p-3 rounded border border-gray-200 mb-2';
+        cartItem.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-gray-800">${item.name}</div>
+              <div class="text-xs text-gray-500">Qty: ${item.quantity}</div>
+              <div class="text-xs text-gray-600">$${item.price.toFixed(2)} each</div>
+            </div>
+            <div class="text-right">
+              <div class="text-sm font-bold text-gray-900">$${subtotal.toFixed(2)}</div>
+              <button class="text-red-500 text-xs hover:text-red-700" onclick="removeFromCart(${index})">Remove</button>
+            </div>
+          </div>
+        `;
+        cartContainer.appendChild(cartItem);
+      });
+      
+      // Update total
+      totalAmount.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Remove from cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+    }
+
+    // Next button
+    document.getElementById('next-bottom').addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Please add at least one item to your cart.');
+        return;
+      }
+      
+      // Validate delivery date and time
+      const deliveryDate = document.getElementById('delivery-date').value;
+      const deliveryTime = document.getElementById('delivery-time').value;
+      
+      if (!deliveryDate || !deliveryTime) {
+        alert('Please select delivery date and time.');
+        return;
+      }
+      
+      // Save cart and delivery info to localStorage
+      localStorage.setItem('customizationCart', JSON.stringify(cart));
+      localStorage.setItem('deliveryInfo', JSON.stringify({
+        date: deliveryDate,
+        time: deliveryTime,
+        packs: packs
+      }));
+      
+      // Navigate to next page (you can change this URL as needed)
+      alert('Order submitted successfully!');
+      // window.location.href = 'order-confirmation.html';
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('#open-mobile');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+      });
+    }
+
+    if (closeMenuBtn && mobileMenu) {
+      closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    }
+
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
