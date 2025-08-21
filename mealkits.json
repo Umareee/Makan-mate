@@ -1,0 +1,17 @@
+{
+  "soy-sauce-chicken": {
+    "name": "Soy Sauce Chicken",
+    "price": "$18",
+    "image": "/images/mealkit/imgi_3_38809248.jpg",
+    "expect": "A savory and aromatic soy-sauce braised chicken meal kit that balances sweet and salty notes, perfect over steamed rice.",
+    "kit": "Chicken thighs, soy sauce, ginger, garlic, scallions, sesame oil, rice, mixed veggies"
+  },
+  "beef-bulgogi": {
+    "name": "Beef Bulgogi",
+    "price": "$22",
+    "image": "/images/mealkit/imgi_4_38810089.jpg",
+    "expect": "Korean-style marinated beef with rich flavors of soy, pear, and sesame—tender and slightly caramelized.",
+    "kit": "Sliced beef, soy sauce, sesame oil, pear puree, garlic, green onions, rice, kimchi"
+  }
+}
+
