@@ -30,6 +30,12 @@
   <style>
     .tab-btn.active { background: #FF5722; color: #fff; }
     .dotted-hr { border-bottom: 2px dotted #f4a18b; padding-bottom: 8px; display: inline-block; }
+    /* Ensure lists and bold text are visible inside Expect/Kit content */
+    #content-expect ul, #content-kit ul { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0; }
+    #content-expect ol, #content-kit ol { list-style: decimal; padding-left: 1.25rem; margin: 0.5rem 0; }
+    #content-expect li, #content-kit li { margin: 0.25rem 0; line-height: 1.6; }
+    #content-expect p, #content-kit p { margin: 0.25rem 0; line-height: 1.6; }
+    #content-expect strong, #content-kit strong { font-weight: 700; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -253,6 +259,44 @@
       return params.get(name);
     }
 
+    // Format plain text (with '-'/'*'/'•' bullets and **bold**) into HTML while preserving order
+    function formatContent(raw) {
+      if (!raw) return '';
+      let text = String(raw);
+      // If content already contains semantic list tags, render as-is
+      if (/<\s*(ul|ol|li)\b/i.test(text)) return text;
+      // Normalize HTML line breaks to newlines for parsing
+      text = text.replace(/<br\s*\/?\s*>/gi, '\n');
+      // If inline bullets like "• item1 • item2" exist, split them into separate lines first
+      text = text.replace(/•\s*/g, '\n- ');
+
+      const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+      const bulletPattern = /^[-*]\s+/;
+      let htmlParts = [];
+      let insideList = false;
+
+      const closeList = () => { if (insideList) { htmlParts.push('</ul>'); insideList = false; } };
+
+      for (let rawLine of lines) {
+        let line = rawLine;
+        // Convert **bold** to <strong>
+        line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        // Only bold 'Protein:' label at the start of a line (case-insensitive)
+        line = line.replace(/^\s*protein\s*:/i, match => `<strong>${match.replace(/\s+/, ' ').trim()}</strong>`);
+
+        if (bulletPattern.test(line)) {
+          const content = line.replace(bulletPattern, '');
+          if (!insideList) { htmlParts.push('<ul>'); insideList = true; }
+          htmlParts.push(`<li>${content}</li>`);
+        } else {
+          closeList();
+          htmlParts.push(`<p>${line}</p>`);
+        }
+      }
+      closeList();
+      return htmlParts.join('');
+    }
+
     // Tabs behavior
     function setupTabs() {
       const btnExpect = document.getElementById('tab-expect');
@@ -386,8 +430,8 @@
         document.getElementById('item-image').alt = item.name;
         document.getElementById('item-name').textContent = item.name;
         document.getElementById('item-price').textContent = item.price;
-        document.getElementById('content-expect').textContent = item.expect;
-        document.getElementById('content-kit').textContent = item.kit;
+        document.getElementById('content-expect').innerHTML = formatContent(item.expect || '');
+        document.getElementById('content-kit').innerHTML = formatContent(item.kit || '');
         // Keep a reference for NEXT button to create cart later
         currentItem = item;
         // Description under price prefers selected card desc, then item.description, then expect

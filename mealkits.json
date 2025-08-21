@@ -1,19 +1,18 @@
 {
-  "soy-sauce-chicken": {
+  "Pongteh Pork": {
   "name": "Pongteh Pork",
   "price": "$18",
   "image": "/images/mealkit/imgi_3_38809248.jpg",
-  "expect": "With the mission to do all the heavy lifting in the kitchen and leave the joy of cooking to the consumers, Prepped is a meal kit service created not only to help save time in the kitchen but also cut down on the problem of food wastage.As part of a nuclear family myself, I sometimes face the problem of not being able to find groceries sold in smaller quantities. As a result, fresh produce often goes bad faster than expected. Like me, if you are facing such problems, Prepped might just be the right solution as they offer meal kit services with no lock-ins or subscription required.All that needs to be done is to choose from their curated list of recipes featuring of our local childhood favourites to popular zi char styled dishes and you are be good to go. Since all the ingredients delivered have been washed, portioned and chopped according to the recipe, you will just require your cooking utensils and basic condiments like salt and pepper to cook up a feast fit for a king!Graded by effort, first-timers in the kitchen can start off comfortably with their easiest option and slowly work your way up as your culinary skills improve. The best part of Prepped’s meal kit is the fact that all the ingredients (down to the chopped onions and garlic) are vacuum packed and labelled with numbers corresponding to the steps on their recipe, making it more convenient and absolutely fuss-free.",
-  "kit": " Like me, if you are facing such problems, Prepped might just be the right solution as they offer meal kit services with no lock-ins or subscription required.All that needs to be done is to choose from their curated list of recipes featuring of our local childhood favourites to popular zi char styled dishes and you are be good to go. Since all the ingredients delivered have been washed, portioned and chopped according to the recipe, you will just require your cooking utensils and basic condiments like salt and pepper to cook up a feast fit for a king!Graded by effort, first-timers in the kitchen can start off comfortably with their easiest option and slowly work your way up as your culinary skills improve. The best part of Prepped’s meal kit is the fact that all the ingredients (down to the chopped onions and garlic) are vacuum packed and labelled with numbers corresponding to the steps on their recipe, making it more convenient and absolutely fuss-free.",
+  "expect": "Pongteh Pork is a signature Peranakan dish that has been passed down for generations. Traditionally, pork belly or pork shoulder is braised in fermented soy bean sauce, creating a soft and tender texture, yet packs with bold, sweet-salty & savoury flavours.• Raw ingredients are portioned for 2 person• Dish ready in 40 minutes• Best cook within 5 daysCooking InstructionCooking Instruction Pongteh Pork",
+  "kit": "•Protein: Pork Shoulder •Sauce: Taucu, Soy Sauce, Dark Soy Sauce, Gula Melaka •Aromatics: Minced Garlic, Shallot, Green Onion for Garnish •Other Ingredients: Cooking Oil",
     "description": "For 1-2 pax"
-
 },
-  "beef-bulgogi": {
+  "Soy Sauce Chicken": {
     "name": "Soy Sauce Chicken",
     "price": "$22",
     "image": "/images/mealkit/imgi_4_38810089.jpg",
-    "expect": "Korean-style marinated beef with rich flavors of soy, pear, and sesame—tender and slightly caramelized.",
-    "kit": "Sliced beef, soy sauce, sesame oil, pear puree, garlic, green onions, rice, kimchi",
+    "expect": "• Raw ingredients are portioned for 2 person• Dish ready in 25 minutes• Best cook within 6 days",
+    "kit": "•Protein: Chicken Whole Leg x 2 pcs •Sauce: Soy Sauce, Dark Soy Sauce, Oyster Sauce •Veggies & Aromatics: Ginger, Garlic, Shallot, Cilantro (for Garnish) •Other Ingredients: Cooking Oil, Rock Sugar",
       "description": "For 2-3 Pax"
   }
 }
