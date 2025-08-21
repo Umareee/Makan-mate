@@ -242,42 +242,6 @@
             </div>
           </div>
 
-          <!-- Vegetable Card -->
-          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
-            <div class="font-semibold text-custom-text uppercase text-base mb-3">Vegetable</div>
-            <div class="cat-topline"></div>
-            
-            <!-- Radio Button Options -->
-            <div class="mt-4 space-y-2">
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="radio" name="vegetable" value="assorted-vegetable" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'vegetable')">
-                <span class="text-sm">Teppanyaki Assorted Vegetable</span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="radio" name="vegetable" value="stir-fry-vegetable" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'vegetable')">
-                <span class="text-sm">Stir Fry Mixed Vegetables</span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="radio" name="vegetable" value="steamed-vegetable" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'vegetable')">
-                <span class="text-sm">Steamed Seasonal Vegetables</span>
-              </label>
-            </div>
-            
-            <!-- Dynamic Image Container -->
-            <div class="image-container hidden" id="vegetable-image">
-              <img src="" alt="Selected Vegetable Dish" class="w-full h-32 object-cover rounded-lg">
-            </div>
-            
-            <!-- Quantity Controls (hidden by default) -->
-            <div class="mt-4 hidden" id="vegetable-controls">
-              <div class="flex gap-2 items-center">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('vegetable', -1)">▼</button>
-                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="vegetable-qty" oninput="onQtyInput('vegetable')">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('vegetable', 1)">▲</button>
-              </div>
-            </div>
-          </div>
-
           <!-- Dessert Card -->
           <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
             <div class="font-semibold text-custom-text uppercase text-base mb-3">Dessert</div>
@@ -631,7 +595,7 @@
       packs = newPacks;
       
       // Update all quantity inputs to respect new minimum
-      const categories = ['main-course', 'chicken', 'vegetable', 'dessert', 'drinks'];
+      const categories = ['main-course', 'chicken', 'dessert', 'drinks'];
       categories.forEach(category => {
         const qtyInput = document.getElementById(`${category}-qty`);
         if (qtyInput && !qtyInput.classList.contains('hidden')) {
