@@ -283,6 +283,14 @@
       packsInput.value = newPacks;
     }
 
+    // Helper: parse a price string like "$12.90 / Set" to number 12.90
+    function parsePriceToNumber(val) {
+      if (typeof val === 'number') return val;
+      if (!val) return 0;
+      const match = String(val).replace(/,/g, '').match(/([0-9]+(?:\.[0-9]+)?)/);
+      return match ? Number(match[1]) : 0;
+    }
+
     // Auto-populate sidebar: min date/time and previous selection
     document.addEventListener('DOMContentLoaded', () => {
       // Date min today
@@ -314,7 +322,10 @@
       } catch {}
     });
 
-    // NEXT button behavior (simple validation similar to customization)
+    // Track currently loaded item for cart creation
+    let currentItem = null;
+
+    // NEXT button behavior: validate date/time, persist cart and navigate to delivery.html
     function setupNext() {
       const nextBtn = document.getElementById('next-bottom');
       if (!nextBtn) return;
@@ -325,8 +336,30 @@
           if (window.Swal) { Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' }); }
           return;
         }
+        // Save delivery preferences
         localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
-        if (window.Swal) { Swal.fire({ icon: 'success', title: 'Saved', text: 'Details saved. Proceeding...' }); }
+
+        // Save cart with the selected item and quantity for delivery.html to consume
+        try {
+          if (currentItem) {
+            const unitPrice = parsePriceToNumber(currentItem.price);
+            const cart = [
+              {
+                title: currentItem.name,
+                image: currentItem.image,
+                price: unitPrice,
+                qty: packs,
+                isPreselected: true
+              }
+            ];
+            localStorage.setItem('cart', JSON.stringify(cart));
+          }
+        } catch (e) {
+          console.warn('Could not save cart:', e);
+        }
+
+        // Navigate to delivery page
+        window.location.href = 'delivery.html';
       });
     }
 
@@ -355,6 +388,8 @@
         document.getElementById('item-price').textContent = item.price;
         document.getElementById('content-expect').textContent = item.expect;
         document.getElementById('content-kit').textContent = item.kit;
+        // Keep a reference for NEXT button to create cart later
+        currentItem = item;
         // Description under price prefers selected card desc, then item.description, then expect
         const desc = document.getElementById('item-desc');
         let selected = null;
