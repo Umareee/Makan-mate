@@ -29,7 +29,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     .tab-btn.active { background: #FF5722; color: #fff; }
+    .dotted-hr { border-bottom: 2px dotted #f4a18b; padding-bottom: 8px; display: inline-block; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-white font-dm-sans text-custom-text">
   <!-- Header -->
@@ -93,39 +95,73 @@
   <section class="py-10 bg-white">
     <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
       <div id="not-found" class="hidden text-center p-8 bg-red-50 border border-red-200 rounded-xl text-red-600">Product Not Found</div>
-      <div id="detail" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <div class="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
-          <img id="item-image" src="" alt="Meal image" class="w-full h-auto object-cover">
-        </div>
-        <div>
+      <div id="detail" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Aside (copied style from menu-customization.html) -->
+        <aside class="lg:col-span-3 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+          <div class="text-xs text-makan-orange font-semibold mb-3">
+            <span class="dotted-hr">ORDER DETAILS</span>
+          </div>
+
+          <!-- Delivery Date and Time -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-custom-text mb-2">Delivery Date & Time</h4>
+            <div class="space-y-2">
+              <input type="date" id="delivery-date" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange">
+              <input type="time" id="delivery-time" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange">
+            </div>
+          </div>
+
+          <!-- Previous Selections -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-custom-text mb-2">Previous Selections</h4>
+            <div class="bg-white p-3 rounded border border-gray-200 space-y-3">
+              <div class="text-gray-500 text-sm text-center py-4">
+                <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+                No items selected yet.
+              </div>
+            </div>
+          </div>
+
+          <!-- Number of Packs -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-custom-text mb-2">Number of Packs</h4>
+            <div class="flex gap-2 items-center">
+              <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changePacks(-1)">▼</button>
+              <input class="flex-1 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="10" min="10" id="packs-input">
+              <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changePacks(1)">▲</button>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Minimum: 10 packs</p>
+          </div>
+        </aside>
+
+        <!-- Right Content -->
+        <div class="lg:col-span-9">
           <!-- Product Info Container -->
           <div class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 mb-6 shadow-sm">
-            <h1 id="item-name" class="text-3xl sm:text-4xl font-playfair font-medium mb-3">&nbsp;</h1>
-            <div id="item-price" class="text-makan-orange text-2xl font-bold mb-5">&nbsp;</div>
-            <form id="product-form" class="space-y-4">
-              <!-- Quantity selector -->
-              <div class="flex items-center justify-center sm:justify-start gap-3">
-                <button type="button" id="qty-decrease" class="w-10 h-10 rounded-full border border-gray-300 text-xl flex items-center justify-center hover:bg-gray-50" aria-label="Decrease quantity">-</button>
-                <input id="qty-value" type="text" value="1" readonly class="w-20 sm:w-24 text-center py-2 border border-gray-300 rounded-md select-none bg-white" />
-                <button type="button" id="qty-increase" class="w-10 h-10 rounded-full border border-gray-300 text-xl flex items-center justify-center hover:bg-gray-50" aria-label="Increase quantity">+</button>
+            <div class="flex flex-col md:flex-row md:items-center gap-4">
+              <img id="item-image" src="" alt="Meal image" class="w-48 h-48 object-cover rounded-lg md:mx-0 mx-auto">
+              <div class="flex-1 text-center md:text-left">
+                <h1 id="item-name" class="text-2xl sm:text-3xl font-playfair font-medium mb-2">&nbsp;</h1>
+                <div id="item-price" class="text-makan-orange text-xl font-bold mb-2">&nbsp;</div>
+                <p id="item-desc" class="text-gray-600 text-sm">&nbsp;</p>
               </div>
-
-              <!-- Add to Cart -->
-              <div class="flex justify-center sm:justify-start pt-1">
-                <button type="button" id="add-to-cart" class="min-w-[220px] sm:min-w-[260px] bg-makan-orange text-white px-8 py-3 rounded-full hover:bg-makan-orange-hover transition-colors font-medium">Add to Cart</button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Tabbed Content below container -->
-          <div>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <button id="tab-expect" class="tab-btn bg-white text-custom-text px-4 py-2 rounded-full border border-gray-300">What to Expect</button>
-              <button id="tab-kit" class="tab-btn bg-white text-custom-text px-4 py-2 rounded-full border border-gray-300">What's in the Kit</button>
             </div>
-            <div id="content-expect" class="text-gray-700 leading-relaxed"></div>
-            <div id="content-kit" class="text-gray-700 leading-relaxed hidden"></div>
           </div>
+
+          	<!-- Tabs Container -->
+          	<div class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 mb-6 shadow-sm">
+            	<div class="flex flex-wrap gap-2 mb-4">
+              	<button id="tab-expect" class="tab-btn bg-white text-custom-text px-4 py-2 rounded-full border border-gray-300">What to Expect</button>
+              	<button id="tab-kit" class="tab-btn bg-white text-custom-text px-4 py-2 rounded-full border border-gray-300">What's in the Kit</button>
+            	</div>
+            	<div id="content-expect" class="text-gray-700 leading-relaxed min-h-56 py-2"></div>
+            	<div id="content-kit" class="text-gray-700 leading-relaxed hidden min-h-56 py-2"></div>
+          	</div>
+
+          	<!-- Next Button -->
+          	<div class="mt-4 mb-10">
+            	<button id="next-bottom" class="bg-makan-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-makan-orange-hover transition-colors">NEXT »</button>
+          	</div>
         </div>
       </div>
     </div>
@@ -237,16 +273,61 @@
       activate('expect');
     }
 
-    // Quantity controls
-    function setupQuantity(min = 1) {
-      const dec = document.getElementById('qty-decrease');
-      const inc = document.getElementById('qty-increase');
-      const val = document.getElementById('qty-value');
-      if (!dec || !inc || !val) return;
-      const get = () => parseInt(val.value || '1', 10) || min;
-      const set = (n) => { val.value = Math.max(min, n).toString(); };
-      dec.addEventListener('click', () => set(get() - 1));
-      inc.addEventListener('click', () => set(get() + 1));
+
+    // Packs state and controls (left sidebar)
+    let packs = 10;
+    function changePacks(change) {
+      const packsInput = document.getElementById('packs-input');
+      const newPacks = Math.max(10, Number(packsInput.value || 10) + change);
+      packs = newPacks;
+      packsInput.value = newPacks;
+    }
+
+    // Auto-populate sidebar: min date/time and previous selection
+    document.addEventListener('DOMContentLoaded', () => {
+      // Date min today
+      const today = new Date().toISOString().split('T')[0];
+      const dateEl = document.getElementById('delivery-date');
+      if (dateEl) dateEl.min = today;
+      // Default time +1h
+      const now = new Date(); now.setHours(now.getHours() + 1);
+      const timeEl = document.getElementById('delivery-time');
+      if (timeEl) timeEl.value = now.toTimeString().slice(0,5);
+
+      // Previous selection from localStorage
+      try {
+        const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+        if (selected) {
+          const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
+          if (container) {
+            container.innerHTML = `
+            <div class="flex items-center gap-3">
+              <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
+                <div class="text-xs text-gray-500">Qty: 1 Set</div>
+              </div>
+              <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
+            </div>`;
+          }
+        }
+      } catch {}
+    });
+
+    // NEXT button behavior (simple validation similar to customization)
+    function setupNext() {
+      const nextBtn = document.getElementById('next-bottom');
+      if (!nextBtn) return;
+      nextBtn.addEventListener('click', () => {
+        const deliveryDate = document.getElementById('delivery-date')?.value;
+        const deliveryTime = document.getElementById('delivery-time')?.value;
+        if (!deliveryDate || !deliveryTime) {
+          if (window.Swal) { Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' }); }
+          return;
+        }
+        localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
+        if (window.Swal) { Swal.fire({ icon: 'success', title: 'Saved', text: 'Details saved. Proceeding...' }); }
+      });
     }
 
     async function loadItem() {
@@ -274,7 +355,24 @@
         document.getElementById('item-price').textContent = item.price;
         document.getElementById('content-expect').textContent = item.expect;
         document.getElementById('content-kit').textContent = item.kit;
-        setupQuantity(1);
+        // Description under price prefers selected card desc, then item.description, then expect
+        const desc = document.getElementById('item-desc');
+        let selected = null;
+        try { selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null'); } catch {}
+        if (desc) desc.textContent = (selected && selected.description) || item.description || item.expect || '';
+        // Sidebar previous selection should reflect current item
+        const prevSelContainer = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
+        if (prevSelContainer) {
+          prevSelContainer.innerHTML = `
+          <div class="flex items-center gap-3">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded object-cover">
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-gray-800">${item.name}</div>
+              <div class="text-xs text-gray-500">Qty: 1 Set</div>
+            </div>
+            <div class="text-sm font-semibold">${item.price}</div>
+          </div>`;
+        }
       } catch (e) {
         console.error('Failed to load item', e);
         notFound.classList.remove('hidden');
@@ -283,6 +381,7 @@
     }
 
     setupTabs();
+    setupNext();
     loadItem();
   </script>
 </body>

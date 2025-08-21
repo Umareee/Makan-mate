@@ -56,6 +56,9 @@
     .dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.5); transition: all 200ms ease; }
     .dot.active { width: 20px; background: #FF5722; }
 
+    /* Disable animations on cards to avoid layout jitter during filtering */
+    #kits-grid .menu-item { transition: none; opacity: 1; transform: none; }
+
     /* Responsive scaling and layout tweaks */
     @media (min-width: 1024px) {
       .fg-inset { transform: translateX(-12%); }
@@ -342,15 +345,37 @@
         });
         const grid = document.getElementById('kits-grid');
         grid.innerHTML = kits.map(k => `
-          <a href="menu-detail.html?item=${encodeURIComponent(k.slug)}" class="menu-item block bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden hover:shadow-md transition" data-category="${k.category}">
+          <a href="menu-detail.html?item=${encodeURIComponent(k.slug)}" 
+             class="menu-item block bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden hover:shadow-md transition" 
+             data-category="${k.category}" 
+             data-slug="${k.slug}" 
+             data-name="${k.name}" 
+             data-price="${k.price}" 
+             data-image="${k.image}" 
+             data-desc="${(k.description || 'Click here to view description').replace(/"/g,'\u0026quot;')}"
+            >
             <div class="relative h-40 sm:h-48 md:h-52"><img src="${k.image}" alt="${k.name}" class="w-full h-full object-cover"></div>
             <div class="p-3 sm:p-4 text-center">
               <div class="text-base sm:text-lg font-bold text-makan-orange mb-2">${k.price}</div>
-              <h3 class="text-base sm:text-lg font-bold text-custom-text mb-2">${k.name}</h3>
-              <p class="text-gray-600 text-sm">Click to view details</p>
+              <h3 class="text-base sm:text-lg font-bold text-custom-text mb-1">${k.name}</h3>
+              ${k.serves ? `<div class="text-xs text-gray-500 mb-2">${k.serves}</div>` : ''}
+              <p class="text-gray-600 text-sm">${k.description || 'Click here to view description'}</p>
             </div>
           </a>
         `).join('');
+        // Persist selected card info so description shows on detail page
+        grid.querySelectorAll('.menu-item').forEach(el => {
+          el.addEventListener('click', () => {
+            const payload = {
+              slug: el.dataset.slug,
+              name: el.dataset.name,
+              price: el.dataset.price,
+              image: el.dataset.image,
+              description: el.dataset.desc
+            };
+            try { localStorage.setItem('selectedMenuItem', JSON.stringify(payload)); } catch {}
+          });
+        });
 
         // Setup category filtering like menu.html
         const categoryBtns = document.querySelectorAll('.menu-category-btn');
@@ -362,13 +387,14 @@
             btn.classList.add('active', 'bg-makan-orange', 'text-white');
             btn.classList.remove('bg-white', 'text-custom-text');
             menuItems.forEach(item => {
+              // Remove any transition/transform to prevent visual shift
+              item.style.transition = 'none';
+              item.style.transform = 'none';
+              item.style.opacity = '1';
               if (category === 'all' || item.getAttribute('data-category') === category) {
                 item.style.display = 'block';
-                setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 100);
               } else {
-                item.style.opacity = '0';
-                item.style.transform = 'scale(0.95)';
-                setTimeout(() => { item.style.display = 'none'; }, 200);
+                item.style.display = 'none';
               }
             });
           });
