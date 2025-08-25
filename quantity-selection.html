@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu - Makan Mate</title>
+    <title>Select Quantity - Makan Mate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -88,7 +88,6 @@
                         </a>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
     </header>
@@ -108,7 +107,7 @@
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                <a href="menu.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Menu</a>
+                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
                 <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
                 <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
                 <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
@@ -119,89 +118,50 @@
 
             <!-- Mobile menu button -->
             <div class="lg:hidden">
-                <button class="text-custom-text hover:text-makan-orange">
+                <button class="text-custom-text hover:text-makan-orange" id="mobile-menu-btn">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Menu Hero Section -->
-    <section class="relative  py-20">
-        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black font-playfair mb-6">Our Menu</h1>
-            <p class="text-base sm:text-lg md:text-xl text-black/90 max-w-2xl mx-auto">
-                We consider all the drivers of change gives you the components you need to change to create a truly happening.
-            </p>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
-            <!-- Menu Categories -->
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12" id="categories-container">
-                <!-- Categories will be loaded from JSON -->
+    <!-- Quantity Selection Section -->
+    <section class="py-12 sm:py-16 min-h-screen">
+        <div class="container mx-auto px-2 sm:px-4 max-w-4xl">
+            <!-- Back Button -->
+            <div class="mb-8">
+                <button onclick="history.back()" class="flex items-center space-x-2 text-custom-text hover:text-makan-orange transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Menu</span>
+                </button>
             </div>
 
-            <!-- Menu Items Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto" id="menu-grid">
-                <!-- Menu items will be loaded from JSON -->
+            <!-- Menu Item Info -->
+            <div class="text-center mb-12">
+                <h1 id="item-name" class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text font-playfair mb-4">
+                    Loading...
+                </h1>
+                <p id="item-description" class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Loading description...
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Delivery Apps Section -->
-    <section class="py-12 sm:py-16 bg-gray-50">
-        <div class="container mx-auto px-2 sm:px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <!-- Left side - Text content -->
-                <div class="lg:w-1/3">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-custom-text font-playfair mb-6">
-                        You can order through apps
-                    </h2>
-                    <p class="text-gray-600 leading-relaxed">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquet risus tempor semper.
-                    </p>
+            <!-- Quantity Selection Grid -->
+            <div class="mb-12">
+                <h2 class="text-2xl sm:text-3xl font-medium text-custom-text font-playfair mb-8 text-center">
+                    Select Quantity
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="packs-grid">
+                    <!-- Cards will be dynamically loaded from JSON -->
                 </div>
-                
-                <!-- Right side - App logos grid -->
-                <div class="lg:w-2/3">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 max-w-2xl">
-                        <!-- Row 1 -->
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20">
-                            <img src="/images/ubereatspng.png" alt="Uber Eats" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20">
-                            <img src="/images/grubhubpng.png" alt="Grubhub" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20">
-                            <img src="/images/postmatespng.png" alt="Postmates" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        
-                        <!-- Row 2 - Wider rectangles -->
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20 col-span-1 transform scale-x-110">
-                            <img src="/images/doordash.png" alt="DoorDash" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20 col-span-1 transform scale-x-110 mx-1 sm:mx-2">
-                            <img src="/images/foodpandapng.png" alt="foodpanda" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20 col-span-1 transform scale-x-110">
-                            <img src="/images/deliveroopng.png" alt="deliveroo" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        
-                        <!-- Row 3 -->
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20">
-                            <img src="/images/instacart.png" alt="Instacart" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20">
-                            <img src="/images/justeat.png" alt="Just Eat" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                        <div class="bg-white rounded-xl p-3 sm:p-6 shadow-sm flex items-center justify-center h-16 sm:h-20">
-                            <img src="/images/didifood.png" alt="DiDi Food" class="max-h-6 sm:max-h-8 max-w-full object-contain">
-                        </div>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Next Button -->
+            <div class="text-center">
+                <button id="next-btn" class="bg-gray-300 text-gray-500 px-8 py-3 rounded-full font-medium text-lg transition-all duration-300 cursor-not-allowed" disabled>
+                    Next Step
+                </button>
+                <p class="text-sm text-gray-500 mt-2">Please select a quantity to continue</p>
             </div>
         </div>
     </section>
@@ -319,7 +279,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenuBtn = document.getElementById('close-menu');
 
@@ -344,122 +304,190 @@
             });
         }
 
-        // Dynamic menu loading
-        let menuData = null;
+        // Page initialization and functionality
+        let selectedMenuItem = null;
+        let selectedPack = null;
+        let quantityConfigs = null;
 
-        // Load menu data from JSON
-        async function loadMenuData() {
+        // Load quantity configurations from JSON
+        async function loadQuantityConfigs() {
             try {
-                const response = await fetch('/menu-items.json');
-                menuData = await response.json();
-                generateCategories();
-                generateMenuItems();
-                initializeMenuInteraction();
+                const response = await fetch('/quantity-configs.json');
+                quantityConfigs = await response.json();
             } catch (error) {
-                console.error('Error loading menu data:', error);
+                console.error('Error loading quantity configs:', error);
+                quantityConfigs = {};
             }
         }
 
-        // Generate category buttons
-        function generateCategories() {
-            const categoriesContainer = document.getElementById('categories-container');
-            categoriesContainer.innerHTML = '';
-
-            menuData.categories.forEach(category => {
-                const activeClass = category.active ? 'active bg-makan-orange text-white' : 'bg-white text-custom-text';
-                const buttonHTML = `
-                    <button class="menu-category-btn ${activeClass} px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300 text-sm sm:text-base" data-category="${category.id}">
-                        ${category.name}
-                    </button>
-                `;
-                categoriesContainer.innerHTML += buttonHTML;
-            });
+        // Load selected menu item from localStorage and generate pack cards
+        async function loadMenuItemData() {
+            const storedItem = localStorage.getItem('selectedMenuItem');
+            if (storedItem) {
+                selectedMenuItem = JSON.parse(storedItem);
+                
+                // Update page content
+                document.getElementById('item-name').textContent = selectedMenuItem.name;
+                document.getElementById('item-description').textContent = selectedMenuItem.description;
+                
+                // Load pack configurations and generate cards
+                await loadQuantityConfigs();
+                generatePackCards();
+            } else {
+                // Fallback if no item selected
+                document.getElementById('item-name').textContent = 'Menu Item';
+                document.getElementById('item-description').textContent = 'Please select a menu item first.';
+            }
         }
 
-        // Generate menu items
-        function generateMenuItems() {
-            const menuGrid = document.getElementById('menu-grid');
-            menuGrid.innerHTML = '';
+        // Generate pack cards based on JSON configuration
+        function generatePackCards() {
+            const packsGrid = document.getElementById('packs-grid');
+            const itemConfig = quantityConfigs[selectedMenuItem.id];
+            
+            if (!itemConfig || !itemConfig.packs) {
+                // Fallback to default configuration
+                generateDefaultPackCards();
+                return;
+            }
 
-            menuData.items.forEach(item => {
-                const itemHTML = `
-                    <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden cursor-pointer" data-category="${item.category}" data-item-id="${item.id}">
-                        <div class="relative h-40 sm:h-48 md:h-52">
-                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+            packsGrid.innerHTML = '';
+            
+            itemConfig.packs.forEach(pack => {
+                const price = (selectedMenuItem.price * pack.multiplier).toFixed(2);
+                
+                const cardHTML = `
+                    <div class="pack-card bg-white border-2 border-gray-200 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-lg" data-pack="${pack.id}">
+                        <div class="w-full h-64 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="${pack.image}" alt="${pack.title}" class="w-full h-full object-contain">
                         </div>
-                        <div class="p-3 sm:p-4 text-center">
-                            <h3 class="text-base sm:text-lg font-bold text-custom-text mb-2">${item.name}</h3>
-                            <div class="text-base sm:text-lg font-bold text-makan-orange mb-2">$ ${item.price}</div>
-                            
+                        <h3 class="text-xl font-bold text-custom-text mb-3">${pack.title}</h3>
+                        ${pack.description ? `<p class="text-gray-600 text-sm mb-4 leading-relaxed">${pack.description}</p>` : ''}
+                        <div class="text-lg font-bold text-makan-orange mb-4">
+                            $${price}
                         </div>
+                        <button class="select-btn w-full bg-gray-100 text-custom-text py-2 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white">
+                            Select
+                        </button>
                     </div>
                 `;
-                menuGrid.innerHTML += itemHTML;
-            });
-        }
-
-        // Initialize menu interaction
-        function initializeMenuInteraction() {
-            const categoryBtns = document.querySelectorAll('.menu-category-btn');
-            const menuGrid = document.getElementById('menu-grid');
-
-            // Category filtering
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const category = btn.getAttribute('data-category');
-                    
-                    // Update active button
-                    categoryBtns.forEach(b => {
-                        b.classList.remove('active', 'bg-makan-orange', 'text-white');
-                        b.classList.add('bg-white', 'text-custom-text');
-                    });
-                    btn.classList.add('active', 'bg-makan-orange', 'text-white');
-                    btn.classList.remove('bg-white', 'text-custom-text');
-                    
-                    // Filter menu items
-                    const menuItems = document.querySelectorAll('.menu-item');
-                    menuItems.forEach(item => {
-                        // Remove any transition/transform to prevent visual shift
-                        item.style.transition = 'none';
-                        item.style.transform = 'none';
-                        item.style.opacity = '1';
-                        if (category === 'all' || item.getAttribute('data-category') === category) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Menu item click handling
-            menuGrid.addEventListener('click', (e) => {
-                const menuItem = e.target.closest('.menu-item');
-                if (!menuItem) return;
-
-                const itemId = menuItem.getAttribute('data-item-id');
-                const item = menuData.items.find(i => i.id === itemId);
                 
-                if (!item) {
-                    Swal.fire({ icon: 'info', title: 'Coming soon', text: 'This item is not configured yet.' });
-                    return;
-                }
-
-                const selected = { 
-                    name: item.name, 
-                    id: item.id, 
-                    image: item.image, 
-                    price: item.price,
-                    description: item.description
-                };
-                localStorage.setItem('selectedMenuItem', JSON.stringify(selected));
-                window.location.href = 'quantity-selection.html';
+                packsGrid.innerHTML += cardHTML;
             });
         }
 
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            loadMenuData();
+        // Fallback function for default pack cards
+        function generateDefaultPackCards() {
+            const packsGrid = document.getElementById('packs-grid');
+            const packSizes = [2, 4, 6, 8, 10, 12];
+            const basePrice = selectedMenuItem.price;
+            
+            packsGrid.innerHTML = '';
+            
+            packSizes.forEach(size => {
+                const price = (basePrice * size * 0.95).toFixed(2);
+                
+                const cardHTML = `
+                    <div class="pack-card bg-white border-2 border-gray-200 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-lg" data-pack="${size}">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png" alt="Food" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-custom-text mb-3">${size} Packs</h3>
+                        <div class="text-lg font-bold text-makan-orange mb-4">
+                            $${price}
+                        </div>
+                        <button class="select-btn w-full bg-gray-100 text-custom-text py-2 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white">
+                            Select
+                        </button>
+                    </div>
+                `;
+                
+                packsGrid.innerHTML += cardHTML;
+            });
+        }
+
+        // Pack selection functionality (using event delegation for dynamic content)
+        function initializePackSelection() {
+            const packsGrid = document.getElementById('packs-grid');
+            const nextBtn = document.getElementById('next-btn');
+
+            // Use event delegation to handle clicks on dynamically generated cards
+            packsGrid.addEventListener('click', (e) => {
+                const card = e.target.closest('.pack-card');
+                if (!card) return;
+
+                // Remove selection from all cards
+                const allCards = packsGrid.querySelectorAll('.pack-card');
+                allCards.forEach(c => {
+                    c.classList.remove('border-makan-orange', 'bg-orange-50');
+                    c.querySelector('.select-btn').classList.remove('bg-makan-orange', 'text-white');
+                    c.querySelector('.select-btn').classList.add('bg-gray-100', 'text-custom-text');
+                    c.querySelector('.select-btn').textContent = 'Select';
+                });
+
+                // Add selection to clicked card
+                card.classList.add('border-makan-orange', 'bg-orange-50');
+                const selectBtn = card.querySelector('.select-btn');
+                selectBtn.classList.remove('bg-gray-100', 'text-custom-text');
+                selectBtn.classList.add('bg-makan-orange', 'text-white');
+                selectBtn.textContent = 'Selected';
+
+                // Store selected pack
+                selectedPack = card.dataset.pack;
+
+                // Enable next button
+                nextBtn.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+                nextBtn.classList.add('bg-makan-orange', 'text-white', 'hover:bg-makan-orange-hover', 'cursor-pointer');
+                nextBtn.disabled = false;
+            });
+
+            // Next button functionality
+            nextBtn.addEventListener('click', () => {
+                if (selectedPack && selectedMenuItem) {
+                    // Find the multiplier for the selected pack
+                    let multiplier = parseInt(selectedPack);
+                    const itemConfig = quantityConfigs[selectedMenuItem.id];
+                    
+                    if (itemConfig && itemConfig.packs) {
+                        const packConfig = itemConfig.packs.find(p => p.id === selectedPack);
+                        if (packConfig) {
+                            multiplier = packConfig.multiplier;
+                        }
+                    }
+
+                    // Store quantity selection
+                    const quantityData = {
+                        ...selectedMenuItem,
+                        quantity: selectedPack,
+                        multiplier: multiplier,
+                        totalPrice: (selectedMenuItem.price * multiplier).toFixed(2)
+                    };
+                    localStorage.setItem('selectedItemWithQuantity', JSON.stringify(quantityData));
+
+                    // Determine next page based on customizability
+                    const menuCustomizableMap = {
+                        'Fried Eggs': true,
+                        'Hawaiian Pizza': true,
+                        'Martinez Cocktail': false,
+                        'Butterscotch Cake': false,
+                        'Mint Lemonade': false,
+                        'Chocolate Icecream': false,
+                        'Cheese Burger': true,
+                        'Classic Waffles': false
+                    };
+
+                    const isCustomizable = menuCustomizableMap[selectedMenuItem.name] || false;
+                    const nextPage = isCustomizable ? 'menu-customization.html' : 'non-customizable.html';
+                    
+                    window.location.href = nextPage;
+                }
+            });
+        }
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadMenuItemData();
+            initializePackSelection();
         });
     </script>
 </body>

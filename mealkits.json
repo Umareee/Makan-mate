@@ -1,19 +1,50 @@
 {
-  "Pongteh Pork": {
-  "name": "Pongteh Pork",
-  "price": "$18",
-  "image": "/images/mealkit/imgi_3_38809248.jpg",
-  "expect": "Pongteh Pork is a signature Peranakan dish that has been passed down for generations. Traditionally, pork belly or pork shoulder is braised in fermented soy bean sauce, creating a soft and tender texture, yet packs with bold, sweet-salty & savoury flavours.• Raw ingredients are portioned for 2 person• Dish ready in 40 minutes• Best cook within 5 daysCooking InstructionCooking Instruction Pongteh Pork",
-  "kit": "•Protein: Pork Shoulder •Sauce: Taucu, Soy Sauce, Dark Soy Sauce, Gula Melaka •Aromatics: Minced Garlic, Shallot, Green Onion for Garnish •Other Ingredients: Cooking Oil",
-    "description": "For 1-2 pax"
-},
-  "Soy Sauce Chicken": {
-    "name": "Soy Sauce Chicken",
-    "price": "$22",
-    "image": "/images/mealkit/imgi_4_38810089.jpg",
-    "expect": "• Raw ingredients are portioned for 2 person• Dish ready in 25 minutes• Best cook within 6 days",
-    "kit": "•Protein: Chicken Whole Leg x 2 pcs •Sauce: Soy Sauce, Dark Soy Sauce, Oyster Sauce •Veggies & Aromatics: Ginger, Garlic, Shallot, Cilantro (for Garnish) •Other Ingredients: Cooking Oil, Rock Sugar",
-      "description": "For 2-3 Pax"
+  "categories": [
+    {
+      "id": "all",
+      "name": "All",
+      "active": true
+    },
+    {
+      "id": "pork",
+      "name": "Pork",
+      "active": false
+    },
+    {
+      "id": "chicken",
+      "name": "Chicken",
+      "active": false
+    },
+    {
+      "id": "beef",
+      "name": "Beef",
+      "active": false
+    },
+    {
+      "id": "seafood",
+      "name": "Seafood",
+      "active": false
+    }
+  ],
+  "items": {
+    "Pongteh Pork": {
+      "name": "Pongteh Pork",
+      "price": "$18",
+      "image": "/images/mealkit/imgi_3_38809248.jpg",
+      "expect": "Pongteh Pork is a signature Peranakan dish that has been passed down for generations. Traditionally, pork belly or pork shoulder is braised in fermented soy bean sauce, creating a soft and tender texture, yet packs with bold, sweet-salty & savoury flavours.• Raw ingredients are portioned for 2 person• Dish ready in 40 minutes• Best cook within 5 daysCooking InstructionCooking Instruction Pongteh Pork",
+      "kit": "•Protein: Pork Shoulder •Sauce: Taucu, Soy Sauce, Dark Soy Sauce, Gula Melaka •Aromatics: Minced Garlic, Shallot, Green Onion for Garnish •Other Ingredients: Cooking Oil",
+      "description": "For 1-2 pax",
+      "category": "pork"
+    },
+    "Soy Sauce Chicken": {
+      "name": "Soy Sauce Chicken",
+      "price": "$22",
+      "image": "/images/mealkit/imgi_4_38810089.jpg",
+      "expect": "• Raw ingredients are portioned for 2 person• Dish ready in 25 minutes• Best cook within 6 days",
+      "kit": "•Protein: Chicken Whole Leg x 2 pcs •Sauce: Soy Sauce, Dark Soy Sauce, Oyster Sauce •Veggies & Aromatics: Ginger, Garlic, Shallot, Cilantro (for Garnish) •Other Ingredients: Cooking Oil, Rock Sugar",
+      "description": "For 2-3 Pax",
+      "category": "chicken"
+    }
   }
 }
 

@@ -1,0 +1,111 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "All",
+      "active": true
+    },
+    {
+      "id": "Catering", 
+      "name": "Catering",
+      "active": false
+    },
+    {
+      "id": "bento",
+      "name": "Bento", 
+      "active": false
+    }
+  ],
+  "items": [
+    {
+      "id": "high-tea",
+      "name": "High Tea",
+      "price": 7.00,
+      "description": "Indulge in a luxurious dining experience with our High Tea Buffet and Mini High Catering services in Singapore! Our expert chefs have crafted a menu filled with a variety of delicious mini treats and delectable finger foods, perfect for any special occasion. Whether it’s a bridal shower, a birthday party, or a corporate event, our Mini High Tea Catering and Buffet is sure to impress your guests.",
+      "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+      "category": "Catering",
+      "customizable": true
+    },
+    {
+      "id": "premium-bento",
+      "name": "Premium Bento", 
+      "price": 15.99,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-maksim-goncharenok-4773769 1.png",
+      "category": "bento",
+      "customizable": true
+    },
+    {
+      "id": "martinez-cocktail",
+      "name": "Vegetarian Catering",
+      "price": 7.25,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-nadin-sh-12956424 1.png", 
+      "category": "Catering",
+      "customizable": false
+    },
+    {
+      "id": "bento-special-menu",
+      "name": "Bento Special Menu",
+      "price": 20.99,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-ruslan-khmelevsky-7845121 1.png",
+      "category": "bento",
+      "customizable": false
+    },
+    {
+      "id": "mint-lemonade",
+      "name": "Mini Catering",
+      "price": 5.89,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-bam-awey-5335918 1.png",
+      "category": "Catering", 
+      "customizable": false
+    },
+    {
+      "id": "korean-street-bento",
+      "name": "Korean Street Bento",
+      "price": 18.05,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-roman-odintsov-5061254 1.png",
+      "category": "bento",
+      "customizable": false
+    },
+    {
+      "id": "bento-set",
+      "name": "Bento set",
+      "price": 12.55,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-pixabay-327158 1.png",
+      "category": "bento",
+      "customizable": true
+    },
+    {
+      "id": "indian-menu",
+      "name": "Indian Menu",
+      "price": 12.99,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-nicola-barts-7937386 1.png",
+      "category": "Catering",
+      "customizable": false
+    },
+     {
+      "id": "korean-menu",
+      "name": "Korean Menu",
+      "price": 12.99,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-nicola-barts-7937386 1.png",
+      "category": "Catering",
+      "customizable": false
+    },
+     {
+      "id": "delight-menu",
+      "name": "Delight Menu",
+      "price": 12.99,
+      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "image": "/images/pexels-nicola-barts-7937386 1.png",
+      "category": "Catering",
+      "customizable": false
+    }
+  ]
+}

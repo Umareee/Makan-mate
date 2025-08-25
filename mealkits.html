@@ -186,10 +186,8 @@
   <!-- Menu-like Tabs -->
   <section id="menu" class="py-16 bg-gray-50">
     <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
-        <button class="menu-category-btn active bg-makan-orange text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 border border-gray-300 text-sm sm:text-base" data-category="all">All</button>
-        <button class="menu-category-btn bg-white text-custom-text px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300 text-sm sm:text-base" data-category="chicken">Chicken</button>
-        <button class="menu-category-btn bg-white text-custom-text px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300 text-sm sm:text-base" data-category="beef">Beef</button>
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12" id="categories-container">
+        <!-- Categories will be generated dynamically -->
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto" id="kits-grid">
@@ -338,11 +336,14 @@
       try {
         const res = await fetch('mealkits.json', { cache: 'no-store' });
         const data = await res.json();
-        const kits = Object.entries(data).map(([slug, item]) => ({ slug, ...item }));
-        // Basic category tagging by heuristic on name (extend as needed)
-        kits.forEach(k => {
-          k.category = k.name.toLowerCase().includes('chicken') ? 'chicken' : (k.name.toLowerCase().includes('beef') ? 'beef' : 'other');
-        });
+        
+        // Generate categories from JSON
+        generateCategories(data.categories);
+        
+        // Convert items object to array with slugs
+        const kits = Object.entries(data.items).map(([slug, item]) => ({ slug, ...item }));
+        
+        // Generate kit cards
         const grid = document.getElementById('kits-grid');
         grid.innerHTML = kits.map(k => `
           <a href="menu-detail.html?item=${encodeURIComponent(k.slug)}" 
@@ -358,11 +359,12 @@
             <div class="p-3 sm:p-4 text-center">
               <div class="text-base sm:text-lg font-bold text-makan-orange mb-2">${k.price}</div>
               <h3 class="text-base sm:text-lg font-bold text-custom-text mb-1">${k.name}</h3>
-              ${k.serves ? `<div class="text-xs text-gray-500 mb-2">${k.serves}</div>` : ''}
-              <p class="text-gray-600 text-sm">${k.description || 'Click here to view description'}</p>
+              ${k.description ? `<div class="text-xs text-gray-500 mb-2">${k.description}</div>` : ''}
+              <p class="text-gray-600 text-sm">${k.expect ? k.expect.substring(0, 100) + '...' : 'Click here to view description'}</p>
             </div>
           </a>
         `).join('');
+        
         // Persist selected card info so description shows on detail page
         grid.querySelectorAll('.menu-item').forEach(el => {
           el.addEventListener('click', () => {
@@ -377,31 +379,58 @@
           });
         });
 
-        // Setup category filtering like menu.html
-        const categoryBtns = document.querySelectorAll('.menu-category-btn');
-        const menuItems = document.querySelectorAll('.menu-item');
-        categoryBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            const category = btn.getAttribute('data-category');
-            categoryBtns.forEach(b => { b.classList.remove('active', 'bg-makan-orange', 'text-white'); b.classList.add('bg-white', 'text-custom-text'); });
-            btn.classList.add('active', 'bg-makan-orange', 'text-white');
-            btn.classList.remove('bg-white', 'text-custom-text');
-            menuItems.forEach(item => {
-              // Remove any transition/transform to prevent visual shift
-              item.style.transition = 'none';
-              item.style.transform = 'none';
-              item.style.opacity = '1';
-              if (category === 'all' || item.getAttribute('data-category') === category) {
-                item.style.display = 'block';
-              } else {
-                item.style.display = 'none';
-              }
-            });
-          });
-        });
+        // Setup category filtering
+        initializeCategoryFiltering();
+        
       } catch (e) {
         console.error('Failed to load mealkits.json', e);
       }
+    }
+
+    // Generate category buttons from JSON
+    function generateCategories(categories) {
+      const categoriesContainer = document.getElementById('categories-container');
+      categoriesContainer.innerHTML = '';
+
+      categories.forEach(category => {
+        const activeClass = category.active ? 'active bg-makan-orange text-white' : 'bg-white text-custom-text';
+        const buttonHTML = `
+          <button class="menu-category-btn ${activeClass} px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white border border-gray-300 text-sm sm:text-base" data-category="${category.id}">
+            ${category.name}
+          </button>
+        `;
+        categoriesContainer.innerHTML += buttonHTML;
+      });
+    }
+
+    // Initialize category filtering
+    function initializeCategoryFiltering() {
+      const categoryBtns = document.querySelectorAll('.menu-category-btn');
+      const menuItems = document.querySelectorAll('.menu-item');
+      
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const category = btn.getAttribute('data-category');
+          categoryBtns.forEach(b => { 
+            b.classList.remove('active', 'bg-makan-orange', 'text-white'); 
+            b.classList.add('bg-white', 'text-custom-text'); 
+          });
+          btn.classList.add('active', 'bg-makan-orange', 'text-white');
+          btn.classList.remove('bg-white', 'text-custom-text');
+          
+          menuItems.forEach(item => {
+            // Remove any transition/transform to prevent visual shift
+            item.style.transition = 'none';
+            item.style.transform = 'none';
+            item.style.opacity = '1';
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
     }
 
     // Build logo marquee using same logos as About/Menu delivery section

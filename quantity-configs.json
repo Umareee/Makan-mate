@@ -1,0 +1,356 @@
+{
+  "high-tea": {
+    "packs": [
+      {
+        "id": "4",
+        "title": "High Tea Select 4 Items + Drinks @ $9.00 per pax (minimum of 80 pax)",
+        "description": "Perfect for couples or small portions",
+        "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+        "multiplier": 4
+      },
+      {
+        "id": "6", 
+        "title": "High Tea Select 6 Items + Drinks @ $11.00 per pax (minimum of 60 pax)",
+        "description": "Great for families or group dining",
+        "image": "/images/menuu/imgi_3_High-Tea-Select-6-Menu-300x300.png",
+        "multiplier": 6
+      },
+      {
+        "id": "8",
+        "title": "High Tea Select 8 Items + Drinks @ $13.00 per pax (minimum of 40 pax)", 
+        "description": "Ideal for large families or parties",
+        "image": "/images/menuu/imgi_4_High-Tea-Select-8-Items-Menu-300x300.png",
+        "multiplier": 8
+      },
+      {
+        "id": "10",
+        "title": "High Tea Select 10 Items + Drinks @ $15.00 per pax (maximum of 20 pax)",
+        "description": "Perfect for office lunches or events", 
+        "image": "/images/menuu/imgi_5_High-Tea-Select-10-Items-Menu-300x300.png",
+        "multiplier": 10
+      }
+    ]
+  },
+  "hawaiian-pizza": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "Small Pizza (2-3 people)",
+        "description": "8-inch pizza perfect for sharing",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 1
+      },
+      {
+        "id": "4",
+        "title": "Medium Pizza (4-5 people)", 
+        "description": "12-inch pizza great for families",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 1.5
+      },
+      {
+        "id": "6",
+        "title": "Large Pizza (6-8 people)",
+        "description": "16-inch pizza for large groups",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2
+      },
+      {
+        "id": "8", 
+        "title": "2 Medium Pizzas",
+        "description": "Two 12-inch pizzas for variety",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 3
+      },
+      {
+        "id": "10",
+        "title": "Party Pack (10+ people)",
+        "description": "3 large pizzas for big gatherings",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 6
+      },
+      {
+        "id": "12",
+        "title": "Mega Pack (12+ people)",
+        "description": "4 large pizzas for celebrations", 
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 8
+      }
+    ]
+  },
+  "martinez-cocktail": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "2 Cocktails",
+        "description": "Perfect for a romantic evening",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2
+      },
+      {
+        "id": "4",
+        "title": "4 Cocktails",
+        "description": "Great for double dates",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 4
+      },
+      {
+        "id": "6",
+        "title": "6 Cocktails",
+        "description": "Perfect for small gatherings",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 6
+      },
+      {
+        "id": "8",
+        "title": "8 Cocktails", 
+        "description": "Ideal for office happy hours",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 8
+      },
+      {
+        "id": "10",
+        "title": "10 Cocktails",
+        "description": "Best for party celebrations",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 10
+      },
+      {
+        "id": "12",
+        "title": "12 Cocktails",
+        "description": "Maximum value for events",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 12
+      }
+    ]
+  },
+  "butterscotch-cake": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "Mini Cake (2-3 slices)",
+        "description": "Perfect for intimate celebrations",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 0.5
+      },
+      {
+        "id": "4",
+        "title": "Small Cake (4-6 slices)",
+        "description": "Great for family desserts",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 1
+      },
+      {
+        "id": "6",
+        "title": "Medium Cake (8-10 slices)",
+        "description": "Ideal for birthday parties",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 1.5
+      },
+      {
+        "id": "8",
+        "title": "Large Cake (12-15 slices)",
+        "description": "Perfect for office celebrations",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2.5
+      },
+      {
+        "id": "10",
+        "title": "XL Cake (16-20 slices)",
+        "description": "Best for large gatherings",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 3.5
+      },
+      {
+        "id": "12",
+        "title": "Party Cake (20+ slices)",
+        "description": "Maximum size for big events",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 5
+      }
+    ]
+  },
+  "mint-lemonade": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "2 Glasses",
+        "description": "Refreshing for two",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2
+      },
+      {
+        "id": "4",
+        "title": "4 Glasses",
+        "description": "Perfect for small groups",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 4
+      },
+      {
+        "id": "6",
+        "title": "1 Pitcher (6 servings)",
+        "description": "Great for family meals",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 5
+      },
+      {
+        "id": "8",
+        "title": "8 Glasses",
+        "description": "Ideal for office lunches",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 7
+      },
+      {
+        "id": "10",
+        "title": "2 Pitchers (12 servings)",
+        "description": "Best for large gatherings",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 9
+      },
+      {
+        "id": "12",
+        "title": "Party Pack (15 servings)",
+        "description": "Maximum refreshment for events",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 12
+      }
+    ]
+  },
+  "chocolate-icecream": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "2 Scoops",
+        "description": "Perfect personal treat",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2
+      },
+      {
+        "id": "4",
+        "title": "4 Scoops",
+        "description": "Great for sharing",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 4
+      },
+      {
+        "id": "6",
+        "title": "Small Tub (6 servings)",
+        "description": "Ideal for family dessert",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 5
+      },
+      {
+        "id": "8",
+        "title": "Medium Tub (8 servings)",
+        "description": "Perfect for gatherings",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 7
+      },
+      {
+        "id": "10",
+        "title": "Large Tub (10 servings)",
+        "description": "Best for parties",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 9
+      },
+      {
+        "id": "12",
+        "title": "Party Tub (15 servings)",
+        "description": "Maximum scoops for events",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 12
+      }
+    ]
+  },
+  "cheese-burger": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "2 Burgers",
+        "description": "Perfect for couples",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2
+      },
+      {
+        "id": "4",
+        "title": "4 Burgers",
+        "description": "Great for families",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 4
+      },
+      {
+        "id": "6",
+        "title": "6 Burgers",
+        "description": "Ideal for group meals",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 6
+      },
+      {
+        "id": "8",
+        "title": "8 Burgers",
+        "description": "Perfect for office lunches",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 8
+      },
+      {
+        "id": "10",
+        "title": "10 Burgers",
+        "description": "Best for large gatherings",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 10
+      },
+      {
+        "id": "12",
+        "title": "12 Burgers",
+        "description": "Maximum value for events",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 12
+      }
+    ]
+  },
+  "classic-waffles": {
+    "packs": [
+      {
+        "id": "2",
+        "title": "2 Waffles",
+        "description": "Perfect breakfast for two",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 2
+      },
+      {
+        "id": "4",
+        "title": "4 Waffles",
+        "description": "Great for family breakfast",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 4
+      },
+      {
+        "id": "6",
+        "title": "6 Waffles",
+        "description": "Ideal for brunch parties",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 6
+      },
+      {
+        "id": "8",
+        "title": "8 Waffles",
+        "description": "Perfect for office breakfast",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 8
+      },
+      {
+        "id": "10",
+        "title": "10 Waffles",
+        "description": "Best for large brunches",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 10
+      },
+      {
+        "id": "12",
+        "title": "12 Waffles",
+        "description": "Maximum stack for events",
+        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "multiplier": 12
+      }
+    ]
+  }
+}
