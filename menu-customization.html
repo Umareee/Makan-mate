@@ -172,144 +172,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       <!-- LEFT CONTENT -->
       <section class="lg:col-span-9 lg:order-2">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          <!-- Main Course Card -->
-          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
-            <div class="font-semibold text-custom-text uppercase text-base mb-3">Main Course</div>
-            <div class="cat-topline"></div>
-            
-            <!-- Checkbox Options (multiple selection) -->
-            <div class="mt-4 space-y-2">
-              <!-- Rice w Mushroom -->
-              <label class="flex items-center gap-2 cursor-pointer flex-wrap">
-                <input type="checkbox" name="main-course" value="rice-mushroom" class="text-makan-orange focus:ring-makan-orange shrink-0" onchange="handleMainCourseCheck(this)">
-                <img data-category="main-course" data-value="rice-mushroom" alt="Rice w Mushroom" class="w-10 h-10 object-cover rounded shrink-0">
-                <span class="text-sm flex-1 min-w-0">Rice w Mushroom</span>
-                <!-- Per-item Quantity Controls (hidden until checked) -->
-                <div class="hidden items-center gap-2 w-full sm:w-auto ml-0 sm:ml-auto mt-2 sm:mt-0" id="main-course-controls-rice-mushroom">
-                  <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('main-course','rice-mushroom', -1)" type="button">▼</button>
-                  <input class="w-24 sm:w-16 text-center border border-gray-300 h-9 sm:h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="10" min="10" id="main-course-qty-rice-mushroom" oninput="onItemQtyInput('main-course','rice-mushroom')">
-                  <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('main-course','rice-mushroom', 1)" type="button">▲</button>
-                </div>
-              </label>
-              <!-- Fried Hong Kong Mee -->
-              <label class="flex items-center gap-2 cursor-pointer flex-wrap">
-                <input type="checkbox" name="main-course" value="fried-hongkong-mee" class="text-makan-orange focus:ring-makan-orange shrink-0" onchange="handleMainCourseCheck(this)">
-                <img data-category="main-course" data-value="fried-hongkong-mee" alt="Fried Hong Kong Mee" class="w-10 h-10 object-cover rounded shrink-0">
-                <span class="text-sm flex-1 min-w-0">Fried Hong Kong Mee</span>
-                <!-- Per-item Quantity Controls (hidden until checked) -->
-                <div class="hidden items-center gap-2 w-full sm:w-auto ml-0 sm:ml-auto mt-2 sm:mt-0" id="main-course-controls-fried-hongkong-mee">
-                  <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('main-course','fried-hongkong-mee', -1)" type="button">▼</button>
-                  <input class="w-24 sm:w-16 text-center border border-gray-300 h-9 sm:h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="10" min="10" id="main-course-qty-fried-hongkong-mee" oninput="onItemQtyInput('main-course','fried-hongkong-mee')">
-                  <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('main-course','fried-hongkong-mee', 1)" type="button">▲</button>
-                </div>
-              </label>
-            </div>
+        <div id="customization-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Categories will be dynamically loaded from JSON -->
+          <div class="flex items-center justify-center p-8 text-gray-500">
+            <i class="fas fa-spinner fa-spin text-2xl mr-3"></i>
+            Loading customization options...
           </div>
-
-          <!-- Chicken Card -->
-          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
-            <div class="font-semibold text-custom-text uppercase text-base mb-3">Chicken</div>
-            <div class="cat-topline"></div>
-            
-            <!-- Radio Button Options with inline images -->
-            <div class="mt-4 space-y-2">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="chicken" value="teriyaki-chicken" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'chicken')">
-                <img data-category="chicken" data-value="teriyaki-chicken" alt="Teriyaki Grilled Chicken" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Teriyaki Grilled Chicken</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="chicken" value="kung-pao-chicken" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'chicken')">
-                <img data-category="chicken" data-value="kung-pao-chicken" alt="Kung Pao Chicken" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Kung Pao Chicken</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="chicken" value="lemon-chicken" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'chicken')">
-                <img data-category="chicken" data-value="lemon-chicken" alt="Lemon Chicken" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Lemon Chicken</span>
-              </label>
-            </div>
-            
-            <!-- Quantity Controls (hidden by default) -->
-            <div class="mt-4 hidden" id="chicken-controls">
-              <div class="flex gap-2 items-center">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('chicken', -1)">▼</button>
-                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="chicken-qty" oninput="onQtyInput('chicken')">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('chicken', 1)">▲</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dessert Card -->
-          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
-            <div class="font-semibold text-custom-text uppercase text-base mb-3">Dessert</div>
-            <div class="cat-topline"></div>
-            
-            <!-- Radio Button Options with inline images -->
-            <div class="mt-4 space-y-2">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="dessert" value="jelly-cocktail" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'dessert')">
-                <img data-category="dessert" data-value="jelly-cocktail" alt="Jelly w Cocktail" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Jelly w Cocktail</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="dessert" value="jelly-longan" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'dessert')">
-                <img data-category="dessert" data-value="jelly-longan" alt="Jelly w Longan" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Jelly w Longan</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="dessert" value="tropical-fruits" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'dessert')">
-                <img data-category="dessert" data-value="tropical-fruits" alt="Tropical Fruits Platter" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Tropical Fruits Platter</span>
-              </label>
-            </div>
-            
-            <!-- Quantity Controls (hidden by default) -->
-            <div class="mt-4 hidden" id="dessert-controls">
-              <div class="flex gap-2 items-center">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('dessert', -1)">▼</button>
-                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="dessert-qty" oninput="onQtyInput('dessert')">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('dessert', 1)">▲</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Drinks Card -->
-          <div class="bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed">
-            <div class="font-semibold text-custom-text uppercase text-base mb-3">Drinks</div>
-            <div class="cat-topline"></div>
-            
-            <!-- Radio Button Options with inline images -->
-            <div class="mt-4 space-y-2">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="drinks" value="iced-lemon-tea" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'drinks')">
-                <img data-category="drinks" data-value="iced-lemon-tea" alt="Iced Lemon Tea" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Iced Lemon Tea</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="drinks" value="fresh-orange-juice" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'drinks')">
-                <img data-category="drinks" data-value="fresh-orange-juice" alt="Fresh Orange Juice" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Fresh Orange Juice</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="drinks" value="coconut-water" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, 'drinks')">
-                <img data-category="drinks" data-value="coconut-water" alt="Fresh Coconut Water" class="w-10 h-10 object-cover rounded">
-                <span class="text-sm">Fresh Coconut Water</span>
-              </label>
-            </div>
-            
-            <!-- Quantity Controls (hidden by default) -->
-            <div class="mt-4 hidden" id="drinks-controls">
-              <div class="flex gap-2 items-center">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('drinks', -1)">▼</button>
-                <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="drinks-qty" oninput="onQtyInput('drinks')">
-                <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('drinks', 1)">▲</button>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <div class="mt-6">
@@ -471,32 +339,172 @@
 
   <!-- JS -->
   <script>
-    // Menu data with images and prices
-    const menuData = {
-      'main-course': {
-        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png', price: 12.99 },
-        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/menu/imgi_81_grilled-sambal-fish-fillet-edit-1-768x768.png', price: 14.99 }
-      },
-      'chicken': {
-        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/menu/imgi_83_Crispy-Tossed-Cereal-Cod-Fish-Fillet-1-768x768.png', price: 18.99 },
-        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/menu/imgi_84_Sauteed-Nyonya-Chap-Chye-768x768.png', price: 16.99 },
-        'lemon-chicken': { name: 'Lemon Chicken', image: '/images/menu/imgi_85_Sauteed-Cabbage-with-Black-Fungus-768x768.png', price: 17.99 }
-      },
-      'dessert': {
-        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/menu/imgi_94_Fried-Beancurd-with-Fried-Shallot-768x768.png', price: 5.99 },
-        'jelly-longan': { name: 'Jelly w Longan', image: '/images/menu/imgi_88_Sambal-Long-Bean-768x768.png', price: 6.99 },
-        'tropical-fruits': { name: 'Tropical Fruits Platter', image: '/images/menu/imgi_94_Fried-Beancurd-with-Fried-Shallot-768x768.png', price: 7.99 }
-      },
-      'drinks': {
-        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/menu/imgi_87_Kai-Lan-with-Oyster-Sauce-768x768.png', price: 3.99 },
-        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/menu/imgi_90_Onion-omelette-768x768.png', price: 4.99 },
-        'coconut-water': { name: 'Fresh Coconut Water', image: '/images/menu/imgi_87_Kai-Lan-with-Oyster-Sauce-768x768.png', price: 3.49 }
-      }
-    };
-
-    // Cart to store selected items
+    // Global variables
+    let menuData = {};
+    let selectedMenuItem = null;
     let cart = [];
     let packs = 10;
+
+    // Load customization data and initialize page
+    async function loadCustomizationData() {
+      try {
+        selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+        
+        if (!selectedMenuItem || !selectedMenuItem.customizable) {
+          // Redirect if no customizable item selected
+          Swal.fire({ 
+            icon: 'error', 
+            title: 'No Customizable Item', 
+            text: 'Please select a customizable menu item first.' 
+          }).then(() => {
+            window.location.href = 'menu.html';
+          });
+          return;
+        }
+
+        // Fetch customization data based on data_source from menu item
+        const dataSource = selectedMenuItem.data_source || 'menu-customization-data.json';
+        const response = await fetch(`/${dataSource}`);
+        if (!response.ok) {
+          throw new Error('Failed to load customization data');
+        }
+        
+        const allCustomizationData = await response.json();
+        const customizationData = allCustomizationData[selectedMenuItem.id];
+        
+        if (!customizationData) {
+          throw new Error(`No customization data found for ${selectedMenuItem.id}`);
+        }
+        
+        // Build menuData from customization categories
+        menuData = {};
+        customizationData.categories.forEach(category => {
+          menuData[category.id] = {};
+          category.options.forEach(option => {
+            menuData[category.id][option.id] = {
+              name: option.name,
+              image: option.image,
+              price: option.price
+            };
+          });
+        });
+        
+        // Build the customization interface
+        buildCustomizationInterface(customizationData);
+        
+      } catch (error) {
+        console.error('Error loading customization data:', error);
+        document.getElementById('customization-container').innerHTML = `
+          <div class="col-span-full flex flex-col items-center justify-center p-8 text-red-500">
+            <i class="fas fa-exclamation-triangle text-3xl mb-3"></i>
+            <p class="text-lg font-semibold mb-2">Error Loading Customization Options</p>
+            <p class="text-sm text-gray-600 mb-4">Unable to load customization data for this menu item.</p>
+            <button onclick="window.location.href='menu.html'" class="bg-makan-orange text-white px-4 py-2 rounded-lg hover:bg-makan-orange-hover transition-colors">
+              Back to Menu
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    // Build the customization interface from loaded data
+    function buildCustomizationInterface(data) {
+      const container = document.getElementById('customization-container');
+      container.innerHTML = '';
+      
+      data.categories.forEach(category => {
+        const categoryCard = createCategoryCard(category);
+        container.appendChild(categoryCard);
+      });
+    }
+
+    // Create a category card
+    function createCategoryCard(category) {
+      const card = document.createElement('div');
+      card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed';
+      
+      const titleSection = document.createElement('div');
+      titleSection.innerHTML = `
+        <div class="font-semibold text-custom-text uppercase text-base mb-3">${category.name}</div>
+        <div class="cat-topline"></div>
+      `;
+      card.appendChild(titleSection);
+      
+      const optionsSection = document.createElement('div');
+      optionsSection.className = 'mt-4 space-y-2';
+      
+      if (category.type === 'checkbox') {
+        // Multiple selection (checkboxes)
+        category.options.forEach(option => {
+          const optionElement = createCheckboxOption(category.id, option);
+          optionsSection.appendChild(optionElement);
+        });
+      } else {
+        // Single selection (radio buttons) - default
+        category.options.forEach(option => {
+          const optionElement = createRadioOption(category.id, option);
+          optionsSection.appendChild(optionElement);
+        });
+        
+        // Add quantity controls for radio categories
+        const quantityControls = createQuantityControls(category.id);
+        optionsSection.appendChild(quantityControls);
+      }
+      
+      card.appendChild(optionsSection);
+      return card;
+    }
+
+    // Create checkbox option (for multiple selection categories)
+    function createCheckboxOption(categoryId, option) {
+      const label = document.createElement('label');
+      label.className = 'flex items-center gap-2 cursor-pointer flex-wrap';
+      
+      label.innerHTML = `
+        <input type="checkbox" name="${categoryId}" value="${option.id}" class="text-makan-orange focus:ring-makan-orange shrink-0" onchange="handleCheckboxChange(this, '${categoryId}')">
+        <img src="${option.image}" alt="${option.name}" class="w-10 h-10 object-cover rounded shrink-0">
+        <span class="text-sm flex-1 min-w-0">${option.name}</span>
+        <!-- Per-item Quantity Controls (hidden until checked) -->
+        <div class="hidden items-center gap-2 w-full sm:w-auto ml-0 sm:ml-auto mt-2 sm:mt-0" id="${categoryId}-controls-${option.id}">
+          <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('${categoryId}','${option.id}', -1)" type="button">▼</button>
+          <input class="w-24 sm:w-16 text-center border border-gray-300 h-9 sm:h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="10" min="10" id="${categoryId}-qty-${option.id}" oninput="onItemQtyInput('${categoryId}','${option.id}')">
+          <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('${categoryId}','${option.id}', 1)" type="button">▲</button>
+        </div>
+      `;
+      
+      return label;
+    }
+
+    // Create radio option (for single selection categories)
+    function createRadioOption(categoryId, option) {
+      const label = document.createElement('label');
+      label.className = 'flex items-center gap-2 cursor-pointer';
+      
+      label.innerHTML = `
+        <input type="radio" name="${categoryId}" value="${option.id}" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, '${categoryId}')">
+        <img src="${option.image}" alt="${option.name}" class="w-10 h-10 object-cover rounded">
+        <span class="text-sm">${option.name}</span>
+      `;
+      
+      return label;
+    }
+
+    // Create quantity controls for radio categories
+    function createQuantityControls(categoryId) {
+      const controls = document.createElement('div');
+      controls.className = 'mt-4 hidden';
+      controls.id = `${categoryId}-controls`;
+      
+      controls.innerHTML = `
+        <div class="flex gap-2 items-center">
+          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('${categoryId}', -1)">▼</button>
+          <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="${categoryId}-qty" oninput="onQtyInput('${categoryId}')">
+          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('${categoryId}', 1)">▲</button>
+        </div>
+      `;
+      
+      return controls;
+    }
 
     // Initialize page
     document.addEventListener("DOMContentLoaded", () => {
@@ -510,8 +518,8 @@
       const timeString = now.toTimeString().slice(0, 5);
       document.getElementById('delivery-time').value = timeString;
 
-      // Populate inline option images from menuData
-      initializeOptionImages();
+      // Load customization data and build interface
+      loadCustomizationData();
 
       // Read selected item with quantity from previous selection
       try {
@@ -568,9 +576,8 @@
       });
     }
 
-    // Main course checkbox handler
-    function handleMainCourseCheck(checkbox) {
-      const category = 'main-course';
+    // Generic checkbox handler for any category
+    function handleCheckboxChange(checkbox, category) {
       const key = checkbox.value;
       const controls = document.getElementById(`${category}-controls-${key}`);
       const qtyInput = document.getElementById(`${category}-qty-${key}`);
@@ -584,6 +591,11 @@
         controls.classList.add('hidden');
         removeCartItem(category, key);
       }
+    }
+
+    // Main course checkbox handler (keeping for backward compatibility)
+    function handleMainCourseCheck(checkbox) {
+      handleCheckboxChange(checkbox, 'main-course');
     }
 
     function changeItemQuantity(category, key, change) {

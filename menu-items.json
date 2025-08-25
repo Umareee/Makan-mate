@@ -21,10 +21,11 @@
       "id": "high-tea",
       "name": "High Tea",
       "price": 7.00,
-      "description": "Indulge in a luxurious dining experience with our High Tea Buffet and Mini High Catering services in Singapore! Our expert chefs have crafted a menu filled with a variety of delicious mini treats and delectable finger foods, perfect for any special occasion. Whether it’s a bridal shower, a birthday party, or a corporate event, our Mini High Tea Catering and Buffet is sure to impress your guests.",
+      "description": "Indulge in a luxurious dining experience with our High Tea Buffet and Mini High Catering services in Singapore! Our expert chefs have crafted a menu filled with a variety of delicious mini treats and delectable finger foods, perfect for any special occasion. Whether it's a bridal shower, a birthday party, or a corporate event, our Mini High Tea Catering and Buffet is sure to impress your guests.",
       "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
       "category": "Catering",
-      "customizable": true
+      "customizable": true,
+      "data_source": "menu-customization-data.json"
     },
     {
       "id": "premium-bento",
@@ -33,43 +34,48 @@
       "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
       "image": "/images/pexels-maksim-goncharenok-4773769 1.png",
       "category": "bento",
-      "customizable": true
+      "customizable": true,
+      "data_source": "menu-customization-data.json"
     },
     {
       "id": "martinez-cocktail",
       "name": "Vegetarian Catering",
       "price": 7.25,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "Complete vegetarian catering set with fresh ingredients and balanced nutrition",
       "image": "/images/pexels-nadin-sh-12956424 1.png", 
       "category": "Catering",
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
     {
       "id": "bento-special-menu",
       "name": "Bento Special Menu",
       "price": 20.99,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "Chef's special bento with premium ingredients and authentic Japanese flavors",
       "image": "/images/pexels-ruslan-khmelevsky-7845121 1.png",
       "category": "bento",
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
     {
       "id": "mint-lemonade",
       "name": "Mini Catering",
       "price": 5.89,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "Perfect for small gatherings with a variety of finger foods and refreshments",
       "image": "/images/pexels-bam-awey-5335918 1.png",
       "category": "Catering", 
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
     {
       "id": "korean-street-bento",
       "name": "Korean Street Bento",
       "price": 18.05,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "Street food inspired Korean bento with bold flavors and authentic taste",
       "image": "/images/pexels-roman-odintsov-5061254 1.png",
       "category": "bento",
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
     {
       "id": "bento-set",
@@ -78,34 +84,38 @@
       "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
       "image": "/images/pexels-pixabay-327158 1.png",
       "category": "bento",
-      "customizable": true
+      "customizable": true,
+      "data_source": "menu-customization-data.json"
     },
     {
       "id": "indian-menu",
       "name": "Indian Menu",
       "price": 12.99,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "Authentic Indian cuisine with rich spices and traditional flavors",
       "image": "/images/pexels-nicola-barts-7937386 1.png",
       "category": "Catering",
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
      {
       "id": "korean-menu",
       "name": "Korean Menu",
       "price": 12.99,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "Traditional Korean meal with authentic flavors and healthy ingredients",
       "image": "/images/pexels-nicola-barts-7937386 1.png",
       "category": "Catering",
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
      {
       "id": "delight-menu",
       "name": "Delight Menu",
       "price": 12.99,
-      "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+      "description": "A delightful combination of international favorites for every palate",
       "image": "/images/pexels-nicola-barts-7937386 1.png",
       "category": "Catering",
-      "customizable": false
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     }
   ]
 }

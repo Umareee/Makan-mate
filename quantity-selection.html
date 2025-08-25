@@ -440,6 +440,11 @@
                     const isCustomizable = selectedMenuItem.customizable;
                     const nextPage = isCustomizable ? 'menu-customization.html' : 'non-customizable.html';
                     
+                    // Debug output
+                    console.log('Selected Menu Item:', selectedMenuItem);
+                    console.log('Is Customizable:', isCustomizable);
+                    console.log('Next Page:', nextPage);
+                    
                     // Navigate immediately
                     window.location.href = nextPage;
                 }

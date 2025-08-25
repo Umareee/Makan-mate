@@ -450,7 +450,9 @@
                     id: item.id, 
                     image: item.image, 
                     price: item.price,
-                    description: item.description
+                    description: item.description,
+                    customizable: item.customizable,
+                    data_source: item.data_source
                 };
                 localStorage.setItem('selectedMenuItem', JSON.stringify(selected));
                 window.location.href = 'quantity-selection.html';

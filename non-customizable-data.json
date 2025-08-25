@@ -1,0 +1,434 @@
+{
+  "martinez-cocktail": {
+    "name": "Vegetarian Catering",
+    "description": "Complete vegetarian catering set with fresh ingredients and balanced nutrition",
+    "base_price": 7.25,
+    "hero_image": "/images/pexels-nadin-sh-12956424 1.png",
+    "included_items": [
+      {
+        "category": "Main Course",
+        "items": [
+          {
+            "name": "Vegetarian Fried Rice",
+            "image": "/images/menu/imgi_120_veg-fried-rice-768x768.png",
+            "description": "Colorful fried rice with mixed vegetables"
+          },
+          {
+            "name": "Tofu Curry",
+            "image": "/images/menu/imgi_121_tofu-curry-768x768.png",
+            "description": "Rich and creamy tofu curry"
+          }
+        ]
+      },
+      {
+        "category": "Side Dishes",
+        "items": [
+          {
+            "name": "Spring Rolls (4 pcs)",
+            "image": "/images/menu/imgi_122_spring-rolls-768x768.png",
+            "description": "Crispy vegetable spring rolls"
+          },
+          {
+            "name": "Mixed Salad",
+            "image": "/images/menu/imgi_123_mixed-salad-768x768.png",
+            "description": "Fresh garden salad with house dressing"
+          }
+        ]
+      },
+      {
+        "category": "Dessert",
+        "items": [
+          {
+            "name": "Fruit Platter",
+            "image": "/images/menu/imgi_124_fruit-platter-768x768.png",
+            "description": "Seasonal fresh fruit arrangement"
+          }
+        ]
+      },
+      {
+        "category": "Drinks",
+        "items": [
+          {
+            "name": "Green Tea",
+            "image": "/images/menu/imgi_125_green-tea-768x768.png",
+            "description": "Premium jasmine green tea"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Vegetarian", "Dairy-Free Options Available"],
+    "serves": "1 person",
+    "preparation_time": "45 minutes"
+  },
+  "bento-special-menu": {
+    "name": "Bento Special Menu",
+    "description": "Chef's special bento with premium ingredients and authentic Japanese flavors",
+    "base_price": 20.99,
+    "hero_image": "/images/pexels-ruslan-khmelevsky-7845121 1.png",
+    "included_items": [
+      {
+        "category": "Main Course",
+        "items": [
+          {
+            "name": "Wagyu Beef Teriyaki",
+            "image": "/images/menu/imgi_130_wagyu-beef-768x768.png",
+            "description": "Premium wagyu beef with teriyaki glaze"
+          }
+        ]
+      },
+      {
+        "category": "Side Dishes",
+        "items": [
+          {
+            "name": "Tempura Assortment",
+            "image": "/images/menu/imgi_131_tempura-768x768.png",
+            "description": "Shrimp and vegetable tempura"
+          },
+          {
+            "name": "Japanese Pickles",
+            "image": "/images/menu/imgi_132_pickles-768x768.png",
+            "description": "Traditional tsukemono pickles"
+          },
+          {
+            "name": "Tamagoyaki",
+            "image": "/images/menu/imgi_133_tamagoyaki-768x768.png",
+            "description": "Sweet Japanese rolled omelette"
+          }
+        ]
+      },
+      {
+        "category": "Rice",
+        "items": [
+          {
+            "name": "Premium Sushi Rice",
+            "image": "/images/menu/imgi_134_sushi-rice-768x768.png",
+            "description": "Perfectly seasoned sushi rice"
+          }
+        ]
+      },
+      {
+        "category": "Soup",
+        "items": [
+          {
+            "name": "Clear Mushroom Soup",
+            "image": "/images/menu/imgi_135_mushroom-soup-768x768.png",
+            "description": "Light and flavorful mushroom broth"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Contains Gluten", "Contains Soy"],
+    "serves": "1 person",
+    "preparation_time": "60 minutes"
+  },
+  "mint-lemonade": {
+    "name": "Mini Catering",
+    "description": "Perfect for small gatherings with a variety of finger foods and refreshments",
+    "base_price": 5.89,
+    "hero_image": "/images/pexels-bam-awey-5335918 1.png",
+    "included_items": [
+      {
+        "category": "Finger Foods",
+        "items": [
+          {
+            "name": "Mini Sandwiches (6 pcs)",
+            "image": "/images/menu/imgi_140_mini-sandwiches-768x768.png",
+            "description": "Assorted mini sandwiches with various fillings"
+          },
+          {
+            "name": "Chicken Skewers (4 pcs)",
+            "image": "/images/menu/imgi_141_chicken-skewers-768x768.png",
+            "description": "Grilled chicken satay with peanut sauce"
+          },
+          {
+            "name": "Vegetable Wraps (4 pcs)",
+            "image": "/images/menu/imgi_142_veg-wraps-768x768.png",
+            "description": "Fresh vegetable wraps with hummus"
+          }
+        ]
+      },
+      {
+        "category": "Snacks",
+        "items": [
+          {
+            "name": "Mixed Nuts",
+            "image": "/images/menu/imgi_143_mixed-nuts-768x768.png",
+            "description": "Premium roasted mixed nuts"
+          },
+          {
+            "name": "Fresh Fruit Bowl",
+            "image": "/images/menu/imgi_144_fruit-bowl-768x768.png",
+            "description": "Seasonal fresh fruit medley"
+          }
+        ]
+      },
+      {
+        "category": "Drinks",
+        "items": [
+          {
+            "name": "Mint Lemonade (2 glasses)",
+            "image": "/images/menu/imgi_145_mint-lemonade-768x768.png",
+            "description": "Refreshing mint lemonade"
+          },
+          {
+            "name": "Iced Tea",
+            "image": "/images/menu/imgi_146_iced-tea-768x768.png",
+            "description": "Classic iced tea with lemon"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Halal Options Available", "Vegetarian Options Included"],
+    "serves": "2-3 people",
+    "preparation_time": "30 minutes"
+  },
+  "korean-street-bento": {
+    "name": "Korean Street Bento",
+    "description": "Street food inspired Korean bento with bold flavors and authentic taste",
+    "base_price": 18.05,
+    "hero_image": "/images/pexels-roman-odintsov-5061254 1.png",
+    "included_items": [
+      {
+        "category": "Main Course",
+        "items": [
+          {
+            "name": "Korean BBQ Chicken",
+            "image": "/images/menu/imgi_150_korean-bbq-chicken-768x768.png",
+            "description": "Spicy Korean BBQ chicken with gochujang glaze"
+          }
+        ]
+      },
+      {
+        "category": "Side Dishes (Banchan)",
+        "items": [
+          {
+            "name": "Kimchi",
+            "image": "/images/menu/imgi_151_kimchi-768x768.png",
+            "description": "Traditional fermented cabbage kimchi"
+          },
+          {
+            "name": "Korean Bean Sprouts",
+            "image": "/images/menu/imgi_152_bean-sprouts-768x768.png",
+            "description": "Seasoned bean sprout salad"
+          },
+          {
+            "name": "Pickled Radish",
+            "image": "/images/menu/imgi_153_pickled-radish-768x768.png",
+            "description": "Sweet and tangy pickled radish"
+          }
+        ]
+      },
+      {
+        "category": "Rice",
+        "items": [
+          {
+            "name": "Korean Purple Rice",
+            "image": "/images/menu/imgi_154_purple-rice-768x768.png",
+            "description": "Nutritious purple rice with sesame"
+          }
+        ]
+      },
+      {
+        "category": "Soup",
+        "items": [
+          {
+            "name": "Seaweed Soup",
+            "image": "/images/menu/imgi_155_seaweed-soup-768x768.png",
+            "description": "Traditional Korean seaweed soup"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Contains Soy", "Spicy", "Contains Sesame"],
+    "serves": "1 person",
+    "preparation_time": "50 minutes"
+  },
+  "indian-menu": {
+    "name": "Indian Menu",
+    "description": "Authentic Indian cuisine with rich spices and traditional flavors",
+    "base_price": 12.99,
+    "hero_image": "/images/pexels-nicola-barts-7937386 1.png",
+    "included_items": [
+      {
+        "category": "Main Course",
+        "items": [
+          {
+            "name": "Butter Chicken",
+            "image": "/images/menu/imgi_160_butter-chicken-768x768.png",
+            "description": "Creamy tomato-based chicken curry"
+          },
+          {
+            "name": "Dal Tadka",
+            "image": "/images/menu/imgi_161_dal-tadka-768x768.png",
+            "description": "Tempered yellow lentil curry"
+          }
+        ]
+      },
+      {
+        "category": "Bread",
+        "items": [
+          {
+            "name": "Basmati Rice",
+            "image": "/images/menu/imgi_162_basmati-rice-768x768.png",
+            "description": "Fragrant basmati rice"
+          },
+          {
+            "name": "Naan Bread (2 pcs)",
+            "image": "/images/menu/imgi_163_naan-768x768.png",
+            "description": "Fresh baked garlic naan"
+          }
+        ]
+      },
+      {
+        "category": "Side Dishes",
+        "items": [
+          {
+            "name": "Cucumber Raita",
+            "image": "/images/menu/imgi_164_raita-768x768.png",
+            "description": "Cooling yogurt with cucumber"
+          },
+          {
+            "name": "Mixed Pickles",
+            "image": "/images/menu/imgi_165_indian-pickles-768x768.png",
+            "description": "Traditional Indian pickle assortment"
+          }
+        ]
+      },
+      {
+        "category": "Dessert",
+        "items": [
+          {
+            "name": "Gulab Jamun (2 pcs)",
+            "image": "/images/menu/imgi_166_gulab-jamun-768x768.png",
+            "description": "Sweet milk dumpling in sugar syrup"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Contains Dairy", "Gluten-Free Options Available", "Medium Spice Level"],
+    "serves": "1 person",
+    "preparation_time": "40 minutes"
+  },
+  "korean-menu": {
+    "name": "Korean Menu",
+    "description": "Traditional Korean meal with authentic flavors and healthy ingredients",
+    "base_price": 12.99,
+    "hero_image": "/images/pexels-nicola-barts-7937386 1.png",
+    "included_items": [
+      {
+        "category": "Main Course",
+        "items": [
+          {
+            "name": "Bulgogi Beef",
+            "image": "/images/menu/imgi_170_bulgogi-768x768.png",
+            "description": "Marinated Korean BBQ beef"
+          }
+        ]
+      },
+      {
+        "category": "Side Dishes (Banchan)",
+        "items": [
+          {
+            "name": "Kimchi Assortment",
+            "image": "/images/menu/imgi_171_kimchi-assort-768x768.png",
+            "description": "Various types of fermented vegetables"
+          },
+          {
+            "name": "Spinach Namul",
+            "image": "/images/menu/imgi_172_spinach-namul-768x768.png",
+            "description": "Seasoned spinach with sesame"
+          },
+          {
+            "name": "Cucumber Salad",
+            "image": "/images/menu/imgi_173_cucumber-salad-korea-768x768.png",
+            "description": "Fresh cucumber with Korean dressing"
+          }
+        ]
+      },
+      {
+        "category": "Rice",
+        "items": [
+          {
+            "name": "Korean Mixed Rice",
+            "image": "/images/menu/imgi_174_mixed-rice-768x768.png",
+            "description": "Multi-grain Korean rice"
+          }
+        ]
+      },
+      {
+        "category": "Soup",
+        "items": [
+          {
+            "name": "Kimchi Soup",
+            "image": "/images/menu/imgi_175_kimchi-soup-768x768.png",
+            "description": "Spicy fermented cabbage soup"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Contains Soy", "Contains Sesame", "Fermented Foods"],
+    "serves": "1 person",
+    "preparation_time": "45 minutes"
+  },
+  "delight-menu": {
+    "name": "Delight Menu",
+    "description": "A delightful combination of international favorites for every palate",
+    "base_price": 12.99,
+    "hero_image": "/images/pexels-nicola-barts-7937386 1.png",
+    "included_items": [
+      {
+        "category": "Main Course",
+        "items": [
+          {
+            "name": "Grilled Salmon",
+            "image": "/images/menu/imgi_180_grilled-salmon-768x768.png",
+            "description": "Fresh Atlantic salmon with herbs"
+          },
+          {
+            "name": "Chicken Caesar Salad",
+            "image": "/images/menu/imgi_181_caesar-salad-768x768.png",
+            "description": "Classic Caesar salad with grilled chicken"
+          }
+        ]
+      },
+      {
+        "category": "Side Dishes",
+        "items": [
+          {
+            "name": "Garlic Bread (2 slices)",
+            "image": "/images/menu/imgi_182_garlic-bread-768x768.png",
+            "description": "Toasted garlic bread with herbs"
+          },
+          {
+            "name": "Roasted Vegetables",
+            "image": "/images/menu/imgi_183_roasted-veg-768x768.png",
+            "description": "Seasonal roasted vegetable medley"
+          }
+        ]
+      },
+      {
+        "category": "Dessert",
+        "items": [
+          {
+            "name": "Chocolate Mousse",
+            "image": "/images/menu/imgi_184_chocolate-mousse-768x768.png",
+            "description": "Rich Belgian chocolate mousse"
+          }
+        ]
+      },
+      {
+        "category": "Drinks",
+        "items": [
+          {
+            "name": "Sparkling Water",
+            "image": "/images/menu/imgi_185_sparkling-water-768x768.png",
+            "description": "Premium sparkling mineral water"
+          }
+        ]
+      }
+    ],
+    "dietary_info": ["Contains Gluten", "Contains Dairy", "Pescatarian Options"],
+    "serves": "1 person",
+    "preparation_time": "35 minutes"
+  }
+}
