@@ -279,31 +279,31 @@
 
   <!-- JS -->
   <script>
-    // Menu data (reuse from customizable page)
-    const menuData = {
-      'main-course': {
-        'rice-mushroom': { name: 'Rice w Mushroom', image: '/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png', price: 12.99 },
-        'fried-hongkong-mee': { name: 'Fried Hong Kong Mee', image: '/images/menu/imgi_81_grilled-sambal-fish-fillet-edit-1-768x768.png', price: 14.99 }
-      },
-      'chicken': {
-        'teriyaki-chicken': { name: 'Teriyaki Grilled Chicken', image: '/images/menu/imgi_83_Crispy-Tossed-Cereal-Cod-Fish-Fillet-1-768x768.png', price: 18.99 },
-        'kung-pao-chicken': { name: 'Kung Pao Chicken', image: '/images/menu/imgi_84_Sauteed-Nyonya-Chap-Chye-768x768.png', price: 16.99 },
-        'lemon-chicken': { name: 'Lemon Chicken', image: '/images/menu/imgi_85_Sauteed-Cabbage-with-Black-Fungus-768x768.png', price: 17.99 }
-      },
-      'dessert': {
-        'jelly-cocktail': { name: 'Jelly w Cocktail', image: '/images/menu/imgi_94_Fried-Beancurd-with-Fried-Shallot-768x768.png', price: 5.99 },
-        'jelly-longan': { name: 'Jelly w Longan', image: '/images/menu/imgi_88_Sambal-Long-Bean-768x768.png', price: 6.99 },
-        'tropical-fruits': { name: 'Tropical Fruits Platter', image: '/images/menu/imgi_94_Fried-Beancurd-with-Fried-Shallot-768x768.png', price: 7.99 }
-      },
-      'drinks': {
-        'iced-lemon-tea': { name: 'Iced Lemon Tea', image: '/images/menu/imgi_87_Kai-Lan-with-Oyster-Sauce-768x768.png', price: 3.99 },
-        'fresh-orange-juice': { name: 'Fresh Orange Juice', image: '/images/menu/imgi_90_Onion-omelette-768x768.png', price: 4.99 },
-        'coconut-water': { name: 'Fresh Coconut Water', image: '/images/menu/imgi_87_Kai-Lan-with-Oyster-Sauce-768x768.png', price: 3.49 }
-      }
-    };
-
+    // Non-customizable menu data
+    let menuItemData = {};
     let cart = [];
     let packs = 10;
+
+    // Load menu data from JSON file
+    async function loadMenuData() {
+      try {
+        const response = await fetch('non-customizable-data.json');
+        const data = await response.json();
+        menuItemData = data;
+        console.log('Menu data loaded:', menuItemData);
+        
+        // Force a specific menu item for testing (comment out in production)
+        // Uncomment below line to test with a specific menu
+        // localStorage.setItem('selectedMenuItem', JSON.stringify({categoryKey: 'bento-special', name: 'Bento Special', image: '/images/pexels-ruslan-khmelevsky-7845121 1.png', price: 20.99}));
+        
+        renderCards();
+        updateCartDisplay();
+      } catch (error) {
+        console.error('Error loading menu data:', error);
+        // Fallback: show error message
+        document.getElementById('cards-container').innerHTML = '<p class="text-red-500">Error loading menu data. Please refresh the page.</p>';
+      }
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
       // Date/time defaults
@@ -349,49 +349,193 @@
                 <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
               </div>`;
             }
+            
           }
+          
         }
+        
       } catch {}
-      renderCards();
-      updateCartDisplay();
+      
+      // Load menu data and render cards
+      loadMenuData();
     });
 
     function renderCards() {
       const container = document.getElementById('cards-container');
       container.innerHTML = '';
-      Object.keys(menuData).forEach(category => {
-        const items = menuData[category];
-        const heroImage = getCategoryHeroImage(category);
-        const card = document.createElement('div');
-        card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4';
-        card.innerHTML = `
-          <div class="font-semibold text-custom-text uppercase text-base mb-1">${toTitle(category)}</div>
-          <div class="cat-topline mb-3"></div>
-          <div class="w-full h-36 rounded overflow-hidden mb-3">
-            <img src="${heroImage}" alt="${toTitle(category)}" class="w-full h-full object-cover">
-          </div>
-          <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
-            ${Object.keys(items).map(key => `<li>${items[key].name}</li>`).join('')}
-          </ul>
-          <div class="flex items-center gap-2">
-            <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
-            <input id="${category}-card-qty" class="card-qty-input w-28 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
-            <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
-            <button id="${category}-add-btn" class="ml-auto bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="addCardToCart('${category}')">Add</button>
-          </div>
-        `;
-        container.appendChild(card);
-      });
+      
+      if (Object.keys(menuItemData).length === 0) {
+        container.innerHTML = '<p class="text-gray-500">Loading menu items...</p>';
+        return;
+      }
+      
+      // Check if there's a selected item from previous page
+      const selectedItem = getSelectedItemFromStorage();
+      
+      if (selectedItem) {
+        // Show only the selected item
+        renderSelectedItemCard(selectedItem, container);
+      } else {
+        // Fallback: show all items if no selection found
+        Object.keys(menuItemData).forEach(category => {
+          const categoryData = menuItemData[category];
+          const card = document.createElement('div');
+          card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4';
+          card.innerHTML = `
+            <div class="font-semibold text-custom-text uppercase text-base mb-1">${categoryData.name}</div>
+            <div class="cat-topline mb-3"></div>
+            <div class="w-full h-36 rounded overflow-hidden mb-3">
+              <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+              ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            <div class="flex items-center gap-2">
+              <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
+              <input id="${category}-card-qty" class="card-qty-input w-28 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
+              <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
+              <button id="${category}-add-btn" class="ml-auto bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="addCardToCart('${category}')">Add</button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
     }
 
     function toTitle(slug) { return slug.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase()); }
+
+    // Map menu item IDs to non-customizable category keys
+    function getMenuIdToCategoryMapping() {
+      return {
+        'premium-bento': 'premium-bento',
+        'martinez-cocktail': 'vegetarian-catering',
+        'bento-special-menu': 'bento-special',
+        'mint-lemonade': 'mini-catering',
+        'korean-street-bento': 'korean-street',
+        'indian-menu': 'indian-cuisine',
+        'korean-menu': 'korean-cuisine',
+        'delight-menu': 'international-delight'
+      };
+    }
+
+    function getSelectedItemFromStorage() {
+      console.log('🔍 Getting selected item from storage...');
+      
+      // Debug: Check what's in localStorage
+      console.log('localStorage selectedItemWithQuantity:', localStorage.getItem('selectedItemWithQuantity'));
+      console.log('localStorage selectedMenuItem:', localStorage.getItem('selectedMenuItem'));
+      console.log('URL search params:', window.location.search);
+      
+      // Try to get from different possible localStorage keys
+      try {
+        // First try the detailed selection with quantity
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        console.log('selectedWithQuantity parsed:', selectedWithQuantity);
+        
+        if (selectedWithQuantity && selectedWithQuantity.categoryKey) {
+          console.log('✅ Found selected item with quantity:', selectedWithQuantity);
+          return {
+            categoryKey: selectedWithQuantity.categoryKey,
+            name: selectedWithQuantity.name,
+            image: selectedWithQuantity.image,
+            price: selectedWithQuantity.price
+          };
+        }
+        
+        // Then try basic selected menu item
+        const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+        console.log('selectedMenuItem parsed:', selected);
+        
+        if (selected) {
+          let categoryKey = selected.categoryKey;
+          
+          // If no categoryKey, try to map from the item ID
+          if (!categoryKey && selected.id) {
+            const idToCategory = getMenuIdToCategoryMapping();
+            categoryKey = idToCategory[selected.id];
+            console.log(`🔄 Mapped ID '${selected.id}' to category '${categoryKey}'`);
+          }
+          
+          // Verify the category exists in our data
+          if (categoryKey && menuItemData[categoryKey]) {
+            console.log('✅ Found valid category:', categoryKey);
+            return {
+              categoryKey: categoryKey,
+              name: selected.name,
+              image: selected.image,
+              price: selected.price
+            };
+          }
+        }
+        
+        // If neither exists, try to infer from URL parameters or other sources
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedCategory = urlParams.get('category');
+        console.log('URL category param:', selectedCategory);
+        
+        if (selectedCategory && menuItemData[selectedCategory]) {
+          console.log('✅ Found category from URL:', selectedCategory);
+          return {
+            categoryKey: selectedCategory,
+            name: toTitle(selectedCategory),
+            image: getCategoryHeroImage(selectedCategory),
+            price: computeCategoryPrice(selectedCategory)
+          };
+        }
+        
+      } catch (error) {
+        console.error('❌ Error getting selected item:', error);
+      }
+      
+      console.log('❌ No selected item found - will show all items');
+      return null;
+    }
+
+    function renderSelectedItemCard(selectedItem, container) {
+      const category = selectedItem.categoryKey;
+      const categoryData = menuItemData[category];
+      
+      if (!categoryData) {
+        console.error('Category not found in menu data:', category);
+        container.innerHTML = '<p class="text-red-500">Selected item not found in menu data.</p>';
+        return;
+      }
+      
+      const card = document.createElement('div');
+      card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4 md:col-span-1';
+      card.innerHTML = `
+        <div class="font-semibold text-custom-text uppercase text-base mb-1">${categoryData.name}</div>
+        <div class="cat-topline mb-3"></div>
+        <div class="w-full h-36 rounded overflow-hidden mb-3">
+          <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
+        </div>
+        <div class="text-sm text-makan-orange font-semibold mb-2">What's included:</div>
+        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+          ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+        <div class="text-lg font-bold text-makan-orange mb-3">Price: $${categoryData.price.toFixed(2)} per pack</div>
+        <div class="flex items-center gap-2">
+          <span class="text-sm font-medium text-gray-700">Quantity:</span>
+          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
+          <input id="${category}-card-qty" class="card-qty-input flex-1 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
+          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
+        </div>
+      `;
+      container.appendChild(card);
+      
+      // Update the page title to reflect the selected item
+      const pageTitle = document.querySelector('main h2');
+      if (pageTitle) {
+        pageTitle.textContent = `${categoryData.name} — Non-Customizable`;
+      }
+    }
 
     function changeCardQuantity(category, delta) {
       const input = document.getElementById(`${category}-card-qty`);
       const newVal = Math.max(packs, Number(input.value) + delta);
       input.value = newVal;
-      // Since quantity changed, require user to confirm by pressing Add again
-      markAdd(category);
+      // Automatically add to cart with new quantity
+      upsertCard(category, newVal);
     }
 
     function onCardQtyInput(category) {
@@ -399,8 +543,8 @@
       let val = Number(input.value);
       if (Number.isNaN(val) || val < packs) val = packs;
       input.value = val;
-      // Since quantity changed, require user to confirm by pressing Add again
-      markAdd(category);
+      // Automatically add to cart with new quantity
+      upsertCard(category, val);
     }
 
     function addCardToCart(category) {
@@ -443,14 +587,13 @@
     }
 
     function computeCategoryPrice(category) {
-      const items = menuData[category] || {};
-      return Object.keys(items).reduce((sum, key) => sum + Number(items[key].price || 0), 0);
+      const categoryData = menuItemData[category];
+      return categoryData ? categoryData.price : 0;
     }
 
     function getCategoryHeroImage(category) {
-      const items = menuData[category] || {};
-      const firstKey = Object.keys(items)[0];
-      return firstKey ? items[firstKey].image : '/images/menu/imgi_161_Bento-Set-A-chicken-300x300.jpg';
+      const categoryData = menuItemData[category];
+      return categoryData ? categoryData.image : '/images/menu/imgi_161_Bento-Set-A-chicken-300x300.jpg';
     }
 
     function changePacks(change) {

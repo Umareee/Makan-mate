@@ -32,10 +32,10 @@
       "name": "Premium Bento", 
       "price": 15.99,
       "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
-      "image": "/images/pexels-maksim-goncharenok-4773769 1.png",
+      "image": "/images/bento/imgi_46_Original-Delight-in-the-Box-1152x1536.jpg",
       "category": "bento",
-      "customizable": true,
-      "data_source": "menu-customization-data.json"
+      "customizable": false,
+      "data_source": "non-customizable-data.json"
     },
     {
       "id": "martinez-cocktail",

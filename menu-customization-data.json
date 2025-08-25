@@ -96,46 +96,6 @@
       }
     ]
   },
-  "premium-bento": {
-    "categories": [
-      {
-        "id": "main-dish",
-        "name": "Main Dish",
-        "type": "radio",
-        "min_selections": 1,
-        "max_selections": 1,
-        "options": [
-          { "id": "salmon-teriyaki", "name": "Salmon Teriyaki", "image": "/images/menu/imgi_100_salmon-teriyaki-768x768.png", "price": 22.99, "description": "Grilled salmon with teriyaki sauce" },
-          { "id": "chicken-katsu", "name": "Chicken Katsu", "image": "/images/menu/imgi_101_chicken-katsu-768x768.png", "price": 19.99, "description": "Crispy breaded chicken cutlet" },
-          { "id": "beef-bulgogi", "name": "Beef Bulgogi", "image": "/images/menu/imgi_102_beef-bulgogi-768x768.png", "price": 24.99, "description": "Korean marinated beef" }
-        ]
-      },
-      {
-        "id": "side-dishes",
-        "name": "Side Dishes",
-        "type": "checkbox",
-        "min_selections": 2,
-        "max_selections": 3,
-        "options": [
-          { "id": "miso-soup", "name": "Miso Soup", "image": "/images/menu/imgi_103_miso-soup-768x768.png", "price": 4.99, "description": "Traditional Japanese miso soup" },
-          { "id": "edamame", "name": "Edamame", "image": "/images/menu/imgi_104_edamame-768x768.png", "price": 3.99, "description": "Steamed soybeans with sea salt" },
-          { "id": "cucumber-salad", "name": "Cucumber Salad", "image": "/images/menu/imgi_105_cucumber-salad-768x768.png", "price": 4.49, "description": "Fresh cucumber with sesame dressing" },
-          { "id": "pickled-vegetables", "name": "Pickled Vegetables", "image": "/images/menu/imgi_106_pickled-veg-768x768.png", "price": 3.49, "description": "Assorted pickled vegetables" }
-        ]
-      },
-      {
-        "id": "rice-type",
-        "name": "Rice Type",
-        "type": "radio",
-        "min_selections": 1,
-        "max_selections": 1,
-        "options": [
-          { "id": "japanese-rice", "name": "Japanese Short Grain Rice", "image": "/images/menu/imgi_107_japanese-rice-768x768.png", "price": 0, "description": "Premium Japanese short grain rice" },
-          { "id": "brown-rice", "name": "Brown Rice", "image": "/images/menu/imgi_108_brown-rice-768x768.png", "price": 1.00, "description": "Healthy brown rice option" }
-        ]
-      }
-    ]
-  },
   "bento-set": {
     "categories": [
       {

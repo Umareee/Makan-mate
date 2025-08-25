@@ -4,76 +4,54 @@
       {
         "id": "4",
         "title": "High Tea Select 4 Items + Drinks @ $9.00 per pax (minimum of 80 pax)",
-        "description": "Perfect for couples or small portions",
         "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
         "multiplier": 4
       },
       {
         "id": "6", 
         "title": "High Tea Select 6 Items + Drinks @ $11.00 per pax (minimum of 60 pax)",
-        "description": "Great for families or group dining",
         "image": "/images/menuu/imgi_3_High-Tea-Select-6-Menu-300x300.png",
         "multiplier": 6
       },
       {
         "id": "8",
         "title": "High Tea Select 8 Items + Drinks @ $13.00 per pax (minimum of 40 pax)", 
-        "description": "Ideal for large families or parties",
         "image": "/images/menuu/imgi_4_High-Tea-Select-8-Items-Menu-300x300.png",
         "multiplier": 8
       },
       {
         "id": "10",
         "title": "High Tea Select 10 Items + Drinks @ $15.00 per pax (maximum of 20 pax)",
-        "description": "Perfect for office lunches or events", 
         "image": "/images/menuu/imgi_5_High-Tea-Select-10-Items-Menu-300x300.png",
         "multiplier": 10
       }
     ]
   },
-  "hawaiian-pizza": {
+  "premium-bento": {
     "packs": [
       {
         "id": "2",
-        "title": "Small Pizza (2-3 people)",
-        "description": "8-inch pizza perfect for sharing",
-        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "title": "Oriental Bento Premium Bento Set $41.50 /pax (min 10 pax)",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "4",
-        "title": "Medium Pizza (4-5 people)", 
-        "description": "12-inch pizza great for families",
-        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "title": "Vegan Bento Premium Bento Set $41.50 /pax (min 10 pax)", 
+        "image": "/images/bento/imgi_3_Original-Vegan-Deluxe-in-the-Box-300x300.jpg",
         "multiplier": 1.5
       },
       {
         "id": "6",
-        "title": "Large Pizza (6-8 people)",
-        "description": "16-inch pizza for large groups",
-        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "title": "Premium Bento Set A $41.50 / pax (min 10 pax)",
+        "image": "/images/bento/imgi_4_Premium-Bento-Set-A-300x300.jpg",
         "multiplier": 2
       },
       {
         "id": "8", 
-        "title": "2 Medium Pizzas",
-        "description": "Two 12-inch pizzas for variety",
-        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
+        "title": "Premium Bento Set B $41.50 / pax (min 10 pax)",
+        "image": "/images/bento/imgi_5_Premium-Bento-Set-B-300x300.jpg",
         "multiplier": 3
-      },
-      {
-        "id": "10",
-        "title": "Party Pack (10+ people)",
-        "description": "3 large pizzas for big gatherings",
-        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
-        "multiplier": 6
-      },
-      {
-        "id": "12",
-        "title": "Mega Pack (12+ people)",
-        "description": "4 large pizzas for celebrations", 
-        "image": "/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png",
-        "multiplier": 8
       }
     ]
   },
