@@ -313,21 +313,42 @@
       now.setHours(now.getHours() + 1);
       document.getElementById('delivery-time').value = now.toTimeString().slice(0,5);
 
-      // Read selected item from menu and show in sidebar "Previous Selections"
-    try {
-        const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
-        if (selected) {
+      // Read selected item with quantity from previous selection
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity) {
           const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
           if (container) {
+            // Use the full quantity title if available, otherwise fallback to basic format
+            const quantityDisplay = selectedWithQuantity.quantityTitle || 
+                                   `${selectedWithQuantity.quantity} ${selectedWithQuantity.quantity === '1' ? 'Pack' : 'Packs'}`;
+            
             container.innerHTML = `
             <div class="flex items-center gap-3">
-              <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
+              <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
               <div class="flex-1">
-                <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
-                <div class="text-xs text-gray-500">Qty: 1 Set</div>
+                <div class="text-sm font-semibold text-gray-800">${selectedWithQuantity.name}</div>
+                <div class="text-xs text-gray-500">${quantityDisplay}</div>
               </div>
-              <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
+              <div class="text-sm font-semibold">$${selectedWithQuantity.totalPrice || Number(selectedWithQuantity.price || 0).toFixed(2)}</div>
             </div>`;
+          }
+        } else {
+          // Fallback to basic selected item if quantity selection not available
+          const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+          if (selected) {
+            const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
+            if (container) {
+              container.innerHTML = `
+              <div class="flex items-center gap-3">
+                <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
+                <div class="flex-1">
+                  <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
+                  <div class="text-xs text-gray-500">Qty: 1 Set</div>
+                </div>
+                <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
+              </div>`;
+            }
           }
         }
       } catch {}

@@ -156,13 +156,6 @@
                 </div>
             </div>
 
-            <!-- Next Button -->
-            <div class="text-center">
-                <button id="next-btn" class="bg-gray-300 text-gray-500 px-8 py-3 rounded-full font-medium text-lg transition-all duration-300 cursor-not-allowed" disabled>
-                    Next Step
-                </button>
-                <p class="text-sm text-gray-500 mt-2">Please select a quantity to continue</p>
-            </div>
         </div>
     </section>
 
@@ -409,76 +402,45 @@
         // Pack selection functionality (using event delegation for dynamic content)
         function initializePackSelection() {
             const packsGrid = document.getElementById('packs-grid');
-            const nextBtn = document.getElementById('next-btn');
 
             // Use event delegation to handle clicks on dynamically generated cards
-            packsGrid.addEventListener('click', (e) => {
+            packsGrid.addEventListener('click', async (e) => {
                 const card = e.target.closest('.pack-card');
                 if (!card) return;
-
-                // Remove selection from all cards
-                const allCards = packsGrid.querySelectorAll('.pack-card');
-                allCards.forEach(c => {
-                    c.classList.remove('border-makan-orange', 'bg-orange-50');
-                    c.querySelector('.select-btn').classList.remove('bg-makan-orange', 'text-white');
-                    c.querySelector('.select-btn').classList.add('bg-gray-100', 'text-custom-text');
-                    c.querySelector('.select-btn').textContent = 'Select';
-                });
-
-                // Add selection to clicked card
-                card.classList.add('border-makan-orange', 'bg-orange-50');
-                const selectBtn = card.querySelector('.select-btn');
-                selectBtn.classList.remove('bg-gray-100', 'text-custom-text');
-                selectBtn.classList.add('bg-makan-orange', 'text-white');
-                selectBtn.textContent = 'Selected';
 
                 // Store selected pack
                 selectedPack = card.dataset.pack;
 
-                // Enable next button
-                nextBtn.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
-                nextBtn.classList.add('bg-makan-orange', 'text-white', 'hover:bg-makan-orange-hover', 'cursor-pointer');
-                nextBtn.disabled = false;
-            });
-
-            // Next button functionality
-            nextBtn.addEventListener('click', () => {
+                // Prepare navigation
                 if (selectedPack && selectedMenuItem) {
-                    // Find the multiplier for the selected pack
+                    // Find the multiplier and pack details for the selected pack
                     let multiplier = parseInt(selectedPack);
+                    let packTitle = `${selectedPack} Packs`; // Default fallback
                     const itemConfig = quantityConfigs[selectedMenuItem.id];
                     
                     if (itemConfig && itemConfig.packs) {
                         const packConfig = itemConfig.packs.find(p => p.id === selectedPack);
                         if (packConfig) {
                             multiplier = packConfig.multiplier;
+                            packTitle = packConfig.title; // Use the full title from config
                         }
                     }
 
-                    // Store quantity selection
+                    // Store quantity selection with full pack title
                     const quantityData = {
                         ...selectedMenuItem,
                         quantity: selectedPack,
+                        quantityTitle: packTitle, // Store the full pack title
                         multiplier: multiplier,
                         totalPrice: (selectedMenuItem.price * multiplier).toFixed(2)
                     };
                     localStorage.setItem('selectedItemWithQuantity', JSON.stringify(quantityData));
 
-                    // Determine next page based on customizability
-                    const menuCustomizableMap = {
-                        'Fried Eggs': true,
-                        'Hawaiian Pizza': true,
-                        'Martinez Cocktail': false,
-                        'Butterscotch Cake': false,
-                        'Mint Lemonade': false,
-                        'Chocolate Icecream': false,
-                        'Cheese Burger': true,
-                        'Classic Waffles': false
-                    };
-
-                    const isCustomizable = menuCustomizableMap[selectedMenuItem.name] || false;
+                    // Determine next page based on customizable property from menu-items.json
+                    const isCustomizable = selectedMenuItem.customizable;
                     const nextPage = isCustomizable ? 'menu-customization.html' : 'non-customizable.html';
                     
+                    // Navigate immediately
                     window.location.href = nextPage;
                 }
             });
