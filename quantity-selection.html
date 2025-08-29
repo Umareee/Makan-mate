@@ -126,38 +126,39 @@
     </nav>
 
     <!-- Quantity Selection Section -->
-    <section class="py-12 sm:py-16 min-h-screen">
-        <div class="container mx-auto px-2 sm:px-4 max-w-4xl">
-            <!-- Back Button -->
-            <div class="mb-8">
-                <button onclick="history.back()" class="flex items-center space-x-2 text-custom-text hover:text-makan-orange transition-colors">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Back to Menu</span>
-                </button>
-            </div>
-
-            <!-- Menu Item Info -->
-            <div class="text-center mb-12">
-                <h1 id="item-name" class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text font-playfair mb-4">
-                    Loading...
-                </h1>
-                <p id="item-description" class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Loading description...
-                </p>
-            </div>
-
-            <!-- Quantity Selection Grid -->
-            <div class="mb-12">
-                <h2 class="text-2xl sm:text-3xl font-medium text-custom-text font-playfair mb-8 text-center">
-                    Select Quantity
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="packs-grid">
-                    <!-- Cards will be dynamically loaded from JSON -->
-                </div>
-            </div>
-
+   <section class="py-12 sm:py-16 min-h-screen">
+    <!-- container without horizontal padding & max-width -->
+    <div class="container mx-auto">
+        <!-- Back Button – keep a little left spacing so it doesn’t touch the edge -->
+        <div class="mb-8 px-16">
+            <button onclick="history.back()" class="flex items-center space-x-2 text-custom-text hover:text-makan-orange transition-colors">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Menu</span>
+            </button>
         </div>
-    </section>
+
+        <!-- Menu Item Info -->
+        <div class="text-center mb-8 px-16">
+            <h1 id="item-name" class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text font-playfair mb-8">
+                Loading...
+            </h1>
+            <p id="item-description" class="text-base sm:text-lg text-gray-600 max-w-6xl mx-auto leading-relaxed">
+                Loading description...
+            </p>
+        </div>
+
+        <!-- Quantity Selection Grid -->
+        <div class="mb-12 mx-12">
+            <h2 class="text-2xl sm:text-3xl font-medium text-custom-text font-playfair mb-8 text-center">
+                Select Quantity
+            </h2>
+            <!-- 4 equal-width columns, no side gaps -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="packs-grid">
+                <!-- Cards will be dynamically loaded from JSON -->
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12 sm:py-16">

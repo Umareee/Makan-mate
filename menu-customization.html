@@ -201,25 +201,10 @@
         </div>
         
         <!-- Previous Selections -->
-        <div class="mb-6">
-          <h4 class="font-semibold text-custom-text mb-2">Previous Selections</h4>
-          <div class="bg-white p-3 rounded border border-gray-200 space-y-3">
-            <div class="flex items-center gap-3">
-              <img src="/images/festive/imgi_6_Something Special.jpg" alt="OH KONICHIWA!" class="w-12 h-12 rounded object-cover">
-              <div class="flex-1">
-                <div class="text-sm font-semibold text-gray-800">OH KONICHIWA!</div>
-                <div class="text-xs text-gray-500">Qty: 1 Set</div>
-              </div>
-              <div class="text-sm font-semibold">$99.00</div>
-            </div>
-            <div class="flex items-center gap-3">
-              <img src="/images/festive/imgi_5_Local Favourites.jpg" alt="VEGGIE DELIGHTS" class="w-12 h-12 rounded object-cover">
-              <div class="flex-1">
-                <div class="text-sm font-semibold text-gray-800">VEGGIE DELIGHTS</div>
-                <div class="text-xs text-gray-500">Qty: 1 Set</div>
-              </div>
-              <div class="text-sm font-semibold">$89.00</div>
-            </div>
+         <div class="mb-6">
+          <h4 class="font-semibold text-gray-800 mb-2">Previous Selections</h4>
+          <div class="space-y-3" id="previous-selections-container">
+            <!-- Previous selections will be populated by JavaScript -->
           </div>
         </div>
         
@@ -338,7 +323,7 @@
   </div>
 
   <!-- JS -->
-  <script>
+<script>
     // Global variables
     let menuData = {};
     let selectedMenuItem = null;
@@ -399,7 +384,7 @@
             <i class="fas fa-exclamation-triangle text-3xl mb-3"></i>
             <p class="text-lg font-semibold mb-2">Error Loading Customization Options</p>
             <p class="text-sm text-gray-600 mb-4">Unable to load customization data for this menu item.</p>
-            <button onclick="window.location.href='menu.html'" class="bg-makan-orange text-white px-4 py-2 rounded-lg hover:bg-makan-orange-hover transition-colors">
+            <button onclick="window.location.href='menu.html'" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">
               Back to Menu
             </button>
           </div>
@@ -421,11 +406,11 @@
     // Create a category card
     function createCategoryCard(category) {
       const card = document.createElement('div');
-      card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4 card-collapsed';
+      card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4 card-collapsed';
       
       const titleSection = document.createElement('div');
       titleSection.innerHTML = `
-        <div class="font-semibold text-custom-text uppercase text-base mb-3">${category.name}</div>
+        <div class="font-semibold text-gray-800 uppercase text-base mb-3">${category.name}</div>
         <div class="cat-topline"></div>
       `;
       card.appendChild(titleSection);
@@ -461,14 +446,14 @@
       label.className = 'flex items-center gap-2 cursor-pointer flex-wrap';
       
       label.innerHTML = `
-        <input type="checkbox" name="${categoryId}" value="${option.id}" class="text-makan-orange focus:ring-makan-orange shrink-0" onchange="handleCheckboxChange(this, '${categoryId}')">
+        <input type="checkbox" name="${categoryId}" value="${option.id}" class="text-orange-500 focus:ring-orange-500 shrink-0" onchange="handleCheckboxChange(this, '${categoryId}')">
         <img src="${option.image}" alt="${option.name}" class="w-10 h-10 object-cover rounded shrink-0">
         <span class="text-sm flex-1 min-w-0">${option.name}</span>
         <!-- Per-item Quantity Controls (hidden until checked) -->
         <div class="hidden items-center gap-2 w-full sm:w-auto ml-0 sm:ml-auto mt-2 sm:mt-0" id="${categoryId}-controls-${option.id}">
-          <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('${categoryId}','${option.id}', -1)" type="button">▼</button>
-          <input class="w-24 sm:w-16 text-center border border-gray-300 h-9 sm:h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="10" min="10" id="${categoryId}-qty-${option.id}" oninput="onItemQtyInput('${categoryId}','${option.id}')">
-          <button class="w-8 h-8 sm:w-7 sm:h-7 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeItemQuantity('${categoryId}','${option.id}', 1)" type="button">▲</button>
+          <button class="w-8 h-8 sm:w-7 sm:h-7 bg-orange-500 rounded text-white text-xs font-bold hover:bg-orange-600 transition-colors" onclick="changeItemQuantity('${categoryId}','${option.id}', -1)" type="button">▼</button>
+          <input class="w-24 sm:w-16 text-center border border-gray-300 h-9 sm:h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-orange-500" type="number" value="10" min="10" id="${categoryId}-qty-${option.id}" oninput="onItemQtyInput('${categoryId}','${option.id}')">
+          <button class="w-8 h-8 sm:w-7 sm:h-7 bg-orange-500 rounded text-white text-xs font-bold hover:bg-orange-600 transition-colors" onclick="changeItemQuantity('${categoryId}','${option.id}', 1)" type="button">▲</button>
         </div>
       `;
       
@@ -481,7 +466,7 @@
       label.className = 'flex items-center gap-2 cursor-pointer';
       
       label.innerHTML = `
-        <input type="radio" name="${categoryId}" value="${option.id}" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, '${categoryId}')">
+        <input type="radio" name="${categoryId}" value="${option.id}" class="text-orange-500 focus:ring-orange-500" onchange="handleSelection(this, '${categoryId}')">
         <img src="${option.image}" alt="${option.name}" class="w-10 h-10 object-cover rounded">
         <span class="text-sm">${option.name}</span>
       `;
@@ -497,9 +482,9 @@
       
       controls.innerHTML = `
         <div class="flex gap-2 items-center">
-          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-down" onclick="changeQuantity('${categoryId}', -1)">▼</button>
-          <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange qty-input" type="number" value="10" min="10" id="${categoryId}-qty" oninput="onQtyInput('${categoryId}')">
-          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors qty-up" onclick="changeQuantity('${categoryId}', 1)">▲</button>
+          <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors qty-down" onclick="changeQuantity('${categoryId}', -1)">▼</button>
+          <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 qty-input" type="number" value="10" min="10" id="${categoryId}-qty" oninput="onQtyInput('${categoryId}')">
+          <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors qty-up" onclick="changeQuantity('${categoryId}', 1)">▲</button>
         </div>
       `;
       
@@ -521,43 +506,50 @@
       // Load customization data and build interface
       loadCustomizationData();
 
-      // Read selected item with quantity from previous selection
+      // Read selected items from previous selections
       try {
-        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
-        if (selectedWithQuantity) {
-          const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
-          if (container) {
-            // Use the full quantity title if available, otherwise fallback to basic format
+        const container = document.getElementById('previous-selections-container');
+        if (container) {
+          let cardsHtml = '';
+          
+          // First, add the main menu item (from menu.html)
+          const selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+          if (selectedMenuItem) {
+            cardsHtml += `
+            <div class="bg-white p-3 rounded border border-gray-200">
+              <div class="flex items-center gap-3">
+                <img src="${selectedMenuItem.image}" alt="${selectedMenuItem.name}" class="w-12 h-12 rounded object-cover">
+                <div class="flex-1">
+                  <div class="text-sm font-semibold text-gray-800">${selectedMenuItem.name}</div>
+                </div>
+                <div class="text-sm font-semibold">${Number(selectedMenuItem.price || 0).toFixed(2)}</div>
+              </div>
+            </div>`;
+          }
+          
+          // Then, add the quantity selection item (from quantity-selection.html)
+          const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+          if (selectedWithQuantity) {
             const quantityDisplay = selectedWithQuantity.quantityTitle || 
                                    `${selectedWithQuantity.quantity} ${selectedWithQuantity.quantity === '1' ? 'Pack' : 'Packs'}`;
             
-            container.innerHTML = `
-            <div class="flex items-center gap-3">
-              <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
-              <div class="flex-1">
-                <div class="text-sm font-semibold text-gray-800">${selectedWithQuantity.name}</div>
-                <div class="text-xs text-gray-500">${quantityDisplay}</div>
+            cardsHtml += `
+            <div class="bg-white p-3 rounded border border-gray-200">
+              <div class="flex items-center gap-3">
+                <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
+                <div class="flex-1">
+                  <div class="text-xs text-gray-500">${quantityDisplay}</div>
+                </div>
+                <div class="text-sm font-semibold">${selectedWithQuantity.totalPrice || Number(selectedWithQuantity.price || 0).toFixed(2)}</div>
               </div>
-              <div class="text-sm font-semibold">$${selectedWithQuantity.totalPrice || Number(selectedWithQuantity.price || 0).toFixed(2)}</div>
             </div>`;
           }
-        } else {
-          // Fallback to basic selected item if quantity selection not available
-          const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
-          if (selected) {
-            const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
-            if (container) {
-              container.innerHTML = `
-              <div class="flex items-center gap-3">
-                <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
-                <div class="flex-1">
-                  <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
-                  <div class="text-xs text-gray-500">Qty: 1 Set</div>
-                </div>
-                <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
-              </div>`;
-            }
-          }
+          
+          // Set the combined HTML
+          container.innerHTML = cardsHtml || `
+            <div class="text-gray-500 text-sm text-center py-4">
+              No previous selections found.
+            </div>`;
         }
       } catch {}
       
@@ -861,31 +853,6 @@
       Swal.fire({ icon: 'success', title: 'Submitted', text: 'Order submitted successfully!' });
       // window.location.href = 'order-confirmation.html';
     });
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('#open-mobile');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeMenuBtn = document.getElementById('close-menu');
-
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-      });
-    }
-
-    if (closeMenuBtn && mobileMenu) {
-      closeMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    }
-
-    if (mobileMenu) {
-      mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
-          mobileMenu.classList.add('hidden');
-        }
-      });
-    }
   </script>
 
 </body>

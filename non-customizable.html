@@ -153,18 +153,12 @@
 
         <!-- Previous Selections -->
         <div class="mb-6">
-          <h4 class="font-semibold text-custom-text mb-2">Previous Selections</h4>
-          <div class="bg-white p-3 rounded border border-gray-200 space-y-3">
-            <div class="flex items-center gap-3">
-              <img src="/images/menu/imgi_181_Grilled-Black-Pepper-Boneless-Chicken-300x300.png" alt="OH KONICHIWA!" class="w-12 h-12 rounded object-cover">
-              <div class="flex-1">
-                <div class="text-sm font-semibold text-gray-800">OH KONICHIWA!</div>
-                <div class="text-xs text-gray-500">Qty: 1 Set</div>
-              </div>
-              <div class="text-sm font-semibold">$99.00</div>
-            </div>
+          <h4 class="font-semibold text-gray-800 mb-2">Previous Selections</h4>
+          <div class="space-y-3" id="previous-selections-container">
+            <!-- Previous selections will be populated by JavaScript -->
           </div>
         </div>
+
 
         <!-- Number of Packs -->
         <div class="mb-6">
@@ -278,7 +272,7 @@
   </div>
 
   <!-- JS -->
-  <script>
+ <script>
     // Non-customizable menu data
     let menuItemData = {};
     let cart = [];
@@ -314,47 +308,51 @@
       document.getElementById('delivery-time').value = now.toTimeString().slice(0,5);
 
       // Read selected item with quantity from previous selection
-      try {
-        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
-        if (selectedWithQuantity) {
-          const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
-          if (container) {
-            // Use the full quantity title if available, otherwise fallback to basic format
-            const quantityDisplay = selectedWithQuantity.quantityTitle || 
-                                   `${selectedWithQuantity.quantity} ${selectedWithQuantity.quantity === '1' ? 'Pack' : 'Packs'}`;
-            
-            container.innerHTML = `
-            <div class="flex items-center gap-3">
-              <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
-              <div class="flex-1">
-                <div class="text-sm font-semibold text-gray-800">${selectedWithQuantity.name}</div>
-                <div class="text-xs text-gray-500">${quantityDisplay}</div>
-              </div>
-              <div class="text-sm font-semibold">$${selectedWithQuantity.totalPrice || Number(selectedWithQuantity.price || 0).toFixed(2)}</div>
-            </div>`;
-          }
-        } else {
-          // Fallback to basic selected item if quantity selection not available
-          const selected = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
-          if (selected) {
-            const container = document.querySelector('aside .bg-white.p-3.rounded.border.border-gray-200.space-y-3');
-            if (container) {
-              container.innerHTML = `
-              <div class="flex items-center gap-3">
-                <img src="${selected.image}" alt="${selected.name}" class="w-12 h-12 rounded object-cover">
-                <div class="flex-1">
-                  <div class="text-sm font-semibold text-gray-800">${selected.name}</div>
-                  <div class="text-xs text-gray-500">Qty: 1 Set</div>
-                </div>
-                <div class="text-sm font-semibold">$${Number(selected.price || 0).toFixed(2)}</div>
-              </div>`;
-            }
-            
-          }
-          
-        }
-        
-      } catch {}
+ // Read selected items from previous selections
+const container = document.getElementById('previous-selections-container');
+if (container) {
+  let cardsHtml = '';
+  
+  // First, add the main menu item (from menu.html)
+  try {
+    const selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
+    if (selectedMenuItem) {
+      cardsHtml += `
+      <div class="bg-white p-3 rounded border border-gray-200">
+        <div class="flex items-center gap-3">
+          <img src="${selectedMenuItem.image}" alt="${selectedMenuItem.name}" class="w-12 h-12 rounded object-cover">
+          <div class="flex-1">
+            <div class="text-sm font-semibold text-gray-800">${selectedMenuItem.name}</div>
+          </div>
+          <div class="text-sm font-semibold">$${Number(selectedMenuItem.price || 0).toFixed(2)}</div>
+        </div>
+      </div>`;
+    }
+  } catch {}
+  
+  // Then, add the quantity selection item (from quantity-selection.html)
+  try {
+    const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+    if (selectedWithQuantity) {
+      const quantityDisplay = selectedWithQuantity.quantityTitle || 
+                             `${selectedWithQuantity.quantity} ${selectedWithQuantity.quantity === '1' ? 'Pack' : 'Packs'}`;
+      
+      cardsHtml += `
+      <div class="bg-white p-3 rounded border border-gray-200">
+        <div class="flex items-center gap-3">
+          <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
+          <div class="flex-1">
+            <div class="text-xs text-gray-500">${quantityDisplay}</div>
+          </div>
+          <div class="text-sm font-semibold">$${selectedWithQuantity.totalPrice || Number(selectedWithQuantity.price || 0).toFixed(2)}</div>
+        </div>
+      </div>`;
+    }
+  } catch {}
+  
+  // Set the combined HTML
+  container.innerHTML = cardsHtml;
+}
       
       // Load menu data and render cards
       loadMenuData();
@@ -380,9 +378,9 @@
         Object.keys(menuItemData).forEach(category => {
           const categoryData = menuItemData[category];
           const card = document.createElement('div');
-          card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4';
+          card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4';
           card.innerHTML = `
-            <div class="font-semibold text-custom-text uppercase text-base mb-1">${categoryData.name}</div>
+            <div class="font-semibold text-gray-800 uppercase text-base mb-1">${categoryData.name}</div>
             <div class="cat-topline mb-3"></div>
             <div class="w-full h-36 rounded overflow-hidden mb-3">
               <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
@@ -391,10 +389,10 @@
               ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
             </ul>
             <div class="flex items-center gap-2">
-              <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
-              <input id="${category}-card-qty" class="card-qty-input w-28 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
-              <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
-              <button id="${category}-add-btn" class="ml-auto bg-makan-orange text-white px-3 py-2 rounded text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="addCardToCart('${category}')">Add</button>
+              <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
+              <input id="${category}-card-qty" class="card-qty-input w-28 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-orange-500" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
+              <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
+              <button id="${category}-add-btn" class="ml-auto bg-orange-500 text-white px-3 py-2 rounded text-sm font-bold hover:bg-orange-600 transition-colors" onclick="addCardToCart('${category}')">Add</button>
             </div>
           `;
           container.appendChild(card);
@@ -502,23 +500,23 @@
       }
       
       const card = document.createElement('div');
-      card.className = 'bg-panel-blue border border-panel-blue-border rounded-lg p-4 md:col-span-1';
+      card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4 md:col-span-1';
       card.innerHTML = `
-        <div class="font-semibold text-custom-text uppercase text-base mb-1">${categoryData.name}</div>
+        <div class="font-semibold text-gray-800 uppercase text-base mb-1">${categoryData.name}</div>
         <div class="cat-topline mb-3"></div>
         <div class="w-full h-36 rounded overflow-hidden mb-3">
           <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
         </div>
-        <div class="text-sm text-makan-orange font-semibold mb-2">What's included:</div>
+        <div class="text-sm text-orange-500 font-semibold mb-2">What's included:</div>
         <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
           ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
         </ul>
-        <div class="text-lg font-bold text-makan-orange mb-3">Price: $${categoryData.price.toFixed(2)} per pack</div>
+        <div class="text-lg font-bold text-orange-500 mb-3">Price: ${categoryData.price.toFixed(2)} per pack</div>
         <div class="flex items-center gap-2">
           <span class="text-sm font-medium text-gray-700">Quantity:</span>
-          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
-          <input id="${category}-card-qty" class="card-qty-input flex-1 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
-          <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
+          <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors" onclick="changeCardQuantity('${category}', -1)">▼</button>
+          <input id="${category}-card-qty" class="card-qty-input flex-1 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-orange-500" type="number" value="${packs}" min="${packs}" oninput="onCardQtyInput('${category}')">
+          <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors" onclick="changeCardQuantity('${category}', 1)">▲</button>
         </div>
       `;
       container.appendChild(card);
@@ -563,7 +561,7 @@
       const btn = getAddBtn(category);
       if (!btn) return;
       btn.textContent = 'Added';
-      btn.classList.remove('bg-makan-orange', 'hover:bg-makan-orange-hover');
+      btn.classList.remove('bg-orange-500', 'hover:bg-orange-600');
       btn.classList.add('bg-green-600', 'hover:bg-green-700');
     }
 
@@ -572,7 +570,7 @@
       if (!btn) return;
       btn.textContent = 'Add';
       btn.classList.remove('bg-green-600', 'hover:bg-green-700');
-      btn.classList.add('bg-makan-orange', 'hover:bg-makan-orange-hover');
+      btn.classList.add('bg-orange-500', 'hover:bg-orange-600');
     }
 
     function upsertCard(category, quantity) {
@@ -638,16 +636,16 @@
             <div class="flex-1">
               <div class="text-sm font-semibold text-gray-800">${item.name}</div>
               <div class="text-xs text-gray-500">Qty: ${item.quantity}</div>
-              <div class="text-xs text-gray-600">$${item.price.toFixed(2)} each</div>
+              <div class="text-xs text-gray-600">${item.price.toFixed(2)} each</div>
             </div>
             <div class="text-right">
-              <div class="text-sm font-bold text-gray-900">$${subtotal.toFixed(2)}</div>
+              <div class="text-sm font-bold text-gray-900">${subtotal.toFixed(2)}</div>
               <button class="text-red-500 text-xs hover:text-red-700" onclick="removeFromCart(${index})">Remove</button>
             </div>
           </div>`;
         cartContainer.appendChild(row);
       });
-      totalAmount.textContent = `$${total.toFixed(2)}`;
+      totalAmount.textContent = `${total.toFixed(2)}`;
     }
 
     function removeFromCart(index) {
@@ -674,20 +672,6 @@
       localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
       Swal.fire({ icon: 'success', title: 'Saved', text: 'Selections saved.' });
     });
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('#open-mobile');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeMenuBtn = document.getElementById('close-menu');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.remove('hidden'); });
-    }
-    if (closeMenuBtn && mobileMenu) {
-      closeMenuBtn.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
-    }
-    if (mobileMenu) {
-      mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) mobileMenu.classList.add('hidden'); });
-    }
   </script>
 
 </body>
