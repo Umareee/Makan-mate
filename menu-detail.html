@@ -117,8 +117,8 @@
             </div>
           </div>
 
-          <!-- Previous Selections -->
-          <div class="mb-6">
+          
+          <!-- <div class="mb-6">
             <h4 class="font-semibold text-custom-text mb-2">Previous Selections</h4>
             <div class="bg-white p-3 rounded border border-gray-200 space-y-3">
               <div class="text-gray-500 text-sm text-center py-4">
@@ -126,7 +126,7 @@
                 No items selected yet.
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Number of Packs -->
           <div class="mb-6">
@@ -440,7 +440,7 @@
       try {
         const res = await fetch('mealkits.json', { cache: 'no-store' });
         const data = await res.json();
-        const item = data[slug];
+        const item = data.items && data.items[slug];
         if (!item) {
           notFound.classList.remove('hidden');
           detail.classList.add('hidden');

@@ -145,13 +145,13 @@
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <!-- Primary button -->
-                <a href="#" 
+                <a href="mealkits.html" 
                    class="bg-makan-orange text-white px-6 sm:px-8 py-3 rounded-full 
                           hover:bg-makan-orange-hover transition-colors font-medium text-base sm:text-lg">
-                    Book A Table
+                    Our Meal Kits
                 </a>
                 <!-- Secondary button -->
-                <a href="#" 
+                <a href="menu.html" 
                    class="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-full 
                           hover:bg-white hover:text-black transition-colors font-medium text-base sm:text-lg">
                     Explore Menu
@@ -169,7 +169,7 @@
 
 
     <!-- Browse Our Menu Section -->
- <section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50">
     <div class="container mx-auto px-2 sm:px-4">
         <!-- Section Title -->
         <div class="text-center mb-12">
@@ -181,8 +181,8 @@
         <!-- Menu Categories Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
-            <!-- Card -->
-            <div class="group cursor-pointer">
+            <!-- 1. BENTO -->
+            <div class="group cursor-pointer" data-item-id="premium-bento">
                 <div class="relative overflow-hidden rounded-2xl shadow-lg">
                     <img src="/images/home/menu/imgi_11_bento.jpg" 
                          alt="Bento Meal" 
@@ -193,8 +193,8 @@
                 </h3>
             </div>
 
-            <!-- Card -->
-            <div class="group cursor-pointer">
+            <!-- 2. CLASSIC DELIGHT -->
+            <div class="group cursor-pointer" data-item-id="delight-menu">
                 <div class="relative overflow-hidden rounded-2xl shadow-lg">
                     <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" 
                          alt="Classic Delight" 
@@ -205,8 +205,8 @@
                 </h3>
             </div>
 
-            <!-- Card -->
-            <div class="group cursor-pointer">
+            <!-- 3. PREMIUM STEAMBOAT -->
+            <div class="group cursor-pointer" data-item-id="korean-menu">
                 <div class="relative overflow-hidden rounded-2xl shadow-lg">
                     <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" 
                          alt="Steamboat" 
@@ -217,8 +217,8 @@
                 </h3>
             </div>
 
-            <!-- Card -->
-            <div class="group cursor-pointer">
+            <!-- 4. HEALTHIER CHOICE -->
+            <div class="group cursor-pointer" data-item-id="vegetarian-catering">
                 <div class="relative overflow-hidden rounded-2xl shadow-lg">
                     <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" 
                          alt="Healthy Choice" 
@@ -229,8 +229,8 @@
                 </h3>
             </div>
 
-            <!-- Card -->
-            <div class="group cursor-pointer">
+            <!-- 5. HIGH TEA -->
+            <div class="group cursor-pointer" data-item-id="high-tea">
                 <div class="relative overflow-hidden rounded-2xl shadow-lg">
                     <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" 
                          alt="High Tea" 
@@ -241,8 +241,8 @@
                 </h3>
             </div>
 
-            <!-- Card -->
-            <div class="group cursor-pointer">
+            <!-- 6. VEGETARIAN -->
+            <div class="group cursor-pointer" data-item-id="vegetarian-menu">
                 <div class="relative overflow-hidden rounded-2xl shadow-lg">
                     <img src="/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg" 
                          alt="Vegetarian Menu" 
@@ -473,62 +473,137 @@
     </section>
 
     <!-- Customer Testimonials Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-2 sm:px-4">
-            <!-- Section Title -->
-            <div class="text-center mb-12">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-custom-text mb-4 font-playfair">What Our Customers Say</h2>
+<section class="py-16">
+  <div class="container mx-auto px-2 sm:px-4">
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-custom-text mb-4 font-playfair">
+        What Our Customers Say
+      </h2>
+    </div>
+
+    <!-- Auto Scroll Wrapper -->
+    <div class="relative overflow-hidden">
+      <div
+        class="flex space-x-6 sm:space-x-8 animate-scroll hover:[animation-play-state:paused]"
+      >
+        <!-- ✅ First Set -->
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Warmest gratitude"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We would like to extend our warmest gratitude to yourself and Makan Mate for support towards making the Standard Chartered Singapore Marathon (SCSM) 2017 such a huge success! A personal note to thank the team including Vigitte, Vera and Jordan for their commitment towards providing a service above else and creating a memorable experience for all our guests.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Ms Tammie" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Ms Tammie</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
             </div>
-
-            <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-                <!-- Testimonial 1 -->
-                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
-                    <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"The best restaurant"</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Last night, we dined at place and were simply blown away. From the moment we stepped in, we were enveloped in an inviting atmosphere and greeted with warm smiles.
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <img src="/images/test-1.png" alt="Sophire Robson" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <h4 class="font-bold text-custom-text">Sophire Robson</h4>
-                            <p class="text-sm text-gray-500">Los Angeles, CA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
-                    <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Simply delicious"</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Place exceeded my expectations on all fronts. The ambiance was cozy and relaxed, making it a perfect venue for our anniversary dinner. Each dish was prepared and beautifully presented.
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <img src="/images/test-1.png" alt="Matt Cannon" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <h4 class="font-bold text-custom-text">Matt Cannon</h4>
-                            <p class="text-sm text-gray-500">San Diego, CA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
-                    <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"One of a kind restaurant"</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        The culinary experience at place is first to none. The atmosphere is vibrant, the food - nothing short of extraordinary. The food was the highlight of our evening. Highly recommended.
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <img src="/images/test-1.png" alt="Andy Smith" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <h4 class="font-bold text-custom-text">Andy Smith</h4>
-                            <p class="text-sm text-gray-500">San Francisco, CA</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Awesome service and food"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Just wanted to say thank you for the awesome service and food. My guests were very happy with the pasta Bolognese and pleasantly surprised that it is vegetarian. The mushroom soup is a hit and a number of them were very shocked to know that catered food can be nice too. Thank you again.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Mr Kok Woon Ng" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Mr Kok Woon Ng</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Good, healthy and delicious"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Your food was good, healthy and delicious. The lunch is perfect and we all enjoyed the selection. Thank you very much for your constant assistance in our orders!
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Daniel Seah Chin Guan" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Daniel Seah Chin Guan</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Very delicious food"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We love the food especially the Phad Thai and Sayur Lodeh, it is very delicious. You all are very helpful and sincere and not to forget the driver as well. We will sure come back for more. Thank you.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Ms Lynn Koh" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Ms Lynn Koh</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ Duplicate Set for seamless loop -->
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Warmest gratitude"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We would like to extend our warmest gratitude to yourself and Makan Mate for support towards making the Standard Chartered Singapore Marathon (SCSM) 2017 such a huge success! A personal note to thank the team including Vigitte, Vera and Jordan for their commitment towards providing a service above else and creating a memorable experience for all our guests.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Ms Tammie" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Ms Tammie</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Awesome service and food"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Just wanted to say thank you for the awesome service and food. My guests were very happy with the pasta Bolognese and pleasantly surprised that it is vegetarian. The mushroom soup is a hit and a number of them were very shocked to know that catered food can be nice too. Thank you again.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Mr Kok Woon Ng" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Mr Kok Woon Ng</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Good, healthy and delicious"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Your food was good, healthy and delicious. The lunch is perfect and we all enjoyed the selection. Thank you very much for your constant assistance in our orders!
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Daniel Seah Chin Guan" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Daniel Seah Chin Guan</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-sm bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg flex-shrink-0">
+          <h3 class="text-lg sm:text-xl font-bold text-makan-orange mb-4">"Very delicious food"</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We love the food especially the Phad Thai and Sayur Lodeh, it is very delicious. You all are very helpful and sincere and not to forget the driver as well. We will sure come back for more. Thank you.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="/images/test-1.png" alt="Ms Lynn Koh" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-bold text-custom-text">Ms Lynn Koh</h4>
+              <p class="text-sm text-gray-500">Singapore</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-2 sm:px-4">
@@ -560,7 +635,7 @@
           </p>
 
           <div class="flex items-center justify-between">
-            <a href="#" class="text-makan-orange font-medium hover:underline text-sm">
+            <a href="menu.html" class="text-makan-orange font-medium hover:underline text-sm">
               Explore Menu
             </a>
           </div>
@@ -644,7 +719,7 @@
           </p>
 
           <div class="flex items-center justify-between">
-            <a href="#" class="text-makan-orange font-medium hover:underline text-sm">
+            <a href="menu.html" class="text-makan-orange font-medium hover:underline text-sm">
               Explore Menu
             </a>
           </div>
@@ -870,7 +945,18 @@ Complete your Makan Mate experience with a refreshing glass of our Home-made Pur
             </nav>
         </div>
     </div>
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+</style>
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
@@ -897,6 +983,47 @@ Complete your Makan Mate experience with a refreshing glass of our Home-made Pur
                 }
             });
         }
+        let menuData = null;
+
+async function loadMenuData() {
+    if (menuData) return menuData;          // already cached
+    try {
+        const res = await fetch('/menu-items.json');
+        menuData = await res.json();
+        return menuData;
+    } catch (err) {
+        console.error('Could not load /menu-items.json', err);
+    }
+}
+
+/* Handle clicks on the homepage cards */
+document.addEventListener('click', async (e) => {
+    const card = e.target.closest('[data-item-id]');
+    if (!card) return;
+
+    const id = card.dataset.itemId;
+    const data = await loadMenuData();
+    const item = data.items.find(i => i.id === id);
+
+    if (!item) {
+        Swal.fire({ icon:'info', title:'Coming soon', text:'This item is not configured yet.' });
+        return;
+    }
+
+    /* Same localStorage structure used in menu.html */
+    localStorage.setItem('selectedMenuItem', JSON.stringify({
+        name: item.name,
+        id: item.id,
+        image: item.image,
+        price: item.price,
+        description: item.description,
+        customizable: item.customizable,
+        data_source: item.data_source
+    }));
+
+    /* Go straight to quantity-selection, just like menu.html */
+    window.location.href = 'quantity-selection.html';
+});
     </script>
 </body>
 </html>

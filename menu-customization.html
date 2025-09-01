@@ -200,13 +200,12 @@
           </div>
         </div>
         
-        <!-- Previous Selections -->
+        <!-- Previous Selections
          <div class="mb-6">
           <h4 class="font-semibold text-gray-800 mb-2">Previous Selections</h4>
           <div class="space-y-3" id="previous-selections-container">
-            <!-- Previous selections will be populated by JavaScript -->
           </div>
-        </div>
+        </div> -->
         
         <!-- Number of Packs -->
         <div class="mb-6">
@@ -849,9 +848,9 @@
         packs: packs
       }));
       
-      // Navigate to next page (you can change this URL as needed)
-      Swal.fire({ icon: 'success', title: 'Submitted', text: 'Order submitted successfully!' });
-      // window.location.href = 'order-confirmation.html';
+      // Navigate to next page
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'delivery.html';
     });
   </script>
 

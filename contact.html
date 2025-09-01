@@ -138,62 +138,95 @@
     </div>
   </section>
 
-  <!-- ===== main contact area: left details + right signup form (matches screenshot) ===== -->
-  <main class="bg-white">
-    <div class="container mx-auto px-2 sm:px-4 lg:px-24 py-12 sm:py-16">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start max-w-6xl mx-auto">
-        <!-- LEFT: company details (large, spaced like the image) -->
-        <div class="space-y-4 sm:space-y-6">
-          <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold font-playfair">Maken Mate</h2>
-          <p class="text-gray-600">30B Quality Rd, Singapore 618826</p>
+ <!-- ===== main contact area: left details + right contact form ===== -->
+<main class="bg-white">
+  <div class="container mx-auto px-2 sm:px-4 lg:px-24 py-12 sm:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start max-w-6xl mx-auto">
+      
+      <!-- LEFT: company details -->
+      <div class="space-y-4 sm:space-y-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold font-playfair">Maken Mate</h2>
+        <p class="text-gray-600">30B Quality Rd, Singapore 618826</p>
 
-          <div class="mt-4 sm:mt-6">
-            <h3 class="text-sm font-medium text-gray-700 mb-2">Email:</h3>
-            <a href="mailto:enquiry@makenmate.com.sg" class="text-makan-orange font-medium text-base sm:text-lg">enquiry@makenmate.com.sg</a>
-          </div>
-
-          <div class="mt-4 sm:mt-6">
-            <h3 class="text-sm font-medium text-gray-700 mb-2">Hotline:</h3>
-            <p class="text-base sm:text-lg font-medium">6896 7757</p>
-          </div>
-
-          <div class="mt-4 sm:mt-6">
-            <h3 class="text-sm font-medium text-gray-700 mb-2">Call Center Operating Hours:</h3>
-            <p class="text-gray-600">Mon - Fri | 9.00am - 7.30pm</p>
-            <p class="text-gray-600">Sat - Sun | 9.00am - 7.00pm</p>
-          </div>
-
-          <!-- optional small note -->
-          <p class="text-gray-500 mt-6 sm:mt-8 text-sm sm:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel repellendus illo, rerum minima suscipit repellat, animi exercitationem quaerat quo possimus enim? Error pariatur, neque aspernatur odit optio itaque ratione eveniet hic quibusdam adipisci sint est molestias odio nostrum! Aspernatur officia nisi doloribus expedita quo nesciunt, non hic vero vel atque.</p>
+        <div class="mt-4 sm:mt-6">
+          <h3 class="text-sm font-medium text-gray-700 mb-2">Email:</h3>
+          <a href="mailto:enquiry@makenmate.com.sg" class="text-makan-orange font-medium text-base sm:text-lg">
+            enquiry@makenmate.com.sg
+          </a>
         </div>
 
-        <!-- RIGHT: newsletter signup card (matches image) -->
-        <aside class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 sm:p-6 lg:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4 sm:mb-6">
-            <span class="text-makan-orange font-semibold text-lg sm:text-xl">Sign up</span>
-            <p class="text-gray-700 font-medium text-sm sm:text-base">for emails to receive updates and exclusive offers</p>
-          </div>
+        <div class="mt-4 sm:mt-6">
+          <h3 class="text-sm font-medium text-gray-700 mb-2">Hotline:</h3>
+          <p class="text-base sm:text-lg font-medium">6896 7757</p>
+        </div>
 
-          <form id="signup-form" class="space-y-3 sm:space-y-4">
-            <div>
-              <input type="email" id="signup-email" name="signup-email" placeholder="Email Address" required
-                     class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base">
-            </div>
-            <div>
-              <input type="text" id="signup-name" name="signup-name" placeholder="Name"
-                     class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base">
-            </div>
-            <div class="pt-1 sm:pt-2">
-              <button type="submit" class="bg-makan-orange text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-makan-orange-hover transition-colors font-medium w-full text-sm sm:text-base">
-                Subscribe to Maken Mate
-              </button>
-            </div>
-            <p id="signup-msg" class="text-sm text-green-600 hidden mt-2">Thank you — we’ve added you to our list.</p>
-          </form>
-        </aside>
+        <div class="mt-4 sm:mt-6">
+          <h3 class="text-sm font-medium text-gray-700 mb-2">Call Center Operating Hours:</h3>
+          <p class="text-gray-600">Mon - Fri | 9.00am - 7.30pm</p>
+          <p class="text-gray-600">Sat - Sun | 9.00am - 7.00pm</p>
+        </div>
+
+        <!-- optional small note -->
+        <p class="text-gray-500 mt-6 sm:mt-8 text-sm sm:text-base">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel repellendus illo, rerum minima suscipit repellat...
+        </p>
+      </div>
+
+      <!-- RIGHT: contact form -->
+      <div class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 sm:p-6 lg:p-8">
+        <h3 class="text-lg sm:text-xl font-semibold font-playfair mb-4">Send us a Message</h3>
+        <form id="contact-form" class="space-y-4">
+          <div>
+            <input type="text" id="contact-name" name="contact-name" placeholder="Your Name" required
+                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base">
+          </div>
+          <div>
+            <input type="email" id="contact-email" name="contact-email" placeholder="Your Email" required
+                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base">
+          </div>
+          <div>
+            <textarea id="contact-message" name="contact-message" rows="4" placeholder="Your Message" required
+                      class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base"></textarea>
+          </div>
+          <button type="submit"
+                  class="bg-makan-orange text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-makan-orange-hover transition-colors font-medium w-full text-sm sm:text-base">
+            Send Message
+          </button>
+          <p id="contact-msg" class="text-sm text-green-600 hidden mt-2">Thanks! We’ll get back to you soon.</p>
+        </form>
       </div>
     </div>
-  </main>
+
+    <!-- Newsletter Signup (centered below both columns) -->
+    <div class="mt-12 sm:mt-16">
+      <aside class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 sm:p-6 lg:p-8 max-w-lg mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4 sm:mb-6 text-center sm:text-left">
+          <span class="text-makan-orange font-semibold text-lg sm:text-xl">Sign up</span>
+          <p class="text-gray-700 font-medium text-sm sm:text-base">for emails to receive updates and exclusive offers</p>
+        </div>
+
+        <form id="signup-form" class="space-y-3 sm:space-y-4">
+          <div>
+            <input type="email" id="signup-email" name="signup-email" placeholder="Email Address" required
+                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base">
+          </div>
+          <div>
+            <input type="text" id="signup-name" name="signup-name" placeholder="Name"
+                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-md focus:outline-none focus:border-makan-orange focus:ring-2 focus:ring-makan-orange/20 text-sm sm:text-base">
+          </div>
+          <div class="pt-1 sm:pt-2">
+            <button type="submit"
+                    class="bg-makan-orange text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-makan-orange-hover transition-colors font-medium w-full text-sm sm:text-base">
+              Subscribe to Maken Mate
+            </button>
+          </div>
+          <p id="signup-msg" class="text-sm text-green-600 hidden mt-2">Thank you — we’ve added you to our list.</p>
+        </form>
+      </aside>
+    </div>
+  </div>
+</main>
+
 
   <!-- ===== keep your original footer exactly as-is ===== -->
   <footer class="bg-gray-800 text-white py-12 sm:py-16">

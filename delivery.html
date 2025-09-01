@@ -346,170 +346,148 @@
     <div class="text-center text-gray-400 text-sm mt-6">© 2025 Makan Mate. All rights reserved.</div>
   </footer>
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Load and display order summary
+<script>
+/* =========  DOM READY  ========= */
+document.addEventListener('DOMContentLoaded', () => {
   loadOrderSummary();
-  
-  // Setup form functionality
   setupFormFunctionality();
 });
 
-// Load order summary from localStorage
+/* =========  ORDER SUMMARY  ========= */
 function loadOrderSummary() {
-  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-  const orderSummary = document.getElementById('order-summary');
-  const orderTotal = document.getElementById('order-total');
-  
-  if (cart.length === 0) {
-    orderSummary.innerHTML = `
+  const keysToTry = ['customizationCart', 'nonCustomizableCart'];
+  let cart = [];
+
+  for (const key of keysToTry) {
+    const raw = localStorage.getItem(key);
+    if (!raw) continue;
+    try {
+      cart = JSON.parse(raw).map(i => ({
+        title: i.name || i.title,
+        image: i.image,
+        price: Number(i.price),
+        qty:  Number(i.quantity || i.qty),
+      }));
+      break; // stop when we find the first valid key
+    } catch (e) {
+      console.warn(`Bad JSON in ${key}`, e);
+    }
+  }
+
+  const $summary = document.getElementById('order-summary');
+  const $total   = document.getElementById('order-total');
+
+  if (!cart.length) {
+    $summary.innerHTML = `
       <div class="text-gray-500 text-center py-8">
         <i class="fas fa-shopping-cart text-3xl mb-2"></i><br>
         No items in your order.<br>
         <span class="text-sm">Please go back to select your menu items.</span>
-      </div>
-    `;
-    orderTotal.textContent = '$0.00';
+      </div>`;
+    $total.textContent = '$0.00';
     return;
   }
 
-  // Calculate total
   let total = 0;
-  
-  // Render each order item
-  orderSummary.innerHTML = '';
-  cart.forEach((item, index) => {
-    const subtotal = item.price * item.qty;
-    total += subtotal;
-    
-    const orderItem = document.createElement('div');
-    orderItem.className = 'border border-gray-200 rounded-lg overflow-hidden mb-3 bg-white';
-    orderItem.innerHTML = `
-      <img src="${item.image || '/images/festive/imgi_6_Something Special.jpg'}" alt="${item.title}" class="w-full h-20 object-cover" />
+  $summary.innerHTML = '';
+  cart.forEach(item => {
+    const sub = item.price * item.qty;
+    total += sub;
+
+    const $row = document.createElement('div');
+    $row.className = 'border border-gray-200 rounded-lg overflow-hidden mb-3 bg-white';
+    $row.innerHTML = `
+      <img src="${item.image || '/images/festive/imgi_6_Something Special.jpg'}"
+           alt="${item.title}" class="w-full h-20 object-cover">
       <div class="p-3 bg-gray-50">
         <div class="text-sm font-bold text-gray-800 uppercase">${item.title}</div>
         <div class="text-base font-bold text-gray-900 mt-1">$${item.price.toFixed(2)} / Set</div>
         <div class="text-xs text-gray-500 mt-1">Qty: ${item.qty}</div>
-        <div class="text-xs text-gray-500">Subtotal: $${subtotal.toFixed(2)}</div>
-        ${item.isPreselected ? '<div class="text-xs text-blue-600 mt-1 font-medium">Preselected from menu</div>' : ''}
-      </div>
-    `;
-    orderSummary.appendChild(orderItem);
+        <div class="text-xs text-gray-500">Subtotal: $${sub.toFixed(2)}</div>
+      </div>`;
+    $summary.appendChild($row);
   });
-  
-  // Update total
-  orderTotal.textContent = `$${total.toFixed(2)}`;
+  $total.textContent = `$${total.toFixed(2)}`;
 }
 
-// Setup form functionality
+/* =========  FORM LOGIC  ========= */
 function setupFormFunctionality() {
-  // Same address checkbox functionality
-  const sameAddressCheckbox = document.getElementById('same-address');
-  const deliveryFields = document.getElementById('delivery-address-fields');
-  
-  sameAddressCheckbox.addEventListener('change', () => {
-    if (sameAddressCheckbox.checked) {
-      // Copy billing address to delivery address
-      const billingZipcode = document.getElementById('billing-zipcode').value;
-      const billingUnit = document.getElementById('billing-unit').value;
-      
-      document.getElementById('delivery-zipcode').value = billingZipcode;
-      document.getElementById('delivery-unit').value = billingUnit;
-      
-      // Disable delivery fields
-      deliveryFields.querySelectorAll('input').forEach(input => {
-        input.disabled = true;
-        input.classList.add('bg-gray-100');
-      });
-    } else {
-      // Enable delivery fields
-      deliveryFields.querySelectorAll('input').forEach(input => {
-        input.disabled = false;
-        input.classList.remove('bg-gray-100');
-      });
-    }
+  /* same-address copy */
+  const $same = document.getElementById('same-address');
+  const $delFields = document.getElementById('delivery-address-fields');
+  $same?.addEventListener('change', () => {
+    const dis = $same.checked;
+    document.getElementById('delivery-zipcode').value = document.getElementById('billing-zipcode').value;
+    document.getElementById('delivery-unit').value   = document.getElementById('billing-unit').value;
+    $delFields.querySelectorAll('input').forEach(inp => {
+      inp.disabled = dis;
+      inp.classList.toggle('bg-gray-100', dis);
+    });
   });
 
-  // Zipcode lookup functionality (simplified)
-  document.getElementById('billing-zipcode').addEventListener('blur', function() {
+  /* zip stub lookup */
+  document.getElementById('billing-zipcode')?.addEventListener('blur', function () {
     if (this.value.length === 6) {
-      // Simulate zipcode lookup
       setTimeout(() => {
-        document.getElementById('billing-block').value = '123';
+        document.getElementById('billing-block').value  = '123';
         document.getElementById('billing-street').value = 'Sample Street';
       }, 500);
     }
   });
 
-  // Character count for remarks
-  const remarksTextarea = document.getElementById('remarks');
-  const charCount = document.getElementById('char-count');
-  
-  remarksTextarea.addEventListener('input', () => {
-    charCount.textContent = remarksTextarea.value.length;
-  });
+  /* char counter */
+  const $rem = document.getElementById('remarks');
+  const $cnt = document.getElementById('char-count');
+  if ($rem && $cnt) {
+    $rem.addEventListener('input', () => ($cnt.textContent = $rem.value.length));
+  }
 
-  // Form submission
-  document.getElementById('delivery-form').addEventListener('submit', function(e) {
+  /* form submit */
+  document.getElementById('delivery-form')?.addEventListener('submit', e => {
     e.preventDefault();
-    
-    // Basic validation
-    const requiredFields = this.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-      if (!field.value.trim()) {
-        field.classList.add('border-red-500');
-        isValid = false;
-      } else {
-        field.classList.remove('border-red-500');
-      }
+    const required = [...e.target.querySelectorAll('[required]')];
+    let ok = true;
+    required.forEach(f => {
+      const missing = !f.value.trim();
+      f.classList.toggle('border-red-500', missing);
+      if (missing) ok = false;
     });
-    
-    if (!isValid) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-    
-    // Collect form data
-    const formData = {
+    if (!ok) return alert('Please fill in all required fields.');
+
+    const data = {
       ecoOptions: {
-        noCutlery: document.getElementById('no-cutlery').checked,
-        noHeatpros: document.getElementById('no-heatpros').checked
+        noCutlery: document.getElementById('no-cutlery')?.checked,
+        noHeatpros: document.getElementById('no-heatpros')?.checked
       },
       personalInfo: {
-        salutation: document.getElementById('salutation').value,
-        surname: document.getElementById('surname').value,
-        givenName: document.getElementById('givenName').value,
-        corporateOrder: document.getElementById('corporate-order').checked
+        salutation: document.getElementById('salutation')?.value,
+        surname:    document.getElementById('surname')?.value,
+        givenName:  document.getElementById('givenName')?.value,
+        corporateOrder: document.getElementById('corporate-order')?.checked
       },
       contactInfo: {
-        email: document.getElementById('email').value,
-        mobile: document.getElementById('mobile').value,
-        alternative: document.getElementById('alternative').value
+        email:      document.getElementById('email')?.value,
+        mobile:     document.getElementById('mobile')?.value,
+        alternative:document.getElementById('alternative')?.value
       },
       billingAddress: {
-        zipcode: document.getElementById('billing-zipcode').value,
-        unit: document.getElementById('billing-unit').value,
-        block: document.getElementById('billing-block').value,
-        street: document.getElementById('billing-street').value,
-        landedHouse: document.getElementById('landed-house').checked
+        zipcode: document.getElementById('billing-zipcode')?.value,
+        unit:    document.getElementById('billing-unit')?.value,
+        block:   document.getElementById('billing-block')?.value,
+        street:  document.getElementById('billing-street')?.value,
+        landedHouse: document.getElementById('landed-house')?.checked
       },
       deliveryAddress: {
-        sameAsBilling: document.getElementById('same-address').checked,
-        zipcode: document.getElementById('delivery-zipcode').value,
-        unit: document.getElementById('delivery-unit').value
+        sameAsBilling: document.getElementById('same-address')?.checked,
+        zipcode: document.getElementById('delivery-zipcode')?.value,
+        unit:    document.getElementById('delivery-unit')?.value
       },
       otherInfo: {
         firstOrder: document.querySelector('input[name="firstOrder"]:checked')?.value,
-        remarks: document.getElementById('remarks').value
+        remarks:    document.getElementById('remarks')?.value
       }
     };
-    
-    // Save to localStorage
-    localStorage.setItem('deliveryFormData', JSON.stringify(formData));
-    
-    // Navigate to next page (you can change this)
+    localStorage.setItem('deliveryFormData', JSON.stringify(data));
     alert('Form submitted successfully!');
     // window.location.href = 'payment.html';
   });
