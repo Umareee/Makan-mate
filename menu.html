@@ -147,126 +147,198 @@
                 </div>
                 
                 <!-- Filter Toggle Button -->
-                <div class="text-center mb-4">
-                    <button id="filter-toggle-btn" class="inline-flex items-center gap-2 bg-white border-2 border-makan-orange text-makan-orange px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all duration-300">
-                        <i class="fas fa-filter"></i>
-                        <span>Filters</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300" id="filter-chevron"></i>
-                    </button>
-                </div>
+                <div class="flex justify-end items-center gap-3 mb-4">
+    <div id="active-filters-outside" class="hidden flex-wrap gap-2"></div>
+    <!-- Filter toggle button stays unchanged -->
+    <button id="filter-toggle-btn" class="inline-flex items-center gap-2 bg-white border-2 border-makan-orange text-makan-orange px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all duration-300">
+        <i class="fas fa-filter"></i>
+        <span>Filters</span>
+        <i class="fas fa-chevron-down transition-transform duration-300" id="filter-chevron"></i>
+    </button>
+    <button id="clear-all-outside" class="hidden text-sm text-makan-orange underline hover:no-underline">
+            Clear all
+        </button>
+</div>
                 
                 <!-- Collapsible Filter Panel -->
-                <div id="filter-panel" class="hidden bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-custom-text mb-4 text-center">
-                            <i class="fas fa-sliders-h mr-2"></i>Filter By
-                        </h3>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-                        <!-- Price Filter -->
-                        <div class="filter-group">
-                            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
-                                <i class="fas fa-dollar-sign text-makan-orange"></i>
-                                Price Range
-                            </label>
-                            <select id="price-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-                                <option value="all">All Prices</option>
-                                <option value="low">Under $10</option>
-                                <option value="medium">$10-$15</option>
-                                <option value="high">Over $15</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Source Filter -->
-                        <div class="filter-group">
-                            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
-                                <i class="fas fa-map-marker-alt text-makan-orange"></i>
-                                Source
-                            </label>
-                            <select id="source-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-                                <option value="all">All Sources</option>
-                                <option value="singapore">Singapore</option>
-                                <option value="korean">Korean</option>
-                                <option value="indian">Indian</option>
-                                <option value="international">International</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Taste Filter -->
-                        <div class="filter-group">
-                            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
-                                <i class="fas fa-utensils text-makan-orange"></i>
-                                Taste
-                            </label>
-                            <select id="taste-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-                                <option value="all">All Tastes</option>
-                                <option value="sweet">Sweet</option>
-                                <option value="savory">Savory</option>
-                                <option value="spicy">Spicy</option>
-                                <option value="mild">Mild</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Minimum Packs Filter -->
-                        <div class="filter-group">
-                            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
-                                <i class="fas fa-boxes text-makan-orange"></i>
-                                Min. Packs
-                            </label>
-                            <select id="packs-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-                                <option value="all">Any Amount</option>
-                                <option value="10">10+ packs</option>
-                                <option value="20">20+ packs</option>
-                                <option value="50">50+ packs</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Dietary Preferences Filter -->
-                        <div class="filter-group">
-                            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
-                                <i class="fas fa-leaf text-makan-orange"></i>
-                                Dietary
-                            </label>
-                            <select id="dietary-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-                                <option value="all">All Options</option>
-                                <option value="vegetarian">Vegetarian</option>
-                                <option value="vegan">Vegan</option>
-                                <option value="halal">Halal</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Spice Level Filter -->
-                        <div class="filter-group">
-                            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
-                                <i class="fas fa-fire text-makan-orange"></i>
-                                Spice Level
-                            </label>
-                            <select id="spice-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-                                <option value="all">All Levels</option>
-                                <option value="mild">Mild</option>
-                                <option value="medium">Medium</option>
-                                <option value="hot">Hot</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- Filter Action Buttons -->
-                    <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6 pt-4 border-t border-gray-200">
-                        <button id="apply-filters" class="px-6 py-3 bg-makan-orange text-white rounded-lg font-medium hover:bg-makan-orange-hover transition-colors">
-                            <i class="fas fa-check mr-2"></i>Apply Filters
-                        </button>
-                        <button id="clear-filters" class="px-6 py-3 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 transition-colors">
-                            <i class="fas fa-times mr-2"></i>Clear All
-                        </button>
-                    </div>
-                    
-                    <!-- Active Filters Display -->
-                    <div id="active-filters" class="mt-4 hidden">
-                        <div class="text-sm text-gray-600 mb-2">Active filters:</div>
-                        <div id="active-filters-list" class="flex flex-wrap gap-2"></div>
-                    </div>
-                </div>
+<div id="filter-panel" class="hidden bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold text-custom-text mb-4 text-center">
+            <i class="fas fa-sliders-h mr-2"></i>Filter By
+        </h3>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+        
+        <!-- Allergens (Exclude) -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-ban text-makan-orange"></i>
+                Allergens (Exclude)
+            </label>
+            <select id="allergens-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="dairy">Dairy</option>
+                <option value="eggs">Eggs</option>
+                <option value="gluten">Gluten</option>
+                <option value="nuts">Nuts</option>
+                <option value="seafood">Seafood</option>
+                <option value="soy_legume">Soy/Legume</option>
+                <option value="wheat">Wheat</option>
+            </select>
+        </div>
+
+        <!-- Dietary Purposes -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-leaf text-makan-orange"></i>
+                Dietary Purposes
+            </label>
+            <select id="dietary-purposes-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="buddhist">Buddhist Vegetarian</option>
+                <option value="keto">Keto</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+            </select>
+        </div>
+
+        <!-- Cuisines -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-utensils text-makan-orange"></i>
+                Cuisines
+            </label>
+            <select id="cuisine-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="chinese">Chinese</option>
+                <option value="indian">Indian</option>
+                <option value="international">International</option>
+                <option value="malay">Malay</option>
+                <option value="nonya">Nonya</option>
+                <option value="western">Western</option>
+            </select>
+        </div>
+
+        <!-- Meal Times -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-clock text-makan-orange"></i>
+                Meal Times
+            </label>
+            <select id="meal-time-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="hightea">High Tea</option>
+                <option value="snack">Snack</option>
+            </select>
+        </div>
+
+        <!-- Cooking Methods -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-fire text-makan-orange"></i>
+                Cooking Methods
+            </label>
+            <select id="cooking-method-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="baked">Baked</option>
+                <option value="boiled">Boiled</option>
+                <option value="braised">Braised</option>
+                <option value="deepfried">Deep Fried</option>
+                <option value="fried">Fried</option>
+                <option value="grilled">Grilled</option>
+                <option value="roasted">Roasted</option>
+                <option value="sauteed">Sauteed</option>
+                <option value="steamed">Steamed</option>
+                <option value="stewed">Stewed</option>
+            </select>
+        </div>
+
+        <!-- Flavor Profiles -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-pepper-hot text-makan-orange"></i>
+                Flavor Profiles
+            </label>
+            <select id="flavor-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="bitter">Bitter</option>
+                <option value="nonspicy">Non-Spicy</option>
+                <option value="savory">Savory</option>
+                <option value="sour">Sour</option>
+                <option value="spicy">Spicy</option>
+                <option value="sweet">Sweet</option>
+                <option value="umami">Umami</option>
+            </select>
+        </div>
+
+        <!-- Temperature -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-thermometer-half text-makan-orange"></i>
+                Temperature
+            </label>
+            <select id="temperature-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="cold">Cold</option>
+                <option value="warm">Warm</option>
+            </select>
+        </div>
+
+        <!-- Food Restrictions -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-exclamation-circle text-makan-orange"></i>
+                Food Restrictions
+            </label>
+            <select id="food-restriction-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="glutenfree">Gluten-Free</option>
+                <option value="halal">Halal</option>
+                <option value="kosher">Kosher</option>
+                <option value="lactosefree">Lactose-Free</option>
+                <option value="vegan">Vegan</option>
+            </select>
+        </div>
+
+        <!-- Health -->
+        <div class="filter-group">
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-3">
+                <i class="fas fa-heartbeat text-makan-orange"></i>
+                Health
+            </label>
+            <select id="health-filter" class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <option value="all">All</option>
+                <option value="lowercalorie">Lower Calorie</option>
+                <option value="healthyoption">Healthy Option</option>
+                <option value="lessoil">Less Oil</option>
+                <option value="lesssalt">Less Salt</option>
+                <option value="lesssweet">Less Sweet</option>
+                <option value="morefiber">More Fiber</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Filter Action Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6 pt-4 border-t border-gray-200">
+        <button id="apply-filters" class="px-6 py-3 bg-makan-orange text-white rounded-lg font-medium hover:bg-makan-orange-hover transition-colors">
+            <i class="fas fa-check mr-2"></i>Apply Filters
+        </button>
+        <button id="clear-filters" class="px-6 py-3 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 transition-colors">
+            <i class="fas fa-times mr-2"></i>Clear All
+        </button>
+    </div>
+
+    <!-- Active Filters Display -->
+    <div id="active-filters" class="mt-4 hidden">
+        <div class="text-sm text-gray-600 mb-2">Active filters:</div>
+        <div id="active-filters-list" class="flex flex-wrap gap-2"></div>
+    </div>
+</div>
+
             </div>
 
             <!-- Menu Items Grid -->
@@ -526,118 +598,113 @@
         }
 
         // Apply all active filters
-        function applyAllFilters() {
-            const priceFilter = document.getElementById('price-filter').value;
-            const sourceFilter = document.getElementById('source-filter').value;
-            const tasteFilter = document.getElementById('taste-filter').value;
-            const packsFilter = document.getElementById('packs-filter').value;
-            const dietaryFilter = document.getElementById('dietary-filter').value;
-            const spiceFilter = document.getElementById('spice-filter').value;
-            
-            const menuItems = document.querySelectorAll('.menu-item');
-            let visibleCount = 0;
-            
-            menuItems.forEach(item => {
-                const itemId = item.getAttribute('data-item-id');
-                const itemData = menuData.items.find(i => i.id === itemId);
-                
-                if (!itemData) return;
-                
-                let shouldShow = true;
-                
-                // Price filter
-                if (priceFilter !== 'all') {
-                    const price = itemData.price;
-                    if (priceFilter === 'low' && price >= 10) shouldShow = false;
-                    if (priceFilter === 'medium' && (price < 10 || price > 15)) shouldShow = false;
-                    if (priceFilter === 'high' && price <= 15) shouldShow = false;
-                }
-                
-                // Source filter
-                if (sourceFilter !== 'all' && itemData.source !== sourceFilter) {
-                    shouldShow = false;
-                }
-                
-                // Taste filter
-                if (tasteFilter !== 'all' && itemData.taste !== tasteFilter) {
-                    shouldShow = false;
-                }
-                
-                // Minimum packs filter
-                if (packsFilter !== 'all') {
-                    const minPacks = parseInt(packsFilter);
-                    if (itemData.minimum_packs < minPacks) shouldShow = false;
-                }
-                
-                // Dietary filter
-                if (dietaryFilter !== 'all' && itemData.dietary !== dietaryFilter) {
-                    shouldShow = false;
-                }
-                
-                // Spice filter
-                if (spiceFilter !== 'all' && itemData.spice_level !== spiceFilter) {
-                    shouldShow = false;
-                }
-                
-                // Show/hide item
-                if (shouldShow) {
-                    item.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            // Show results count
-            showFilterResults(visibleCount);
+function applyAllFilters() {
+    const filters = {
+        allergens: document.getElementById('allergens-filter'),
+        dietaryPurposes: document.getElementById('dietary-purposes-filter'),
+        cuisine: document.getElementById('cuisine-filter'),
+        mealTime: document.getElementById('meal-time-filter'),
+        cookingMethod: document.getElementById('cooking-method-filter'),
+        flavor: document.getElementById('flavor-filter'),
+        temperature: document.getElementById('temperature-filter'),
+        foodRestriction: document.getElementById('food-restriction-filter'),
+        health: document.getElementById('health-filter')
+    };
+
+    // Build active list
+    const active = [];
+    Object.keys(filters).forEach(k => {
+        const el = filters[k];
+        if (el && el.value !== 'all') {
+            active.push({ key: k, label: el.options[el.selectedIndex].text, value: el.value });
         }
+    });
+
+    // Apply filters
+    const menuItems = document.querySelectorAll('.menu-item');
+    let visibleCount = 0;
+    menuItems.forEach(item => {
+        const itemId = item.getAttribute('data-item-id');
+        const itemData = menuData.items.find(i => i.id === itemId);
+        if (!itemData) return;
+        let show = true;
+        active.forEach(f => {
+            const dataKey = f.key.replace(/([A-Z])/g, '_$1').toLowerCase();
+            const itemValue = Array.isArray(itemData[dataKey]) ? itemData[dataKey] : [itemData[dataKey]];
+            if (!itemValue.includes(f.value)) show = false;
+        });
+        item.style.display = show ? 'block' : 'none';
+        if (show) visibleCount++;
+    });
+    showFilterResults(visibleCount);
+
+    // Close panel
+    const panel = document.getElementById('filter-panel');
+    const chevron = document.getElementById('filter-chevron');
+    const toggleBtn = document.getElementById('filter-toggle-btn');
+    panel.classList.add('hidden');
+    chevron.style.transform = 'rotate(0deg)';
+}
+
+
+
+function clearFilter(filterId) {
+    const filterElement = document.getElementById(filterId);
+    if (filterElement) {
+        filterElement.value = 'all';
+        applyAllFilters(); 
+        updateActiveFiltersDisplay();
+    }
+}
 
         // Update active filters display
-        function updateActiveFiltersDisplay() {
-            const activeFiltersContainer = document.getElementById('active-filters');
-            const activeFiltersList = document.getElementById('active-filters-list');
-            
-            if (!activeFiltersContainer || !activeFiltersList) return;
-            
-            const filters = [
-                { id: 'price-filter', label: 'Price', icon: 'fas fa-dollar-sign' },
-                { id: 'source-filter', label: 'Source', icon: 'fas fa-map-marker-alt' },
-                { id: 'taste-filter', label: 'Taste', icon: 'fas fa-utensils' },
-                { id: 'packs-filter', label: 'Min. Packs', icon: 'fas fa-boxes' },
-                { id: 'dietary-filter', label: 'Dietary', icon: 'fas fa-leaf' },
-                { id: 'spice-filter', label: 'Spice', icon: 'fas fa-fire' }
-            ];
-            
-            let activeFilters = [];
-            
-            filters.forEach(filter => {
-                const element = document.getElementById(filter.id);
-                if (element && element.value !== 'all') {
-                    const selectedOption = element.options[element.selectedIndex];
-                    activeFilters.push({
-                        label: filter.label,
-                        value: selectedOption.text,
-                        icon: filter.icon,
-                        filterId: filter.id
-                    });
-                }
+function updateActiveFiltersDisplay() {
+    const outsideBox = document.getElementById('active-filters-outside');
+    if (!outsideBox) return;                     // safety-check
+
+    const filterMetas = [
+        { id: 'allergens-filter',          label: 'Allergens',      icon: 'fas fa-ban' },
+        { id: 'dietary-purposes-filter',   label: 'Dietary',        icon: 'fas fa-leaf' },
+        { id: 'cuisine-filter',            label: 'Cuisine',        icon: 'fas fa-utensils' },
+        { id: 'meal-time-filter',          label: 'Meal Time',      icon: 'fas fa-clock' },
+        { id: 'cooking-method-filter',     label: 'Cooking',        icon: 'fas fa-fire' },
+        { id: 'flavor-filter',             label: 'Flavor',         icon: 'fas fa-pepper-hot' },
+        { id: 'temperature-filter',        label: 'Temperature',    icon: 'fas fa-thermometer-half' },
+        { id: 'food-restriction-filter',   label: 'Restriction',    icon: 'fas fa-exclamation-circle' },
+        { id: 'health-filter',             label: 'Health',         icon: 'fas fa-heartbeat' }
+    ];
+
+    const active = [];
+    filterMetas.forEach(f => {
+        const el = document.getElementById(f.id);
+        if (el && el.value !== 'all') {
+            active.push({
+                label: f.label,
+                value: el.options[el.selectedIndex].text,
+                icon: f.icon,
+                filterId: f.id
             });
-            
-            if (activeFilters.length > 0) {
-                activeFiltersContainer.classList.remove('hidden');
-                activeFiltersList.innerHTML = activeFilters.map(filter => `
-                    <span class="inline-flex items-center gap-2 bg-makan-orange text-white px-3 py-1 rounded-full text-sm">
-                        <i class="${filter.icon}"></i>
-                        ${filter.label}: ${filter.value}
-                        <button onclick="clearSingleFilter('${filter.filterId}')" class="ml-1 hover:bg-white hover:bg-opacity-20 rounded-full p-1">
-                            <i class="fas fa-times text-xs"></i>
-                        </button>
-                    </span>
-                `).join('');
-            } else {
-                activeFiltersContainer.classList.add('hidden');
-            }
         }
+    });
+
+    if (active.length) {
+        outsideBox.classList.remove('hidden');
+        outsideBox.innerHTML = active.map(f => `
+            <span class="inline-flex items-center gap-2 bg-makan-orange text-white px-3 py-1 rounded-full text-sm">
+                <i class="${f.icon}"></i>
+                ${f.label}: ${f.value}
+                <button onclick="clearSingleFilter('${f.filterId}')" class="ml-1 hover:bg-white hover:bg-opacity-20 rounded-full p-1">
+                    <i class="fas fa-times text-xs"></i>
+                </button>
+            </span>`).join('');
+    } else {
+        outsideBox.classList.add('hidden');
+    }
+    const clearAllBtn = document.getElementById('clear-all-outside');
+if (clearAllBtn) {
+    active.length ? clearAllBtn.classList.remove('hidden')
+                  : clearAllBtn.classList.add('hidden');
+}}
 
         // Clear single filter
         function clearSingleFilter(filterId) {
@@ -650,50 +717,43 @@
         }
 
         // Clear all filters
-        function clearAllFilters() {
-            const filterIds = ['price-filter', 'source-filter', 'taste-filter', 'packs-filter', 'dietary-filter', 'spice-filter'];
-            
-            filterIds.forEach(filterId => {
-                const filterElement = document.getElementById(filterId);
-                if (filterElement) {
-                    filterElement.value = 'all';
-                }
-            });
-            
-            // Show all items
-            const menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach(item => {
-                item.style.display = 'block';
-            });
-            
-            // Hide active filters
-            const activeFiltersContainer = document.getElementById('active-filters');
-            if (activeFiltersContainer) {
-                activeFiltersContainer.classList.add('hidden');
-            }
-            
-            // Hide filter panel
-            const filterPanel = document.getElementById('filter-panel');
-            const filterChevron = document.getElementById('filter-chevron');
-            const filterToggleBtn = document.getElementById('filter-toggle-btn');
-            
-            if (filterPanel) {
-                filterPanel.classList.add('hidden');
-                filterChevron.style.transform = 'rotate(0deg)';
-                filterToggleBtn.classList.remove('bg-makan-orange', 'text-white');
-                filterToggleBtn.classList.add('text-makan-orange');
-            }
-            
-            showFilterResults(menuData?.items?.length || 0);
-        }
+       function clearAllFilters() {
+    // 1. reset every <select>
+    [
+        'allergens-filter',
+        'dietary-purposes-filter',
+        'cuisine-filter',
+        'meal-time-filter',
+        'cooking-method-filter',
+        'flavor-filter',
+        'temperature-filter',
+        'food-restriction-filter',
+        'health-filter'
+    ].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = 'all';
+    });
+
+    // 2. show every card again
+    document.querySelectorAll('.menu-item').forEach(card => card.style.display = 'block');
+
+    // 3. wipe the badges and the extra "Clear all" button
+    const outsideBox = document.getElementById('active-filters-outside');
+    const clearAllBtn = document.getElementById('clear-all-outside');
+    if (outsideBox) outsideBox.classList.add('hidden');
+    if (clearAllBtn) clearAllBtn.classList.add('hidden');
+
+    showFilterResults(menuData?.items?.length || 0);
+}
 
         // Show filter results count
         function showFilterResults(count) {
             console.log(`Showing ${count} items`);
         }
 
-        // Update the existing DOMContentLoaded event to include filter initialization
         document.addEventListener('DOMContentLoaded', () => {
+             document.getElementById('clear-all-outside')
+            ?.addEventListener('click', clearAllFilters);
             loadMenuData().then(() => {
                 initializeFilters();
             });

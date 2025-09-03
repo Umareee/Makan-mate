@@ -28,6 +28,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+<!-- Mega-menu modal -->
+<div id="mega-menu-modal" class="fixed inset-0 z-[100] hidden pointer-events-none">
+  <div class="absolute inset-0 bg-black/40 pointer-events-auto" onclick="closeMegaMenu()"></div>
+  <div class="absolute top-[80px] left-1/2 -translate-x-1/2 w-4/5 max-w-7xl bg-white rounded-2xl shadow-2xl p-6 pointer-events-auto">
+    <div class="grid grid-cols-3 gap-6">
+      <!-- 9 items, 3×3 -->
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Bento" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Bento Meal</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Classic Delight" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Classic Delight</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Steamboat" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Steamboat</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Healthy Choice" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Healthier Choice</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="High Tea" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">High Tea</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg" alt="Vegetarian" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Vegetarian</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Meat" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Tantalising Meat</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Salmon" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Ocean’s Delight</span>
+      </a>
+      <a href="menu.html" class="group flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
+        <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Dim Sum" class="w-16 h-16 object-cover rounded-lg">
+        <span class="text-sm font-medium text-custom-text group-hover:text-makan-orange">Delicious Dim Sum</span>
+      </a>
+    </div>
+
+    <div class="mt-6 text-center">
+      <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
+        See All Menu
+      </a>
+    </div>
+  </div>
+</div>
+
 <body class="bg-white font-dm-sans text-custom-text">
     <!-- Header -->
     <header class="bg-gray-800 text-white">
@@ -107,7 +159,9 @@
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <a href="menu.html" id="menu-trigger" class="relative text-custom-text hover:text-makan-orange transition-colors font-medium">
+   Menu
+</a>
                 <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
                 <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
                 <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
@@ -1024,6 +1078,43 @@ document.addEventListener('click', async (e) => {
     /* Go straight to quantity-selection, just like menu.html */
     window.location.href = 'quantity-selection.html';
 });
+ function openMegaMenu() {
+    document.getElementById('mega-menu-modal').classList.remove('hidden');
+  }
+  function closeMegaMenu() {
+    document.getElementById('mega-menu-modal').classList.add('hidden');
+  }
+  /* ---------- Mega-menu hover persistence ---------- */
+const trigger = document.getElementById('menu-trigger');
+const mega    = document.getElementById('mega-menu-modal');
+
+if (trigger && mega) {
+  let leaveTimer = null;
+
+  /* ---- SHOW ---- */
+  trigger.addEventListener('mouseenter', () => {
+    clearTimeout(leaveTimer);
+    mega.classList.remove('hidden');
+  });
+
+  mega.addEventListener('mouseenter', () => {
+    clearTimeout(leaveTimer);          // cancel the hide if user re-enters fast
+  });
+
+  /* ---- HIDE ---- */
+  trigger.addEventListener('mouseleave', () => {
+    leaveTimer = setTimeout(() => mega.classList.add('hidden'), 200); // 200 ms grace
+  });
+
+  mega.addEventListener('mouseleave', () => {
+    leaveTimer = setTimeout(() => mega.classList.add('hidden'), 200);
+  });
+
+  /* Optional: also close when backdrop/overlay is clicked */
+  mega.querySelector('.bg-black\\/40').addEventListener('click', () => {
+    mega.classList.add('hidden');
+  });
+}
     </script>
 </body>
 </html>
