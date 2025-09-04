@@ -109,11 +109,11 @@
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                 <div class="relative group">
+                 <div class="group">
         <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
 
         <!-- Full-width mega panel -->
-        <div class="fixed inset-x-0 top-[header-height] bg-white hidden group-hover:block border-t border-gray-200 shadow-sm">
+        <div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
           <div class="container px-2 sm:px-4 py-6">
             <div class="grid grid-cols-3 gap-6">
               <!-- 9 items, 3×3 -->
@@ -154,7 +154,6 @@
                 <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Delicious Dim Sum</span>
               </a>
             </div>
-
             <div class="mt-6 text-center">
               <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
                 See All Menu
@@ -1144,6 +1143,76 @@ function heroSlide(dir) {
 /* pause on hover */
 hero.addEventListener('mouseenter', () => clearInterval(auto));
 hero.addEventListener('mouseleave', () => auto = setInterval(() => heroSlide(1), 5000));
+
+const heroTexts = [
+  {
+    title: "Best food for<br>your taste",
+    description: "Discover delectable cuisine and unforgettable moments<br>in our welcoming, culinary haven."
+  },
+  {
+    title: "Premium Catering<br>Services",
+    description: "Exquisite meals prepared with care for your special<br>occasions and corporate events."
+  },
+  {
+    title: "Fresh Ingredients<br>Every Day",
+    description: "We source the finest ingredients to create memorable<br>dining experiences for you."
+  }
+];
+
+// Update hero text based on slide index
+function updateHeroText(index) {
+  const titleElement = document.querySelector('#hero-slider h1');
+  const descriptionElement = document.querySelector('#hero-slider p');
+  
+  // Use modulo to handle the clone slides
+  const textIndex = (index % 3);
+  
+  titleElement.innerHTML = heroTexts[textIndex].title;
+  descriptionElement.innerHTML = heroTexts[textIndex].description;
+}
+
+// Update the heroSlide function
+function heroSlide(dir) {
+  idx = idx + dir;
+  if (idx >= total) idx = 1;
+  if (idx < 0) idx = total - 2;
+  document.getElementById('hero-slides').style.transform = `translateX(-${idx * 100}%)`;
+  
+  // Update text based on current slide
+  updateHeroText(idx);
+}
+
+// Initialize text on page load
+updateHeroText(1);
+// Hover menu with delay
+const menuTrigger = document.getElementById('menu-trigger');
+const menuPanel = document.querySelector('.group .absolute');
+
+if (menuTrigger && menuPanel) {
+    let menuTimeout;
+    
+    menuTrigger.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        menuPanel.classList.remove('hidden');
+    });
+    
+    menuTrigger.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            menuPanel.classList.add('hidden');
+        }, 1000); // 1 second delay
+    });
+    
+    menuPanel.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        menuPanel.classList.remove('hidden');
+    });
+    
+    menuPanel.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            menuPanel.classList.add('hidden');
+        }, 200); 
+    });
+}
     </script>
 </body>
 </html>
