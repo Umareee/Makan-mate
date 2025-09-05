@@ -182,7 +182,7 @@
     <!-- Hero Section -->
 <section
   id="hero-slider"
-  class="relative min-h-screen overflow-hidden"
+  class="relative min-h-screen overflow-hidden hero-zoom observe-fade"
 >
   <!-- SLIDE WRAPPER (background only) -->
   <div
@@ -269,99 +269,75 @@
 
 
     <!-- Browse Our Menu Section -->
-<section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-2 sm:px-4">
-        <!-- Section Title -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">
-                Browse Our Menu
-            </h2>
-        </div>
-
-        <!-- Menu Categories Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            <!-- 1. BENTO -->
-            <div class="group cursor-pointer" data-item-id="premium-bento">
-                <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="/images/home/menu/imgi_11_bento.jpg" 
-                         alt="Bento Meal" 
-                         class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <h3 class="mt-4 text-xl font-bold text-custom-text text-center">
-                    BENTO MEAL
-                </h3>
-            </div>
-
-            <!-- 2. CLASSIC DELIGHT -->
-            <div class="group cursor-pointer" data-item-id="delight-menu">
-                <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" 
-                         alt="Classic Delight" 
-                         class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <h3 class="mt-4 text-xl font-bold text-custom-text text-center">
-                    CLASSIC DELIGHT MEAL
-                </h3>
-            </div>
-
-            <!-- 3. PREMIUM STEAMBOAT -->
-            <div class="group cursor-pointer" data-item-id="korean-menu">
-                <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" 
-                         alt="Steamboat" 
-                         class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <h3 class="mt-4 text-xl font-bold text-custom-text text-center">
-                    PREMIUM STEAMBOAT PACKAGE
-                </h3>
-            </div>
-
-            <!-- 4. HEALTHIER CHOICE -->
-            <div class="group cursor-pointer" data-item-id="vegetarian-catering">
-                <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" 
-                         alt="Healthy Choice" 
-                         class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <h3 class="mt-4 text-xl font-bold text-custom-text text-center">
-                    HEALTHIER CHOICE MENU
-                </h3>
-            </div>
-
-            <!-- 5. HIGH TEA -->
-            <div class="group cursor-pointer" data-item-id="high-tea">
-                <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" 
-                         alt="High Tea" 
-                         class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <h3 class="mt-4 text-xl font-bold text-custom-text text-center">
-                    HIGH TEA
-                </h3>
-            </div>
-
-            <!-- 6. VEGETARIAN -->
-            <div class="group cursor-pointer" data-item-id="vegetarian-menu">
-                <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg" 
-                         alt="Vegetarian Menu" 
-                         class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <h3 class="mt-4 text-xl font-bold text-custom-text text-center">
-                    VEGETARIAN MENU
-                </h3>
-            </div>
-
-        </div>
+<!-- Browse Our Menu Section -->
+<section class="py-16 bg-gray-50 observe-fade">
+  <div class="container mx-auto px-2 sm:px-4">
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <p class="uppercase text-makan-orange tracking-widest mb-2">Fresh and Local</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">
+        Discover our menu
+      </h2>
     </div>
+
+    <!-- Menu Items Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto stagger">
+
+      <!-- 1. Bento Meal -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer transform -translate-y-4 card-pop" data-item-id="premium-bento">
+        <p class="text-makan-orange font-bold text-lg mb-4">$20.00</p>
+        <div class="relative w-40 h-40 mx-auto overflow-hidden rounded-full transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105">
+          <img src="/images/home/menu/imgi_11_bento.jpg" alt="Bento Meal" class="w-full h-full object-cover">
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-custom-text">Bento Meal</h3>
+        <p class="text-gray-500 text-sm mt-2">Quinoa, corn, black bean, green onion, cherry tomato, & lime vinaigrette.</p>
+      </div>
+
+      <!-- 2. Classic Delight Meal -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer transform translate-y-4 card-pop" data-item-id="delight-menu">
+        <p class="text-makan-orange font-bold text-lg mb-4">$17.00</p>
+        <div class="relative w-40 h-40 mx-auto overflow-hidden rounded-full transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-105">
+          <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Classic Delight" class="w-full h-full object-cover">
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-custom-text">Classic Delight Meal</h3>
+        <p class="text-gray-500 text-sm mt-2">Quinoa, corn, black bean, green onion, cherry tomato, & lime vinaigrette.</p>
+      </div>
+
+      <!-- 3. Premium Steamboat -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer transform -translate-y-4 card-pop" data-item-id="korean-menu">
+        <p class="text-makan-orange font-bold text-lg mb-4">$49.00</p>
+        <div class="relative w-40 h-40 mx-auto overflow-hidden rounded-full transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105">
+          <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Steamboat" class="w-full h-full object-cover">
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-custom-text">Premium Steamboat Package</h3>
+        <p class="text-gray-500 text-sm mt-2">Quinoa, corn, black bean, green onion, cherry tomato, & lime vinaigrette.</p>
+      </div>
+
+     
+
+        <!-- 5. High Tea -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer transform translate-y-4 card-pop" data-item-id="high-tea">
+          <p class="text-makan-orange font-bold text-lg mb-4">$25.00</p>
+          <div class="relative w-40 h-40 mx-auto overflow-hidden rounded-full transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105">
+            <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="High Tea" class="w-full h-full object-cover">
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-custom-text">High Tea</h3>
+          <p class="text-gray-500 text-sm mt-2">Quinoa, corn, black bean, green onion, cherry tomato, & lime vinaigrette.</p>
+        </div>
+        
+
+    </div>
+  </div>
 </section>
 
 
+
+
 <!-- Food Section -->
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-2 sm:px-4 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+<section id="about-parallax" class="py-16 observe-fade">
+  <div class="para-bg" aria-hidden="true"></div>
+  <div class="content container mx-auto px-2 sm:px-4 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto stagger">
       <div class="relative max-w-lg mx-auto lg:mx-0">
         <div class="rounded-3xl overflow-hidden shadow-lg">
           <img
@@ -413,7 +389,7 @@
         <div class="mt-8">
           <a
             href="#"
-            class="inline-block px-8 py-3 border-2 border-makan-orange text-makan-orange rounded-full font-medium transition-colors hover:bg-makan-orange hover:text-white"
+            class="inline-block px-8 py-3 border-2 border-makan-orange text-white bg-makan-orange  rounded-full font-medium transition-colors hover:bg-transparent hover:text-makan-orange"
           >
             More About Us
           </a>
@@ -425,7 +401,7 @@
 </section>
 
     <!-- Services Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gray-50 observe-fade">
         <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <!-- Section Title -->
             <div class="text-center mb-12">
@@ -462,7 +438,7 @@
                 </div>
 
                 <!-- Snack -->
-                <div class="group cursor-pointer">
+                <div class="group cursor-pointer ">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
                         <img src="/images/home/maken-mart/imgi_20_spring-roll.jpg" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
@@ -516,7 +492,7 @@
     </section>
 
     <!-- Fastest Food Delivery Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white observe-fade">
         <div class="container mx-auto px-2 sm:px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 <div class="grid grid-cols-2 gap-4">
@@ -573,7 +549,7 @@
     </section>
 
     <!-- Customer Testimonials Section -->
-<section class="py-16">
+<section class="py-16 observe-fade">
   <div class="container mx-auto px-2 sm:px-4">
     <!-- Section Title -->
     <div class="text-center mb-12">
@@ -705,7 +681,7 @@
   </div>
 </section>
 
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-gray-50 observe-fade">
   <div class="container mx-auto px-2 sm:px-4">
     <!-- Section Title -->
     <div class="text-center mb-12">
@@ -832,7 +808,7 @@
 
 
     <!-- Our Blog & Articles Section -->
-    <section class="py-12 bg-white">
+    <section class="py-12 bg-white observe-fade">
         <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <!-- Section Header -->
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
@@ -937,7 +913,7 @@ Complete your Makan Mate experience with a refreshing glass of our Home-made Pur
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-16">
+    <footer class="bg-gray-800 text-white py-16 observe-fade  ">
         <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <!-- Logo and Description -->
@@ -1055,9 +1031,150 @@ Complete your Makan Mate experience with a refreshing glass of our Home-made Pur
   width: max-content;
   animation: scroll 60s linear infinite;
 }
+/* ==========  NEW VISUAL DELIGHTS  ========== */
+/* 1. Hero zoom-out (infinite) */
+@keyframes heroZoom {
+  0%   { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+#hero-slides > div {
+  animation: heroZoom 18s ease-out infinite alternate;
+  will-change: transform;
+}
+/* darker vignette so text stays legible while zooming */
+#hero-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, #0009 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+/* ======  CREATIVE MOTION KIT  ====== */
+/* 1.1  Global fade-in for every section */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s cubic-bezier(.16,1,.3,1),
+              transform .9s cubic-bezier(.16,1,.3,1);
+}
+section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1.2  Stagger children (menus, cards, grids) */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* delay each child 0.08s more than sibling */
+.stagger.is-visible > *:nth-child(1) { transition-delay: .08s; }
+.stagger.is-visible > *:nth-child(2) { transition-delay: .16s; }
+.stagger.is-visible > *:nth-child(3) { transition-delay: .24s; }
+.stagger.is-visible > *:nth-child(4) { transition-delay: .32s; }
+.stagger.is-visible > *:nth-child(5) { transition-delay: .40s; }
+.stagger.is-visible > *:nth-child(6) { transition-delay: .48s; }
+.stagger.is-visible > *:nth-child(7) { transition-delay: .56s; }
+.stagger.is-visible > *:nth-child(8) { transition-delay: .64s; }
+.stagger.is-visible > *:nth-child(9) { transition-delay: .72s; }
+
+/* 1.3  Scale & rotate entrance for cards */
+.card-pop {
+  opacity: 0;
+  transform: scale(.92) rotate(-1.5deg);
+  transition: opacity .7s, transform .7s;
+}
+.card-pop.is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* 1.4  Parallax hero caption (subtle) */
+@keyframes floatDown {
+  0%   { transform: translateY(-15px); }
+  100% { transform: translateY(15px); }
+}
+.hero-caption {
+  animation: floatDown 6s ease-in-out infinite alternate;
+}
+
+/* 1.5  Bounce for CTA buttons */
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+.btn-bounce:hover {
+  animation: bounce .55s;
+}
+
+/* 1.6  Gradient shimmer on logo hover */
+@keyframes shimmer {
+  0%  { background-position: -200% 0; }
+  100%{ background-position: 200% 0; }
+}
+.logo-shimmer:hover {
+  background: linear-gradient(110deg, #FF5722 45%, #fff 50%, #FF5722 55%);
+  background-size: 200% auto;
+  color: transparent;
+  /* -webkit-background-clip: text; */
+  animation: shimmer 1.2s linear infinite;
+}
+
+/* 1.7  Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition-duration: 1ms !important; }
+}
+/* ========== PARALLAX ABOUT-US ========== */
+/* --- orange heading / white description inside parallax about-us --- */
+#about-parallax h2,
+#about-parallax .content h2 {          /* double selector for safety */
+  color: #FF5722 !important;          /* makan-orange */
+}
+
+#about-parallax p,
+#about-parallax .content p {
+  color: #ffffff !important;
+}
+
+#about-parallax {
+  position: relative;
+  overflow: hidden;               /* keep moving layer inside */
+}
+
+#about-parallax .para-bg {
+  position: absolute;
+  top: -100%;                    
+  left: 0;
+  width: 100%;
+  height: 150%;                   
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    
+    url("/images/home/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg") center/cover no-repeat;
+    filter: brightness(0.85);
+  will-change: transform;
+  z-index: 0;
+}
+
+#about-parallax .content {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
     <script>
+      const onEntry = (entries, obs) => entries.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('is-visible');
+});
+const io = new IntersectionObserver(onEntry, { threshold: .18 });
+document.querySelectorAll('.observe-fade, .stagger, .card-pop')
+        .forEach(el => io.observe(el));
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1212,6 +1329,17 @@ if (menuTrigger && menuPanel) {
             menuPanel.classList.add('hidden');
         }, 200); 
     });
+}
+/* ----------  PARALLAX ABOUT-US  ---------- */
+const para = document.getElementById('about-parallax');
+if (para) {
+  const bg = para.querySelector('.para-bg');
+  const speed = 0.35;                    // 1 = normal scroll, <1 = slower
+  const onScroll = () => {
+    const y = window.pageYOffset;
+    bg.style.transform = `translateY(${y * speed}px)`;
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
 }
     </script>
 </body>
