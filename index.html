@@ -275,7 +275,7 @@
     <!-- Section Title -->
     <div class="text-center mb-12">
       <p class="uppercase text-makan-orange tracking-widest mb-2">Fresh and Local</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
         Discover our menu
       </h2>
     </div>
@@ -328,49 +328,20 @@
 
     </div>
   </div>
+          <div class="absolute -z-10 bottom-0 -right-20 w-64 h-64" style="background-image: url('./images/home/background-home.png'); background-size: cover; background-position: center;"></div>
 </section>
 
 
 
 
 <!-- Food Section -->
-<section id="about-parallax" class="py-16 observe-fade">
-  <div class="para-bg" aria-hidden="true"></div>
+<section class="py-16 observe-fade relative bg-white">
   <div class="content container mx-auto px-2 sm:px-4 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto stagger">
-      <div class="relative max-w-lg mx-auto lg:mx-0">
-        <div class="rounded-3xl overflow-hidden shadow-lg">
-          <img
-            src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png"
-            alt="Delicious Food"
-            class="w-full h-auto object-contain"
-          />
-        </div>
-        <div class="absolute -bottom-4 -right-4 sm:bottom-0 sm:right-0 sm:translate-x-1/4 sm:translate-y-1/4 bg-makan-orange text-white p-3 sm:p-4 md:p-6 rounded-2xl shadow-xl max-w-xs sm:max-w-sm">
-          <h3 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">Come and visit us</h3>
-          <div class="space-y-1 sm:space-y-2 md:space-y-3 text-xs sm:text-sm md:text-sm">
-            <div class="flex items-center">
-              <i class="fas fa-phone text-sm md:text-base mr-2 md:mr-3"></i>
-              <span>62642233 Ext 10-18</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-envelope text-sm md:text-base mr-2 md:mr-3"></i>
-              <span>order@makanmate.com</span>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-map-marker-alt text-sm md:text-base mt-1 mr-2 md:mr-3"></i>
-              <div>
-                <p>35-B Fishery Port Road, Jurong</p>
-                <p>Central Fish Market, Singapore,</p>
-                <p>619744</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Right side – Content -->
-      <div class="lg:pr-8">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
+
+      <!-- Left side – Content -->
+      <div class="lg:pr-8 text-center lg:text-left">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
           We provide healthy food for your family.
         </h2>
         <div class="space-y-6 text-gray-600 leading-relaxed">
@@ -389,171 +360,174 @@
         <div class="mt-8">
           <a
             href="#"
-            class="inline-block px-8 py-3 border-2 border-makan-orange text-white bg-makan-orange  rounded-full font-medium transition-colors hover:bg-transparent hover:text-makan-orange"
+            class="inline-block px-8 py-3 bg-makan-orange text-white rounded-md font-medium transition-colors hover:bg-transparent hover:text-makan-orange border-2 border-makan-orange"
           >
             More About Us
           </a>
         </div>
       </div>
-     
+
+      <!-- Right side – Circular Image with Visit Info -->
+      <div class="flex justify-center lg:justify-end relative">
+        <!-- Main Circle Image -->
+        <div class="rounded-full overflow-hidden shadow-lg w-80 h-80 sm:w-96 sm:h-96">
+          <img
+            src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png"
+            alt="Delicious Food"
+            class="w-full h-full object-cover"
+          />
+
+          <!-- Visit Info Circle -->
+          <div class="absolute z-10 -bottom-10 left-30 translate-y-6 -translate-x-6 bg-makan-orange text-white p-6 rounded-full shadow-xl w-64 h-64 flex flex-col justify-center items-center text-center">
+            <h3 class="text-lg font-bold mb-3">Come and visit us</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center justify-center">
+                <i class="fas fa-phone mr-2"></i>
+                <span>62642233 Ext 10-18</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <i class="fas fa-envelope mr-2"></i>
+                <span>order@makanmate.com</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-map-marker-alt mb-1"></i>
+                <p>35-B Fishery Port Road, Jurong</p>
+                <p>Central Fish Market, Singapore</p>
+                <p>619744</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+  <div class="absolute -z-10 top-0 -left-20 w-64 h-64" style="background-image: url('./images/home/background-home.png'); background-size: cover; background-position: center;"></div>
 </section>
+
 
     <!-- Services Section -->
     <section class="py-16 bg-gray-50 observe-fade">
         <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <!-- Section Title -->
             <div class="text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">Maken Mart</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">Maken Mart</h2>
             </div>
 
             <!-- Services Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
                 <!-- Meat -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Caterings" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">TANTALISING MEAT</h3>
-                </div>
+               <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Meat" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">TANTALISING MEAT</h3>
+      </div>
 
-                <!-- Ocean -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Birthdays" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">OCEAN’S DELIGHT</h3>
-                </div>
+      <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Ocean’s Delight" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">OCEAN’S DELIGHT</h3>
+      </div>
 
-                <!-- Dim -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Weddings" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">DELICIOUS DIM SUM</h3>
-                </div>
+      <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Dim Sum" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">DELICIOUS DIM SUM</h3>
+      </div>
 
-                <!-- Snack -->
-                <div class="group cursor-pointer ">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_20_spring-roll.jpg" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">APPETIZING SNACKS</h3>
-                </div>
-                 <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_21_sauce.jpg" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">SAVORY SAUCES</h3>
-                </div>
-                 <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_22_set.jpg" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">SET MENUS</h3>
-                </div>
-                 <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_23_vegetable.jpg" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">NUTRITIOUS VEGETABLES</h3>
-                </div>
-                 <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_24_untitled-1.jpg" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">TASTY NOODLES</h3>
-                </div>
-                 <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_26_6.png" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">DECADENT DESSERTS</h3>
-                </div>
-                 <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="/images/home/maken-mart/imgi_27_makan-mate-front-page-image-size-1.png" alt="Events" class="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-custom-text mb-3 text-center">DRY GOODS</h3>
-                </div>
+      <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_20_spring-roll.jpg" alt="Snacks" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">APPETIZING SNACKS</h3>
+      </div>
+<div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Meat" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">TANTALISING MEAT</h3>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Ocean’s Delight" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">OCEAN’S DELIGHT</h3>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Dim Sum" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">DELICIOUS DIM SUM</h3>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md flex flex-col items-center p-6 hover:shadow-lg transition">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+          <img src="/images/home/maken-mart/imgi_20_spring-roll.jpg" alt="Snacks" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-custom-text text-center">APPETIZING SNACKS</h3>
+      </div>
+
             </div>
         </div>
+                <div class="absolute -z-10 top-0 -right-20 w-64 h-64" style="background-image: url('./images/home/background-home.png'); background-size: cover; background-position: center;"></div>
     </section>
 
     <!-- Fastest Food Delivery Section -->
-    <section class="py-16 bg-white observe-fade">
-        <div class="container mx-auto px-2 sm:px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="col-span-1 row-span-2">
-                        <img src="/images/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.png" alt="Chef preparing food" class="w-full h-full object-cover rounded-2xl">
+  <section class="py-16 bg-white observe-fade">
+    <div class="container mx-auto px-2 sm:px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                    <div class="md:w-1/2 pr-8">
+                        <img src="/images/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.png" alt="Chef preparing food" class="w-full h-full object-cover">
                     </div>
-                    <div class="col-span-1 mt-4">
-                        <img src="/images/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food 1.png" alt="Delicious Pasta" class="w-full h-48 object-cover rounded-2xl">
+
+            <div class="lg:pl-8">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    Fastest Food <br>
+                    Delivery in City
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Our visual designer lets you quickly and of drag a down your way to customapps for both keep desktop.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-7 h-7 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-white text-sm"></i>
+                        </div>
+                        <span class="text-gray-800 font-medium">Delivery within 30 minutes</span>
                     </div>
-                    <div class="col-span-1">
-                        <img src="/images/sadj-iron-pot-with-various-salads 1.png" alt="Grilled Meal" class="w-full h-48 object-cover rounded-2xl">
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-7 h-7 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-tag text-white text-sm"></i>
+                        </div>
+                        <span class="text-gray-800 font-medium">Best Offer & Prices</span>
                     </div>
-                </div>
 
-                <!-- Right side - Content -->
-                <div class="lg:pl-8">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-custom-text mb-6 leading-tight font-playfair">
-                        Fastest Food <br>
-                         Delivery in City
-                    </h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Our visual designer lets you quickly and of  drag a down <br> your way to customapps for both keep desktop.
-                    </p>
-
-                    <!-- Features List -->
-                    <div class="space-y-4 mb-8">
-                        <!-- Delivery Feature -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-7 h-7 bg-makan-orange rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-clock text-white text-sm"></i>
-                            </div>
-                            <span class="text-custom-text font-medium">Delivery within 30 minutes</span>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-7 h-7 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-laptop text-white text-sm"></i>
                         </div>
-
-                        <!-- Best Offer Feature -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-7 h-7 bg-makan-orange rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-tag text-white text-sm"></i>
-                            </div>
-                            <span class="text-custom-text font-medium">Best Offer & Prices</span>
-                        </div>
-
-                        <!-- Online Services Feature -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-7 h-7 bg-makan-orange rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-laptop text-white text-sm"></i>
-                            </div>
-                            <span class="text-custom-text font-medium">Online Services Available</span>
-                        </div>
+                        <span class="text-gray-800 font-medium">Online Services Available</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+        <div class="absolute -z-10 bottom-0 -right-20 w-64 h-64" style="background-image: url('./images/home/background-home.png'); background-size: cover; background-position: center;"></div>
+</section>
 
     <!-- Customer Testimonials Section -->
 <section class="py-16 observe-fade">
   <div class="container mx-auto px-2 sm:px-4">
     <!-- Section Title -->
     <div class="text-center mb-12">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-custom-text mb-4 font-playfair">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
         What Our Customers Say
       </h2>
     </div>
@@ -681,129 +655,88 @@
   </div>
 </section>
 
-  <section class="py-16 bg-gray-50 observe-fade">
-  <div class="container mx-auto px-2 sm:px-4">
-    <!-- Section Title -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text mb-4 font-playfair">Occasions</h2>
+<!--Occassion Section-->
+<section class="py-16 bg-white observe-fade">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Occasions
+      </h2>
+      <p class="text-gray-600 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus, tortor nec 
+        dignissim semper, felis eros venenatis metus, id molestie sapien augue mattis lacus. 
+        Curabitur vel nibh libero.
+      </p>
     </div>
 
-    <!-- Occasions Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
-      <!-- Card wrapper with gradient border -->
-      <div class="rounded-xl p-[1.5px] bg-gradient-to-r from-makan-orange to-pink-500">
-        <div class="relative bg-white rounded-lg overflow-hidden p-5 group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-          <div aria-hidden="true" class="pointer-events-none absolute -top-6 -right-8 w-28 h-28 rounded-full blur-3xl opacity-20 bg-orange-300"></div>
-
-          <div class="overflow-hidden rounded-lg">
-            <img
-              src="/images/home/occasions/imgi_29_WhatsApp-Image-2024-11-08-at-9.45.35-AM-1.jpg"
-              alt="Birthday party catering"
-              loading="lazy"
-              class="w-full h-56 sm:h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <h3 class="mt-4 text-lg sm:text-xl font-semibold text-custom-text">Bento</h3>
-
-          <p class="text-gray-500 text-sm mt-2 mb-4 leading-relaxed">
-            Portion-controlled, chef-curated bento boxes — balanced flavours perfect for lunches on-the-go.
-          </p>
-
-          <div class="flex items-center justify-between">
-            <a href="menu.html" class="text-makan-orange font-medium hover:underline text-sm">
-              Explore Menu
-            </a>
-          </div>
+    <!-- Food Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Bento -->
+      <div class="text-center">
+        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-lg group">
+          <img
+            src="/images/home/occasions/imgi_29_WhatsApp-Image-2024-11-08-at-9.45.35-AM-1.jpg"
+            alt="Bento"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
+        <h3 class="mt-4 font-semibold text-lg text-gray-900">Bento</h3>
+        <p class="text-gray-500 text-sm mt-2">
+          Portion-controlled, chef-curated bento boxes — balanced flavours perfect for lunches on-the-go.
+        </p>
       </div>
 
       <!-- Buffet -->
-      <div class="rounded-xl p-[1.5px] bg-gradient-to-r from-makan-orange to-pink-500">
-        <div class="relative bg-white rounded-lg overflow-hidden p-5 group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-          <div aria-hidden="true" class="pointer-events-none absolute -top-6 -right-8 w-28 h-28 rounded-full blur-3xl opacity-20 bg-orange-300"></div>
-
-          <div class="overflow-hidden rounded-lg">
-            <img
-              src="/images/home/occasions/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg"
-              alt="Birthday party catering"
-              loading="lazy"
-              class="w-full h-56 sm:h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <h3 class="mt-4 text-lg sm:text-xl font-semibold text-custom-text">Buffet</h3>
-
-          <p class="text-gray-500 text-sm mt-2 mb-4 leading-relaxed">
-            Generous buffet stations with hot and cold options — ideal for feeding large groups with variety.
-          </p>
-
-          <div class="flex items-center justify-between">
-            <a href="#" class="text-makan-orange font-medium hover:underline text-sm">
-              Explore Menu
-            </a>
-          </div>
+      <div class="text-center">
+        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-lg group">
+          <img
+            src="/images/home/occasions/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg"
+            alt="Buffet"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
+        <h3 class="mt-4 font-semibold text-lg text-gray-900">Buffet</h3>
+        <p class="text-gray-500 text-sm mt-2">
+          Generous buffet stations with hot and cold options — ideal for feeding large groups with variety.
+        </p>
       </div>
 
       <!-- Corporate -->
-      <div class="rounded-xl p-[1.5px] bg-gradient-to-r from-makan-orange to-pink-500">
-        <div class="relative bg-white rounded-lg overflow-hidden p-5 group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-          <div aria-hidden="true" class="pointer-events-none absolute -top-6 -right-8 w-28 h-28 rounded-full blur-3xl opacity-20 bg-amber-300"></div>
-
-          <div class="overflow-hidden rounded-lg">
-            <img
-              src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg"
-              alt="Corporate event catering"
-              loading="lazy"
-              class="w-full h-56 sm:h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <h3 class="mt-4 text-lg sm:text-xl font-semibold text-custom-text">Corporate</h3>
-
-          <p class="text-gray-500 text-sm mt-2 mb-4 leading-relaxed">
-            Professional set menus, neat plating and efficient service for conferences and meetings.
-          </p>
-
-          <div class="flex items-center justify-between">
-            <a href="#" class="text-makan-orange font-medium hover:underline text-sm">
-              Explore Menu
-            </a>
-          </div>
+      <div class="text-center">
+        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-lg group">
+          <img
+            src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg"
+            alt="Corporate"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
+        <h3 class="mt-4 font-semibold text-lg text-gray-900">Corporate</h3>
+        <p class="text-gray-500 text-sm mt-2">
+          Professional set menus, neat plating and efficient service for conferences and meetings.
+        </p>
       </div>
 
-      <!-- Anniversary -->
-      <div class="rounded-xl p-[1.5px] bg-gradient-to-r from-makan-orange to-pink-500">
-        <div class="relative bg-white rounded-lg overflow-hidden p-5 group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-          <div aria-hidden="true" class="pointer-events-none absolute -top-6 -right-8 w-28 h-28 rounded-full blur-3xl opacity-20 bg-rose-300"></div>
-
-          <div class="overflow-hidden rounded-lg">
-            <img
-              src="/images/home/occasions/imgi_32_WhatsApp-Image-2024-11-08-at-9.45.35-AM-2.jpg"
-              alt="Anniversary dinner"
-              loading="lazy"
-              class="w-full h-56 sm:h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <h3 class="mt-4 text-lg sm:text-xl font-semibold text-custom-text">Mini-Buffet</h3>
-
-          <p class="text-gray-500 text-sm mt-2 mb-4 leading-relaxed">
-             Compact spread delivering buffet-style variety for gatherings and small events.
-          </p>
-
-          <div class="flex items-center justify-between">
-            <a href="menu.html" class="text-makan-orange font-medium hover:underline text-sm">
-              Explore Menu
-            </a>
-          </div>
+      <!-- Mini-Buffet -->
+      <div class="text-center">
+        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-lg group">
+          <img
+            src="/images/home/occasions/imgi_32_WhatsApp-Image-2024-11-08-at-9.45.35-AM-2.jpg"
+            alt="Mini-Buffet"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
+        <h3 class="mt-4 font-semibold text-lg text-gray-900">Mini-Buffet</h3>
+        <p class="text-gray-500 text-sm mt-2">
+          Compact spread delivering buffet-style variety for gatherings and small events.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
+
 
 
 
@@ -1130,42 +1063,6 @@ section.is-visible {
 /* 1.7  Respect user motion preference */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: 1ms !important; }
-}
-/* ========== PARALLAX ABOUT-US ========== */
-/* --- orange heading / white description inside parallax about-us --- */
-#about-parallax h2,
-#about-parallax .content h2 {          /* double selector for safety */
-  color: #FF5722 !important;          /* makan-orange */
-}
-
-#about-parallax p,
-#about-parallax .content p {
-  color: #ffffff !important;
-}
-
-#about-parallax {
-  position: relative;
-  overflow: hidden;               /* keep moving layer inside */
-}
-
-#about-parallax .para-bg {
-  position: absolute;
-  top: -100%;                    
-  left: 0;
-  width: 100%;
-  height: 150%;                   
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-    
-    url("/images/home/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg") center/cover no-repeat;
-    filter: brightness(0.85);
-  will-change: transform;
-  z-index: 0;
-}
-
-#about-parallax .content {
-  position: relative;
-  z-index: 1;
 }
 </style>
     <script>
