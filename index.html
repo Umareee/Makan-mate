@@ -113,54 +113,114 @@
         <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
 
         <!-- Full-width mega panel -->
-        <div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
-          <div class="container px-2 sm:px-4 py-6">
-            <div class="grid grid-cols-3 gap-6">
-              <!-- 9 items, 3×3 -->
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition ">
-                <img src="/images/home/menu/imgi_11_bento.jpg" alt="Bento" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Bento Meal</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Classic Delight" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Classic Delight</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Steamboat" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Steamboat</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Healthy Choice" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Healthier Choice</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="High Tea" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">High Tea</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg" alt="Vegetarian" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Vegetarian</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Meat" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Tantalising Meat</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Salmon" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Ocean’s Delight</span>
-              </a>
-              <a href="menu.html" class="group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition">
-                <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Dim Sum" class="w-16 h-16 object-cover rounded-lg">
-                <span class="text-sm font-medium text-custom-text group-hover/item:text-makan-orange">Delicious Dim Sum</span>
-              </a>
-            </div>
-            <div class="mt-6 text-center">
-              <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
-                See All Menu
-              </a>
-            </div>
-          </div>
-        </div>
+<div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
+  <div class="container px-2 sm:px-4 py-6">
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center space-x-4 mb-6">
+      <button class="filter-btn bg-makan-orange text-white px-4 py-2 rounded-full font-medium transition" data-filter="all">
+        All
+      </button>
+      <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-makan-orange hover:text-white transition" data-filter="bento">
+        Bento
+      </button>
+      <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-makan-orange hover:text-white transition" data-filter="buffet">
+        Buffet
+      </button>
+      <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-makan-orange hover:text-white transition" data-filter="mini-buffet">
+        Mini Buffet
+      </button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div id="menu-grid" class="grid grid-cols-3 gap-6">
+
+      <!-- 1. Bento Meal -->
+      <a href="menu.html" data-category="bento"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Bento"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Bento Meal</span>
+      </a>
+
+      <!-- 2. Classic Delight (Buffet) -->
+      <a href="menu.html" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Classic Delight"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Classic Delight</span>
+      </a>
+
+      <!-- 3. Steamboat (Buffet) -->
+      <a href="menu.html" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Steamboat"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Steamboat</span>
+      </a>
+
+      <!-- 4. Healthier Choice Buffet -->
+      <a href="menu.html" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Healthy Choice Buffet"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Healthier Choice Buffet</span>
+      </a>
+
+      <!-- 5. High Tea (Mini Buffet) -->
+      <a href="menu.html" data-category="mini-buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="High Tea"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">High Tea</span>
+      </a>
+
+      <!-- 6. Vegetarian (Buffet) -->
+      <a href="menu.html" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg" alt="Vegetarian"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Vegetarian</span>
+      </a>
+
+      <!-- 7. Tantalising Meat (Buffet) -->
+      <a href="menu.html" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Meat"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Tantalising Meat</span>
+      </a>
+
+      <!-- 8. Ocean’s Delight (Buffet) -->
+      <a href="menu.html" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Salmon"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Ocean’s Delight</span>
+      </a>
+
+      <!-- 9. Delicious Dim Sum (Mini Buffet) -->
+      <a href="menu.html" data-category="mini-buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Dim Sum"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Delicious Dim Sum</span>
+      </a>
+
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-6 text-center">
+      <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
+        See All Menu
+      </a>
+    </div>
+  </div>
+</div>
+
+
+ 
+
       </div>
                 <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
                 <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
@@ -1229,17 +1289,27 @@ if (menuTrigger && menuPanel) {
         }, 200); 
     });
 }
-/* ----------  PARALLAX ABOUT-US  ---------- */
-const para = document.getElementById('about-parallax');
-if (para) {
-  const bg = para.querySelector('.para-bg');
-  const speed = 0.35;                    // 1 = normal scroll, <1 = slower
-  const onScroll = () => {
-    const y = window.pageYOffset;
-    bg.style.transform = `translateY(${y * speed}px)`;
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-}
+ <!-- Filtering Script -->
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      menuItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'flex'; // show
+        } else {
+          item.style.display = 'none'; // hide
+        }
+      });
+
+      // Active button style
+      filterBtns.forEach(b => b.classList.remove('bg-makan-orange', 'text-white'));
+      btn.classList.add('bg-makan-orange', 'text-white');
+    });
+  });
     </script>
 </body>
 </html>
