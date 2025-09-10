@@ -127,7 +127,121 @@
       <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
         <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
         <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <div class="group">
+        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+
+        <!-- Full-width mega panel -->
+<div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
+  <div class="px-4 lg:px-128">
+<div class="max-w-6xl mx-auto py-6">
+    <!-- Filter Buttons -->
+    <div class="flex justify-center space-x-4 mb-6">
+      <button class="filter-btn bg-makan-orange text-white px-4 py-2 rounded-full font-medium transition" data-filter="all">
+        All
+      </button>
+      <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-makan-orange hover:text-white transition" data-filter="bento">
+        Bento
+      </button>
+      <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-makan-orange hover:text-white transition" data-filter="buffet">
+        Buffet
+      </button>
+      <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-makan-orange hover:text-white transition" data-filter="mini-buffet">
+        Mini Buffet
+      </button>
+    </div>
+
+    <!-- Menu Grid -->
+     <div class="flex justify-center">
+    <div id="menu-grid" 
+     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-5xl w-full">
+
+      <!-- 1. Bento Meal -->
+      <a href="#" data-category="bento" data-item-id = "premium-bento"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Bento"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Bento Meal</span>
+      </a>
+
+      <!-- 2. Classic Delight (Buffet) -->
+      <a href="#" data-category="buffet" data-item-id="delight-menu"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Classic Delight"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Classic Delight</span>
+      </a>
+
+      <!-- 3. Steamboat (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Steamboat"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Steamboat</span>
+      </a>
+
+      <!-- 4. Healthier Choice Buffet -->
+      <a href="#" data-category="buffet" data-item-id="combo-deal"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Healthy Choice Buffet"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Healthier Choice Buffet</span>
+      </a>
+
+      <!-- 5. High Tea (Mini Buffet) -->
+      <a href="#" data-category="mini-buffet" data-item-id="high-tea"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="High Tea"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">High Tea</span>
+      </a>
+
+      <!-- 6. Vegetarian (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg" alt="Vegetarian"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Vegetarian</span>
+      </a>
+
+      <!-- 7. Tantalising Meat (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/maken-mart/imgi_17_meat.jpg" alt="Meat"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Tantalising Meat</span>
+      </a>
+
+      <!-- 8. Ocean’s Delight (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/maken-mart/imgi_18_salmon.jpg" alt="Salmon"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Ocean’s Delight</span>
+      </a>
+
+      <!-- 9. Delicious Dim Sum (Mini Buffet) -->
+      <a href="#" data-category="mini-buffet"
+         class="menu-item group/item flex items-center space-x-3 rounded-xl hover:bg-gray-100 p-2 transition transform hover:scale-[1.02] hover:shadow-md duration-300 ease-in-out">
+        <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Dim Sum"
+             class="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover/item:scale-110 group-hover/item:rotate-1">
+        <span class="text-sm font-medium text-custom-text transition-colors duration-300 group-hover/item:text-makan-orange">Delicious Dim Sum</span>
+      </a>
+    </div>
+    </div>
+    </div>
+    <!-- CTA Button -->
+    <div class="text-center py-6">
+      <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
+        See All Menu
+      </a>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+      </div>
         <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
         <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
         <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
@@ -562,6 +676,98 @@ if (mobileMenu) {
       mobileMenu.classList.add('hidden');
     }
   });
+}
+
+ let menuData = null;
+async function loadMenuData() {
+    if (menuData) return menuData;          // already cached
+    try {
+        const res = await fetch('/menu-items.json');
+        menuData = await res.json();
+        return menuData;
+    } catch (err) {
+        console.error('Could not load /menu-items.json', err);
+    }
+}
+        /* Handle clicks on the menu cards */
+document.addEventListener('click', async (e) => {
+    const card = e.target.closest('[data-item-id]');
+    if (!card) return;
+
+    const id = card.dataset.itemId;
+    const data = await loadMenuData();
+    const item = data.items.find(i => i.id === id);
+
+    if (!item) {
+        Swal.fire({ icon:'info', title:'Coming soon', text:'This item is not configured yet.' });
+        return;
+    }
+
+    /* Same localStorage structure used in menu.html */
+    localStorage.setItem('selectedMenuItem', JSON.stringify({
+        name: item.name,
+        id: item.id,
+        image: item.image,
+        price: item.price,
+        description: item.description,
+        customizable: item.customizable,
+        data_source: item.data_source
+    }));
+
+    /* Go straight to quantity-selection, just like menu.html */
+    window.location.href = 'quantity-selection.html';
+});
+
+ //Filtering script
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      menuItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'flex'; // show
+        } else {
+          item.style.display = 'none'; // hide
+        }
+      });
+
+      // Active button style
+      filterBtns.forEach(b => b.classList.remove('bg-makan-orange', 'text-white'));
+      btn.classList.add('bg-makan-orange', 'text-white');
+    });
+  });
+
+  // Hover menu with delay
+const menuTrigger = document.getElementById('menu-trigger');
+const menuPanel = document.querySelector('.group .absolute');
+
+if (menuTrigger && menuPanel) {
+    let menuTimeout;
+    
+    menuTrigger.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        menuPanel.classList.remove('hidden');
+    });
+    
+    menuTrigger.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            menuPanel.classList.add('hidden');
+        }, 1000); // 1 second delay
+    });
+    
+    menuPanel.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        menuPanel.classList.remove('hidden');
+    });
+    
+    menuPanel.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            menuPanel.classList.add('hidden');
+        }, 200); 
+    });
 }
 </script>
 
