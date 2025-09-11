@@ -5,8 +5,9 @@
         "id": "savoury-delight",
         "name": "Savoury Delight",
         "type": "checkbox",
-        "min_selections": 2,
-        "max_selections": 2,
+        "min_selections": 1,
+        "max_selections": 7,
+        "dynamic_selection": true,
         "options": [
           { "id": "mini-red-bean-bun", "name": "Mini Red Bean Bun", "price": 1.20, "image": "/images/high-tea/imgi_75_Mini-Red-Bean-Bun-edit-100x100.png", "description": "" },
           { "id": "steamed-lotus-bun", "name": "Steamed Lotus Bun", "price": 1.20, "image": "/images/high-tea/imgi_76_Steamed-Lotus-Bun-edit-100x100.png", "description": "" },

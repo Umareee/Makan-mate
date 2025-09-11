@@ -407,15 +407,30 @@
       const card = document.createElement('div');
       card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4 card-collapsed';
       
+      // Calculate dynamic limits for this category
+      let effectiveMaxSelections = category.max_selections;
+      let categoryDescription = '';
+      
+      if (category.dynamic_selection && category.type === 'checkbox') {
+        effectiveMaxSelections = Math.min(remainingCheckboxSelections, category.max_selections);
+      } else if (category.type === 'radio') {
+      }
+      
       const titleSection = document.createElement('div');
       titleSection.innerHTML = `
-        <div class="font-semibold text-gray-800 uppercase text-base mb-3">${category.name}</div>
+        <div class="font-semibold text-gray-800 uppercase text-base mb-1">${category.name}${categoryDescription}</div>
+        <div class="text-xs text-gray-600 mb-2" id="${category.id}-selection-info">
+          ${category.dynamic_selection ? `Available selections: ${effectiveMaxSelections}` : ''}
+        </div>
         <div class="cat-topline"></div>
       `;
       card.appendChild(titleSection);
       
       const optionsSection = document.createElement('div');
       optionsSection.className = 'mt-4 space-y-2';
+      optionsSection.setAttribute('data-max-selections', effectiveMaxSelections);
+      optionsSection.setAttribute('data-category-type', category.type);
+      optionsSection.setAttribute('data-category-id', category.id);
       
       if (category.type === 'checkbox') {
         // Multiple selection (checkboxes)
@@ -486,6 +501,37 @@
     // }
 
     // Initialize page
+    // Global variables for dynamic selection
+    let totalSelectableItems = 0;
+    let fixedRadioSelections = 3; // Sweet Delight, Beverage, Hot Serve
+    let remainingCheckboxSelections = 0;
+    let currentTotalSelected = 0;
+
+    // Extract total items from quantity selection
+    function extractTotalItemsFromQuantity() {
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity && selectedWithQuantity.quantityTitle) {
+          // Extract number from titles like "High Tea Select 4 Items + Drinks @ $9.00 per pax"
+          const match = selectedWithQuantity.quantityTitle.match(/select\s+(\d+)\s+items/i);
+          if (match) {
+            totalSelectableItems = parseInt(match[1]);
+            remainingCheckboxSelections = totalSelectableItems - fixedRadioSelections;
+            console.log(`Dynamic Selection: Total ${totalSelectableItems} items, ${remainingCheckboxSelections} checkbox selections available`);
+            return true;
+          }
+        }
+      } catch (error) {
+        console.error('Error extracting quantity info:', error);
+      }
+      
+      // Fallback to default if extraction fails
+      totalSelectableItems = 4; // Default
+      remainingCheckboxSelections = 1; // 4 - 3 = 1
+      console.log('Using fallback: 4 total items, 1 checkbox selection');
+      return false;
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       // Set minimum date to today
       const today = new Date().toISOString().split('T')[0];
@@ -496,6 +542,9 @@
       now.setHours(now.getHours() + 1);
       const timeString = now.toTimeString().slice(0, 5);
       document.getElementById('delivery-time').value = timeString;
+      
+      // Extract quantity selection info
+      extractTotalItemsFromQuantity();
 
       // Load customization data and build interface
       loadCustomizationData();
@@ -562,16 +611,79 @@
       });
     }
 
+    // Count current selections across all categories
+    function countCurrentSelections() {
+      let radioSelections = 0;
+      let checkboxSelections = 0;
+      
+      // Count radio selections
+      document.querySelectorAll('input[type="radio"]:checked').forEach(() => {
+        radioSelections++;
+      });
+      
+      // Count checkbox selections
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(() => {
+        checkboxSelections++;
+      });
+      
+      currentTotalSelected = radioSelections + checkboxSelections;
+      return { radioSelections, checkboxSelections, total: currentTotalSelected };
+    }
+
+    // Update selection progress UI
+    function updateSelectionProgress() {
+      const counts = countCurrentSelections();
+      const remaining = totalSelectableItems - counts.total;
+      
+      // Update progress indicator if it exists
+      const progressElement = document.getElementById('selection-progress');
+      if (progressElement) {
+        progressElement.textContent = `Selected ${counts.total} of ${totalSelectableItems} items`;
+        progressElement.className = remaining === 0 ? 'text-green-600 font-semibold' : 'text-gray-600';
+      }
+    }
+
     // Generic checkbox handler for any category
-function handleCheckboxChange(checkbox, category) {
-  const key = checkbox.value;
-  if (checkbox.checked) {
-    // Just add with default packs quantity, no individual controls
-    upsertCartItem(category, key, packs);
-  } else {
-    removeCartItem(category, key);
-  }
-}
+    function handleCheckboxChange(checkbox, category) {
+      const key = checkbox.value;
+      const optionsSection = checkbox.closest('[data-category-id]');
+      const maxSelections = parseInt(optionsSection.getAttribute('data-max-selections'));
+      
+      if (checkbox.checked) {
+        // Check if we're at the total limit
+        const counts = countCurrentSelections();
+        if (counts.total > totalSelectableItems) {
+          checkbox.checked = false;
+          Swal.fire({
+            icon: 'warning',
+            title: 'Selection Limit Reached',
+            text: `You can only select ${totalSelectableItems} items total. Please deselect other items first.`,
+            confirmButtonColor: '#FF5722'
+          });
+          return;
+        }
+        
+        // Check category-specific limit
+        const categoryChecked = optionsSection.querySelectorAll('input[type="checkbox"]:checked').length;
+        if (categoryChecked > maxSelections) {
+          checkbox.checked = false;
+          const categoryName = category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+          Swal.fire({
+            icon: 'info',
+            title: 'Category Limit Reached',
+            text: `You can only select ${maxSelections} item${maxSelections === 1 ? '' : 's'} from ${categoryName}.`,
+            confirmButtonColor: '#FF5722'
+          });
+          return;
+        }
+        
+        upsertCartItem(category, key, packs);
+      } else {
+        removeCartItem(category, key);
+      }
+      
+      updateSelectionProgress();
+    }
 
     // Main course checkbox handler (keeping for backward compatibility)
     function handleMainCourseCheck(checkbox) {
@@ -623,6 +735,7 @@ function handleCheckboxChange(checkbox, category) {
       // }
       // Auto add/update cart with default packs
       upsertCart(category);
+      updateSelectionProgress();
     }
 
     // Change quantity with cap packs + 5
@@ -815,6 +928,17 @@ function handleCheckboxChange(checkbox, category) {
 
     // Next button
     document.getElementById('next-bottom').addEventListener('click', () => {
+      // Validate exact item selection count
+      const counts = countCurrentSelections();
+      if (counts.total !== totalSelectableItems) {
+        Swal.fire({ 
+          icon: 'warning', 
+          title: 'Incorrect selection', 
+          text: `You must select exactly ${totalSelectableItems} items. Currently selected: ${counts.total}` 
+        });
+        return;
+      }
+      
       if (cart.length === 0) {
         Swal.fire({ icon: 'warning', title: 'No items', text: 'Please add at least one item to your cart.' });
         return;
