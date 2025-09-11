@@ -448,6 +448,13 @@
             }
         }
 
+        // Function to extract per-pax price from pack title
+        function extractPerPaxPrice(title) {
+            // Look for patterns like "$9.00 per pax", "$11.00/pax", "$13.00 /pax", etc.
+            const match = title.match(/\$(\d+\.?\d*)\s*(?:per\s*pax|\/\s*pax)/i);
+            return match ? parseFloat(match[1]) : null;
+        }
+
         // Generate pack cards based on JSON configuration
         function generatePackCards() {
             const packsGrid = document.getElementById('packs-grid');
@@ -462,7 +469,10 @@
             packsGrid.innerHTML = '';
             
             itemConfig.packs.forEach(pack => {
-                const price = (selectedMenuItem.price * pack.multiplier).toFixed(2);
+                // Try to extract actual per-pax price from title, fallback to base price
+                const extractedPrice = extractPerPaxPrice(pack.title);
+                const perPaxPrice = extractedPrice || selectedMenuItem.price;
+                const totalPrice = (perPaxPrice * pack.multiplier).toFixed(2);
                 
                 const cardHTML = `
                     <div class="pack-card bg-white border-2 border-gray-200 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-lg" data-pack="${pack.id}">
@@ -471,9 +481,10 @@
                         </div>
                         <h3 class="text-xl font-bold text-custom-text mb-3">${pack.title}</h3>
                         ${pack.description ? `<p class="text-gray-600 text-sm mb-4 leading-relaxed">${pack.description}</p>` : ''}
-                        <div class="text-lg font-bold text-makan-orange mb-4">
-                            $${price}
+                        <div class="text-lg font-bold text-makan-orange mb-2">
+                            $${perPaxPrice.toFixed(2)} /pax
                         </div>
+                        
                         <button class="select-btn w-full bg-gray-100 text-custom-text py-2 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white">
                             Select
                         </button>
@@ -493,7 +504,8 @@
             packsGrid.innerHTML = '';
             
             packSizes.forEach(size => {
-                const price = (basePrice * size * 0.95).toFixed(2);
+                const perPaxPrice = basePrice.toFixed(2);
+                const totalPrice = (basePrice * size * 0.95).toFixed(2); // 5% discount for bulk
                 
                 const cardHTML = `
                     <div class="pack-card bg-white border-2 border-gray-200 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-lg" data-pack="${size}">
@@ -501,8 +513,11 @@
                             <img src="/images/menu/imgi_80_Crispy-Breaded-Fish-Fillet-768x768.png" alt="Food" class="w-full h-full object-cover">
                         </div>
                         <h3 class="text-xl font-bold text-custom-text mb-3">${size} Packs</h3>
-                        <div class="text-lg font-bold text-makan-orange mb-4">
-                            $${price}
+                        <div class="text-lg font-bold text-makan-orange mb-2">
+                            $${perPaxPrice} /pax
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            Total for ${size} pax: $${totalPrice} <span class="text-green-600">(5% bulk discount)</span>
                         </div>
                         <button class="select-btn w-full bg-gray-100 text-custom-text py-2 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange hover:text-white">
                             Select
@@ -541,13 +556,26 @@
                         }
                     }
 
-                    // Store quantity selection with full pack title
+                    // Extract the correct per-pax price for this pack
+                    let perPaxPrice = selectedMenuItem.price;
+                    if (itemConfig && itemConfig.packs) {
+                        const packConfig = itemConfig.packs.find(p => p.id === selectedPack);
+                        if (packConfig) {
+                            const extractedPrice = extractPerPaxPrice(packConfig.title);
+                            if (extractedPrice) {
+                                perPaxPrice = extractedPrice;
+                            }
+                        }
+                    }
+
+                    // Store quantity selection with full pack title and correct pricing
                     const quantityData = {
                         ...selectedMenuItem,
                         quantity: selectedPack,
                         quantityTitle: packTitle, // Store the full pack title
                         multiplier: multiplier,
-                        totalPrice: (selectedMenuItem.price * multiplier).toFixed(2)
+                        price: perPaxPrice, // Update the per-pax price
+                        totalPrice: (perPaxPrice * multiplier).toFixed(2)
                     };
                     localStorage.setItem('selectedItemWithQuantity', JSON.stringify(quantityData));
 

@@ -5,13 +5,13 @@
         "id": "4",
         "title": "High Tea Select 4 Items + Drinks @ $9.00 per pax (minimum of 80 pax)",
         "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
-        "multiplier": 4
+        "multiplier": 1
       },
       {
         "id": "6", 
         "title": "High Tea Select 6 Items + Drinks @ $11.00 per pax (minimum of 60 pax)",
         "image": "/images/menuu/imgi_3_High-Tea-Select-6-Menu-300x300.png",
-        "multiplier": 6
+        "multiplier": 1
       },
       {
         "id": "8",
