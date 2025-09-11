@@ -431,8 +431,8 @@
         });
         
         // Add quantity controls for radio categories
-        const quantityControls = createQuantityControls(category.id);
-        optionsSection.appendChild(quantityControls);
+        // const quantityControls = createQuantityControls(category.id);
+        // optionsSection.appendChild(quantityControls);
       }
       
       card.appendChild(optionsSection);
@@ -469,21 +469,21 @@
     }
 
     // Create quantity controls for radio categories
-    function createQuantityControls(categoryId) {
-      const controls = document.createElement('div');
-      controls.className = 'mt-4 hidden';
-      controls.id = `${categoryId}-controls`;
+    // function createQuantityControls(categoryId) {
+    //   const controls = document.createElement('div');
+    //   controls.className = 'mt-4 hidden';
+    //   controls.id = `${categoryId}-controls`;
       
-      controls.innerHTML = `
-        <div class="flex gap-2 items-center">
-          <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors qty-down" onclick="changeQuantity('${categoryId}', -1)">▼</button>
-          <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 qty-input" type="number" value="10" min="10" id="${categoryId}-qty" oninput="onQtyInput('${categoryId}')">
-          <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors qty-up" onclick="changeQuantity('${categoryId}', 1)">▲</button>
-        </div>
-      `;
+    //   controls.innerHTML = `
+    //     <div class="flex gap-2 items-center">
+    //       <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors qty-down" onclick="changeQuantity('${categoryId}', -1)">▼</button>
+    //       <input class="flex-1 min-w-16 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 qty-input" type="number" value="10" min="10" id="${categoryId}-qty" oninput="onQtyInput('${categoryId}')">
+    //       <button class="w-8 h-8 bg-orange-500 rounded text-white text-sm font-bold hover:bg-orange-600 transition-colors qty-up" onclick="changeQuantity('${categoryId}', 1)">▲</button>
+    //     </div>
+    //   `;
       
-      return controls;
-    }
+    //   return controls;
+    // }
 
     // Initialize page
     document.addEventListener("DOMContentLoaded", () => {
@@ -613,14 +613,14 @@ function handleCheckboxChange(checkbox, category) {
       const selectedItem = menuData[category][selectedValue];
       if (!selectedItem) return;
       // Show quantity controls for the category
-      const controls = document.getElementById(`${category}-controls`);
-      if (controls) controls.classList.remove('hidden');
+      // const controls = document.getElementById(`${category}-controls`);
+      // if (controls) controls.classList.remove('hidden');
       // Update quantity input to match packs
-      const qtyInput = document.getElementById(`${category}-qty`);
-      if (qtyInput) {
-        qtyInput.value = packs;
-        qtyInput.min = packs;
-      }
+      // const qtyInput = document.getElementById(`${category}-qty`);
+      // if (qtyInput) {
+      //   qtyInput.value = packs;
+      //   qtyInput.min = packs;
+      // }
       // Auto add/update cart with default packs
       upsertCart(category);
     }
@@ -828,6 +828,9 @@ function handleCheckboxChange(checkbox, category) {
         Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' });
         return;
       }
+      
+      // Clear any previous non-customizable cart to avoid conflicts
+      localStorage.removeItem('nonCustomizableCart');
       
       // Save cart and delivery info to localStorage
       localStorage.setItem('customizationCart', JSON.stringify(cart));

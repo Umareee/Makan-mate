@@ -151,12 +151,12 @@
           </div>
         </div>
 
-        <!-- Previous Selections
+        <!-- Previous Selections -->
         <div class="mb-6">
           <h4 class="font-semibold text-gray-800 mb-2">Previous Selections</h4>
           <div class="space-y-3" id="previous-selections-container">
           </div>
-        </div> -->
+        </div>
 
 
         <!-- Number of Packs -->
@@ -171,12 +171,16 @@
         </div>
 
         <!-- Cart Summary -->
-        <div class="border-t border-gray-300 pt-4">
-          <h4 class="font-semibold text-custom-text mb-2">Your Selection</h4>
+        <div class="">
           <div id="cart-container">
-            <div class="text-gray-500 text-sm text-center py-4">
-              <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
-              No items selected yet.
+            <!-- Previous selections will be loaded here -->
+            <div id="previous-selections-container"></div>
+            <!-- Current cart items will be added here -->
+            <div id="current-cart-items">
+              <div class="text-gray-500 text-sm text-center py-4">
+                <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+                No additional items selected yet.
+              </div>
             </div>
           </div>
           <div class="border-t border-gray-300 mt-4 pt-4" id="cart-total" style="display: none;">
@@ -306,56 +310,59 @@
       now.setHours(now.getHours() + 1);
       document.getElementById('delivery-time').value = now.toTimeString().slice(0,5);
 
-      // Read selected item with quantity from previous selection
- // Read selected items from previous selections
-const container = document.getElementById('previous-selections-container');
-if (container) {
+      // Load previous selections into Your Selection section with 10x multiplier
+const previousContainer = document.getElementById('previous-selections-container');
+if (previousContainer) {
   let cardsHtml = '';
   
-  // First, add the main menu item (from menu.html)
-  try {
-    const selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || 'null');
-    if (selectedMenuItem) {
-      cardsHtml += `
-      <div class="bg-white p-3 rounded border border-gray-200">
-        <div class="flex items-center gap-3">
-          <img src="${selectedMenuItem.image}" alt="${selectedMenuItem.name}" class="w-12 h-12 rounded object-cover">
-          <div class="flex-1">
-            <div class="text-sm font-semibold text-gray-800">${selectedMenuItem.name}</div>
-          </div>
-          <div class="text-sm font-semibold">$${Number(selectedMenuItem.price || 0).toFixed(2)}</div>
-        </div>
-      </div>`;
-    }
-  } catch {}
-  
-  // Then, add the quantity selection item (from quantity-selection.html)
+  // Add the quantity selection item (from quantity-selection.html) as the main previous selection
   try {
     const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
     if (selectedWithQuantity) {
-      const quantityDisplay = selectedWithQuantity.quantityTitle || 
+      // Apply minimum 10 packs multiplier for non-customizable
+      const originalQuantity = selectedWithQuantity.quantityTitle || 
                              `${selectedWithQuantity.quantity} ${selectedWithQuantity.quantity === '1' ? 'Pack' : 'Packs'}`;
+      const basePrice = Number(selectedWithQuantity.totalPrice || selectedWithQuantity.price || 0);
+      const multipliedPrice = (basePrice * 10).toFixed(2);
+      
+      // Update localStorage with the multiplied selection
+      const multipliedSelection = {
+        ...selectedWithQuantity,
+        nonCustomizableQuantity: 10,
+        nonCustomizablePrice: multipliedPrice,
+        originalQuantity: originalQuantity,
+        originalPrice: selectedWithQuantity.totalPrice || selectedWithQuantity.price
+      };
+      localStorage.setItem('selectedItemWithQuantity', JSON.stringify(multipliedSelection));
       
       cardsHtml += `
-      <div class="bg-white p-3 rounded border border-gray-200">
+      <div class="bg-white p-3 rounded border border-gray-200 mb-2">
         <div class="flex items-center gap-3">
           <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
           <div class="flex-1">
-            <div class="text-xs text-gray-500">${quantityDisplay}</div>
+            <div class="text-sm font-semibold text-gray-800">${selectedWithQuantity.name}</div>
+            <div class="text-xs text-gray-500">${originalQuantity} × 10 packs = ${parseInt(selectedWithQuantity.quantity || 1) * 10} total packs</div>
           </div>
-          <div class="text-sm font-semibold">$${selectedWithQuantity.totalPrice || Number(selectedWithQuantity.price || 0).toFixed(2)}</div>
+          <div class="text-sm font-semibold">$${multipliedPrice}</div>
         </div>
       </div>`;
+      
+      // Hide the "No additional items" message since we have previous selections
+      const currentCartItems = document.getElementById('current-cart-items');
+      if (currentCartItems && cardsHtml) {
+        currentCartItems.innerHTML = '';
+      }
     }
   } catch {}
   
-  // Set the combined HTML
-  container.innerHTML = cardsHtml;
+  // Set the previous selections HTML
+  previousContainer.innerHTML = cardsHtml;
 }
       
       // Load menu data and render cards
       loadMenuData();
     });
+
 
     function renderCards() {
       const container = document.getElementById('cards-container');
@@ -399,6 +406,38 @@ if (container) {
       }
     }
 
+    function renderSelectedItemCard(selectedItem, container) {
+      const category = selectedItem.categoryKey;
+      const categoryData = menuItemData[category];
+      
+      if (!categoryData) {
+        console.error('Category not found in menu data:', category);
+        container.innerHTML = '<p class="text-red-500">Selected item not found in menu data.</p>';
+        return;
+      }
+      
+      const card = document.createElement('div');
+      card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4 md:col-span-1';
+      card.innerHTML = `
+        <div class="font-semibold text-gray-800 uppercase text-base mb-1">${categoryData.name}</div>
+        <div class="cat-topline mb-3"></div>
+        <div class="w-full h-36 rounded overflow-hidden mb-3">
+          <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
+        </div>
+        <div class="text-sm text-orange-500 font-semibold mb-2">What's included:</div>
+        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+          ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+      `;
+      container.appendChild(card);
+      
+      // Update the page title to reflect the selected item
+      const pageTitle = document.querySelector('main h2');
+      if (pageTitle) {
+        pageTitle.textContent = `${categoryData.name} — Non-Customizable`;
+      }
+    }
+
     function toTitle(slug) { return slug.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase()); }
 
     // Map menu item IDs to non-customizable category keys
@@ -410,7 +449,7 @@ if (container) {
         'mint-lemonade': 'mini-catering',
         'korean-street-bento': 'korean-street',
         'indian-menu': 'indian-cuisine',
-        'korean-menu': 'korean-cuisine',
+        'korean-menu': 'korean-street',
         'delight-menu': 'international-delight'
       };
     }
@@ -488,37 +527,6 @@ if (container) {
       return null;
     }
 
-    function renderSelectedItemCard(selectedItem, container) {
-      const category = selectedItem.categoryKey;
-      const categoryData = menuItemData[category];
-      
-      if (!categoryData) {
-        console.error('Category not found in menu data:', category);
-        container.innerHTML = '<p class="text-red-500">Selected item not found in menu data.</p>';
-        return;
-      }
-      
-      const card = document.createElement('div');
-      card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4 md:col-span-1';
-      card.innerHTML = `
-        <div class="font-semibold text-gray-800 uppercase text-base mb-1">${categoryData.name}</div>
-        <div class="cat-topline mb-3"></div>
-        <div class="w-full h-36 rounded overflow-hidden mb-3">
-          <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
-        </div>
-        <div class="text-sm text-orange-500 font-semibold mb-2">What's included:</div>
-        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
-          ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
-        </ul>
-      `;
-      container.appendChild(card);
-      
-      // Update the page title to reflect the selected item
-      const pageTitle = document.querySelector('main h2');
-      if (pageTitle) {
-        pageTitle.textContent = `${categoryData.name} — Non-Customizable`;
-      }
-    }
 
     // function changeCardQuantity(category, delta) {
     //   const input = document.getElementById(`${category}-card-qty`);
@@ -534,6 +542,7 @@ if (container) {
     //   input.value = val;
     //   upsertCard(category, val);
     // }
+
 
     function addCardToCart(category) {
       const input = document.getElementById(`${category}-card-qty`);
@@ -589,6 +598,24 @@ if (container) {
       const newPacks = Math.max(10, Number(packsInput.value) + change);
       packs = newPacks;
       packsInput.value = packs;
+      
+      // Update previous selection with new pack count
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity) {
+          const originalPrice = Number(selectedWithQuantity.originalPrice || selectedWithQuantity.totalPrice || selectedWithQuantity.price || 0);
+          const newMultipliedPrice = (originalPrice * newPacks).toFixed(2);
+          
+          selectedWithQuantity.nonCustomizableQuantity = newPacks;
+          selectedWithQuantity.nonCustomizablePrice = newMultipliedPrice;
+          
+          localStorage.setItem('selectedItemWithQuantity', JSON.stringify(selectedWithQuantity));
+          
+          // Update the display
+          updatePreviousSelectionDisplay();
+        }
+      } catch {}
+      
       // Update all qty inputs
       document.querySelectorAll('.card-qty-input').forEach(ip => {
         ip.min = packs;
@@ -599,42 +626,87 @@ if (container) {
       updateCartDisplay();
     }
 
+    function updatePreviousSelectionDisplay() {
+      const previousContainer = document.getElementById('previous-selections-container');
+      if (!previousContainer) return;
+      
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity) {
+          const originalQuantity = selectedWithQuantity.originalQuantity;
+          const currentPacks = selectedWithQuantity.nonCustomizableQuantity || 10;
+          const currentPrice = selectedWithQuantity.nonCustomizablePrice;
+          
+          previousContainer.innerHTML = `
+          <div class="bg-white p-3 rounded border border-gray-200 mb-2">
+            <div class="flex items-center gap-3">
+              <img src="${selectedWithQuantity.image}" alt="${selectedWithQuantity.name}" class="w-12 h-12 rounded object-cover">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">${selectedWithQuantity.name}</div>
+                <div class="text-xs text-gray-500">${originalQuantity} × ${currentPacks} packs = ${parseInt(selectedWithQuantity.quantity || 1) * currentPacks} total packs</div>
+              </div>
+              <div class="text-sm font-semibold">$${currentPrice}</div>
+            </div>
+          </div>`;
+        }
+      } catch {}
+    }
+
     function updateCartDisplay() {
-      const cartContainer = document.getElementById('cart-container');
+      const currentCartContainer = document.getElementById('current-cart-items');
       const cartTotal = document.getElementById('cart-total');
       const totalAmount = document.getElementById('total-amount');
-      if (cart.length === 0) {
-        cartContainer.innerHTML = `
-          <div class="text-gray-500 text-sm text-center py-4">
-            <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
-            No items selected yet.
-          </div>`;
-        cartTotal.style.display = 'none';
-        return;
-      }
-      cartTotal.style.display = 'block';
+      
+      // Calculate total from previous selections (with 10x multiplier)
       let total = 0;
-      cartContainer.innerHTML = '';
-      cart.forEach((item, index) => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-        const row = document.createElement('div');
-        row.className = 'bg-white p-3 rounded border border-gray-200 mb-2';
-        row.innerHTML = `
-          <div class="flex items-center space-x-2">
-            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">
-            <div class="flex-1">
-              <div class="text-sm font-semibold text-gray-800">${item.name}</div>
-              <div class="text-xs text-gray-500">Qty: ${item.quantity}</div>
-              <div class="text-xs text-gray-600">${item.price.toFixed(2)} each</div>
-            </div>
-            <div class="text-right">
-              <div class="text-sm font-bold text-gray-900">${subtotal.toFixed(2)}</div>
-              <button class="text-red-500 text-xs hover:text-red-700" onclick="removeFromCart(${index})">Remove</button>
-            </div>
-          </div>`;
-        cartContainer.appendChild(row);
-      });
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity) {
+          // Use the non-customizable multiplied price if available, otherwise apply 10x multiplier
+          const previousTotal = selectedWithQuantity.nonCustomizablePrice || 
+                               (Number(selectedWithQuantity.totalPrice || selectedWithQuantity.price || 0) * 10);
+          total += Number(previousTotal);
+        }
+      } catch {}
+      
+      if (cart.length === 0) {
+        if (total > 0) {
+          // If we have previous selections but no current cart items
+          currentCartContainer.innerHTML = '';
+          cartTotal.style.display = 'block';
+        } else {
+          // If no previous selections and no current cart items
+          currentCartContainer.innerHTML = `
+            <div class="text-gray-500 text-sm text-center py-4">
+              <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+              No additional items selected yet.
+            </div>`;
+          cartTotal.style.display = 'none';
+        }
+      } else {
+        cartTotal.style.display = 'block';
+        currentCartContainer.innerHTML = '';
+        cart.forEach((item, index) => {
+          const subtotal = item.price * item.quantity;
+          total += subtotal;
+          const row = document.createElement('div');
+          row.className = 'bg-white p-3 rounded border border-gray-200 mb-2';
+          row.innerHTML = `
+            <div class="flex items-center space-x-2">
+              <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-gray-800">${item.name}</div>
+                <div class="text-xs text-gray-500">Qty: ${item.quantity}</div>
+                <div class="text-xs text-gray-600">${item.price.toFixed(2)} each</div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-bold text-gray-900">${subtotal.toFixed(2)}</div>
+                <button class="text-red-500 text-xs hover:text-red-700" onclick="removeFromCart(${index})">Remove</button>
+              </div>
+            </div>`;
+          currentCartContainer.appendChild(row);
+        });
+      }
       totalAmount.textContent = `${total.toFixed(2)}`;
     }
 
@@ -648,19 +720,63 @@ if (container) {
     }
 
     document.getElementById('next-bottom').addEventListener('click', () => {
-      if (cart.length === 0) { 
+      // Check if we have previous selections or current cart items
+      let hasItems = false;
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        hasItems = selectedWithQuantity !== null || cart.length > 0;
+      } catch {
+        hasItems = cart.length > 0;
+      }
+      
+      if (!hasItems) { 
         Swal.fire({ icon: 'warning', title: 'No items', text: 'Please add at least one item.' });
         return; 
       }
+      
       const deliveryDate = document.getElementById('delivery-date').value;
       const deliveryTime = document.getElementById('delivery-time').value;
       if (!deliveryDate || !deliveryTime) { 
         Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' });
         return; 
       }
-      localStorage.setItem('nonCustomizableCart', JSON.stringify(cart));
+      
+      // Prepare cart data including previous selection
+      const finalCart = [];
+      
+      // Add your main selection (from previous steps)
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity) {
+          const totalPrice = Number(selectedWithQuantity.nonCustomizablePrice || (selectedWithQuantity.originalPrice || selectedWithQuantity.price || 0) * 10);
+          const quantity = selectedWithQuantity.nonCustomizableQuantity || 10;
+          const pricePerUnit = totalPrice / quantity;
+          
+          finalCart.push({
+            name: selectedWithQuantity.name,
+            image: selectedWithQuantity.image,
+            price: pricePerUnit,
+            quantity: quantity
+          });
+        }
+      } catch {}
+      
+      // Add any additional items from the right section
+      cart.forEach(item => {
+        finalCart.push({
+          name: item.name,
+          image: item.image,
+          price: item.price,
+          quantity: item.quantity
+        });
+      });
+      
+      // Clear any previous customization cart to avoid conflicts
+      localStorage.removeItem('customizationCart');
+      
+      localStorage.setItem('nonCustomizableCart', JSON.stringify(finalCart));
       localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(finalCart));
       window.location.href = 'delivery.html';
     });
   </script>
