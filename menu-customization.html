@@ -507,7 +507,7 @@
     let remainingCheckboxSelections = 0;
     let currentTotalSelected = 0;
 
-    // Extract total items from quantity selection
+    // Extract total items from quantity selection and update packs
     function extractTotalItemsFromQuantity() {
       try {
         const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
@@ -517,7 +517,13 @@
           if (match) {
             totalSelectableItems = parseInt(match[1]);
             remainingCheckboxSelections = totalSelectableItems - fixedRadioSelections;
-            console.log(`Dynamic Selection: Total ${totalSelectableItems} items, ${remainingCheckboxSelections} checkbox selections available`);
+            
+            // Update global packs variable with minimum pax requirement
+            if (selectedWithQuantity.minimumPax) {
+              packs = selectedWithQuantity.minimumPax;
+            }
+            
+            console.log(`Dynamic Selection: Total ${totalSelectableItems} items, ${remainingCheckboxSelections} checkbox selections available, Minimum pax: ${packs}`);
             return true;
           }
         }
@@ -528,7 +534,8 @@
       // Fallback to default if extraction fails
       totalSelectableItems = 4; // Default
       remainingCheckboxSelections = 1; // 4 - 3 = 1
-      console.log('Using fallback: 4 total items, 1 checkbox selection');
+      packs = 10; // Default minimum
+      console.log('Using fallback: 4 total items, 1 checkbox selection, 10 minimum pax');
       return false;
     }
 
@@ -545,6 +552,17 @@
       
       // Extract quantity selection info
       extractTotalItemsFromQuantity();
+      
+      // Update packs input and minimum display
+      const packsInput = document.getElementById('packs-input');
+      const packsMinText = document.querySelector('.text-xs.text-gray-500');
+      if (packsInput) {
+        packsInput.value = packs;
+        packsInput.min = packs;
+      }
+      if (packsMinText) {
+        packsMinText.textContent = `Minimum: ${packs} packs`;
+      }
 
       // Load customization data and build interface
       loadCustomizationData();
@@ -770,7 +788,8 @@
     // Change packs
     function changePacks(change) {
       const packsInput = document.getElementById('packs-input');
-      const newPacks = Math.max(10, Number(packsInput.value) + change);
+      const minPacks = parseInt(packsInput.min) || packs; // Use the dynamic minimum
+      const newPacks = Math.max(minPacks, Number(packsInput.value) + change);
       packsInput.value = newPacks;
       packs = newPacks;
       
@@ -826,8 +845,6 @@
         category,
         key: selectedValue,
         name: selectedItem.name,
-        price: selectedItem.price,
-        quantity,
         image: selectedItem.image
       };
       const existingIndex = cart.findIndex(item => item.category === category);
@@ -869,56 +886,80 @@
     }
 
     // Update cart display
-    function updateCartDisplay() {
-      const cartContainer = document.getElementById('cart-container');
-      const cartTotal = document.getElementById('cart-total');
-      const totalAmount = document.getElementById('total-amount');
-      
-      if (cart.length === 0) {
-        cartContainer.innerHTML = `
-          <div class="text-gray-500 text-sm text-center py-4">
-            <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
-            No items selected yet.
-          </div>
-        `;
-        cartTotal.style.display = 'none';
-        return;
-      }
-      
-      // Show total section
-      cartTotal.style.display = 'block';
-      
-      // Calculate total
-      let total = 0;
-      
-      // Render each cart item
-      cartContainer.innerHTML = '';
-      cart.forEach((item, index) => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-        
-        const cartItem = document.createElement('div');
-        cartItem.className = 'bg-white p-3 rounded border border-gray-200 mb-2';
-        cartItem.innerHTML = `
-          <div class="flex items-center space-x-2">
-            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">
-            <div class="flex-1">
-              <div class="text-sm font-semibold text-gray-800">${item.name}</div>
-              <div class="text-xs text-gray-500">Qty: ${item.quantity}</div>
-              <div class="text-xs text-gray-600">$${item.price.toFixed(2)} each</div>
-            </div>
-            <div class="text-right">
-              <div class="text-sm font-bold text-gray-900">$${subtotal.toFixed(2)}</div>
-              <button class="text-red-500 text-xs hover:text-red-700" onclick="removeFromCart(${index})">Remove</button>
-            </div>
-          </div>
-        `;
-        cartContainer.appendChild(cartItem);
+   function updateCartDisplay() {
+  const cartContainer = document.getElementById('cart-container');
+  const cartTotal = document.getElementById('cart-total');
+  const totalAmountEl = document.getElementById('total-amount');
+
+  // Load per pax price from quantity selection
+  const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+  let perPaxPrice = 0;
+  if (selectedWithQuantity && selectedWithQuantity.price) {
+    perPaxPrice = parseFloat(selectedWithQuantity.price);
+  }
+
+  // Get number of packs
+  const packsInput = document.getElementById('packs-input');
+  const paxCount = parseInt(packsInput.value) || 0;
+
+  // Calculate total = per pax × packs
+  const total = perPaxPrice * paxCount;
+
+  // Collect all selected items (radio + checkboxes)
+  let selectedItems = [];
+
+  // Radios
+  document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+    const category = radio.name;
+    const optionId = radio.value;
+    const option = menuData[category]?.[optionId];
+    if (option) {
+      selectedItems.push({
+        name: option.name,
+        image: option.image
       });
-      
-      // Update total
-      totalAmount.textContent = `$${total.toFixed(2)}`;
     }
+  });
+
+  // Checkboxes
+  document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+    const category = checkbox.name;
+    const optionId = checkbox.value;
+    const option = menuData[category]?.[optionId];
+    if (option) {
+      selectedItems.push({
+        name: option.name,
+        image: option.image
+      });
+    }
+  });
+
+  // Build cart UI
+  if (selectedItems.length > 0) {
+    cartContainer.innerHTML = selectedItems.map(item => `
+      <div class="bg-white p-3 rounded border border-gray-200 mb-2">
+        <div class="flex items-center gap-3">
+          <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded object-cover">
+          <div class="flex-1">
+            <div class="text-sm font-semibold text-gray-800">${item.name}</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  } else {
+    cartContainer.innerHTML = `
+      <div class="text-gray-500 text-sm text-center py-4">
+        <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+        No items selected yet.
+      </div>
+    `;
+  }
+
+  // Update total
+  totalAmountEl.textContent = `$${total.toFixed(2)}`;
+  cartTotal.style.display = 'block';
+}
+
 
     // Remove from cart by list index (used in sidebar)
     function removeFromCart(index) {

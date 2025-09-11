@@ -455,6 +455,13 @@
             return match ? parseFloat(match[1]) : null;
         }
 
+        // Function to extract minimum pax from pack title
+        function extractMinimumPax(title) {
+            // Look for patterns like "minimum of 80 pax", "min 10 pax", etc.
+            const match = title.match(/(?:minimum\s*of\s*|min\s*of\s*|min\s+)(\d+)\s*pax/i);
+            return match ? parseInt(match[1]) : null;
+        }
+
         // Generate pack cards based on JSON configuration
         function generatePackCards() {
             const packsGrid = document.getElementById('packs-grid');
@@ -556,25 +563,33 @@
                         }
                     }
 
-                    // Extract the correct per-pax price for this pack
+                    // Extract the correct per-pax price and minimum pax for this pack
                     let perPaxPrice = selectedMenuItem.price;
+                    let minimumPax = 10; // Default fallback
+                    
                     if (itemConfig && itemConfig.packs) {
                         const packConfig = itemConfig.packs.find(p => p.id === selectedPack);
                         if (packConfig) {
                             const extractedPrice = extractPerPaxPrice(packConfig.title);
+                            const extractedMinPax = extractMinimumPax(packConfig.title);
+                            
                             if (extractedPrice) {
                                 perPaxPrice = extractedPrice;
+                            }
+                            if (extractedMinPax) {
+                                minimumPax = extractedMinPax;
                             }
                         }
                     }
 
-                    // Store quantity selection with full pack title and correct pricing
+                    // Store quantity selection with full pack title, correct pricing, and minimum pax
                     const quantityData = {
                         ...selectedMenuItem,
                         quantity: selectedPack,
                         quantityTitle: packTitle, // Store the full pack title
                         multiplier: multiplier,
                         price: perPaxPrice, // Update the per-pax price
+                        minimumPax: minimumPax, // Store the minimum pax requirement
                         totalPrice: (perPaxPrice * multiplier).toFixed(2)
                     };
                     localStorage.setItem('selectedItemWithQuantity', JSON.stringify(quantityData));
