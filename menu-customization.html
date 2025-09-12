@@ -23,7 +23,10 @@
           fontFamily: {
             'playfair': ['Playfair Display','serif'],
             'dm-sans': ['DM Sans','sans-serif']
-          }
+          },
+          screens: {
+      '3xl': '1596px',
+    },
         }
       }
     }
@@ -172,7 +175,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       <!-- LEFT CONTENT -->
       <section class="lg:col-span-9 lg:order-2">
-        <div id="customization-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div id="customization-container" class="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3  gap-6">
           <!-- Categories will be dynamically loaded from JSON -->
           <div class="flex items-center justify-center p-8 text-gray-500">
             <i class="fas fa-spinner fa-spin text-2xl mr-3"></i>
