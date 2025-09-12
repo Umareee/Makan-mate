@@ -268,12 +268,6 @@
           </div>
         </div>
         
-        <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-          <div class="text-sm text-blue-800">
-            <i class="fas fa-info-circle mr-2"></i>
-            <strong>Delivery Charge:</strong> $45.00 ($49.05 w/GST) per return trip
-          </div>
-        </div>
       </aside>
 
       <!-- RIGHT CONTENT - Delivery Form -->
@@ -484,50 +478,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* =========  ORDER SUMMARY  ========= */
 function loadOrderSummary() {
-  const keysToTry = ['customizationCart', 'nonCustomizableCart'];
-  let cart = [];
-  let menuName = '';
-
-  // Get the stored total from previous pages (this is the correct total)
-  const storedTotal = localStorage.getItem('orderTotal');
-  const finalTotal = storedTotal ? parseFloat(storedTotal) : 0;
-  
-  // Get delivery info to get pack quantity and menu details
-  let packs = 0;
-  try {
-    const deliveryInfo = JSON.parse(localStorage.getItem('deliveryInfo') || '{}');
-    packs = deliveryInfo.packs || 0;
-  } catch (e) {
-    console.warn('Error parsing delivery info', e);
-  }
-  
-  // Get selected menu item name
-  try {
-    const selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || '{}');
-    menuName = selectedMenuItem.name || 'Selected Menu';
-  } catch (e) {
-    console.warn('Error parsing selected menu item', e);
-    menuName = 'Selected Menu';
-  }
-
-  for (const key of keysToTry) {
-    const raw = localStorage.getItem(key);
-    if (!raw) continue;
-    try {
-      const rawCart = JSON.parse(raw);
-      cart = rawCart; // Keep original cart structure
-      break; // stop when we find the first valid key
-    } catch (e) {
-      console.warn(`Bad JSON in ${key}`, e);
-    }
-  }
-
   const $summary = document.getElementById('order-summary');
   const $subtotal = document.getElementById('order-subtotal');
   const $gst = document.getElementById('order-gst');
   const $total = document.getElementById('order-total');
 
-  if (!cart.length || packs === 0) {
+  // Get combined multi-order cart
+  const multiOrderCart = getMultiOrderCart();
+  
+  if (!multiOrderCart || multiOrderCart.length === 0) {
     $summary.innerHTML = `
       <div class="text-gray-500 text-center py-8">
         <i class="fas fa-shopping-cart text-3xl mb-2"></i><br>
@@ -540,62 +499,86 @@ function loadOrderSummary() {
     return;
   }
 
-  // Show order summary with pack quantity and selected items
-  let summaryHTML = `
-    <div class="border border-gray-200 rounded-lg overflow-hidden bg-white mb-4">
-      <div class="bg-gray-50 border-b border-gray-200 p-3">
-        <div class="flex items-center space-x-2">
-          <img src="/images/festive/imgi_6_Something Special.jpg" alt="${menuName}" class="w-10 h-10 object-cover rounded">
-          <div>
-            <div class="text-sm font-semibold text-gray-800">${menuName}</div>
-            <div class="text-xs text-makan-orange font-medium">${packs} ${packs === 1 ? 'Pack' : 'Packs'}</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="p-3">
-        <h5 class="text-sm font-semibold text-gray-700 flex items-center mb-3">
-          <i class="fas fa-list text-makan-orange mr-2"></i>
-          Selected Items
-        </h5>
-        <div class="space-y-2">`;
-
-  // Add selected items from cart
-  if (cart && cart.length > 0) {
-    cart.forEach(item => {
-      const itemName = item.name || item.title || 'Item';
-      const itemImage = item.image || '/images/festive/imgi_6_Something Special.jpg';
-      
-      summaryHTML += `
-        <div class="flex items-center space-x-2 p-2 bg-gray-50 rounded-lg border border-gray-200">
-          <img src="${itemImage}" alt="${itemName}" class="w-10 h-10 object-cover rounded">
-          <div class="flex-1">
-            <div class="text-xs font-medium text-gray-800">${itemName}</div>
-          </div>
-        </div>`;
-    });
-  } else {
+  // Display multiple orders summary
+  let summaryHTML = '';
+  let grandTotal = 0;
+  
+  multiOrderCart.forEach((order, index) => {
+    const menuName = order.menuName || `Order ${index + 1}`;
+    const packs = order.packs || 0;
+    const orderTotal = order.total || 0;
+    grandTotal += orderTotal;
+    
     summaryHTML += `
-      <div class="text-center py-4 text-gray-500">
-        <i class="fas fa-info-circle mb-2"></i>
-        <p class="text-xs">Items based on selection</p>
-      </div>`;
-  }
-
-  summaryHTML += `
+      <div class="border border-gray-200 rounded-lg overflow-hidden bg-white mb-3">
+        <div class="bg-gray-50 border-b border-gray-200 p-3">
+          <div class="flex items-center space-x-2">
+            <img src="${order.image || '/images/festive/imgi_6_Something Special.jpg'}" alt="${menuName}" class="w-8 h-8 object-cover rounded">
+            <div class="flex-1">
+              <div class="text-xs font-semibold text-gray-800">${menuName}</div>
+              <div class="text-xs text-makan-orange font-medium">${packs} ${packs === 1 ? 'Pack' : 'Packs'} - $${orderTotal.toFixed(2)}</div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>`;
+        
+        <div class="p-2">
+          <div class="space-y-1">`;
+
+    // Add selected items from this order (show first few items)
+    if (order.items && order.items.length > 0) {
+      const itemsToShow = order.items.slice(0, 3); // Show max 3 items
+      itemsToShow.forEach(item => {
+        const itemName = item.name || item.title || 'Item';
+        const itemImage = item.image || '/images/festive/imgi_6_Something Special.jpg';
+        
+        summaryHTML += `
+          <div class="flex items-center space-x-2 p-1 bg-gray-50 rounded text-xs">
+            <img src="${itemImage}" alt="${itemName}" class="w-6 h-6 object-cover rounded">
+            <div class="flex-1 truncate">${itemName}</div>
+          </div>`;
+      });
+      
+      if (order.items.length > 3) {
+        summaryHTML += `
+          <div class="text-xs text-gray-500 text-center py-1">
+            +${order.items.length - 3} more items
+          </div>`;
+      }
+    } else {
+      summaryHTML += `
+        <div class="text-center py-2 text-gray-500">
+          <i class="fas fa-info-circle mb-1 text-xs"></i>
+          <p class="text-xs">Items based on selection</p>
+        </div>`;
+    }
+
+    summaryHTML += `
+          </div>
+        </div>
+      </div>`;
+  });
+
   $summary.innerHTML = summaryHTML;
   
   // Calculate GST and final total
-  const gstAmount = finalTotal * 0.09;
-  const totalWithGst = finalTotal + gstAmount;
+  const gstAmount = grandTotal * 0.09;
+  const totalWithGst = grandTotal + gstAmount;
   
   // Update display
-  $subtotal.textContent = `$${finalTotal.toFixed(2)}`;
+  $subtotal.textContent = `$${grandTotal.toFixed(2)}`;
   $gst.textContent = `$${gstAmount.toFixed(2)}`;
   $total.textContent = `$${totalWithGst.toFixed(2)}`;
+}
+
+/* =========  CART MANAGEMENT FUNCTIONS  ========= */
+function getMultiOrderCart() {
+  try {
+    const stored = localStorage.getItem('multiOrderCart');
+    return stored ? JSON.parse(stored) : [];
+  } catch (e) {
+    console.warn('Error parsing multi-order cart', e);
+    return [];
+  }
 }
 
 /* =========  FORM LOGIC  ========= */

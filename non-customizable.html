@@ -786,12 +786,46 @@ if (previousContainer) {
       // Clear any previous customization cart to avoid conflicts
       localStorage.removeItem('customizationCart');
       
-      localStorage.setItem('nonCustomizableCart', JSON.stringify(finalCart));
-      localStorage.setItem('orderTotal', calculatedTotal.toString());
-      localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
-      localStorage.setItem('cart', JSON.stringify(finalCart));
+      // Add this order to multi-order cart
+      const selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || '{}');
+      const order = {
+        id: Date.now(),
+        menuName: selectedMenuItem.name || 'Non-Customizable Menu',
+        image: selectedMenuItem.image || '/images/festive/imgi_6_Something Special.jpg',
+        packs: packs,
+        total: calculatedTotal,
+        items: finalCart,
+        date: deliveryDate,
+        time: deliveryTime,
+        type: 'nonCustomizableCart'
+      };
+      
+      addOrderToMultiCart(order);
+      
+      // Navigate to cart page
       window.location.href = 'cart.html';
     });
+    
+    // Multi-order cart functions
+    function getMultiOrderCart() {
+      try {
+        const stored = localStorage.getItem('multiOrderCart');
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        console.warn('Error parsing multi-order cart', e);
+        return [];
+      }
+    }
+
+    function saveMultiOrderCart(cart) {
+      localStorage.setItem('multiOrderCart', JSON.stringify(cart));
+    }
+
+    function addOrderToMultiCart(order) {
+      const cart = getMultiOrderCart();
+      cart.push(order);
+      saveMultiOrderCart(cart);
+    }
   </script>
 
 </body>
