@@ -644,7 +644,6 @@ if (previousContainer) {
                 <div class="text-sm font-semibold text-gray-800">${selectedWithQuantity.name}</div>
                 <div class="text-xs text-gray-500">${originalQuantity} × ${currentPacks} packs = ${parseInt(selectedWithQuantity.quantity || 1) * currentPacks} total packs</div>
               </div>
-              <div class="text-sm font-semibold">$${currentPrice}</div>
             </div>
           </div>`;
         }
@@ -696,10 +695,8 @@ if (previousContainer) {
               <div class="flex-1">
                 <div class="text-sm font-semibold text-gray-800">${item.name}</div>
                 <div class="text-xs text-gray-500">Qty: ${item.quantity}</div>
-                <div class="text-xs text-gray-600">${item.price.toFixed(2)} each</div>
               </div>
               <div class="text-right">
-                <div class="text-sm font-bold text-gray-900">${subtotal.toFixed(2)}</div>
                 <button class="text-red-500 text-xs hover:text-red-700" onclick="removeFromCart(${index})">Remove</button>
               </div>
             </div>`;
