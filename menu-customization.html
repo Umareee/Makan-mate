@@ -994,11 +994,22 @@
         return;
       }
       
+      // Calculate and store the total
+      const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+      let perPaxPrice = 0;
+      if (selectedWithQuantity && selectedWithQuantity.price) {
+        perPaxPrice = parseFloat(selectedWithQuantity.price);
+      }
+      const packsInput = document.getElementById('packs-input');
+      const paxCount = parseInt(packsInput.value) || 0;
+      const calculatedTotal = perPaxPrice * paxCount;
+
       // Clear any previous non-customizable cart to avoid conflicts
       localStorage.removeItem('nonCustomizableCart');
       
       // Save cart and delivery info to localStorage
       localStorage.setItem('customizationCart', JSON.stringify(cart));
+      localStorage.setItem('orderTotal', calculatedTotal.toString());
       localStorage.setItem('deliveryInfo', JSON.stringify({
         date: deliveryDate,
         time: deliveryTime,

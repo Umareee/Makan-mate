@@ -765,11 +765,29 @@ if (previousContainer) {
           quantity: item.quantity
         });
       });
+
+      // Calculate the total that was shown in updateCartDisplay()
+      let calculatedTotal = 0;
+      try {
+        const selectedWithQuantity = JSON.parse(localStorage.getItem('selectedItemWithQuantity') || 'null');
+        if (selectedWithQuantity) {
+          const previousTotal = selectedWithQuantity.nonCustomizablePrice || 
+                               (Number(selectedWithQuantity.totalPrice || selectedWithQuantity.price || 0) * 10);
+          calculatedTotal += Number(previousTotal);
+        }
+      } catch {}
+      
+      // Add totals from additional cart items
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        calculatedTotal += subtotal;
+      });
       
       // Clear any previous customization cart to avoid conflicts
       localStorage.removeItem('customizationCart');
       
       localStorage.setItem('nonCustomizableCart', JSON.stringify(finalCart));
+      localStorage.setItem('orderTotal', calculatedTotal.toString());
       localStorage.setItem('deliveryInfo', JSON.stringify({ date: deliveryDate, time: deliveryTime, packs }));
       localStorage.setItem('cart', JSON.stringify(finalCart));
       window.location.href = 'delivery.html';

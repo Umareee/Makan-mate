@@ -472,15 +472,19 @@ function loadOrderSummary() {
   const keysToTry = ['customizationCart', 'nonCustomizableCart'];
   let cart = [];
 
+  // Get the stored total from previous pages (this is the correct total)
+  const storedTotal = localStorage.getItem('orderTotal');
+  const finalTotal = storedTotal ? parseFloat(storedTotal) : 0;
+
   for (const key of keysToTry) {
     const raw = localStorage.getItem(key);
     if (!raw) continue;
     try {
-      cart = JSON.parse(raw).map(i => ({
+      const rawCart = JSON.parse(raw);
+      cart = rawCart.map(i => ({
         title: i.name || i.title,
         image: i.image,
-        price: Number(i.price),
-        qty:  Number(i.quantity || i.qty),
+        qty: Number(i.quantity || i.qty || 1)
       }));
       break; // stop when we find the first valid key
     } catch (e) {
@@ -502,12 +506,8 @@ function loadOrderSummary() {
     return;
   }
 
-  let total = 0;
   $summary.innerHTML = '';
   cart.forEach(item => {
-    const sub = item.price * item.qty;
-    total += sub;
-
     const $row = document.createElement('div');
     $row.className = 'border border-gray-200 rounded-lg overflow-hidden mb-3 bg-white';
     $row.innerHTML = `
@@ -515,13 +515,13 @@ function loadOrderSummary() {
            alt="${item.title}" class="w-full h-20 object-cover">
       <div class="p-3 bg-gray-50">
         <div class="text-sm font-bold text-gray-800 uppercase">${item.title}</div>
-        <div class="text-base font-bold text-gray-900 mt-1">$${item.price.toFixed(2)} / Set</div>
         <div class="text-xs text-gray-500 mt-1">Qty: ${item.qty}</div>
-        <div class="text-xs text-gray-500">Subtotal: $${sub.toFixed(2)}</div>
       </div>`;
     $summary.appendChild($row);
   });
-  $total.textContent = `$${total.toFixed(2)}`;
+  
+  // Use the stored total from previous pages (pax * price per pax)
+  $total.textContent = `$${finalTotal.toFixed(2)}`;
 }
 
 /* =========  FORM LOGIC  ========= */
