@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Makan Mate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display', 'serif'],
+            'dm-sans': ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+   <!-- ===== header ===== -->
+  <header class="bg-gray-800 text-white">
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <!-- Mobile Layout -->
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
+            <i class="fas fa-phone"></i>
+            <span>62642233 Ext 10-18</span>
+          </div>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter text-xs"></i>
+            </a>
+            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook text-xs"></i>
+            </a>
+            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram text-xs"></i>
+            </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-github text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop Layout -->
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-phone"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== nav  ===== -->
+ <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+        <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
+      </div>
+      <div class="lg:hidden">
+        <button class="text-custom-text hover:text-makan-orange">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <div class="flex items-center mb-6">
+      <button onclick="history.back()" class="mr-4 p-2 text-gray-600 hover:text-makan-orange transition-colors">
+        <i class="fas fa-arrow-left text-xl"></i>
+      </button>
+      <h2 class="text-3xl font-playfair font-bold">Shopping Cart</h2>
+    </div>
+    
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Cart Items -->
+      <section>
+        <div id="cart-items" class="space-y-4">
+          <!-- Cart items will be dynamically populated here -->
+        </div>
+        
+        <!-- Order Total -->
+        <div class="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="text-lg">Subtotal:</div>
+              <div id="order-subtotal" class="text-lg">$0.00</div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="text-lg">GST (9%):</div>
+              <div id="order-gst" class="text-lg">$0.00</div>
+            </div>
+            <div class="border-t border-gray-300 pt-3">
+              <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">TOTAL:</div>
+                <div id="order-total" class="text-2xl font-bold text-makan-orange">$0.00</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+            <div class="text-sm text-blue-800">
+              <i class="fas fa-info-circle mr-2"></i>
+              <strong>Delivery Charge:</strong> $45.00 ($49.05 w/GST) per return trip
+            </div>
+          </div>
+        </div>
+        
+        <!-- Delivery Information -->
+        <div id="delivery-info" class="mt-6 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+          <!-- Delivery info will be populated here -->
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-between">
+          <a href="menu.html" class="inline-flex items-center text-makan-orange hover:text-makan-orange-hover transition-colors font-medium">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Continue Shopping
+          </a>
+          
+          <button id="proceed-btn" class="bg-makan-orange hover:bg-makan-orange-hover text-white px-8 py-3 rounded-lg shadow-md transition-colors font-bold text-lg">
+            Proceed to Delivery <i class="fa fa-angle-double-right ml-2"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-custom-topbar text-white py-8 mt-12">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-4">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Makan Mate</h3>
+        <p class="text-sm text-gray-300">Your trusted partner for catering services in Singapore.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-makan-orange">Home</a></li>
+          <li><a href="about.html" class="hover:text-makan-orange">About</a></li>
+          <li><a href="menu.html" class="hover:text-makan-orange">Menu</a></li>
+          <li><a href="contact.html" class="hover:text-makan-orange">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Contact Us</h3>
+        <p class="text-sm"><i class="fas fa-phone mr-1"></i> 62642233 Ext 10-18</p>
+        <p class="text-sm"><i class="fas fa-envelope mr-1"></i> order@makanmate.com</p>
+        <div class="flex space-x-3 mt-3">
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-custom-logo-bg hover:text-makan-orange"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-custom-logo-bg hover:text-makan-orange"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-custom-logo-bg hover:text-makan-orange"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-gray-400 text-sm mt-6">© 2025 Makan Mate. All rights reserved.</div>
+  </footer>
+
+<script>
+/* =========  DOM READY  ========= */
+document.addEventListener('DOMContentLoaded', () => {
+  loadCartSummary();
+  loadDeliveryInfo();
+  
+  // Proceed to delivery button
+  document.getElementById('proceed-btn').addEventListener('click', () => {
+    window.location.href = 'delivery.html';
+  });
+});
+
+/* =========  CART SUMMARY  ========= */
+function loadCartSummary() {
+  const keysToTry = ['customizationCart', 'nonCustomizableCart'];
+  let cart = [];
+  let menuName = '';
+
+  // Get the stored total from previous pages (this is the correct total)
+  const storedTotal = localStorage.getItem('orderTotal');
+  const finalTotal = storedTotal ? parseFloat(storedTotal) : 0;
+  
+  // Get delivery info to get pack quantity and menu details
+  let packs = 0;
+  try {
+    const deliveryInfo = JSON.parse(localStorage.getItem('deliveryInfo') || '{}');
+    packs = deliveryInfo.packs || 0;
+  } catch (e) {
+    console.warn('Error parsing delivery info', e);
+  }
+  
+  // Get selected menu item name
+  try {
+    const selectedMenuItem = JSON.parse(localStorage.getItem('selectedMenuItem') || '{}');
+    menuName = selectedMenuItem.name || 'Selected Menu';
+  } catch (e) {
+    console.warn('Error parsing selected menu item', e);
+    menuName = 'Selected Menu';
+  }
+
+  for (const key of keysToTry) {
+    const raw = localStorage.getItem(key);
+    if (!raw) continue;
+    try {
+      const rawCart = JSON.parse(raw);
+      cart = rawCart; // Keep original cart structure
+      break; // stop when we find the first valid key
+    } catch (e) {
+      console.warn(`Bad JSON in ${key}`, e);
+    }
+  }
+
+  const $cartItems = document.getElementById('cart-items');
+  const $subtotal = document.getElementById('order-subtotal');
+  const $gst = document.getElementById('order-gst');
+  const $total = document.getElementById('order-total');
+
+  if (!cart.length || packs === 0) {
+    $cartItems.innerHTML = `
+      <div class="text-gray-500 text-center py-12">
+        <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Your cart is empty</h3>
+        <p class="mb-4">Add some delicious items to get started!</p>
+        <a href="menu.html" class="bg-makan-orange text-white px-6 py-2 rounded-lg hover:bg-makan-orange-hover transition-colors">
+          Browse Menu
+        </a>
+      </div>`;
+    $subtotal.textContent = '$0.00';
+    $gst.textContent = '$0.00';
+    $total.textContent = '$0.00';
+    return;
+  }
+
+  // Show cart summary with pack quantity and selected items
+  let cartHTML = `
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden mb-6">
+      <div class="bg-gray-50 border-b border-gray-200 p-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <img src="/images/festive/imgi_6_Something Special.jpg" alt="${menuName}" class="w-12 h-12 object-cover rounded-lg">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">${menuName}</h3>
+              <p class="text-sm text-makan-orange font-medium">${packs} ${packs === 1 ? 'Pack' : 'Packs'}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <i class="fas fa-utensils text-makan-orange mr-2"></i>
+          Your Selected Items
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">`;
+
+  // Add selected items from cart
+  if (cart && cart.length > 0) {
+    cart.forEach(item => {
+      const itemName = item.name || item.title || 'Item';
+      const itemImage = item.image || '/images/festive/imgi_6_Something Special.jpg';
+      
+      cartHTML += `
+        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+          <img src="${itemImage}" alt="${itemName}" class="w-12 h-12 object-cover rounded-lg">
+          <div class="flex-1">
+            <div class="text-sm font-medium text-gray-800">${itemName}</div>
+          </div>
+        </div>`;
+    });
+  } else {
+    cartHTML += `
+      <div class="col-span-full text-center py-8 text-gray-500">
+        <i class="fas fa-info-circle text-2xl mb-2"></i>
+        <p>Items will be customized based on your selection</p>
+      </div>`;
+  }
+
+  cartHTML += `
+        </div>
+      </div>
+    </div>`;
+
+  $cartItems.innerHTML = cartHTML;
+  
+  // Calculate GST and final total
+  const gstAmount = finalTotal * 0.09;
+  const totalWithGst = finalTotal + gstAmount;
+  
+  // Update display
+  $subtotal.textContent = `$${finalTotal.toFixed(2)}`;
+  $gst.textContent = `$${gstAmount.toFixed(2)}`;
+  $total.textContent = `$${totalWithGst.toFixed(2)}`;
+}
+
+/* =========  DELIVERY INFO  ========= */
+function loadDeliveryInfo() {
+  const deliveryInfo = localStorage.getItem('deliveryInfo');
+  const $deliveryInfo = document.getElementById('delivery-info');
+  
+  if (!deliveryInfo) {
+    $deliveryInfo.innerHTML = `
+      <div class="text-center">
+        <i class="fas fa-info-circle text-blue-600 text-2xl mb-2"></i>
+        <p class="text-gray-600">No delivery information set yet.</p>
+      </div>`;
+    return;
+  }
+  
+  try {
+    const info = JSON.parse(deliveryInfo);
+    $deliveryInfo.innerHTML = `
+      <h3 class="text-lg font-semibold text-blue-800 mb-3 flex items-center">
+        <i class="fas fa-truck mr-2"></i>
+        Delivery Information
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div>
+          <strong class="text-gray-700">Date:</strong>
+          <p class="text-gray-600">${info.date || 'Not set'}</p>
+        </div>
+        <div>
+          <strong class="text-gray-700">Time:</strong>
+          <p class="text-gray-600">${info.time || 'Not set'}</p>
+        </div>
+        <div>
+          <strong class="text-gray-700">Packs:</strong>
+          <p class="text-gray-600">${info.packs || 'Not set'} packs</p>
+        </div>
+      </div>`;
+  } catch (e) {
+    console.warn('Error parsing delivery info', e);
+    $deliveryInfo.innerHTML = `
+      <div class="text-center">
+        <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl mb-2"></i>
+        <p class="text-gray-600">Error loading delivery information.</p>
+      </div>`;
+  }
+}
+</script>
+</body>
+</html>
