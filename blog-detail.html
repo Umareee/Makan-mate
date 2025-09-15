@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Blog Detail - Makan Mate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'makan-orange': '#FF5722',
+                        'makan-orange-hover': '#E64A19',
+                        'custom-topbar': '#474747',
+                        'custom-navbar': '#F9F9F7',
+                        'custom-logo-bg': '#F9F9F71F',
+                        'custom-text': '#2C2F24',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white font-dm-sans text-custom-text">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <!-- Top bar with contact info -->
+        <div class="bg-custom-topbar py-2 px-2">
+            <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+                <!-- Mobile Layout -->
+                <div class="flex sm:hidden justify-between items-start py-1">
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-phone"></i>
+                        <span>62642233 Ext 10-18</span>
+                    </div>
+                    <div class="flex flex-col items-end space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-twitter text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-facebook text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-instagram text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-github text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Desktop Layout -->
+                <div class="hidden sm:flex justify-between items-center">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>62642233 Ext 10-18</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main navigation -->
+    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+                <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
+                <a href="blog.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Blog</a>
+                <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="order.html" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
+                    Order Now
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+                <button class="text-custom-text hover:text-makan-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loading" class="flex items-center justify-center py-32">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-makan-orange"></div>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="hidden py-32 text-center">
+        <div class="container mx-auto px-4">
+            <i class="fas fa-exclamation-triangle text-4xl text-gray-400 mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-600 mb-2">Blog post not found</h2>
+            <p class="text-gray-500 mb-6">The blog post you're looking for doesn't exist or has been moved.</p>
+            <a href="blog.html" class="bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition-colors">
+                Back to Blog
+            </a>
+        </div>
+    </div>
+
+    <!-- Blog Content -->
+    <div id="blog-content" class="hidden">
+        <!-- Blog Hero Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Breadcrumb -->
+                    <nav class="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+                        <a href="index.html" class="hover:text-makan-orange">Home</a>
+                        <i class="fas fa-chevron-right text-xs"></i>
+                        <a href="blog.html" class="hover:text-makan-orange">Blog</a>
+                        <i class="fas fa-chevron-right text-xs"></i>
+                        <span class="text-makan-orange" id="breadcrumb-title">Article</span>
+                    </nav>
+                    
+                    <!-- Article Header -->
+                    <div class="text-center mb-12">
+                        <div class="mb-4">
+                            <span id="article-category" class="bg-makan-orange text-white px-4 py-2 rounded-full text-sm font-medium"></span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">
+                            <span id="article-date"></span> • <span id="article-read-time"></span>
+                        </p>
+                        <h1 id="article-title" class="text-3xl sm:text-4xl md:text-5xl font-bold text-custom-text mb-6 leading-tight">
+                        </h1>
+                        <div class="flex items-center justify-center space-x-4 text-gray-500">
+                            <div class="flex items-center space-x-2">
+                                <img id="author-avatar" src="" alt="" class="w-8 h-8 rounded-full object-cover">
+                                <span id="author-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Featured Image -->
+                    <div class="mb-12 rounded-2xl overflow-hidden shadow-lg">
+                        <img id="article-image" src="" alt="" class="w-full h-64 sm:h-96 object-cover">
+                    </div>
+
+                    <!-- Article Content -->
+                    <article class="prose prose-lg max-w-none">
+                        <div id="article-content" class="text-gray-700 leading-relaxed space-y-6">
+                            <!-- Content will be loaded dynamically -->
+                        </div>
+                    </article>
+
+                    <!-- Tags -->
+                    <div class="mt-12 pt-8 border-t border-gray-200">
+                        <h3 class="text-lg font-semibold text-custom-text mb-4">Tags</h3>
+                        <div id="article-tags" class="flex flex-wrap gap-2">
+                            <!-- Tags will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Share Section -->
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <h3 class="text-lg font-semibold text-custom-text mb-4">Share this article</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" id="share-facebook" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" id="share-twitter" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" id="share-linkedin" class="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" id="share-whatsapp" class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Related Posts -->
+                    <div class="mt-16">
+                        <h3 class="text-2xl font-bold text-custom-text mb-8">Related Articles</h3>
+                        <div id="related-posts" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Related posts will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Back to Blog -->
+                    <div class="text-center mt-12">
+                        <a href="blog.html" class="bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition-colors inline-block">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Logo and Description -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        In the new era of technology we look into the future with certainty and pride to for our company and.
+                    </p>
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pages Links -->
+                <div class="mx-0 sm:mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
+                        <li><a href="blog.html" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Utility Pages -->
+                <div class="mx-0 sm:mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Styleguide</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Password Protected</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">404 Not Found</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Licenses</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Changelog</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">View More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On Instagram -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    Copyright © 2025 Makan Mate. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+        <div class="bg-white w-64 h-full p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+                <button class="text-gray-600" id="close-menu">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+                <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
+                <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
+                <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+                <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        let blogsData = [];
+        let currentBlog = null;
+
+        // Get blog ID from URL parameter
+        function getBlogIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Load blog data
+        async function loadBlogData() {
+            try {
+                const response = await fetch('blogs.json');
+                blogsData = await response.json();
+                return blogsData;
+            } catch (error) {
+                console.error('Error loading blog data:', error);
+                return null;
+            }
+        }
+
+        // Find blog by ID
+        function findBlogById(id) {
+            return blogsData.find(blog => blog.id === id);
+        }
+
+        // Render blog content
+        function renderBlogContent(blog) {
+            currentBlog = blog;
+
+            // Update page title
+            document.getElementById('page-title').textContent = `${blog.title} - Makan Mate Blog`;
+            
+            // Update breadcrumb
+            document.getElementById('breadcrumb-title').textContent = blog.title.substring(0, 50) + '...';
+            
+            // Update article header
+            document.getElementById('article-category').textContent = blog.category;
+            document.getElementById('article-date').textContent = blog.date;
+            document.getElementById('article-read-time').textContent = blog.readTime;
+            document.getElementById('article-title').textContent = blog.title;
+            document.getElementById('author-avatar').src = blog.author.avatar;
+            document.getElementById('author-avatar').alt = blog.author.name;
+            document.getElementById('author-name').textContent = blog.author.name;
+            
+            // Update featured image
+            document.getElementById('article-image').src = blog.image;
+            document.getElementById('article-image').alt = blog.title;
+
+            // Render article content
+            renderArticleContent(blog.content);
+
+            // Render tags
+            renderTags(blog.tags);
+
+            // Setup share links
+            setupShareLinks(blog);
+
+            // Load related posts
+            loadRelatedPosts(blog);
+        }
+
+        // Render article content sections
+        function renderArticleContent(content) {
+            const container = document.getElementById('article-content');
+            
+            let html = `<p class="text-xl font-medium text-custom-text mb-8">${content.introduction}</p>`;
+
+            content.sections.forEach(section => {
+                html += `<h2 class="text-2xl font-bold text-custom-text mt-12 mb-6">${section.title}</h2>`;
+                html += `<p class="mb-6">${section.content}</p>`;
+                
+                if (section.list) {
+                    html += '<ul class="space-y-2 mb-6 ml-6">';
+                    section.list.forEach(item => {
+                        html += `<li class="flex items-start space-x-2">
+                            <i class="fas fa-check text-makan-orange mt-1 flex-shrink-0"></i>
+                            <span>${item}</span>
+                        </li>`;
+                    });
+                    html += '</ul>';
+                }
+            });
+
+            if (content.conclusion) {
+                html += `<div class="bg-gray-50 rounded-lg p-6 mt-8">
+                    <h3 class="text-lg font-semibold text-makan-orange mb-3">Conclusion</h3>
+                    <p>${content.conclusion}</p>
+                </div>`;
+            }
+
+            // Add CTA section for catering articles
+            if (currentBlog.category === 'Catering Tips') {
+                html += `<div class="bg-makan-orange text-white rounded-lg p-8 my-12 text-center">
+                    <h3 class="text-xl font-bold mb-4">Ready to Experience the Makan Mate Difference?</h3>
+                    <p class="mb-6">Contact us today to discuss your catering needs and discover how we can make your next event memorable.</p>
+                    <div class="space-x-4">
+                        <a href="order.html" class="bg-white text-makan-orange px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block">
+                            Order Now
+                        </a>
+                        <a href="contact.html" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-makan-orange transition-colors inline-block">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>`;
+            }
+
+            container.innerHTML = html;
+        }
+
+        // Render tags
+        function renderTags(tags) {
+            const container = document.getElementById('article-tags');
+            const html = tags.map(tag => 
+                `<span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-makan-orange hover:text-white transition-colors cursor-pointer">${tag}</span>`
+            ).join('');
+            container.innerHTML = html;
+        }
+
+        // Setup share links
+        function setupShareLinks(blog) {
+            const currentUrl = window.location.href;
+            const title = encodeURIComponent(blog.title);
+            const description = encodeURIComponent(blog.excerpt);
+
+            document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+            document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${title}`;
+            document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+            document.getElementById('share-whatsapp').href = `https://wa.me/?text=${title} ${currentUrl}`;
+        }
+
+        // Load related posts
+        function loadRelatedPosts(blog) {
+            const relatedPosts = blogsData
+                .filter(b => b.id !== blog.id && (b.category === blog.category || b.tags.some(tag => blog.tags.includes(tag))))
+                .slice(0, 2);
+
+            const container = document.getElementById('related-posts');
+            
+            if (relatedPosts.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center col-span-2">No related articles found.</p>';
+                return;
+            }
+
+            const html = relatedPosts.map(post => `
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="window.location.href='blog-detail.html?id=${post.id}'">
+                    <div class="h-48 relative">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs text-gray-500 mb-2">${post.date}</p>
+                        <h4 class="text-lg font-bold text-custom-text mb-2 line-clamp-2">
+                            ${post.title}
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            ${post.excerpt}
+                        </p>
+                        <span class="text-makan-orange font-semibold text-sm hover:underline">Read More</span>
+                    </div>
+                </article>
+            `).join('');
+
+            container.innerHTML = html;
+        }
+
+        // Show error state
+        function showError() {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('blog-content').classList.add('hidden');
+            document.getElementById('error').classList.remove('hidden');
+        }
+
+        // Show blog content
+        function showBlogContent() {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('error').classList.add('hidden');
+            document.getElementById('blog-content').classList.remove('hidden');
+        }
+
+        // Initialize page
+        async function initializePage() {
+            const blogId = getBlogIdFromUrl();
+            
+            if (!blogId) {
+                showError();
+                return;
+            }
+
+            const data = await loadBlogData();
+            if (!data) {
+                showError();
+                return;
+            }
+
+            const blog = findBlogById(blogId);
+            if (!blog) {
+                showError();
+                return;
+            }
+
+            renderBlogContent(blog);
+            showBlogContent();
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuBtn = document.getElementById('close-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                });
+            }
+
+            if (closeMenuBtn && mobileMenu) {
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+
+            // Close menu when clicking outside
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // Document ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initializePage();
+            setupMobileMenu();
+        });
+    </script>
+
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</body>
+</html>
