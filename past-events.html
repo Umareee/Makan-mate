@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Events - Makan Mate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'makan-orange': '#FF5722',
+                        'makan-orange-hover': '#E64A19',
+                        'custom-topbar': '#474747',
+                        'custom-navbar': '#F9F9F7',
+                        'custom-logo-bg': '#F9F9F71F',
+                        'custom-text': '#2C2F24',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white font-dm-sans text-custom-text">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <!-- Top bar with contact info -->
+        <div class="bg-custom-topbar py-2 px-2">
+            <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+                <!-- Mobile Layout -->
+                <div class="flex sm:hidden justify-between items-start py-1">
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-phone"></i>
+                        <span>62642233 Ext 10-18</span>
+                    </div>
+                    <div class="flex flex-col items-end space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-twitter text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-facebook text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-instagram text-xs"></i>
+                            </a>
+                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                                <i class="fab fa-github text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Desktop Layout -->
+                <div class="hidden sm:flex justify-between items-center">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>62642233 Ext 10-18</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>order@makanmate.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main navigation -->
+    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                </div>
+                <h1 class="text-xl sm:text-2xl font-bold text-custom-text font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+                <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <a href="blog.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
+                <a href="past-events.html" class="text-makan-orange font-medium">Past Events</a>
+                <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden bg-custom-navbar mt-4 p-4 rounded-lg shadow-lg hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-custom-text">Menu</h2>
+                <button id="close-menu" class="text-custom-text hover:text-makan-orange">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+                <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
+                <a href="past-events.html" class="block text-makan-orange font-medium">Past Events</a>
+                <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="order.html" class="block bg-makan-orange text-white px-6 py-2 rounded-full text-center font-medium mt-4">Order Now</a>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-makan-orange to-makan-orange-hover text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-4">Past Events</h1>
+            <p class="text-lg text-orange-100 max-w-2xl mx-auto">
+                Relive the memorable moments from our past catering events and celebrations
+            </p>
+            <nav class="flex items-center justify-center space-x-2 text-sm text-orange-200 mb-8 mt-6">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-white">Past Events</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Beautiful Image Gallery -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Masonry Style Gallery -->
+            <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+                
+                <!-- Image 1 - Large -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 2 - Medium -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 3 - Small -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 4 - Large -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/imgi_20_spring-roll.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 5 - Medium -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/imgi_23_vegetable.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 6 - Small -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 7 - Additional image -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 8 - Additional image -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 9 - Additional image -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 10 - Additional image -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/occasions/imgi_29_WhatsApp-Image-2024-11-08-at-9.45.35-AM-1.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 11 - Additional image -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/occasions/imgi_32_WhatsApp-Image-2024-11-08-at-9.45.35-AM-2.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Image 12 - Additional image -->
+                <div class="group cursor-pointer break-inside-avoid">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
+                        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-makan-orange to-makan-orange-hover text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold font-playfair mb-4">Ready to Create Your Own Memorable Event?</h2>
+            <p class="text-lg text-orange-100 mb-8 max-w-2xl mx-auto">
+                Let us help you create unforgettable moments with our exceptional catering services
+            </p>
+            <div class="space-x-4">
+                <a href="order.html" class="bg-white text-makan-orange px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block">
+                    Get Quote
+                </a>
+                <a href="contact.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-makan-orange transition-colors inline-block">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Logo and Description -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        In the new era of technology we look into the future with certainty and pride to for our company and.
+                    </p>
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pages -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+                        <li><a href="blog.html" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="past-events.html" class="text-gray-300 hover:text-makan-orange transition-colors">Past Events</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Utility Pages -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Utility Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">404 Not Found</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Password Protected</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Licenses</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On Instagram -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Follow Us On Instagram</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                            <img src="/images/home/imgi_20_spring-roll.jpg" alt="Instagram 1" class="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer">
+                        </div>
+                        <div class="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                            <img src="/images/home/imgi_23_vegetable.jpg" alt="Instagram 2" class="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer">
+                        </div>
+                        <div class="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                            <img src="/images/home/menu/imgi_11_bento.jpg" alt="Instagram 3" class="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer">
+                        </div>
+                        <div class="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                            <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Instagram 4" class="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer">
+                        </div>
+                        <div class="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                            <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Instagram 5" class="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer">
+                        </div>
+                        <div class="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                            <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Instagram 6" class="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    Copyright © 2024 Makan Mate. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close menu when clicking outside
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

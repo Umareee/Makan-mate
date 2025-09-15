@@ -47,14 +47,67 @@
 .fg-img { max-height: 420px; width: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,0.25)); opacity: 0; transform: translateX(20px); transition: all 600ms ease; }
 .copy { color: #fff; opacity: 0; transform: translateX(-20px); transition: all 600ms ease 120ms; }
     .slide.active .fg-img, .slide.active .copy { opacity: 1; transform: translateY(0); }
-    /* Navigation buttons styled to theme orange and brought above overlay */
-    .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,87,34,0.9); color: #fff; width: 48px; height: 48px; border-radius: 999px; display: grid; place-items: center; box-shadow: 0 6px 16px rgba(255,87,34,0.3); transition: background 200ms ease, transform 150ms ease; z-index: 3; }
-    .nav-btn:hover { background: rgba(230,74,25,0.95); transform: translateY(-50%) scale(1.05); }
-    .nav-prev { left: 16px; }
-    .nav-next { right: 16px; }
-    .dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
-    .dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.5); transition: all 200ms ease; }
-    .dot.active { width: 20px; background: #FF5722; }
+    /* Slide Navigation Tabs */
+    .slide-tabs {
+      z-index: 10;
+    }
+    
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 25px;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 300ms ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .tab-btn.active {
+      background: #FF5722;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3);
+    }
+    
+    .tab-icon {
+      font-size: 16px;
+    }
+    
+    .tab-text {
+      font-weight: 500;
+      font-size: 13px;
+    }
+    
+    /* Auto-play Progress Bar */
+    .progress-bar {
+      animation: slideProgress 6s linear infinite;
+    }
+    
+    @keyframes slideProgress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    
+    /* Responsive tabs */
+    @media (max-width: 640px) {
+      .tab-text {
+        display: none;
+      }
+      .tab-btn {
+        padding: 10px 12px;
+      }
+    }
 
     /* Disable animations on cards to avoid layout jitter during filtering */
     #kits-grid .menu-item { transition: none; opacity: 1; transform: none; }
@@ -289,14 +342,48 @@
       	</div>
     	</div>
 
-    <!-- Navigation -->
-    <button class="nav-btn nav-prev" aria-label="Previous slide" id="hero-prev">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="nav-btn nav-next" aria-label="Next slide" id="hero-next">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-    <div class="dots" id="hero-dots" aria-label="Slide indicators" role="tablist"></div>
+    	<!-- Slide 3 - Quick Meals -->
+    	<div class="slide" data-index="2">
+      	<div class="slide-bg" style="background-image: url('/images/pexels-ella-olsson-1640772 1.png');"></div>
+      	<div class="slide-overlay"></div>
+      	<div class="slide-content container mx-auto px-4">
+        	<div class="h-full grid grid-cols-1 lg:grid-cols-2 items-center">
+          	<div class="copy pr-0 lg:pr-10 text-center lg:text-left">
+            	<h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-semibold mb-3">Quick & Easy Meals</h2>
+            	<p class="text-white/90 text-base sm:text-lg mb-6">Ready in 15 minutes, perfect for busy lifestyles.</p>
+            	<a href="#menu" class="inline-block bg-makan-orange hover:bg-makan-orange-hover text-white px-6 py-3 rounded-full font-medium">Browse Kits</a>
+          	</div>
+          	<div class="fg-wrap fg-inset flex justify-center lg:justify-end">
+            	<img class="fg-img" src="/images/mealkit/imgi_2_38808577.jpg" alt="quick meal kit">
+          	</div>
+        	</div>
+      	</div>
+    	</div>
+
+    <!-- Slide Navigation Tabs -->
+    <div class="slide-tabs absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <div class="bg-white/10 backdrop-blur-sm rounded-full p-2">
+        <div class="flex space-x-2">
+          <button class="tab-btn active" data-slide="0">
+            <span class="tab-icon">🍽️</span>
+            <span class="tab-text">Fresh Kits</span>
+          </button>
+          <button class="tab-btn" data-slide="1">
+            <span class="tab-icon">👨‍🍳</span>
+            <span class="tab-text">Chef Quality</span>
+          </button>
+          <button class="tab-btn" data-slide="2">
+            <span class="tab-icon">⚡</span>
+            <span class="tab-text">Quick Meals</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto-play Progress Bar -->
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-10">
+      <div class="progress-bar h-full bg-makan-orange transition-all duration-300 ease-linear" style="width: 0%"></div>
+    </div>
   </section>
 
   <!-- Menu-like Tabs -->
@@ -416,37 +503,56 @@
       const slider = document.getElementById('hero');
       if (!slider) return;
       const slides = Array.from(slider.querySelectorAll('.slide'));
-      const prevBtn = document.getElementById('hero-prev');
-      const nextBtn = document.getElementById('hero-next');
-      const dotsWrap = document.getElementById('hero-dots');
+      const tabBtns = Array.from(slider.querySelectorAll('.tab-btn'));
+      const progressBar = slider.querySelector('.progress-bar');
       let index = 0;
       let timer;
 
-      function renderDots() {
-        dotsWrap.innerHTML = slides.map((_, i) => `<button class="dot${i===0?' active':''}" data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join('');
-        dotsWrap.querySelectorAll('.dot').forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.i)));
-      }
-
       function activate(i) {
         slides.forEach((s, j) => s.classList.toggle('active', j === i));
-        dotsWrap.querySelectorAll('.dot').forEach((d, j) => d.classList.toggle('active', j === i));
+        tabBtns.forEach((btn, j) => btn.classList.toggle('active', j === i));
+        
+        // Reset progress bar animation
+        if (progressBar) {
+          progressBar.style.animation = 'none';
+          progressBar.offsetHeight; // Trigger reflow
+          progressBar.style.animation = 'slideProgress 6s linear infinite';
+        }
       }
 
-      function goTo(i) { index = (i + slides.length) % slides.length; activate(index); restart(); }
+      function goTo(i) { 
+        index = (i + slides.length) % slides.length; 
+        activate(index); 
+        restart(); 
+      }
+      
       function next() { goTo(index + 1); }
-      function prev() { goTo(index - 1); }
-      function start() { timer = setInterval(next, 5000); }
+      function start() { timer = setInterval(next, 6000); }
       function stop() { clearInterval(timer); }
       function restart() { stop(); start(); }
 
-      renderDots();
+      // Tab button event listeners
+      tabBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => goTo(i));
+      });
+
       activate(0);
       start();
 
-      nextBtn.addEventListener('click', next);
-      prevBtn.addEventListener('click', prev);
-      slider.addEventListener('mouseenter', stop);
-      slider.addEventListener('mouseleave', start);
+      // Pause on hover with progress bar
+      slider.addEventListener('mouseenter', () => {
+        stop();
+        if (progressBar) {
+          progressBar.style.animationPlayState = 'paused';
+        }
+      });
+      
+      slider.addEventListener('mouseleave', () => {
+        start();
+        if (progressBar) {
+          progressBar.style.animationPlayState = 'running';
+        }
+      });
     }
 
     // Load kits from JSON and build cards

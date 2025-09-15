@@ -226,6 +226,7 @@
       </div>
                 <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
                 <a href="blog.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
+                <a href="past-events.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Past Events</a>
                 <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
                 <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
                 <a href="order.html" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
@@ -276,31 +277,55 @@
   <div class="absolute inset-0 bg-black/50"></div>
   <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- LEFT ARROW -->
-  <button
-    aria-label="Previous slide"
-    onclick="heroSlide(-1)"
-    class="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20
-           w-10 h-10 sm:w-12 sm:h-12 rounded-full
-           bg-white/20 text-white
-           hover:bg-white/30 transition
-           flex items-center justify-center"
-  >
-    <i class="fas fa-chevron-left sm:text-lg"></i>
-  </button>
+  <!-- Unique Vertical Timeline Navigation -->
+  <div class="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block">
+    <div class="timeline-container">
+      <!-- Timeline Line -->
+      <div class="timeline-line">
+        <div class="timeline-progress"></div>
+      </div>
+      
+      <!-- Timeline Points -->
+      <div class="timeline-point active" data-slide="0">
+        <div class="point-outer">
+          <div class="point-inner">
+            <div class="point-core"></div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-point" data-slide="1">
+        <div class="point-outer">
+          <div class="point-inner">
+            <div class="point-core"></div>
+          </div>
+        </div>
+      </div>
 
-  <!-- RIGHT ARROW -->
-  <button
-    aria-label="Next slide"
-    onclick="heroSlide(1)"
-    class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20
-           w-10 h-10 sm:w-12 sm:h-12 rounded-full
-           bg-white/20 text-white
-           hover:bg-white/30 transition
-           flex items-center justify-center"
-  >
-    <i class="fas fa-chevron-right sm:text-lg"></i>
-  </button>
+      <div class="timeline-point" data-slide="2">
+        <div class="point-outer">
+          <div class="point-inner">
+            <div class="point-core"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Geometric Pattern Navigation (Mobile) -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 lg:hidden">
+    <div class="geo-nav">
+      <button class="geo-shape active" data-slide="0">
+        <div class="shape-circle"></div>
+      </button>
+      <button class="geo-shape" data-slide="1">
+        <div class="shape-square"></div>
+      </button>
+      <button class="geo-shape" data-slide="2">
+        <div class="shape-triangle"></div>
+      </button>
+    </div>
+  </div>
+
 
   <!-- HERO CONTENT -->
   <div class="container relative mx-auto px-28 h-screen flex items-center">
@@ -696,6 +721,132 @@
   </div>
 </section>
 
+<!-- Past Events Slider Section -->
+<section class="py-16 bg-gray-50 observe-fade">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="text-sm text-makan-orange font-semibold uppercase tracking-wide">Our Events</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-custom-text">Recent Past Events</h2>
+      <p class="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
+        Take a look at some of our successful catering events and celebrations that we've had the privilege to be part of.
+      </p>
+    </div>
+
+    <!-- Events Horizontal Scroll -->
+    <div class="max-w-7xl mx-auto">
+      <!-- Scrolling Container -->
+      <div class="overflow-hidden">
+        <div id="events-scroll" class="flex space-x-6 animate-scroll-left">
+          
+          <!-- Event 1 - Corporate -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg" alt="Tech Summit 2024" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Tech Summit 2024</h3>
+                <p class="text-xs text-gray-200">Corporate Event • 150 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 - Wedding -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png" alt="Dream Wedding" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Dream Wedding</h3>
+                <p class="text-xs text-gray-200">Wedding Celebration • 200 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 - Birthday -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg" alt="80th Birthday" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">80th Birthday</h3>
+                <p class="text-xs text-gray-200">Family Celebration • 50 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4 - Festival -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/imgi_20_spring-roll.jpg" alt="Deepavali Festival" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Deepavali Festival</h3>
+                <p class="text-xs text-gray-200">Community Event • 300 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5 - Team Building (Duplicate to create continuous scroll) -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/imgi_23_vegetable.jpg" alt="Team Building" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Team Building</h3>
+                <p class="text-xs text-gray-200">Corporate Event • 80 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 6 - Anniversary -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/menu/imgi_11_bento.jpg" alt="Anniversary Party" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Anniversary Party</h3>
+                <p class="text-xs text-gray-200">Celebration • 120 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate first few items for seamless loop -->
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg" alt="Tech Summit 2024" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Tech Summit 2024</h3>
+                <p class="text-xs text-gray-200">Corporate Event • 150 Guests</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="min-w-80 relative rounded-2xl overflow-hidden shadow-lg">
+            <div class="relative h-64">
+              <img src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png" alt="Dream Wedding" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-bold font-playfair mb-1">Dream Wedding</h3>
+                <p class="text-xs text-gray-200">Wedding Celebration • 200 Guests</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-12">
+      <a href="past-events.html" class="inline-flex items-center bg-makan-orange hover:bg-makan-orange-hover text-white px-8 py-3 rounded-full font-semibold transition-colors">
+        View All Events
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-16 observe-fade  ">
@@ -757,24 +908,7 @@
                     </ul>
                 </div>
 
-                <!-- Follow Us On Instagram -->
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                    </div>
-                </div>
+         
             </div>
 
             <!-- Copyright -->
@@ -801,6 +935,7 @@
                 <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
                 <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
                 <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
+                <a href="past-events.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Past Events</a>
                 <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
                 <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
                 <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
@@ -816,6 +951,19 @@
   display: flex;
   width: max-content;
   animation: scroll 60s linear infinite;
+}
+
+/* Events horizontal scroll animation */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+  will-change: transform;
+}
+.animate-scroll-left:hover {
+  animation-play-state: paused;
 }
 /* ==========  NEW VISUAL DELIGHTS  ========== */
 /* 1. Hero zoom-out (infinite) */
@@ -836,6 +984,614 @@
   pointer-events: none;
   z-index: 1;
 }
+/* ======  UNIQUE VERTICAL TIMELINE NAVIGATION  ====== */
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+/* Timeline Line */
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 2px;
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 33.33%;
+  background: linear-gradient(to bottom, #FF5722, #FF8A65);
+  border-radius: 2px;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.5);
+}
+
+/* Timeline Points */
+.timeline-point {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.timeline-point:nth-child(2) { top: 0; }
+.timeline-point:nth-child(3) { top: 50%; transform: translateY(-50%); }
+.timeline-point:nth-child(4) { bottom: 0; }
+
+.point-outer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-point.active .point-outer {
+  background: rgba(255, 87, 34, 0.3);
+  transform: scale(1.2);
+  box-shadow: 0 0 30px rgba(255, 87, 34, 0.6);
+}
+
+.point-inner {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.timeline-point.active .point-inner {
+  background: rgba(255, 87, 34, 0.8);
+  animation: pointPulse 2s ease-in-out infinite;
+}
+
+.point-core {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline-point.active .point-core {
+  background: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes pointPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Timeline Labels */
+.timeline-label {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.timeline-point:hover .timeline-label,
+.timeline-point.active .timeline-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+}
+
+.label-connector {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 2px;
+  background: linear-gradient(to right, rgba(255, 87, 34, 0.6), #FF5722);
+}
+
+.label-content {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 87, 34, 0.3);
+  min-width: 160px;
+}
+
+.label-title {
+  display: block;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.label-subtitle {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Timeline Year */
+.timeline-year {
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.timeline-point.active .timeline-year {
+  color: #FF5722;
+  transform: translateY(-50%) rotate(-90deg) scale(1.1);
+}
+
+/* Geometric Mobile Navigation */
+.geo-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.geo-shape {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shape-circle, .shape-square, .shape-triangle {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.shape-circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.shape-square {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 17px solid rgba(255, 255, 255, 0.6);
+}
+
+.geo-shape.active .shape-circle {
+  border-color: #FF5722;
+  background: #FF5722;
+  box-shadow: 0 0 15px rgba(255, 87, 34, 0.6);
+}
+
+.geo-shape.active .shape-square {
+  border-color: #FF5722;
+  background: #FF5722;
+  box-shadow: 0 0 15px rgba(255, 87, 34, 0.6);
+}
+
+.geo-shape.active .shape-triangle {
+  border-bottom-color: #FF5722;
+  filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.6));
+}
+
+/* Info Panel */
+.info-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slide-fraction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.fraction-line {
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(to right, #FF5722, rgba(255, 255, 255, 0.3));
+  border-radius: 1px;
+}
+
+.total-slides {
+  opacity: 0.6;
+}
+
+.panel-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.panel-decorator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.decorator-line {
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 87, 34, 0.6));
+}
+
+.decorator-dot {
+  width: 6px;
+  height: 6px;
+  background: #FF5722;
+  border-radius: 50%;
+  animation: decoratorPulse 2s ease-in-out infinite;
+}
+
+@keyframes decoratorPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ======  DYNAMIC SLIDE-SPECIFIC ANIMATIONS  ====== */
+
+/* Timeline Wave Animation */
+@keyframes timelineWave {
+  0% { transform: scaleY(1) translateY(0); opacity: 0.8; }
+  50% { transform: scaleY(1.1) translateY(-2px); opacity: 1; }
+  100% { transform: scaleY(1) translateY(0); opacity: 0.8; }
+}
+
+/* Progressive Glow Effect */
+@keyframes progressiveGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 87, 34, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(255, 87, 34, 0.8), 0 0 60px rgba(255, 87, 34, 0.4); }
+  100% { box-shadow: 0 0 10px rgba(255, 87, 34, 0.3); }
+}
+
+/* Point Connection Animation */
+@keyframes pointConnect {
+  0% { width: 0; opacity: 0; }
+  100% { width: 100%; opacity: 1; }
+}
+
+/* Slide-Specific Timeline Animations */
+.timeline-container.slide-1 .timeline-line {
+  animation: timelineWave 3s ease-in-out infinite;
+  background: linear-gradient(to bottom, rgba(255, 87, 34, 0.4), rgba(255, 87, 34, 0.2));
+}
+
+.timeline-container.slide-2 .timeline-line {
+  animation: timelineWave 2.5s ease-in-out infinite;
+  background: linear-gradient(to bottom, rgba(76, 175, 80, 0.4), rgba(76, 175, 80, 0.2));
+}
+
+.timeline-container.slide-3 .timeline-line {
+  animation: timelineWave 3.5s ease-in-out infinite;
+  background: linear-gradient(to bottom, rgba(63, 81, 181, 0.4), rgba(63, 81, 181, 0.2));
+}
+
+/* Active Point Enhanced Animations */
+.timeline-container.slide-1 .timeline-point.active .point-outer {
+  animation: progressiveGlow 2s ease-in-out infinite;
+  background: rgba(255, 87, 34, 0.3);
+}
+
+.timeline-container.slide-2 .timeline-point.active .point-outer {
+  animation: progressiveGlow 2s ease-in-out infinite;
+  background: rgba(76, 175, 80, 0.3);
+  box-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+}
+
+.timeline-container.slide-3 .timeline-point.active .point-outer {
+  animation: progressiveGlow 2s ease-in-out infinite;
+  background: rgba(63, 81, 181, 0.3);
+  box-shadow: 0 0 30px rgba(63, 81, 181, 0.6);
+}
+
+/* Progress Line Dynamic Colors */
+.timeline-container.slide-1 .timeline-progress {
+  background: linear-gradient(to bottom, #FF5722, #FF8A65);
+  animation: progressiveGlow 3s ease-in-out infinite;
+}
+
+.timeline-container.slide-2 .timeline-progress {
+  background: linear-gradient(to bottom, #4CAF50, #81C784);
+  animation: progressiveGlow 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.timeline-container.slide-3 .timeline-progress {
+  background: linear-gradient(to bottom, #3F51B5, #7986CB);
+  animation: progressiveGlow 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(63, 81, 181, 0.5);
+}
+
+/* Connection Lines Between Points */
+.timeline-point::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 87, 34, 0.6));
+  transition: all 0.8s ease;
+  z-index: -1;
+}
+
+.timeline-point.active::before {
+  animation: pointConnect 1s ease-out forwards;
+}
+
+/* Flowing Energy Line Animation */
+.timeline-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.9), 
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  border-radius: 3px;
+  animation: energyFlow 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.timeline-container.slide-1 .timeline-progress::after {
+  animation: energyFlow1 2s ease-in-out infinite;
+}
+
+.timeline-container.slide-2 .timeline-progress::after {
+  animation: energyFlow2 2s ease-in-out infinite;
+}
+
+.timeline-container.slide-3 .timeline-progress::after {
+  animation: energyFlow3 2s ease-in-out infinite;
+}
+
+@keyframes energyFlow1 {
+  0% { top: 0; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 33%; opacity: 0; }
+}
+
+@keyframes energyFlow2 {
+  0% { top: 0; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 66%; opacity: 0; }
+}
+
+@keyframes energyFlow3 {
+  0% { top: 0; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Enhanced Label Animations */
+.timeline-container.slide-1 .timeline-point.active .label-content {
+  border-color: rgba(255, 87, 34, 0.5);
+  background: rgba(255, 87, 34, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.timeline-container.slide-2 .timeline-point.active .label-content {
+  border-color: rgba(76, 175, 80, 0.5);
+  background: rgba(76, 175, 80, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.timeline-container.slide-3 .timeline-point.active .label-content {
+  border-color: rgba(63, 81, 181, 0.5);
+  background: rgba(63, 81, 181, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+/* Current Focus Point Enhancement */
+.timeline-point.current-focus .point-outer {
+  transform: scale(1.2);
+  z-index: 10;
+  animation: currentFocusPulse 2s ease-in-out infinite;
+}
+
+.timeline-point.current-focus .label-content {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+@keyframes currentFocusPulse {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(255, 87, 34, 0.8), 0 0 35px rgba(255, 87, 34, 0.4);
+  }
+}
+
+/* Current Focus Colors per Slide */
+.timeline-container.slide-1 .timeline-point.current-focus .point-outer {
+  animation: currentFocusPulse1 2s ease-in-out infinite;
+}
+
+.timeline-container.slide-2 .timeline-point.current-focus .point-outer {
+  animation: currentFocusPulse2 2s ease-in-out infinite;
+}
+
+.timeline-container.slide-3 .timeline-point.current-focus .point-outer {
+  animation: currentFocusPulse3 2s ease-in-out infinite;
+}
+
+@keyframes currentFocusPulse1 {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(255, 87, 34, 0.8), 0 0 35px rgba(255, 87, 34, 0.4);
+  }
+}
+
+@keyframes currentFocusPulse2 {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(76, 175, 80, 0.8), 0 0 35px rgba(76, 175, 80, 0.4);
+  }
+}
+
+@keyframes currentFocusPulse3 {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(63, 81, 181, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(63, 81, 181, 0.8), 0 0 35px rgba(63, 81, 181, 0.4);
+  }
+}
+
+/* Geometric Shapes Dynamic Colors */
+.geo-nav.slide-1 .geo-shape.active .shape-circle,
+.geo-nav.slide-1 .geo-shape.active .shape-square,
+.geo-nav.slide-1 .geo-shape.active .shape-triangle {
+  filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
+}
+
+.geo-nav.slide-2 .geo-shape.active .shape-circle {
+  border-color: #4CAF50;
+  background: #4CAF50;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+}
+
+.geo-nav.slide-2 .geo-shape.active .shape-square {
+  border-color: #4CAF50;
+  background: #4CAF50;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+}
+
+.geo-nav.slide-2 .geo-shape.active .shape-triangle {
+  border-bottom-color: #4CAF50;
+  filter: drop-shadow(0 0 8px rgba(76, 175, 80, 0.6));
+}
+
+.geo-nav.slide-3 .geo-shape.active .shape-circle {
+  border-color: #3F51B5;
+  background: #3F51B5;
+  box-shadow: 0 0 15px rgba(63, 81, 181, 0.6);
+}
+
+.geo-nav.slide-3 .geo-shape.active .shape-square {
+  border-color: #3F51B5;
+  background: #3F51B5;
+  box-shadow: 0 0 15px rgba(63, 81, 181, 0.6);
+}
+
+.geo-nav.slide-3 .geo-shape.active .shape-triangle {
+  border-bottom-color: #3F51B5;
+  filter: drop-shadow(0 0 8px rgba(63, 81, 181, 0.6));
+}
+
+/* Info Panel Dynamic Styling */
+.info-panel.slide-1 .fraction-line {
+  background: linear-gradient(to right, #FF5722, rgba(255, 255, 255, 0.3));
+}
+
+.info-panel.slide-2 .fraction-line {
+  background: linear-gradient(to right, #4CAF50, rgba(255, 255, 255, 0.3));
+}
+
+.info-panel.slide-3 .fraction-line {
+  background: linear-gradient(to right, #3F51B5, rgba(255, 255, 255, 0.3));
+}
+
+.info-panel.slide-1 .decorator-dot {
+  background: #FF5722;
+}
+
+.info-panel.slide-2 .decorator-dot {
+  background: #4CAF50;
+}
+
+.info-panel.slide-3 .decorator-dot {
+  background: #3F51B5;
+}
+
+/* Particle Effect Animation (Optional Enhancement) */
+@keyframes particleFloat {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  50% { transform: translateY(-20px) translateX(10px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-40px) translateX(-10px) scale(0.8); opacity: 0; }
+}
+
+.timeline-point.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: particleFloat 2s ease-out infinite;
+  animation-delay: 0.5s;
+}
+
 /* ======  CREATIVE MOTION KIT  ====== */
 /* 1.1  Global fade-in for every section */
 section {
@@ -999,17 +1755,224 @@ let idx = 1;                   /* start at first real slide (index-1 because of 
 let auto = setInterval(() => heroSlide(1), 5000);
 const hero = document.getElementById('hero-slider');
 
-/* slide function */
-function heroSlide(dir) {
-  idx = idx + dir;
-  if (idx >= total) idx = 1;
-  if (idx < 0) idx = total - 2;
-  document.getElementById('hero-slides').style.transform = `translateX(-${idx * 100}%)`;
+
+/* update slide navigation */
+function updateSlideNavigation() {
+  const timelinePoints = document.querySelectorAll('.timeline-point');
+  const geoShapes = document.querySelectorAll('.geo-shape');
+  const timelineProgress = document.querySelector('.timeline-progress');
+  const timelineContainer = document.querySelector('.timeline-container');
+  const geoNav = document.querySelector('.geo-nav');
+  const infoPanel = document.querySelector('.info-panel');
+  
+  // Calculate the correct active index (0, 1, 2 for slides 1, 2, 3)
+  let activeIndex;
+  if (idx === 1) activeIndex = 0;
+  else if (idx === 2) activeIndex = 1;
+  else if (idx === 3) activeIndex = 2;
+  else activeIndex = 0;
+  
+  // Remove all slide classes and add current slide class
+  if (timelineContainer) {
+    timelineContainer.classList.remove('slide-1', 'slide-2', 'slide-3');
+    timelineContainer.classList.add(`slide-${idx}`);
+  }
+  
+  if (geoNav) {
+    geoNav.classList.remove('slide-1', 'slide-2', 'slide-3');
+    geoNav.classList.add(`slide-${idx}`);
+  }
+  
+  if (infoPanel) {
+    infoPanel.classList.remove('slide-1', 'slide-2', 'slide-3');
+    infoPanel.classList.add(`slide-${idx}`);
+  }
+  
+  // Clear all previous active states first and reset timeline
+  timelinePoints.forEach((point, index) => {
+    point.classList.remove('active', 'current-focus');
+  });
+  
+  // Reset progress bar to start fresh animation
+  if (timelineProgress) {
+    timelineProgress.style.transition = 'none';
+    timelineProgress.style.height = '0%';
+    // Force reflow to ensure the reset is applied
+    timelineProgress.offsetHeight;
+  }
+  
+  // Start progression animation with proper timing
+  setTimeout(() => {
+    if (timelineProgress) {
+      // Calculate progress: 33.33% per stage (1→33%, 2→66%, 3→100%)
+      const progressHeight = (activeIndex + 1) * 33.33;
+      timelineProgress.style.transition = 'height 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      timelineProgress.style.height = `${progressHeight}%`;
+    }
+    
+    // Activate points progressively to show movement through timeline
+    for (let i = 0; i <= activeIndex; i++) {
+      setTimeout(() => {
+        if (timelinePoints[i]) {
+          timelinePoints[i].classList.add('active');
+          
+          // Mark the current slide's point as the main focus
+          if (i === activeIndex) {
+            timelinePoints[i].classList.add('current-focus');
+            triggerPointAnimation(timelinePoints[i]);
+          }
+        }
+      }, i * 200); // 200ms stagger between each point activation
+    }
+    
+  }, 50); // Small delay to ensure clean reset
+  
+  // Update geometric shapes (mobile navigation)
+  geoShapes.forEach((shape, index) => {
+    shape.classList.toggle('active', index === activeIndex);
+  });
 }
 
-/* pause on hover */
-hero.addEventListener('mouseenter', () => clearInterval(auto));
-hero.addEventListener('mouseleave', () => auto = setInterval(() => heroSlide(1), 5000));
+/* trigger point animation effects */
+function triggerPointAnimation(point) {
+  // Add temporary animation class
+  point.classList.add('point-activate');
+  
+  // Create ripple effect
+  const ripple = document.createElement('div');
+  ripple.style.position = 'absolute';
+  ripple.style.top = '50%';
+  ripple.style.left = '50%';
+  ripple.style.width = '0px';
+  ripple.style.height = '0px';
+  ripple.style.background = 'rgba(255, 87, 34, 0.3)';
+  ripple.style.borderRadius = '50%';
+  ripple.style.transform = 'translate(-50%, -50%)';
+  ripple.style.animation = 'rippleEffect 1s ease-out forwards';
+  ripple.style.pointerEvents = 'none';
+  ripple.style.zIndex = '-1';
+  
+  point.appendChild(ripple);
+  
+  // Remove ripple after animation
+  setTimeout(() => {
+    if (ripple.parentNode) {
+      ripple.parentNode.removeChild(ripple);
+    }
+    point.classList.remove('point-activate');
+  }, 1000);
+}
+
+/* Add ripple effect keyframe */
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `
+  @keyframes rippleEffect {
+    0% {
+      width: 0px;
+      height: 0px;
+      opacity: 1;
+    }
+    100% {
+      width: 80px;
+      height: 80px;
+      opacity: 0;
+    }
+  }
+  
+  .point-activate {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+`;
+document.head.appendChild(rippleStyle);
+
+/* update slide number display */
+function updateSlideNumber() {
+  const currentSlideNumber = document.getElementById('current-slide-number');
+  if (currentSlideNumber) {
+    let slideNum;
+    if (idx === 1) slideNum = 1;
+    else if (idx === 2) slideNum = 2;
+    else if (idx === 3) slideNum = 3;
+    else slideNum = 1; // Default fallback
+    
+    currentSlideNumber.textContent = slideNum.toString().padStart(2, '0');
+  }
+}
+
+/* handle navigation clicks */
+function goToSlide(slideIndex) {
+  idx = slideIndex + 1; // +1 because of clone (0->1, 1->2, 2->3)
+  document.getElementById('hero-slides').style.transform = `translateX(-${idx * 100}%)`;
+  updateSlideNavigation();
+  updateSlideNumber();
+  
+  // Restart the timer
+  clearInterval(auto);
+  auto = setInterval(() => heroSlide(1), 5000);
+}
+
+// Pause/resume functions removed as requested
+
+/* add slide entrance animations */
+function triggerSlideEntranceAnimation(slideIndex) {
+  const timelineContainer = document.querySelector('.timeline-container');
+  const infoPanel = document.querySelector('.info-panel');
+  
+  // Add entrance animation classes
+  if (timelineContainer) {
+    timelineContainer.style.transform = 'translateX(-20px)';
+    timelineContainer.style.opacity = '0.7';
+    timelineContainer.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    
+    setTimeout(() => {
+      timelineContainer.style.transform = 'translateX(0)';
+      timelineContainer.style.opacity = '1';
+    }, 50);
+  }
+  
+  if (infoPanel) {
+    infoPanel.style.transform = 'translateY(-10px)';
+    infoPanel.style.opacity = '0.7';
+    infoPanel.style.transition = 'all 0.4s ease';
+    
+    setTimeout(() => {
+      infoPanel.style.transform = 'translateY(0)';
+      infoPanel.style.opacity = '1';
+    }, 100);
+  }
+}
+
+
+/* setup navigation click handlers */
+document.addEventListener('DOMContentLoaded', () => {
+  // Timeline points click handlers
+  const timelinePoints = document.querySelectorAll('.timeline-point');
+  timelinePoints.forEach((point, index) => {
+    point.addEventListener('click', () => {
+      triggerSlideEntranceAnimation(index);
+      goToSlide(index);
+    });
+  });
+  
+  // Geometric shapes click handlers (mobile)
+  const geoShapes = document.querySelectorAll('.geo-shape');
+  geoShapes.forEach((shape, index) => {
+    shape.addEventListener('click', () => {
+      triggerSlideEntranceAnimation(index);
+      goToSlide(index);
+    });
+  });
+  
+  // Initialize first slide with animation
+  setTimeout(() => {
+    triggerSlideEntranceAnimation(0);
+    updateSlideNavigation();
+    updateSlideNumber();
+  }, 100);
+});
+
+// Hover functionality removed as requested
 
 const heroTexts = [
   {
@@ -1038,7 +2001,7 @@ function updateHeroText(index) {
   descriptionElement.innerHTML = heroTexts[textIndex].description;
 }
 
-// Update the heroSlide function
+// Update the heroSlide function with complete navigation updates
 function heroSlide(dir) {
   idx = idx + dir;
   if (idx >= total) idx = 1;
@@ -1047,10 +2010,18 @@ function heroSlide(dir) {
   
   // Update text based on current slide
   updateHeroText(idx);
+  
+  // Trigger entrance animations
+  triggerSlideEntranceAnimation(idx - 1);
+  
+  // Update timeline navigation
+  updateSlideNavigation();
+  updateSlideNumber();
 }
 
 // Initialize text on page load
 updateHeroText(1);
+
 // Hover menu with delay
 const menuTrigger = document.getElementById('menu-trigger');
 const menuPanel = document.querySelector('.group .absolute');
