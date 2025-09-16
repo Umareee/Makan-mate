@@ -151,7 +151,7 @@
                 <div class="flex justify-end items-center gap-3 mb-4">
     <div id="active-filters-outside" class="hidden flex-wrap gap-2"></div>
     <!-- Filter toggle button stays unchanged -->
-    <button id="filter-toggle-btn" class="inline-flex items-center gap-2 bg-white border-2 border-makan-orange text-makan-orange px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all duration-300">
+    <button id="filter-toggle-btn" class="inline-flex items-center gap-2 bg-white dark:bg-gray-800 border-2 border-makan-orange text-makan-orange dark:text-makan-orange px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all duration-300">
         <i class="fas fa-filter"></i>
         <span>Filters</span>
         <i class="fas fa-chevron-down transition-transform duration-300" id="filter-chevron"></i>
@@ -510,12 +510,12 @@
                         filterPanel.classList.remove('hidden');
                         filterChevron.style.transform = 'rotate(180deg)';
                         filterToggleBtn.classList.add('bg-makan-orange', 'text-white');
-                        filterToggleBtn.classList.remove('text-makan-orange');
+                        filterToggleBtn.classList.remove('bg-white', 'dark:bg-gray-800', 'text-makan-orange', 'dark:text-makan-orange');
                     } else {
                         filterPanel.classList.add('hidden');
                         filterChevron.style.transform = 'rotate(0deg)';
                         filterToggleBtn.classList.remove('bg-makan-orange', 'text-white');
-                        filterToggleBtn.classList.add('text-makan-orange');
+                        filterToggleBtn.classList.add('bg-white', 'dark:bg-gray-800', 'text-makan-orange', 'dark:text-makan-orange');
                     }
                 });
                 
@@ -527,7 +527,7 @@
                         filterPanel.classList.add('hidden');
                         filterChevron.style.transform = 'rotate(0deg)';
                         filterToggleBtn.classList.remove('bg-makan-orange', 'text-white');
-                        filterToggleBtn.classList.add('text-makan-orange');
+                        filterToggleBtn.classList.add('bg-white', 'dark:bg-gray-800', 'text-makan-orange', 'dark:text-makan-orange');
                     }
                 });
                 
