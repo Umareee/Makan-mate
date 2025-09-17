@@ -108,7 +108,7 @@
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
                 <div class="group">
-        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
 
         <!-- Full-width mega panel -->
 <div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
@@ -253,7 +253,7 @@
 
         <!-- Menu Item Info -->
         <div class="text-center mb-8 px-16">
-            <h1 id="item-name" class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text font-playfair mb-8">
+            <h1 id="item-name" class="text-3xl sm:text-4xl md:text-5xl font-medium text-custom-text font-medium mb-8">
                 Loading...
             </h1>
             <p id="item-description" class="text-base sm:text-lg text-gray-600 max-w-6xl mx-auto leading-relaxed">
@@ -263,9 +263,9 @@
 
         <!-- Quantity Selection Grid -->
         <div class="mb-12 mx-12">
-            <h2 class="text-2xl sm:text-3xl font-medium text-custom-text font-playfair mb-8 text-center">
-                Select Quantity
-            </h2>
+            <p id="min-pax-info" class="text-2xl sm:text-3xl font-medium text-custom-text font-medium mb-8 text-center">
+                Minimum 10 pax required
+            </p>
             <!-- 4 equal-width columns, no side gaps -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="packs-grid">
                 <!-- Cards will be dynamically loaded from JSON -->
@@ -312,7 +312,7 @@
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
                         <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
                         <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
@@ -375,7 +375,7 @@
             <nav class="space-y-4">
                 <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
                 <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
-                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
                 <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
                 <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
                 <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
@@ -462,6 +462,31 @@
             return match ? parseInt(match[1]) : null;
         }
 
+        // Extract and update minimum pax display from pack configurations
+        function updateMinimumPaxDisplay(packs) {
+            const minPaxInfoEl = document.getElementById('min-pax-info');
+            let minPax = null;
+            
+            // Look through all packs to find minimum pax requirements
+            packs.forEach(pack => {
+                const title = pack.title || '';
+                const minMatch = title.match(/minimum\s+of\s+(\d+)\s+pax/i);
+                if (minMatch) {
+                    const paxNumber = parseInt(minMatch[1]);
+                    if (minPax === null || paxNumber < minPax) {
+                        minPax = paxNumber;
+                    }
+                }
+            });
+            
+            // Update the display
+            if (minPax) {
+                minPaxInfoEl.textContent = `Minimum ${minPax} pax required`;
+            } else {
+                minPaxInfoEl.textContent = 'Minimum 10 pax required'; // Default fallback
+            }
+        }
+
         // Generate pack cards based on JSON configuration
         function generatePackCards() {
             const packsGrid = document.getElementById('packs-grid');
@@ -474,6 +499,9 @@
             }
 
             packsGrid.innerHTML = '';
+            
+            // Extract and display minimum pax from the pack configurations
+            updateMinimumPaxDisplay(itemConfig.packs);
             
             itemConfig.packs.forEach(pack => {
                 // Try to extract actual per-pax price from title, fallback to base price
@@ -507,6 +535,10 @@
             const packsGrid = document.getElementById('packs-grid');
             const packSizes = [2, 4, 6, 8, 10, 12];
             const basePrice = selectedMenuItem.price;
+            
+            // Update minimum pax display for default case
+            const minPaxInfoEl = document.getElementById('min-pax-info');
+            minPaxInfoEl.textContent = 'Minimum 10 pax required';
             
             packsGrid.innerHTML = '';
             

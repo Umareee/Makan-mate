@@ -107,7 +107,7 @@
         <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
         <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
                 <div class="group">
-        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
 
         <!-- Full-width mega panel -->
 <div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
@@ -255,6 +255,15 @@
               <div class="text-md">Subtotal:</div>
               <div id="order-subtotal" class="text-md">$0.00</div>
             </div>
+            <!-- Applied Discounts/Gift Cards -->
+            <div id="applied-discounts" class="hidden">
+              <div class="flex justify-between items-center text-green-600">
+                <div class="text-md">
+                  <span id="discount-type">Discount</span> (<span id="discount-code-display"></span>):
+                </div>
+                <div id="discount-amount" class="text-md">-$0.00</div>
+              </div>
+            </div>
             <div class="flex justify-between items-center">
               <div class="text-md">GST (9%):</div>
               <div id="order-gst" class="text-md">$0.00</div>
@@ -273,6 +282,49 @@
       <!-- RIGHT CONTENT - Delivery Form -->
       <section class="lg:col-span-8">
         <form class="space-y-8" id="delivery-form">
+
+          <!-- Login for Faster Checkout -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-sign-in-alt mr-2 text-makan-orange"></i>
+              Log in for faster checkout (no password needed)
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Email Address</label>
+                <input type="email" id="login-email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <button type="button" id="email-login-btn" class="mt-2 bg-makan-orange hover:bg-makan-orange-hover text-white px-4 py-2 rounded text-sm transition-colors">
+                  Sign up / Login with Email
+                </button>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">WhatsApp Number</label>
+                <input type="tel" id="login-whatsapp" placeholder="Enter your WhatsApp number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <button type="button" id="whatsapp-login-btn" class="mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                  <i class="fab fa-whatsapp mr-1"></i> Sign up / Login with WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Discount Code / Gift Card -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-tag mr-2 text-makan-orange"></i>
+              Discount Code / Gift Card
+            </h3>
+            <div class="max-w-md">
+              <label class="block text-sm font-medium mb-1">Enter Code</label>
+              <div class="flex">
+                <input type="text" id="promo-code" placeholder="Enter discount code or gift card" class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
+                <button type="button" id="apply-code-btn" class="bg-makan-orange hover:bg-makan-orange-hover text-white px-4 py-2 rounded-r-lg transition-colors">
+                  Apply
+                </button>
+              </div>
+              <div id="code-message" class="text-sm mt-1 hidden"></div>
+              <p class="text-xs text-gray-500 mt-2">Enter discount codes (e.g., SAVE10) or gift card codes (e.g., GC123456)</p>
+            </div>
+          </div>
 
           <!-- Personal Information -->
           <div class="p-6 bg-white border border-gray-200 rounded-lg">
@@ -382,28 +434,32 @@
             </div>
           </div>
 
-          <!-- Other Information -->
+          <!-- Additional Information -->
           <div class="p-6 bg-white border border-gray-200 rounded-lg">
             <h3 class="text-xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-info-circle mr-2 text-makan-orange"></i>
-              Other Information
+              <i class="fas fa-clipboard-list mr-2 text-makan-orange"></i>
+              Additional Information
             </h3>
-            <p class="text-sm font-medium mb-3">Is this your first order?*</p>
-            <div class="flex space-x-6">
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="radio" name="firstOrder" value="yes" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
-                <span>Yes</span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="radio" name="firstOrder" value="no" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
-                <span>No</span>
-              </label>
-            </div>
-            <div class="mt-4">
-              <label class="block text-sm font-medium mb-1">Remarks (200 characters)</label>
-              <textarea id="remarks" maxlength="200" rows="3" placeholder="Any special instructions or requests..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"></textarea>
-              <div class="text-xs text-gray-500 mt-1 text-right">
-                <span id="char-count">0</span>/200
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <p class="text-sm font-medium mb-3">Is this your first order?*</p>
+                <div class="flex space-x-6">
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="firstOrder" value="yes" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
+                    <span>Yes</span>
+                  </label>
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="firstOrder" value="no" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Special Instructions</label>
+                <textarea id="remarks" maxlength="200" rows="3" placeholder="Any special requests or dietary requirements..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"></textarea>
+                <div class="text-xs text-gray-500 mt-1 text-right">
+                  <span id="char-count">0</span>/200
+                </div>
               </div>
             </div>
           </div>
@@ -431,7 +487,7 @@
         <ul class="space-y-2 text-sm">
           <li><a href="index.html" class="hover:text-makan-orange">Home</a></li>
           <li><a href="about.html" class="hover:text-makan-orange">About</a></li>
-          <li><a href="menu.html" class="hover:text-makan-orange">Menu</a></li>
+          <li><a href="menu.html" class="hover:text-makan-orange">Catering</a></li>
           <li><a href="contact.html" class="hover:text-makan-orange">Contact</a></li>
         </ul>
       </div>
@@ -450,6 +506,9 @@
   </footer>
 
 <script>
+/* Global variables for discount tracking */
+let appliedDiscount = null;
+
 /* =========  DOM READY  ========= */
 document.addEventListener('DOMContentLoaded', () => {
   loadOrderSummary();
@@ -540,14 +599,42 @@ function loadOrderSummary() {
 
   $summary.innerHTML = summaryHTML;
   
-  // Calculate GST and final total
-  const gstAmount = grandTotal * 0.09;
-  const totalWithGst = grandTotal + gstAmount;
+  // Apply discount if available
+  let discountAmount = 0;
+  if (appliedDiscount) {
+    if (appliedDiscount.discountType === 'percentage') {
+      discountAmount = grandTotal * (appliedDiscount.amount / 100);
+    } else {
+      discountAmount = appliedDiscount.amount;
+    }
+    // Don't let discount exceed the subtotal
+    discountAmount = Math.min(discountAmount, grandTotal);
+  }
+  
+  const discountedSubtotal = grandTotal - discountAmount;
+  const gstAmount = discountedSubtotal * 0.09;
+  const totalWithGst = discountedSubtotal + gstAmount;
   
   // Update display
   $subtotal.textContent = `$${grandTotal.toFixed(2)}`;
   $gst.textContent = `$${gstAmount.toFixed(2)}`;
   $total.textContent = `$${totalWithGst.toFixed(2)}`;
+  
+  // Show/hide discount section
+  const discountSection = document.getElementById('applied-discounts');
+  if (appliedDiscount && discountAmount > 0) {
+    document.getElementById('discount-type').textContent = appliedDiscount.type;
+    document.getElementById('discount-code-display').textContent = appliedDiscount.code;
+    document.getElementById('discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
+    discountSection.classList.remove('hidden');
+  } else {
+    discountSection.classList.add('hidden');
+  }
+}
+
+/* Update order summary when discount is applied */
+function updateOrderSummaryWithDiscount() {
+  loadOrderSummary();
 }
 
 /* =========  CART MANAGEMENT FUNCTIONS  ========= */
@@ -641,6 +728,91 @@ function setupFormFunctionality() {
     localStorage.setItem('deliveryFormData', JSON.stringify(data));
     alert('Form submitted successfully!');
     // window.location.href = 'payment.html';
+  });
+
+  /* Login functionality */
+  document.getElementById('email-login-btn')?.addEventListener('click', () => {
+    const email = document.getElementById('login-email')?.value;
+    if (!email) {
+      alert('Please enter your email address');
+      return;
+    }
+    // Simulate login process
+    alert('Login link sent to ' + email + '. Please check your email.');
+    // Here you would typically send a login link to the email
+  });
+
+  document.getElementById('whatsapp-login-btn')?.addEventListener('click', () => {
+    const whatsapp = document.getElementById('login-whatsapp')?.value;
+    if (!whatsapp) {
+      alert('Please enter your WhatsApp number');
+      return;
+    }
+    // Simulate WhatsApp login
+    alert('Login code sent to ' + whatsapp + ' via WhatsApp.');
+    // Here you would typically send a login code via WhatsApp
+  });
+
+  /* Combined promo code functionality */
+  document.getElementById('apply-code-btn')?.addEventListener('click', () => {
+    const code = document.getElementById('promo-code')?.value.toUpperCase().trim();
+    const messageEl = document.getElementById('code-message');
+    
+    if (!code) {
+      messageEl.textContent = 'Please enter a code';
+      messageEl.className = 'text-sm mt-1 text-red-600';
+      messageEl.classList.remove('hidden');
+      return;
+    }
+
+    let discountInfo = null;
+
+    // Check if it's a gift card (starts with GC and is 8 characters)
+    if (code.startsWith('GC') && code.length === 8) {
+      // Gift card validation - fixed amount
+      discountInfo = {
+        code: code,
+        type: 'Gift Card',
+        discountType: 'fixed',
+        amount: 25.00 // $25 gift card for testing
+      };
+      messageEl.textContent = `✓ Gift card "${code}" applied successfully!`;
+      messageEl.className = 'text-sm mt-1 text-green-600';
+      messageEl.classList.remove('hidden');
+    } else {
+      // Discount code validation
+      const discountCodes = {
+        'SAVE10': { type: 'Discount', discountType: 'percentage', amount: 10 },
+        'WELCOME20': { type: 'Discount', discountType: 'percentage', amount: 20 },
+        'FIRST15': { type: 'Discount', discountType: 'percentage', amount: 15 },
+        'NEWUSER': { type: 'Discount', discountType: 'fixed', amount: 5.00 },
+        'HOLIDAY25': { type: 'Discount', discountType: 'percentage', amount: 25 },
+        'TEST50': { type: 'Discount', discountType: 'fixed', amount: 50.00 } // Dummy code for testing
+      };
+      
+      if (discountCodes[code]) {
+        discountInfo = {
+          code: code,
+          type: discountCodes[code].type,
+          discountType: discountCodes[code].discountType,
+          amount: discountCodes[code].amount
+        };
+        messageEl.textContent = `✓ Discount code "${code}" applied successfully!`;
+        messageEl.className = 'text-sm mt-1 text-green-600';
+        messageEl.classList.remove('hidden');
+      } else {
+        messageEl.textContent = 'Invalid code. Please check and try again.';
+        messageEl.className = 'text-sm mt-1 text-red-600';
+        messageEl.classList.remove('hidden');
+        return;
+      }
+    }
+
+    // Store the applied discount and update the sidebar
+    if (discountInfo) {
+      appliedDiscount = discountInfo;
+      updateOrderSummaryWithDiscount();
+    }
   });
 }
  let menuData = null;

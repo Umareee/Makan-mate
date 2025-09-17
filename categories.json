@@ -1,0 +1,58 @@
+{
+  "all": {
+    "service_style": [
+      "Mini-Buffet",
+      "Buffet",
+      "Bento Set (Standard & Premium)",
+      "Plated Meal",
+      "Special Set (Steamboat / BBQ)",
+      "Live Station (Sweet & Savory)"
+    ],
+    "event_type": [
+      "Seminar Package",
+      "Birthday (Mini-buffet / Buffet / Plated)",
+      "Wedding (Mini-buffet / Buffet / Plated)",
+      "Parent Day Special",
+      "Funeral Buffet"
+    ],
+    "cuisine": [
+      "Chinese",
+      "Malay",
+      "Indian",
+      "Thai",
+      "Japanese",
+      "Korean",
+      "Western",
+      "Asian",
+      "International",
+      "Vegetarian",
+      "Healthy"
+    ],
+    "festive": [
+      "Chinese New Year (CNY)",
+      "Hari Raya",
+      "Deepavali",
+      "Mid-Autumn",
+      "Christmas"
+    ],
+    "budget_per_pax": [
+      "<$10",
+      "$11–$20",
+      "$21–$30",
+      "$31–$40",
+      "$41–$50",
+      ">$50"
+    ],
+    "pax_range": {
+      "10–24": ["Bento Set", "Special Set", "Mini-Buffet", "Plated Meal"],
+      "25–40": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Plated Meal"],
+      "41+": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Plated Meal"]
+    },
+    "meal_period": {
+      "Breakfast": [],
+      "Lunch/Dinner": ["Mini-Buffet", "Buffet", "Bento Set", "Vegetarian", "Healthy"],
+      "Hi-Tea Package": [],
+      "Seminar Package": []
+    }
+  }
+}

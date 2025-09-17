@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Categories - Makan Mate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF6B35',
+            'makan-orange-hover': '#E55A2B',
+            'custom-text': '#2D3436',
+            'custom-topbar': '#1A1A1A',
+            'custom-navbar': '#F8F9FA'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+
+ <!-- Main navigation -->
+    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                <a href="index.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Home</a>
+                <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+                 <div class="group">
+        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
+
+        <!-- Full-width mega panel -->
+<div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
+  <div class="px-4 lg:px-128">
+<div class="max-w-4xl mx-auto py-4">
+
+    <!-- Menu Grid -->
+     <div class="flex justify-center">
+    <div id="menu-grid" 
+     class="grid grid-cols-3 gap-4 max-w-4xl w-full">
+
+      <!-- 1. Bento Meal -->
+      <a href="#" data-category="bento" data-item-id = "premium-bento"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Bento Meal</span>
+      </a>
+
+      <!-- 2. Classic Delight (Buffet) -->
+      <a href="#" data-category="buffet" data-item-id="delight-menu"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Classic Delight</span>
+      </a>
+
+      <!-- 3. Steamboat (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Steamboat</span>
+      </a>
+
+      <!-- 4. Healthier Choice Buffet -->
+      <a href="#" data-category="buffet" data-item-id="combo-deal"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Healthier Choice Buffet</span>
+      </a>
+
+      <!-- 5. High Tea (Mini Buffet) -->
+      <a href="#" data-category="mini-buffet" data-item-id="high-tea"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">High Tea</span>
+      </a>
+
+      <!-- 6. Vegetarian (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Vegetarian</span>
+      </a>
+
+      <!-- 7. Tantalising Meat (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Tantalising Meat</span>
+      </a>
+
+      <!-- 8. Ocean’s Delight (Buffet) -->
+      <a href="#" data-category="buffet"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Ocean's Delight</span>
+      </a>
+
+      <!-- 9. Delicious Dim Sum (Mini Buffet) -->
+      <a href="#" data-category="mini-buffet"
+         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+        <span class="text-sm text-custom-text hover:text-makan-orange">Delicious Dim Sum</span>
+      </a>
+    </div>
+    </div>
+    </div>
+    <!-- CTA Button -->
+    <div class="text-center py-6">
+      <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
+        See All Menu
+      </a>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+      </div>
+                <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
+                <a href="blog.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
+                <a href="past-events.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Past Events</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+                <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+                <a href="order.html" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
+                    Order Now
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+                <button class="text-custom-text hover:text-makan-orange">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <nav class="text-sm text-gray-600 mb-4">
+        <a href="index.html" class="hover:text-makan-orange">Home</a>
+        <span class="mx-2">/</span>
+        <span id="category-breadcrumb">Browse Categories</span>
+      </nav>
+      <h1 id="page-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+        Browse Categories
+      </h1>
+      <p class="text-gray-600">Find the perfect catering option for your needs</p>
+    </div>
+
+    <!-- Categories Grid -->
+    <div id="categories-container" class="max-w-6xl mx-auto">
+      <!-- This will be populated by JavaScript -->
+    </div>
+
+    <!-- Back Button -->
+    <div id="back-button-container" class="text-center mt-8 hidden">
+      <button id="back-button" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Back to Home
+      </button>
+    </div>
+  </main>
+
+ <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16 observe-fade  ">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Logo and Description -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        In the new era of technology we look into the future with certainty and pride to for our company and.
+                    </p>
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pages Links -->
+                <div class="mx-0 sm:mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Utility Pages -->
+                <div class="mx-0 sm:mx-4">
+                    <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
+                    <ul class="space-y-3">
+                              <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Styleguide</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Password Protected</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">404 Not Found</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Licenses</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Changelog</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">View More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On Instagram -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/home/imgi_11_bento.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/home/imgi_12_classic-delight-2-366.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/home/imgi_14_healthier-choice-buffet.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden">
+                            <img src="/images/home/imgi_21_sauce.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+
+         
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    Copyright © 2025 Makan Mate. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+        <div class="bg-white w-64 h-full p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+                <button class="text-gray-600" id="close-menu">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
+                <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
+                <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
+                <a href="past-events.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Past Events</a>
+                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+                <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+                <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+            </nav>
+        </div>
+    </div>
+
+  <script>
+    let categoriesData = null;
+    let currentCategory = null;
+    let currentSubcategory = null;
+
+    // Load categories data
+    async function loadCategoriesData() {
+      try {
+        const response = await fetch('/categories.json');
+        categoriesData = await response.json();
+        return categoriesData;
+      } catch (error) {
+        console.error('Error loading categories data:', error);
+        return null;
+      }
+    }
+
+    // Get URL parameters
+    function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Display main categories or all subcategories
+    function displayMainCategories() {
+      const container = document.getElementById('categories-container');
+      
+      // Check if we should show all subcategories
+      const showAll = !getURLParameter('category');
+      
+      if (showAll && categoriesData) {
+        // Show all subcategories from all categories
+        const allSubcategories = [];
+        
+        // Collect all subcategories from all categories
+        Object.keys(categoriesData.all).forEach(categoryKey => {
+          const data = categoriesData.all[categoryKey];
+          
+          if (Array.isArray(data)) {
+            // Simple array of subcategories
+            data.forEach(item => {
+              allSubcategories.push({
+                name: item,
+                parentCategory: categoryKey
+              });
+            });
+          } else {
+            // Object with nested subcategories
+            Object.keys(data).forEach(subKey => {
+              allSubcategories.push({
+                name: subKey,
+                parentCategory: categoryKey,
+                hasSubcategories: Array.isArray(data[subKey]) && data[subKey].length > 0,
+                subcategories: data[subKey]
+              });
+            });
+          }
+        });
+
+        // Display all subcategories as cards
+        container.innerHTML = `
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            ${allSubcategories.map(item => `
+              ${item.hasSubcategories ? `
+                <div class="subcategory-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                  <div class="subcategory-header p-6 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white cursor-pointer hover:bg-gradient-to-r hover:from-makan-orange hover:to-makan-orange-hover hover:text-white transition-all duration-200">
+                    <h4 class="text-lg font-semibold text-gray-800 text-center leading-tight hover:text-white">${item.name}</h4>
+                  </div>
+                  <div class="subcategory-content bg-gray-50/30">
+                    <div class="p-5 space-y-3">
+                      ${item.subcategories.map(subItem => `
+                        <div class="sub-item bg-white rounded-lg p-4 cursor-pointer hover:bg-makan-orange hover:text-white transition-all duration-200 text-center shadow-sm hover:shadow-md border border-gray-100 hover:border-makan-orange">
+                          <span class="text-sm font-medium">${subItem}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              ` : `
+                <div class="subcategory-card bg-white rounded-xl shadow-lg p-8 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 bg-gradient-to-br from-white to-gray-50">
+                  <div class="text-center">
+                    <h4 class="text-lg font-semibold text-gray-800 group-hover:text-makan-orange transition-colors leading-tight">${item.name}</h4>
+                  </div>
+                </div>
+              `}
+            `).join('')}
+          </div>
+        `;
+      } else {
+        // Show main categories for navigation
+        const categories = [
+          { key: 'service_style', name: 'Service Style' },
+          { key: 'event_type', name: 'Event Type' },
+          { key: 'cuisine', name: 'Cuisine' },
+          { key: 'festive', name: 'Festive' },
+          { key: 'budget_per_pax', name: 'Budget Per Pax' },
+          { key: 'pax_range', name: 'Pax Range' },
+          { key: 'meal_period', name: 'Meal Period' }
+        ];
+
+        container.innerHTML = `
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            ${categories.map(category => `
+              <div class="category-card bg-white rounded-xl shadow-lg p-8 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 bg-gradient-to-br from-white to-gray-50" 
+                   onclick="showSubcategories('${category.key}', '${category.name}')">
+                <div class="text-center">
+                  <h3 class="text-lg font-semibold text-gray-800 group-hover:text-makan-orange transition-colors leading-tight">
+                    ${category.name}
+                  </h3>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+    }
+
+    // Display subcategories
+    function showSubcategories(categoryKey, categoryName) {
+      if (!categoriesData || !categoriesData.all[categoryKey]) return;
+      
+      currentCategory = categoryKey;
+      const data = categoriesData.all[categoryKey];
+      
+      // Update page title and breadcrumb
+      document.getElementById('page-title').textContent = categoryName;
+      document.getElementById('category-breadcrumb').innerHTML = `
+        <a href="browse-categories.html" class="hover:text-makan-orange">Browse Categories</a>
+        <span class="mx-2">/</span>
+        <span>${categoryName}</span>
+      `;
+      
+      const container = document.getElementById('categories-container');
+      
+      // Use consistent card design for all categories
+      if (Array.isArray(data)) {
+        // Simple array of subcategories - display as cards
+        container.innerHTML = `
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            ${data.map(item => `
+              <div class="subcategory-card bg-white rounded-xl shadow-lg p-8 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 bg-gradient-to-br from-white to-gray-50">
+                <div class="text-center">
+                  <h4 class="text-lg font-semibold text-gray-800 group-hover:text-makan-orange transition-colors leading-tight">
+                    ${item}
+                  </h4>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else {
+        // Object with nested subcategories - display as cards with proper sizing
+        const keys = Object.keys(data);
+        container.innerHTML = `
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            ${keys.map(key => `
+              ${Array.isArray(data[key]) && data[key].length > 0 ? `
+                <div class="subcategory-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+                  <div class="subcategory-header p-6 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white cursor-pointer hover:bg-gradient-to-r hover:from-makan-orange hover:to-makan-orange-hover hover:text-white transition-all duration-200">
+                    <h4 class="text-lg font-semibold text-gray-800 text-center leading-tight hover:text-white">${key}</h4>
+                  </div>
+                  <div class="subcategory-content bg-gray-50/30">
+                    <div class="p-5 space-y-3">
+                      ${data[key].map(item => `
+                        <div class="sub-item bg-white rounded-lg p-4 cursor-pointer hover:bg-makan-orange hover:text-white transition-all duration-200 text-center shadow-sm hover:shadow-md border border-gray-100 hover:border-makan-orange">
+                          <span class="text-sm font-medium">${item}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              ` : `
+                <div class="subcategory-card bg-white rounded-xl shadow-lg p-8 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 bg-gradient-to-br from-white to-gray-50">
+                  <div class="text-center">
+                    <h4 class="text-lg font-semibold text-gray-800 group-hover:text-makan-orange transition-colors leading-tight">${key}</h4>
+                  </div>
+                </div>
+              `}
+            `).join('')}
+          </div>
+        `;
+      }
+      
+      // Show back button
+      document.getElementById('back-button-container').classList.remove('hidden');
+    }
+
+
+    // Back button functionality
+    document.getElementById('back-button').addEventListener('click', () => {
+      // Navigate back to home page
+      window.location.href = 'index.html';
+    });
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadCategoriesData();
+      
+      // Check if a specific category was requested
+      const categoryParam = getURLParameter('category');
+      
+      if (categoryParam && categoriesData) {
+        const categoryMap = {
+          'service_style': 'Service Style',
+          'event_type': 'Event Type', 
+          'cuisine': 'Cuisine',
+          'festive': 'Festive',
+          'budget_per_pax': 'Budget Per Pax',
+          'pax_range': 'Pax Range',
+          'meal_period': 'Meal Period'
+        };
+        
+        if (categoryMap[categoryParam]) {
+          showSubcategories(categoryParam, categoryMap[categoryParam]);
+        } else {
+          displayMainCategories();
+        }
+      } else {
+        displayMainCategories();
+      }
+    });
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close menu when clicking outside
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+  
+  </script>
+</body>
+</html>

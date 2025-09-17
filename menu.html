@@ -108,7 +108,7 @@
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                <a href="menu.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Menu</a>
+                <a href="menu.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Catering</a>
                 <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
                 <a href="blog.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
                 <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
@@ -130,7 +130,7 @@
     <!-- Menu Hero Section -->
     <section class="relative  py-20">
         <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black font-playfair mb-6">Our Menu</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black font-playfair mb-6">Our Catering Menu</h1>
             <p class="text-base sm:text-lg md:text-xl text-black/90 max-w-2xl mx-auto">
                 We consider all the drivers of change gives you the components you need to change to create a truly happening.
             </p>
@@ -148,7 +148,7 @@
                 </div>
                 
                 <!-- Filter Toggle Button -->
-                <div class="flex justify-end items-center gap-3 mb-4">
+                <!-- <div class="flex justify-end items-center gap-3 mb-4">
     <div id="active-filters-outside" class="hidden flex-wrap gap-2"></div>
     <button id="filter-toggle-btn" class="inline-flex items-center gap-2 bg-white dark:bg-makan-orange border-2 border-makan-orange text-makan-orange dark:text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all duration-300">
         <i class="fas fa-filter"></i>
@@ -158,7 +158,7 @@
     <button id="clear-all-outside" class="hidden text-sm text-makan-orange underline hover:no-underline">
             Clear all
         </button>
-</div>
+</div> -->
                 
                 <!-- Collapsible Filter Panel -->
 <div id="filter-panel" class="hidden bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
@@ -387,7 +387,7 @@
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
                         <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
                         <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
@@ -450,7 +450,7 @@
             <nav class="space-y-4">
                 <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
                 <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
-                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
                 <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
                 <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
                 <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
@@ -715,8 +715,55 @@ if (clearAllBtn) {
             ?.addEventListener('click', clearAllFilters);
             loadMenuData().then(() => {
                 initializeFilters();
+                // Check for filter parameter from URL and activate corresponding category
+                checkURLFilter();
             });
         });
+
+        // Check for selected category from homepage dropdown and activate it
+        function checkURLFilter() {
+            // First check localStorage for category selected from homepage dropdown
+            const selectedCategory = localStorage.getItem('selectedMenuCategory');
+            console.log('Checking for selected category:', selectedCategory);
+            
+            if (selectedCategory) {
+                // Wait a bit to ensure buttons are rendered
+                setTimeout(() => {
+                    // Find the category button with the matching data-category
+                    const categoryBtn = document.querySelector(`[data-category="${selectedCategory}"]`);
+                    console.log('Found category button:', categoryBtn);
+                    
+                    if (categoryBtn) {
+                        console.log('Clicking category button for:', selectedCategory);
+                        // Simulate click on the category button to activate it
+                        categoryBtn.click();
+                    } else {
+                        console.log('Category button not found for:', selectedCategory);
+                        // List all available buttons for debugging
+                        const allBtns = document.querySelectorAll('[data-category]');
+                        console.log('Available category buttons:', Array.from(allBtns).map(btn => btn.getAttribute('data-category')));
+                    }
+                    // Clear the stored category after using it
+                    localStorage.removeItem('selectedMenuCategory');
+                }, 100);
+                return;
+            }
+            
+            // Fallback: check URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const filterCategory = urlParams.get('filter');
+            
+            if (filterCategory) {
+                setTimeout(() => {
+                    // Find the category button with the matching data-category
+                    const categoryBtn = document.querySelector(`[data-category="${filterCategory}"]`);
+                    if (categoryBtn) {
+                        // Simulate click on the category button to activate it
+                        categoryBtn.click();
+                    }
+                }, 100);
+            }
+        }
 
         // Ensure loadMenuData returns a promise for proper chaining
         async function loadMenuData() {

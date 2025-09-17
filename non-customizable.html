@@ -120,7 +120,7 @@
       <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
         <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
         <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Menu</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
         <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
         <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
         <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
@@ -151,6 +151,11 @@
           <div class="space-y-2">
             <input type="date" id="delivery-date" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange">
             <input type="time" id="delivery-time" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange">
+            <div class="text-xs text-gray-600 mt-2">
+              <p><strong>Processing Time:</strong> 3 working days (Mon-Fri)</p>
+              <p><strong>Order placed after 5:00 PM processing will start from next day</strong></p>
+              <p id="earliest-delivery-info" class="text-makan-orange font-medium"></p>
+            </div>
           </div>
         </div>
 
@@ -173,6 +178,63 @@
           <p class="text-xs text-gray-500 mt-1">Minimum: 10 packs</p>
         </div>
 
+        <!-- Optional Add-ons -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-3">Optional Add-ons</h4>
+          <div class="space-y-3">
+            <!-- Disposable Plates & Cutleries -->
+            <div class="bg-white p-3 rounded border border-gray-200">
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-sm font-medium text-gray-700">Disposable Plates & Cutleries (10 sets)</label>
+                <span class="text-sm font-semibold text-makan-orange">$15</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="w-6 h-6 bg-gray-300 rounded text-gray-600 text-xs font-bold hover:bg-gray-400 transition-colors" onclick="changeAddonQty('disposable', -1)">-</button>
+                <input class="flex-1 text-center border border-gray-300 h-6 rounded text-xs focus:outline-none focus:ring-1 focus:ring-makan-orange" type="number" value="0" min="0" id="disposable-qty">
+                <button class="w-6 h-6 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeAddonQty('disposable', 1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Delivery & Setup Fees -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-3">Delivery & Setup</h4>
+          <div class="bg-white p-3 rounded border border-gray-200">
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Buffet/Seminar:</span>
+                <span class="font-medium">$60</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Mini-buffet/Bento/Set meal:</span>
+                <span class="font-medium">$35</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Additional Fees -->
+          <div class="mt-3 bg-yellow-50 p-3 rounded border border-yellow-200">
+            <div class="text-xs text-gray-600 mb-2">
+              <strong>Additional Charges:</strong>
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <input type="checkbox" id="non-ground-floor" class="text-makan-orange focus:ring-makan-orange">
+              <label for="non-ground-floor" class="text-xs text-gray-600">Non-ground floor delivery without lift (+$20)</label>
+            </div>
+          </div>
+        </div>
+        
+         <!-- Delivery Disclaimer -->
+        <div class="mb-6 bg-blue-50 p-3 rounded border border-blue-200">
+          <div class="text-xs text-gray-600">
+            <i class="fas fa-info-circle text-blue-500 mr-1"></i>
+            <strong>Delivery Note:</strong> We aim to deliver within your chosen time slot but can't guarantee exact arrival times. <br>
+            <i class="fas fa-info-circle text-blue-500 mr-1"></i>
+            For High-rise buildings, pick up your order at ground floor/lobby area <br>
+          </div>
+        </div>
+
         <!-- Cart Summary -->
         <div class="">
           <div id="cart-container">
@@ -187,7 +249,11 @@
             </div>
           </div>
           <div class="border-t border-gray-300 mt-4 pt-4" id="cart-total" style="display: none;">
+            <!-- Add-ons and Fees Breakdown -->
+            <div id="breakdown-section" class="mb-3 text-xs text-gray-600"></div>
+            
             <div class="text-sm font-semibold">TOTAL: <span id="total-amount" class="text-lg">$0.00</span></div>
+            <div class="text-xs text-gray-500 mt-1">(not including delivery fee & GST)</div>
           </div>
         </div>
       </aside>
@@ -227,7 +293,7 @@
         <div class="mx-0 sm:mx-4">
           <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Menu</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
             <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Order Now</a></li>
             <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Locations</a></li>
             <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">FAQs</a></li>
@@ -269,7 +335,7 @@
       <nav class="space-y-4">
         <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
         <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
-        <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Menu</a>
+        <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
         <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
         <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
         <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
@@ -305,10 +371,53 @@
       }
     }
 
+    // Calculate minimum delivery date (3 working days + cutoff logic)
+    function calculateMinDeliveryDate() {
+      const now = new Date();
+      const currentHour = now.getHours();
+      
+      // If it's after 5 PM (17:00), start counting from tomorrow
+      let startDate = new Date();
+      if (currentHour >= 17) {
+        startDate.setDate(startDate.getDate() + 1);
+      }
+      
+      let workingDaysCount = 0;
+      let checkDate = new Date(startDate);
+      
+      // Start from the next day to begin counting working days
+      checkDate.setDate(checkDate.getDate() + 1);
+      
+      // Count 3 full working days
+      while (workingDaysCount < 3) {
+        // Monday = 1, Tuesday = 2, ..., Sunday = 0
+        const dayOfWeek = checkDate.getDay();
+        
+        // If it's not Saturday (6) or Sunday (0), count as working day
+        if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+          workingDaysCount++;
+        }
+        
+        // If we haven't reached 3 working days yet, move to next day
+        if (workingDaysCount < 3) {
+          checkDate.setDate(checkDate.getDate() + 1);
+        }
+      }
+      
+      return checkDate.toISOString().split('T')[0];
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      // Date/time defaults
-      const today = new Date().toISOString().split('T')[0];
-      document.getElementById('delivery-date').min = today;
+      // Set minimum date to calculated minimum delivery date
+      const minDeliveryDate = calculateMinDeliveryDate();
+      document.getElementById('delivery-date').min = minDeliveryDate;
+      
+      // Update earliest delivery info display
+      const minDate = new Date(minDeliveryDate);
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = minDate.toLocaleDateString('en-US', options);
+      document.getElementById('earliest-delivery-info').textContent = `Earliest delivery: ${formattedDate}`;
+      
       const now = new Date();
       now.setHours(now.getHours() + 1);
       document.getElementById('delivery-time').value = now.toTimeString().slice(0,5);
@@ -360,6 +469,9 @@ if (previousContainer) {
   // Set the previous selections HTML
   previousContainer.innerHTML = cardsHtml;
 }
+      
+      // Add event listener for non-ground floor checkbox
+      document.getElementById('non-ground-floor')?.addEventListener('change', updateCartDisplay);
       
       // Load menu data and render cards
       loadMenuData();
@@ -628,6 +740,40 @@ if (previousContainer) {
       updateCartDisplay();
     }
 
+    // Change add-on quantity
+    function changeAddonQty(addonType, change) {
+      const input = document.getElementById(`${addonType}-qty`);
+      const newQty = Math.max(0, Number(input.value) + change);
+      input.value = newQty;
+      updateAddonInCart(addonType, newQty);
+    }
+
+    // Update add-on in cart
+    function updateAddonInCart(addonType, qty) {
+      const addonMap = {
+        'disposable': { name: 'Disposable Plates & Cutleries (10 sets)', price: 15 }
+      };
+      
+      if (!addonMap[addonType]) return;
+      
+      const addon = addonMap[addonType];
+      
+      // Remove existing addon from cart
+      cart = cart.filter(item => item.category !== `addon-${addonType}`);
+      
+      // Add new addon if quantity > 0
+      if (qty > 0) {
+        cart.push({
+          category: `addon-${addonType}`,
+          name: addon.name,
+          quantity: qty,
+          price: addon.price
+        });
+      }
+      
+      updateCartDisplay();
+    }
+
     function updatePreviousSelectionDisplay() {
       const previousContainer = document.getElementById('previous-selections-container');
       if (!previousContainer) return;
@@ -705,7 +851,47 @@ if (previousContainer) {
           currentCartContainer.appendChild(row);
         });
       }
+      
+      // Add cutlery add-on cost
+      const disposableQty = parseInt(document.getElementById('disposable-qty')?.value || 0);
+      total += disposableQty * 15; // $15 per set
+      
+      // Add non-ground floor fee if checked
+      const nonGroundFloorChecked = document.getElementById('non-ground-floor')?.checked || false;
+      if (nonGroundFloorChecked) {
+        total += 20; // $20 additional fee
+      }
+      
+      // Update breakdown section
+      updateBreakdownDisplay(disposableQty, nonGroundFloorChecked);
+      
       totalAmount.textContent = `${total.toFixed(2)}`;
+    }
+
+    // Update breakdown display
+    function updateBreakdownDisplay(disposableQty, nonGroundFloorChecked) {
+      const breakdownSection = document.getElementById('breakdown-section');
+      let breakdownHtml = '';
+      
+      if (disposableQty > 0 || nonGroundFloorChecked) {
+        breakdownHtml += '<div class="text-xs font-medium text-gray-700 mb-2">Add-ons & Fees:</div>';
+        
+        if (disposableQty > 0) {
+          breakdownHtml += `<div class="flex justify-between">
+            <span>• Disposable Cutlery (${disposableQty} sets)</span>
+            <span>$${(disposableQty * 15).toFixed(2)}</span>
+          </div>`;
+        }
+        
+        if (nonGroundFloorChecked) {
+          breakdownHtml += `<div class="flex justify-between">
+            <span>• Non-ground floor delivery</span>
+            <span>$20.00</span>
+          </div>`;
+        }
+      }
+      
+      breakdownSection.innerHTML = breakdownHtml;
     }
 
     function removeFromCart(index) {
@@ -737,6 +923,29 @@ if (previousContainer) {
       if (!deliveryDate || !deliveryTime) { 
         Swal.fire({ icon: 'error', title: 'Missing info', text: 'Please select delivery date and time.' });
         return; 
+      }
+      
+      // Validate delivery date meets business requirements
+      const selectedDate = new Date(deliveryDate);
+      const minDeliveryDate = new Date(calculateMinDeliveryDate());
+      
+      if (selectedDate < minDeliveryDate) {
+        Swal.fire({ 
+          icon: 'error', 
+          title: 'Invalid Delivery Date', 
+          text: 'Selected delivery date is too early. Orders require 3 working days to process (excluding weekends) and must be placed before 5:00 PM.' 
+        });
+        return;
+      }
+      
+      // Check if delivery date falls on a weekend
+      const deliveryDay = selectedDate.getDay();
+      if (deliveryDay === 0 || deliveryDay === 6) {
+        Swal.fire({ 
+          icon: 'warning', 
+          title: 'Weekend Delivery', 
+          text: 'Please note: Weekend deliveries may have limited availability.' 
+        });
       }
       
       // Prepare cart data including previous selection
