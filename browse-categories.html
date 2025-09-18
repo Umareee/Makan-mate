@@ -477,28 +477,26 @@
     // Based on actual properties in menu-items.json
     const categoryToMenuFilter = {
       // Service Style mappings - using category buttons (like menu dropdown)
-      'Bento Meal': 'bento',
-      'Premium Bento': 'bento',
-      'Classic Delight': 'buffet',
-      'Steamboat': 'buffet',
-      'Healthier Choice Buffet': 'vegan', // Maps to Vegan/Healthy category
-      'High Tea': 'mini-buffet', // High Tea items are in mini-buffet category
-      'Vegetarian': 'vegan', // Maps to Vegan/Healthy category
-      'Tantalising Meat': 'buffet',
-      'Ocean\'s Delight': 'buffet',
-      'Delicious Dim Sum': 'mini-buffet',
-      
-      // Additional Service Style mappings
-      'Plated Meal': 'plated',
+      'Bento Set': 'bento',
+      'Standard': 'bento', // Subcategory under Bento Set
+      'Premium': 'bento', // Subcategory under Bento Set
+      'Special Set': 'buffet',
+      'Steamboat': 'buffet', // Subcategory under Special Set
+      'BBQ': 'buffet', // Subcategory under Special Set
       'Live Station': 'live-station',
-      'Festive Special': 'festive',
+      'Sweet': 'live-station', // Subcategory under Live Station
+      'Savory': 'live-station', // Subcategory under Live Station
+      'Mini-Buffet': 'mini-buffet',
+      'Buffet': 'buffet',
+      'Plated Meal': 'plated',
       
       // Event Type mappings - using category buttons
+      'Birthday': 'mini-buffet', // Main category maps to mini-buffet by default
       'Wedding': 'wedding',
-      'Corporate Events': 'seminar',
-      'Seminar': 'seminar',
-      'Birthday Parties': 'buffet',
-      'Family Gatherings': 'buffet',
+      'Seminar Package': 'seminar',
+      'Parent Day Special': 'seminar',
+      'Funeral Buffet': 'buffet',
+      'Festive Special': 'festive',
       
       // Cuisine mappings - based on actual cuisine values in menu-items.json
       'Chinese': { filterType: 'cuisine', value: 'chinese' },
@@ -510,22 +508,29 @@
       'Malay': { filterType: 'cuisine', value: 'malay' },
       'International': { filterType: 'cuisine', value: 'international' },
       'Nonya': { filterType: 'cuisine', value: 'nonya' },
+      'Asian': { filterType: 'cuisine', value: 'international' }, // Map to international
+      'Vegetarian': { filterType: 'dietary', value: 'vegetarian' },
+      'Healthy': { filterType: 'health', value: 'healthyoption' },
       
-      // Festive mappings - keep as category filters for now
-      'Chinese New Year': 'festive',
+      // Festive mappings - based on categories.json
+      'Chinese New Year (CNY)': 'festive',
       'Hari Raya': 'festive',
-      'Christmas': 'festive',
       'Deepavali': 'festive',
+      'Mid-Autumn': 'festive',
+      'Christmas': 'festive',
       
-      // Budget Per Pax mappings - using health/dietary filters as proxies
-      'Budget-Friendly': { filterType: 'health', value: 'lowercalorie' },
-      'Premium': { filterType: 'health', value: 'healthyoption' },
-      'Value for Money': { filterType: 'dietary', value: 'halal' },
+      // Budget Per Pax mappings - based on categories.json
+      '<$10': { filterType: 'health', value: 'lowercalorie' },
+      '$11–$20': { filterType: 'dietary', value: 'halal' },
+      '$21–$30': { filterType: 'health', value: 'healthyoption' },
+      '$31–$40': { filterType: 'health', value: 'healthyoption' },
+      '$41–$50': { filterType: 'health', value: 'healthyoption' },
+      '>$50': { filterType: 'health', value: 'healthyoption' },
       
-      // Pax Range mappings - using meal time as proxy for group size
-      'Small Groups (10-30)': { filterType: 'mealTime', value: 'hightea' },
-      'Medium Groups (30-80)': { filterType: 'mealTime', value: 'lunch' },
-      'Large Groups (80+)': { filterType: 'mealTime', value: 'dinner' },
+      // Pax Range mappings - based on categories.json
+      '10–24': 'mini-buffet', // Small groups typically use mini-buffet
+      '25–40': 'buffet', // Medium groups use buffet
+      '41+': 'buffet', // Large groups use buffet
       
       // Meal Period mappings - based on actual meal_time values in menu-items.json
       'Breakfast': { filterType: 'mealTime', value: 'breakfast' },
