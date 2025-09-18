@@ -1,20 +1,21 @@
 {
   "all": {
-    "service_style": [
-      "Mini-Buffet",
-      "Buffet",
-      "Bento Set (Standard & Premium)",
-      "Plated Meal",
-      "Special Set (Steamboat / BBQ)",
-      "Live Station (Sweet & Savory)"
-    ],
-    "event_type": [
-      "Seminar Package",
-      "Birthday (Mini-buffet / Buffet / Plated)",
-      "Wedding (Mini-buffet / Buffet / Plated)",
-      "Parent Day Special",
-      "Funeral Buffet"
-    ],
+    "service_style": {
+       "Bento Set": ["Standard", "Premium"],
+      "Special Set": ["Steamboat", "BBQ"],
+      "Live Station": ["Sweet", "Savory"],
+      "Mini-Buffet": [],
+      "Buffet": [],
+      "Plated Meal": []
+    },
+    "event_type": {
+      "Birthday": ["Mini-Buffet", "Buffet", "Plated Meal"],
+      "Wedding": ["Mini-Buffet", "Buffet", "Plated Meal"],
+      "Seminar Package": [],
+      "Parent Day Special": [],
+      "Funeral Buffet": []
+    },
+
     "cuisine": [
       "Chinese",
       "Malay",
