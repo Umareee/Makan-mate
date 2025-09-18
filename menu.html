@@ -859,46 +859,108 @@ if (clearAllBtn) {
 
         // Check for selected category from homepage dropdown and activate it
         function checkURLFilter() {
-            // First check localStorage for category selected from homepage dropdown
+            // Check URL parameters first for filters
+            const urlParams = new URLSearchParams(window.location.search);
+            const filterCategory = urlParams.get('filter');
+            
+            // Then check localStorage for category selected from homepage dropdown
             const selectedCategory = localStorage.getItem('selectedMenuCategory');
             console.log('Checking for selected category:', selectedCategory);
+            console.log('Checking for URL filter:', filterCategory);
             
-            if (selectedCategory) {
-                // Wait a bit to ensure buttons are rendered
+            // Priority: URL filter > localStorage category
+            const categoryToApply = filterCategory || selectedCategory;
+            
+            if (categoryToApply) {
+                // Wait a bit to ensure buttons are rendered and event listeners are attached
                 setTimeout(() => {
+                    console.log('Looking for category button with data-category:', categoryToApply);
+                    
                     // Find the category button with the matching data-category
-                    const categoryBtn = document.querySelector(`[data-category="${selectedCategory}"]`);
+                    const categoryBtn = document.querySelector(`[data-category="${categoryToApply}"]`);
                     console.log('Found category button:', categoryBtn);
                     
                     if (categoryBtn) {
-                        console.log('Clicking category button for:', selectedCategory);
-                        // Simulate click on the category button to activate it
-                        categoryBtn.click();
+                        console.log('Activating category button for:', categoryToApply);
+                        
+                        // Directly implement the same filtering logic as the button click handler
+                        const category = categoryBtn.getAttribute('data-category');
+                        
+                        // Update active button - remove active from all buttons first
+                        const allBtns = document.querySelectorAll('.menu-category-btn');
+                        allBtns.forEach(btn => {
+                            btn.classList.remove('active', 'bg-makan-orange', 'text-white');
+                            btn.classList.add('bg-white', 'text-custom-text');
+                        });
+                        
+                        // Activate the target button
+                        categoryBtn.classList.add('active', 'bg-makan-orange', 'text-white');
+                        categoryBtn.classList.remove('bg-white', 'text-custom-text');
+                        
+                        // Filter menu items using the exact same logic as the click handler
+                        const menuItems = document.querySelectorAll('.menu-item');
+                        menuItems.forEach(item => {
+                            // Remove any transition/transform to prevent visual shift
+                            item.style.transition = 'none';
+                            item.style.transform = 'none';
+                            item.style.opacity = '1';
+                            
+                            if (category === 'all' || item.getAttribute('data-category') === category) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                        
+                        console.log(`Successfully filtered to category: ${category}, found ${document.querySelectorAll('.menu-item[style*="block"]').length} items`);
                     } else {
-                        console.log('Category button not found for:', selectedCategory);
+                        console.log('Category button not found for:', categoryToApply);
                         // List all available buttons for debugging
                         const allBtns = document.querySelectorAll('[data-category]');
                         console.log('Available category buttons:', Array.from(allBtns).map(btn => btn.getAttribute('data-category')));
                     }
-                    // Clear the stored category after using it
-                    localStorage.removeItem('selectedMenuCategory');
-                }, 100);
+                    // Clear the stored category after using it (only if we used localStorage)
+                    if (selectedCategory && !filterCategory) {
+                        localStorage.removeItem('selectedMenuCategory');
+                    }
+                }, 300);
                 return;
             }
             
-            // Fallback: check URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const filterCategory = urlParams.get('filter');
+            // Check for dropdown filter parameters
+            const dropdownFilters = {
+                'cuisine': 'cuisine-filter',
+                'mealTime': 'meal-time-filter',
+                'cookingMethod': 'cooking-method-filter',
+                'flavor': 'flavor-filter',
+                'temperature': 'temperature-filter',
+                'dietary': 'dietary-purposes-filter',
+                'allergens': 'allergens-filter',
+                'foodRestriction': 'food-restriction-filter',
+                'health': 'health-filter'
+            };
             
-            if (filterCategory) {
-                setTimeout(() => {
-                    // Find the category button with the matching data-category
-                    const categoryBtn = document.querySelector(`[data-category="${filterCategory}"]`);
-                    if (categoryBtn) {
-                        // Simulate click on the category button to activate it
-                        categoryBtn.click();
+            // Apply dropdown filters from URL parameters
+            let hasDropdownFilters = false;
+            Object.keys(dropdownFilters).forEach(paramName => {
+                const paramValue = urlParams.get(paramName);
+                if (paramValue) {
+                    const filterId = dropdownFilters[paramName];
+                    const filterElement = document.getElementById(filterId);
+                    if (filterElement) {
+                        filterElement.value = paramValue;
+                        hasDropdownFilters = true;
+                        console.log(`Applied ${paramName} filter: ${paramValue}`);
                     }
-                }, 100);
+                }
+            });
+            
+            // Apply all filters after setting values
+            if (hasDropdownFilters) {
+                setTimeout(() => {
+                    applyAllFilters();
+                    updateActiveFiltersDisplay();
+                }, 250);
             }
         }
 

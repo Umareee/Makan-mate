@@ -473,18 +473,127 @@
     }
 
 
+    // Mapping of category/subcategory names to menu filter values
+    // Based on actual properties in menu-items.json
+    const categoryToMenuFilter = {
+      // Service Style mappings - using category buttons (like menu dropdown)
+      'Bento Meal': 'bento',
+      'Premium Bento': 'bento',
+      'Classic Delight': 'buffet',
+      'Steamboat': 'buffet',
+      'Healthier Choice Buffet': 'vegan', // Maps to Vegan/Healthy category
+      'High Tea': 'mini-buffet', // High Tea items are in mini-buffet category
+      'Vegetarian': 'vegan', // Maps to Vegan/Healthy category
+      'Tantalising Meat': 'buffet',
+      'Ocean\'s Delight': 'buffet',
+      'Delicious Dim Sum': 'mini-buffet',
+      
+      // Additional Service Style mappings
+      'Plated Meal': 'plated',
+      'Live Station': 'live-station',
+      'Festive Special': 'festive',
+      
+      // Event Type mappings - using category buttons
+      'Wedding': 'wedding',
+      'Corporate Events': 'seminar',
+      'Seminar': 'seminar',
+      'Birthday Parties': 'buffet',
+      'Family Gatherings': 'buffet',
+      
+      // Cuisine mappings - based on actual cuisine values in menu-items.json
+      'Chinese': { filterType: 'cuisine', value: 'chinese' },
+      'Western': { filterType: 'cuisine', value: 'western' },
+      'Japanese': { filterType: 'cuisine', value: 'japanese' }, // Actually exists in data
+      'Korean': { filterType: 'cuisine', value: 'korean' }, // Actually exists in data
+      'Thai': { filterType: 'cuisine', value: 'thai' },
+      'Indian': { filterType: 'cuisine', value: 'indian' },
+      'Malay': { filterType: 'cuisine', value: 'malay' },
+      'International': { filterType: 'cuisine', value: 'international' },
+      'Nonya': { filterType: 'cuisine', value: 'nonya' },
+      
+      // Festive mappings - keep as category filters for now
+      'Chinese New Year': 'festive',
+      'Hari Raya': 'festive',
+      'Christmas': 'festive',
+      'Deepavali': 'festive',
+      
+      // Budget Per Pax mappings - using health/dietary filters as proxies
+      'Budget-Friendly': { filterType: 'health', value: 'lowercalorie' },
+      'Premium': { filterType: 'health', value: 'healthyoption' },
+      'Value for Money': { filterType: 'dietary', value: 'halal' },
+      
+      // Pax Range mappings - using meal time as proxy for group size
+      'Small Groups (10-30)': { filterType: 'mealTime', value: 'hightea' },
+      'Medium Groups (30-80)': { filterType: 'mealTime', value: 'lunch' },
+      'Large Groups (80+)': { filterType: 'mealTime', value: 'dinner' },
+      
+      // Meal Period mappings - based on actual meal_time values in menu-items.json
+      'Breakfast': { filterType: 'mealTime', value: 'breakfast' },
+      'Lunch': { filterType: 'mealTime', value: 'lunch' },
+      'Dinner': { filterType: 'mealTime', value: 'dinner' },
+      'High Tea': { filterType: 'mealTime', value: 'hightea' }, // Found in menu-items.json
+      'Snack': { filterType: 'mealTime', value: 'snack' }, // Found in menu-items.json
+      
+      // Mini-Buffet in meal time context should use meal time filter
+      'Mini-Buffet': { filterType: 'mealTime', value: 'hightea' },
+      
+      // Additional mappings based on actual values in menu-items.json
+      'Halal': { filterType: 'foodRestriction', value: 'halal' }, // Found in data
+      'Vegetarian': { filterType: 'dietary', value: 'vegetarian' }, // Found in data
+      'Vegan': { filterType: 'dietary', value: 'vegan' },
+      'Gluten-Free': { filterType: 'foodRestriction', value: 'glutenfree' },
+      'Spicy': { filterType: 'flavor', value: 'spicy' }, // Found in data
+      'Non-Spicy': { filterType: 'flavor', value: 'nonspicy' },
+      'Sweet': { filterType: 'flavor', value: 'sweet' }, // Found in data
+      'Savory': { filterType: 'flavor', value: 'savory' }, // Found in data
+      
+      // Cooking methods found in data
+      'Grilled': { filterType: 'cookingMethod', value: 'grilled' },
+      'Steamed': { filterType: 'cookingMethod', value: 'steamed' },
+      'Fried': { filterType: 'cookingMethod', value: 'fried' },
+      'Baked': { filterType: 'cookingMethod', value: 'baked' },
+      'Roasted': { filterType: 'cookingMethod', value: 'roasted' },
+      'Stewed': { filterType: 'cookingMethod', value: 'stewed' },
+      'Braised': { filterType: 'cookingMethod', value: 'braised' },
+      'Sauteed': { filterType: 'cookingMethod', value: 'sauteed' },
+      
+      // Health options found in data
+      'Healthy Option': { filterType: 'health', value: 'healthyoption' },
+      'Less Oil': { filterType: 'health', value: 'lessoil' },
+      'Less Salt': { filterType: 'health', value: 'lesssalt' },
+      'Less Sweet': { filterType: 'health', value: 'lesssweet' },
+      'More Fiber': { filterType: 'health', value: 'morefiber' }
+    };
+
     // Handle category header clicks
     function handleCategoryClick(categoryName) {
       console.log('Category clicked:', categoryName);
-      // You can add custom logic here, e.g., navigate to a specific page or show more details
-      // For now, just log the click
+      navigateToMenuWithFilter(categoryName);
     }
 
     // Handle sub-item clicks
     function handleSubItemClick(subItemName) {
       console.log('Sub-item clicked:', subItemName);
-      // You can add custom logic here, e.g., navigate to menu details or selection
-      // For now, just log the click
+      navigateToMenuWithFilter(subItemName);
+    }
+
+    // Navigate to menu.html with appropriate filter
+    function navigateToMenuWithFilter(itemName) {
+      const filterMapping = categoryToMenuFilter[itemName];
+      
+      if (typeof filterMapping === 'string') {
+        // Direct category filter
+        window.location.href = `menu.html?filter=${filterMapping}`;
+      } else if (typeof filterMapping === 'object') {
+        // Dropdown filter - navigate to menu and set filter via URL parameters
+        const params = new URLSearchParams();
+        params.set(filterMapping.filterType, filterMapping.value);
+        window.location.href = `menu.html?${params.toString()}`;
+      } else {
+        // No specific mapping found, go to menu without filter
+        console.log(`No filter mapping found for: ${itemName}`);
+        window.location.href = 'menu.html';
+      }
     }
 
     // Back button functionality
