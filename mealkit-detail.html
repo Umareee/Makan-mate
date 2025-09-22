@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Kit Details - Makan Mate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display', 'serif'],
+            'dm-sans': ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Fade-in animations */
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .9s cubic-bezier(.16,1,.3,1),
+                  transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+    .stagger.is-visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger.is-visible > *:nth-child(1) { transition-delay: .08s; }
+    .stagger.is-visible > *:nth-child(2) { transition-delay: .16s; }
+    .stagger.is-visible > *:nth-child(3) { transition-delay: .24s; }
+    .stagger.is-visible > *:nth-child(4) { transition-delay: .32s; }
+
+    /* Card pop animation */
+    .card-pop {
+      opacity: 0;
+      transform: translateY(20px) scale(.95);
+      transition: opacity .7s, transform .7s;
+    }
+    .card-pop.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Step animation */
+    .step-animate {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.8s ease;
+    }
+    .step-animate.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Enhanced Promotional banner styling */
+    .promo-banner {
+      background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%);
+      position: relative;
+      overflow: hidden;
+      animation: promoBounce 2s ease-in-out infinite alternate;
+      box-shadow: 0 4px 20px rgba(255, 87, 34, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .promo-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2.5s infinite;
+    }
+
+    .promo-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+      animation: sparkle 3s ease-in-out infinite;
+    }
+
+    .promo-code {
+      animation: codeGlow 2s ease-in-out infinite alternate;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .promo-icon {
+      animation: iconSpin 3s linear infinite;
+    }
+
+    .promo-text {
+      animation: textPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    @keyframes promoBounce {
+      0% { transform: translateX(-50%) translateY(0px) scale(1); }
+      100% { transform: translateX(-50%) translateY(-5px) scale(1.02); }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes codeGlow {
+      0% { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+      100% { color: #ffff99; text-shadow: 0 0 20px rgba(255, 255, 153, 0.8); }
+    }
+
+    @keyframes iconSpin {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @keyframes textPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Responsive promo banner */
+    @media (max-width: 640px) {
+      .promo-banner {
+        max-width: 90%;
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+      .promo-banner .hidden-mobile {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .promo-banner {
+        max-width: 95%;
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+    }
+
+    /* Button hover effects */
+    .btn-hover {
+      transition: all 0.3s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3);
+    }
+
+    /* Benefit card hover effects */
+    .benefit-card {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .benefit-card:hover {
+      border-color: #FF5722;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Step indicator */
+    .step-number {
+      background: linear-gradient(135deg, #FF5722, #E64A19);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+  <!-- Header -->
+  <header class="bg-gray-800 text-white">
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
+            <i class="fas fa-phone"></i>
+            <span>62642233 Ext 10-18</span>
+          </div>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-twitter text-xs"></i></a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-facebook text-xs"></i></a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-instagram text-xs"></i></a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-github text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2"><i class="fas fa-phone"></i><span>62642233 Ext 10-18</span></div>
+            <div class="flex items-center space-x-2"><i class="fas fa-envelope"></i><span>order@makanmate.com</span></div>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main navigation -->
+  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
+        <a href="mealkits.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Meal Kits</a>
+        <a href="blog.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+        <a href="order.html" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">Order Now</a>
+      </div>
+      <div class="lg:hidden">
+        <button class="text-custom-text hover:text-makan-orange"><i class="fas fa-bars text-xl"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Fixed Banner -->
+  <section class="relative h-screen bg-cover bg-center bg-no-repeat observe-fade" style="background-image: url('/images/pexels-andra-918581 1.png');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    <!-- Enhanced Promotional Banner -->
+    <div class="promo-banner absolute top-8 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full text-white z-20">
+      <div class="flex items-center space-x-2 relative z-10">
+        <i class="fas fa-gift text-yellow-300 promo-icon text-lg"></i>
+        <span class="promo-code font-bold text-lg">USE CODE: FRESH20</span>
+        <span class="promo-text text-sm hidden-mobile">for 20% off your first order!</span>
+        <span class="promo-text text-xs sm:hidden">20% OFF!</span>
+      </div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 h-full flex items-center">
+      <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 font-playfair">
+            Fresh Meal Kits<br>
+            <span class="text-makan-orange">Delivered Daily</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+            Chef-designed recipes with pre-portioned ingredients. Cook restaurant-quality meals at home in just 30 minutes.
+          </p>
+          
+          <!-- Hero Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#benefits" class="btn-hover bg-makan-orange text-white px-8 py-4 rounded-lg font-semibold text-lg text-center">
+              Why Choose Us?
+            </a>
+            <a href="#how-it-works" class="btn-hover border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg text-center hover:bg-white hover:text-black transition-colors">
+              How It Works
+            </a>
+            <a href="order.html" class="btn-hover bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg text-center hover:bg-green-700">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="py-16 bg-gray-50 observe-fade">
+    <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+      <!-- Section Title -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-custom-text mb-4 font-playfair">
+          Why Order Our Meal Kit?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Experience the perfect blend of convenience, quality, and value with our premium meal kits.
+        </p>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger">
+        <!-- Save Time -->
+        <div class="benefit-card bg-white rounded-xl p-8 text-center card-pop">
+          <div class="w-16 h-16 bg-makan-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-clock text-3xl text-makan-orange"></i>
+          </div>
+          <h3 class="text-xl font-bold text-custom-text mb-4">Save Time</h3>
+          <p class="text-gray-600 leading-relaxed">
+            No meal planning, no grocery shopping, no food prep. Everything arrives ready to cook in 30 minutes or less.
+          </p>
+        </div>
+
+        <!-- Save Money -->
+        <div class="benefit-card bg-white rounded-xl p-8 text-center card-pop">
+          <div class="w-16 h-16 bg-makan-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-dollar-sign text-3xl text-makan-orange"></i>
+          </div>
+          <h3 class="text-xl font-bold text-custom-text mb-4">Save Money</h3>
+          <p class="text-gray-600 leading-relaxed">
+            No food waste with pre-portioned ingredients. Cost-effective compared to dining out with restaurant-quality results.
+          </p>
+        </div>
+
+        <!-- Restaurant Quality -->
+        <div class="benefit-card bg-white rounded-xl p-8 text-center card-pop">
+          <div class="w-16 h-16 bg-makan-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-star text-3xl text-makan-orange"></i>
+          </div>
+          <h3 class="text-xl font-bold text-custom-text mb-4">Restaurant Quality</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Chef-designed recipes using premium ingredients. Create gourmet meals that rival your favorite restaurants.
+          </p>
+        </div>
+
+        <!-- Reduce Waste -->
+        <div class="benefit-card bg-white rounded-xl p-8 text-center card-pop">
+          <div class="w-16 h-16 bg-makan-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-leaf text-3xl text-makan-orange"></i>
+          </div>
+          <h3 class="text-xl font-bold text-custom-text mb-4">Reduce Waste</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Exact portions mean zero food waste. Eco-friendly packaging that's recyclable and sustainably sourced.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-16 bg-white observe-fade">
+    <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+      <!-- Section Title -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-custom-text mb-4 font-playfair">
+          How It Works
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          From selection to your table in just three simple steps. Fresh meal kits delivered to your doorstep.
+        </p>
+      </div>
+
+      <!-- Steps Container with Better Spacing -->
+      <div class="space-y-16">
+        
+        <!-- Step 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Step 1 Content -->
+          <div class="flex step-animate">
+            <div class="flex-shrink-0 w-16 h-16 bg-makan-orange rounded-full flex items-center justify-center mr-6">
+              <span class="step-number text-2xl font-bold text-white">1</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-custom-text mb-3">Choose Your Meals</h3>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                Browse our weekly menu of chef-designed recipes. Select meals that match your dietary preferences and family size. New options added every week to keep things exciting.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Step 1 Image -->
+          <div class="step-image rounded-xl overflow-hidden shadow-lg step-animate">
+            <img src="/images/home/menu/imgi_11_bento.jpg" alt="Choose Your Meals" class="w-full h-64 object-cover">
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Step 2 Content -->
+          <div class="flex step-animate lg:order-1">
+            <div class="flex-shrink-0 w-16 h-16 bg-makan-orange rounded-full flex items-center justify-center mr-6">
+              <span class="step-number text-2xl font-bold text-white">2</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-custom-text mb-3">We Prepare & Deliver</h3>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                Our team sources the freshest ingredients and pre-portions everything you need. Your meal kit is packed with ice and delivered fresh to your doorstep on your chosen day.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Step 2 Image -->
+          <div class="step-image rounded-xl overflow-hidden shadow-lg step-animate lg:order-0">
+            <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="We Prepare & Deliver" class="w-full h-64 object-cover">
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Step 3 Content -->
+          <div class="flex step-animate">
+            <div class="flex-shrink-0 w-16 h-16 bg-makan-orange rounded-full flex items-center justify-center mr-6">
+              <span class="step-number text-2xl font-bold text-white">3</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-custom-text mb-3">Cook & Enjoy</h3>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                Follow our easy step-by-step recipe cards. With pre-portioned ingredients and clear instructions, you'll have a delicious restaurant-quality meal ready in 30 minutes or less.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Step 3 Image -->
+          <div class="step-image rounded-xl overflow-hidden shadow-lg step-animate">
+            <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Cook & Enjoy" class="w-full h-64 object-cover">
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-12">
+        <div class="bg-gray-50 rounded-2xl p-8 max-w-2xl mx-auto">
+          <h3 class="text-2xl font-bold text-custom-text mb-4">Ready to Get Started?</h3>
+          <p class="text-gray-600 mb-6">Join thousands of satisfied customers who have transformed their cooking experience with our meal kits.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mealkits.html" class="btn-hover bg-makan-orange text-white px-8 py-3 rounded-lg font-semibold">
+              Browse Meal Kits
+            </a>
+            <a href="order.html" class="btn-hover border-2 border-makan-orange text-makan-orange px-8 py-3 rounded-lg font-semibold hover:bg-makan-orange hover:text-white transition-colors">
+              Start Your Order
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (same as other pages) -->
+  <footer class="bg-gray-800 text-white py-16">
+    <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div class="lg:col-span-1">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+              <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">In the new era of technology we look into the future with certainty and pride to for our company and.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors"><i class="fab fa-twitter text-white"></i></a>
+            <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors"><i class="fab fa-facebook text-white"></i></a>
+            <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors"><i class="fab fa-instagram text-white"></i></a>
+            <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors"><i class="fab fa-github text-white"></i></a>
+          </div>
+        </div>
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+            <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+            <li><a href="mealkits.html" class="text-gray-300 hover:text-makan-orange transition-colors">Meal Kits</a></li>
+            <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="mealkits.html" class="text-gray-300 hover:text-makan-orange transition-colors">Daily Meal Kits</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Tingkat Meals</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Confinement Meals</a></li>
+            <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Festive Sets</a></li>
+            <li><a href="order.html" class="text-gray-300 hover:text-makan-orange transition-colors">Order Now</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="aspect-square rounded-lg overflow-hidden"><img src="/images/pexels-steve-3789885 1.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" alt="Instagram"></div>
+            <div class="aspect-square rounded-lg overflow-hidden"><img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" alt="Instagram"></div>
+            <div class="aspect-square rounded-lg overflow-hidden"><img src="/images/pexels-ella-olsson-1640772 1.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" alt="Instagram"></div>
+            <div class="aspect-square rounded-lg overflow-hidden"><img src="/images/pexels-ash-376464 1.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" alt="Instagram"></div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-400">Copyright © 2025 Makan Mate. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu -->
+  <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+    <div class="bg-white w-64 h-full p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+        <button class="text-gray-600" id="close-menu"><i class="fas fa-times text-xl"></i></button>
+      </div>
+      <nav class="space-y-4">
+        <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+        <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+        <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
+        <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
+        <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
+        <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+        <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+        <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+    if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+    if (closeMenuBtn && mobileMenu) closeMenuBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    if (mobileMenu) mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) mobileMenu.classList.add('hidden'); });
+
+    // Intersection Observer for animations
+    const onEntry = (entries, obs) => entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('is-visible');
+    });
+    const io = new IntersectionObserver(onEntry, { threshold: .18 });
+    document.querySelectorAll('.observe-fade, .stagger, .card-pop, .step-animate')
+            .forEach(el => io.observe(el));
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

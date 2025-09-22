@@ -35,78 +35,338 @@
     .logo-item img { max-height: 32px; max-width: 140px; object-fit: contain; }
     @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Hero slider */
-.hero-slider { position: relative; width: 100%; height: 100vh; min-height: 560px; overflow: hidden; }
-    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 600ms ease; }
-    .slide.active { opacity: 1; }
-    .slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: saturate(1) contrast(1.05); }
-    .slide-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 120% 150% at 0% 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 70%, transparent 80%), radial-gradient(ellipse 120% 150% at 0% 0%, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.1) 70%, transparent 80%); }
-    .slide-content { position: relative; z-index: 2; height: 100%; }
-    .fg-wrap { position: relative; }
-    /* Inset the foreground container slightly toward center on large screens */
-.fg-img { max-height: 420px; width: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,0.25)); opacity: 0; transform: translateX(20px); transition: all 600ms ease; }
-.copy { color: #fff; opacity: 0; transform: translateX(-20px); transition: all 600ms ease 120ms; }
-    .slide.active .fg-img, .slide.active .copy { opacity: 1; transform: translateY(0); }
-    /* Slide Navigation Tabs */
-    .slide-tabs {
-      z-index: 10;
+    /* ======  HERO ZOOM AND ADVANCED ANIMATIONS  ====== */
+    @keyframes heroZoom {
+      0%   { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+    #hero-slides > div {
+      animation: heroZoom 18s ease-out infinite alternate;
+      will-change: transform;
+    }
+    /* darker vignette so text stays legible while zooming */
+    #hero-slider::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 40%, #0009 100%);
+      pointer-events: none;
+      z-index: 1;
     }
     
-    .tab-btn {
+    /* ======  UNIQUE VERTICAL TIMELINE NAVIGATION  ====== */
+    /* Timeline Container */
+    .timeline-container {
+      position: relative;
+      height: 300px;
+      width: 300px;
+    }
+
+    /* Timeline Line */
+    .timeline-line {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      border-radius: 2px;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 33.33%;
+      background: linear-gradient(to bottom, #FF5722, #FF8A65);
+      border-radius: 2px;
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 0 20px rgba(255, 87, 34, 0.5);
+    }
+
+    /* Timeline Points */
+    .timeline-point {
+      position: absolute;
+      left: 0;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .timeline-point:nth-child(2) { top: 0; }
+    .timeline-point:nth-child(3) { top: 50%; transform: translateY(-50%); }
+    .timeline-point:nth-child(4) { bottom: 0; }
+
+    .point-outer {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
+      justify-content: center;
+    }
+
+    .timeline-point.active .point-outer {
+      background: rgba(255, 87, 34, 0.3);
+      transform: scale(1.2);
+      box-shadow: 0 0 30px rgba(255, 87, 34, 0.6);
+    }
+
+    .point-inner {
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-point.active .point-inner {
+      background: rgba(255, 87, 34, 0.8);
+      animation: pointPulse 2s ease-in-out infinite;
+    }
+
+    .point-core {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-point.active .point-core {
+      background: white;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    @keyframes pointPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Geometric Mobile Navigation */
+    .geo-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
       border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .geo-shape {
+      width: 40px;
+      height: 40px;
       background: transparent;
       border: none;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      transition: all 300ms ease;
-      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
     }
-    
-    .tab-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      transform: translateY(-2px);
+
+    .shape-circle, .shape-square, .shape-triangle {
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
-    .tab-btn.active {
+
+    .shape-circle {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+    }
+
+    .shape-square {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 3px;
+      transform: rotate(45deg);
+    }
+
+    .shape-triangle {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 17px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .geo-shape.active .shape-circle {
+      border-color: #FF5722;
       background: #FF5722;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3);
+      box-shadow: 0 0 15px rgba(255, 87, 34, 0.6);
     }
-    
-    .tab-icon {
-      font-size: 16px;
+
+    .geo-shape.active .shape-square {
+      border-color: #FF5722;
+      background: #FF5722;
+      box-shadow: 0 0 15px rgba(255, 87, 34, 0.6);
     }
-    
-    .tab-text {
-      font-weight: 500;
-      font-size: 13px;
+
+    .geo-shape.active .shape-triangle {
+      border-bottom-color: #FF5722;
+      filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.6));
     }
-    
-    /* Auto-play Progress Bar */
-    .progress-bar {
-      animation: slideProgress 6s linear infinite;
+
+    /* ======  ANIMATION ENHANCEMENTS  ====== */
+    @keyframes timelineWave {
+      0% { transform: scaleY(1) translateY(0); opacity: 0.8; }
+      50% { transform: scaleY(1.1) translateY(-2px); opacity: 1; }
+      100% { transform: scaleY(1) translateY(0); opacity: 0.8; }
     }
-    
-    @keyframes slideProgress {
-      0% { width: 0%; }
-      100% { width: 100%; }
+
+    @keyframes progressiveGlow {
+      0% { box-shadow: 0 0 10px rgba(255, 87, 34, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(255, 87, 34, 0.8), 0 0 60px rgba(255, 87, 34, 0.4); }
+      100% { box-shadow: 0 0 10px rgba(255, 87, 34, 0.3); }
     }
-    
-    /* Responsive tabs */
-    @media (max-width: 640px) {
-      .tab-text {
-        display: none;
+
+    /* Slide-Specific Timeline Animations */
+    .timeline-container.slide-1 .timeline-line {
+      animation: timelineWave 3s ease-in-out infinite;
+      background: linear-gradient(to bottom, rgba(255, 87, 34, 0.4), rgba(255, 87, 34, 0.2));
+    }
+
+    .timeline-container.slide-2 .timeline-line {
+      animation: timelineWave 2.5s ease-in-out infinite;
+      background: linear-gradient(to bottom, rgba(76, 175, 80, 0.4), rgba(76, 175, 80, 0.2));
+    }
+
+    .timeline-container.slide-3 .timeline-line {
+      animation: timelineWave 3.5s ease-in-out infinite;
+      background: linear-gradient(to bottom, rgba(63, 81, 181, 0.4), rgba(63, 81, 181, 0.2));
+    }
+
+    /* Active Point Enhanced Animations */
+    .timeline-container.slide-1 .timeline-point.active .point-outer {
+      animation: progressiveGlow 2s ease-in-out infinite;
+      background: rgba(255, 87, 34, 0.3);
+    }
+
+    .timeline-container.slide-2 .timeline-point.active .point-outer {
+      animation: progressiveGlow 2s ease-in-out infinite;
+      background: rgba(76, 175, 80, 0.3);
+      box-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+    }
+
+    .timeline-container.slide-3 .timeline-point.active .point-outer {
+      animation: progressiveGlow 2s ease-in-out infinite;
+      background: rgba(63, 81, 181, 0.3);
+      box-shadow: 0 0 30px rgba(63, 81, 181, 0.6);
+    }
+
+    /* Progress Line Dynamic Colors */
+    .timeline-container.slide-1 .timeline-progress {
+      background: linear-gradient(to bottom, #FF5722, #FF8A65);
+      animation: progressiveGlow 3s ease-in-out infinite;
+    }
+
+    .timeline-container.slide-2 .timeline-progress {
+      background: linear-gradient(to bottom, #4CAF50, #81C784);
+      animation: progressiveGlow 3s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    }
+
+    .timeline-container.slide-3 .timeline-progress {
+      background: linear-gradient(to bottom, #3F51B5, #7986CB);
+      animation: progressiveGlow 3s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(63, 81, 181, 0.5);
+    }
+
+    /* Geometric Shapes Dynamic Colors */
+    .geo-nav.slide-2 .geo-shape.active .shape-circle {
+      border-color: #4CAF50;
+      background: #4CAF50;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+    }
+
+    .geo-nav.slide-2 .geo-shape.active .shape-square {
+      border-color: #4CAF50;
+      background: #4CAF50;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+    }
+
+    .geo-nav.slide-2 .geo-shape.active .shape-triangle {
+      border-bottom-color: #4CAF50;
+      filter: drop-shadow(0 0 8px rgba(76, 175, 80, 0.6));
+    }
+
+    .geo-nav.slide-3 .geo-shape.active .shape-circle {
+      border-color: #3F51B5;
+      background: #3F51B5;
+      box-shadow: 0 0 15px rgba(63, 81, 181, 0.6);
+    }
+
+    .geo-nav.slide-3 .geo-shape.active .shape-square {
+      border-color: #3F51B5;
+      background: #3F51B5;
+      box-shadow: 0 0 15px rgba(63, 81, 181, 0.6);
+    }
+
+    .geo-nav.slide-3 .geo-shape.active .shape-triangle {
+      border-bottom-color: #3F51B5;
+      filter: drop-shadow(0 0 8px rgba(63, 81, 181, 0.6));
+    }
+
+    /* Global fade-in animations */
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .9s cubic-bezier(.16,1,.3,1),
+                  transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Particle Effect Animation */
+    @keyframes particleFloat {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+      50% { transform: translateY(-20px) translateX(10px) scale(1.2); opacity: 1; }
+      100% { transform: translateY(-40px) translateX(-10px) scale(0.8); opacity: 0; }
+    }
+
+    .timeline-point.active::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: particleFloat 2s ease-out infinite;
+      animation-delay: 0.5s;
+    }
+
+    /* Ripple effect keyframe */
+    @keyframes rippleEffect {
+      0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
       }
-      .tab-btn {
-        padding: 10px 12px;
+      100% {
+        width: 80px;
+        height: 80px;
+        opacity: 0;
       }
+    }
+
+    .point-activate {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
     }
 
     /* Disable animations on cards to avoid layout jitter during filtering */
@@ -292,7 +552,7 @@
  
 
       </div>
-        <a href="mealkits.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Meal Kits</a>
+        <a href="mealkits.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Delivery</a>
         <a href="blog.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Blog</a>
         <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
         <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
@@ -304,94 +564,250 @@
     </div>
   </nav>
 
-  <!-- Hero Slider Section -->
-  <section class="hero-slider" id="hero">
-    <!-- Slide 1 - left aligned -->
-    <div class="slide active" data-index="0">
-      <div class="slide-bg" style="background-image: url('/images/pexels-andra-918581 1.png');"></div>
-      <div class="slide-overlay"></div>
-      <div class="slide-content container mx-auto px-4">
-        <div class="h-full grid grid-cols-1 lg:grid-cols-2 items-center">
-          	<div class="copy pr-0 lg:pr-10 text-center lg:text-left">
-            <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-semibold mb-3">Fresh, Fast, and Flavorful</h2>
-            <p class="text-white/90 text-base sm:text-lg mb-6">Curated Meal kits for modern kitchens.</p>
-            <a href="#menu" class="inline-block bg-makan-orange hover:bg-makan-orange-hover text-white px-6 py-3 rounded-full font-medium">Browse Kits</a>
+  <!-- Hero Section -->
+  <section
+    id="hero-slider"
+    class="relative min-h-screen overflow-hidden hero-zoom observe-fade"
+  >
+    <!-- SLIDE WRAPPER (background only) -->
+    <div
+      id="hero-slides"
+      class="absolute inset-0 flex transition-transform duration-700 ease-in-out"
+    >
+      <div
+        class="min-w-full h-full bg-cover bg-center bg-no-repeat"
+        style="background-image:url('/images/pexels-andra-918581 1.png')"
+      ></div>
+      <div
+        class="min-w-full h-full bg-cover bg-center bg-no-repeat"
+        style="background-image:url('/images/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.png')"
+      ></div>
+      <div
+        class="min-w-full h-full bg-cover bg-center bg-no-repeat"
+        style="background-image:url('/images/pexels-ella-olsson-1640772 1.png')"
+      ></div>
+      <!-- clone of first slide -->
+      <div
+        class="min-w-full h-full bg-cover bg-center bg-no-repeat"
+        style="background-image:url('/images/pexels-andra-918581 1.png')"
+      ></div>
+    </div>
+
+    <!-- RADIAL GRADIENTS FROM TOP LEFT AND BOTTOM LEFT TO CENTER -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 120% 150% at 0% 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 70%, transparent 80%), radial-gradient(ellipse 120% 150% at 0% 0%, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.1) 70%, transparent 80%);"></div>
+
+    <!--  Vertical Timeline Navigation -->
+    <div class="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block">
+      <div class="timeline-container">
+        <!-- Timeline Line -->
+        <div class="timeline-line">
+          <div class="timeline-progress"></div>
+        </div>
+        
+        <!-- Timeline Points -->
+        <div class="timeline-point active" data-slide="0">
+          <div class="point-outer">
+            <div class="point-inner">
+              <div class="point-core"></div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-point" data-slide="1">
+          <div class="point-outer">
+            <div class="point-inner">
+              <div class="point-core"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-point" data-slide="2">
+          <div class="point-outer">
+            <div class="point-inner">
+              <div class="point-core"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    	<!-- Slide 2 - right aligned (image right, text left) -->
-    	<div class="slide" data-index="1">
-      	<div class="slide-bg" style="background-image: url('/images/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.png');"></div>
-      	<div class="slide-overlay"></div>
-      	<div class="slide-content container mx-auto px-4">
-        	<div class="h-full grid grid-cols-1 lg:grid-cols-2 items-center">
-          	<div class="copy pr-0 lg:pr-10 text-center lg:text-left">
-            	<h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-semibold mb-3">Restaurant Quality at Home</h2>
-            	<p class="text-white/90 text-base sm:text-lg mb-6">Chef-designed kits, ready in minutes.</p>
-            	<a href="#menu" class="inline-block bg-makan-orange hover:bg-makan-orange-hover text-white px-6 py-3 rounded-full font-medium">Browse Kits</a>
-          	</div>
-        	</div>
-      	</div>
-    	</div>
-
-    	<!-- Slide 3 - Quick Meals -->
-    	<div class="slide" data-index="2">
-      	<div class="slide-bg" style="background-image: url('/images/pexels-ella-olsson-1640772 1.png');"></div>
-      	<div class="slide-overlay"></div>
-      	<div class="slide-content container mx-auto px-4">
-        	<div class="h-full grid grid-cols-1 lg:grid-cols-2 items-center">
-          	<div class="copy pr-0 lg:pr-10 text-center lg:text-left">
-            	<h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-semibold mb-3">Quick & Easy Meals</h2>
-            	<p class="text-white/90 text-base sm:text-lg mb-6">Ready in 15 minutes, perfect for busy lifestyles.</p>
-            	<a href="#menu" class="inline-block bg-makan-orange hover:bg-makan-orange-hover text-white px-6 py-3 rounded-full font-medium">Browse Kits</a>
-          	</div>
-        	</div>
-      	</div>
-    	</div>
-
-    <!-- Slide Navigation Tabs -->
-    <div class="slide-tabs absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-      <div class="bg-white/10 backdrop-blur-sm rounded-full p-2">
-        <div class="flex space-x-2">
-          <button class="tab-btn active" data-slide="0">
-            <span class="tab-icon">🍽️</span>
-            <span class="tab-text">Fresh Kits</span>
-          </button>
-          <button class="tab-btn" data-slide="1">
-            <span class="tab-icon">👨‍🍳</span>
-            <span class="tab-text">Chef Quality</span>
-          </button>
-          <button class="tab-btn" data-slide="2">
-            <span class="tab-icon">⚡</span>
-            <span class="tab-text">Quick Meals</span>
-          </button>
-        </div>
+    <!-- Geometric Pattern Navigation (Mobile) -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 lg:hidden">
+      <div class="geo-nav">
+        <button class="geo-shape active" data-slide="0">
+          <div class="shape-circle"></div>
+        </button>
+        <button class="geo-shape" data-slide="1">
+          <div class="shape-square"></div>
+        </button>
+        <button class="geo-shape" data-slide="2">
+          <div class="shape-triangle"></div>
+        </button>
       </div>
     </div>
 
-    <!-- Auto-play Progress Bar -->
-    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-10">
-      <div class="progress-bar h-full bg-makan-orange transition-all duration-300 ease-linear" style="width: 0%"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="container relative mx-auto px-4 sm:px-28 h-screen flex items-center">
+      <div class="max-w-3xl text-left">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+          Fresh, Fast, and<br>Flavorful Kits
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed font-medium">
+          Curated meal kits for modern kitchens.<br>
+          Chef-designed recipes, ready in minutes.
+        </p>
+        <a
+          href="#menu"
+          class="bg-makan-orange text-white px-6 sm:px-8 py-3 rounded-md
+                 hover:bg-makan-orange-hover transition-colors font-semibold text-lg inline-block mb-4 sm:mb-0 sm:mr-4"
+        >
+          Order Now
+        </a>
+        <a
+          href="order.html"
+          class="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-md
+                 hover:bg-white hover:text-black transition-colors font-semibold text-lg inline-block"
+        >
+          Our Catering
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- About Our Service Section -->
+  <section class="py-16 bg-white observe-fade">
+    <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Title -->
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-custom-text mb-8 font-bold">
+          “ Meals Made for Every Moment,
+Delivered to Your Doorstep.”
+        </h2>
+        
+        <!-- Description -->
+        <div class="text-lg text-gray-600 leading-relaxed space-y-6">
+          <p class="text-xl text-gray-700 font-medium mb-8">
+            At Makan Mate, we believe mealtimes should be wholesome, stress-free, and tailored to your lifestyle. That's why our Meal Delivery Service goes beyond the ordinary tingkat.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <!-- Daily Meal Kits -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-makan-orange mb-3">Daily Meal Kits</h3>
+              <p>Fresh, pre-portioned ingredients with easy recipes that let you cook like a chef without the hassle of planning or prepping.</p>
+            </div>
+            
+            <!-- Tingkat Meals -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-makan-orange mb-3">Tingkat Meals <span class="text-sm text-gray-500">(coming soon)</span></h3>
+              <p>Balanced, home-style dishes delivered daily, perfect for busy schedules and families who want nourishing meals without the cooking.</p>
+            </div>
+            
+            <!-- Confinement Meals -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-makan-orange mb-3">Confinement Meals <span class="text-sm text-gray-500">(coming soon)</span></h3>
+              <p>Specially crafted menus designed for recovery and care, rooted in tradition and nutrition.</p>
+            </div>
+            
+            <!-- Festive Sets -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-makan-orange mb-3">Festive Sets</h3>
+              <p>Celebration-ready spreads that make gatherings effortless, so you can focus on the moments that matter.</p>
+            </div>
+          </div>
+          
+          <p class="text-lg text-gray-700 mt-8 font-medium">
+            Whether you want the joy of cooking, the convenience of ready meals, or the abundance of festive feasts, we bring it all straight to your doorstep. With just a few clicks, you'll always have a meal that fits your needs, your lifestyle, and your table.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Main Categories Section -->
+<section class="py-16 bg-gray-50 observe-fade">
+  <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-custom-text mb-12">
+      Explore Our Main Categories
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Meal Kit (Wide Hero Card) -->
+      <div class="md:col-span-2 relative h-64 md:h-80 rounded-2xl overflow-hidden group">
+        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Meal Kit" 
+             class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-6">
+          <h3 class="text-3xl font-bold text-white mb-2">Meal Kit</h3>
+          <p class="text-gray-200 mb-4">Fresh kits with recipes and a detailed “How it Works” guide.</p>
+          <a href="mealkit-detail.html" class="bg-makan-orange text-white px-6 py-2 rounded-full hover:bg-makan-orange-hover transition">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <!-- Confinement Meal (Small Overlay Card) -->
+      <div class="relative h-64 rounded-2xl overflow-hidden group">
+        <img src="/images/home/maken-mart/imgi_19_dimsum.jpg" alt="Confinement Meal" 
+             class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Confinement Meal</h3>
+          <p class="text-gray-200 mb-4">Specially crafted menus for recovery.</p>
+          <a href="coming-soon.html" class="bg-gray-400 text-white px-5 py-2 rounded-full cursor-not-allowed">
+            Coming Soon
+          </a>
+        </div>
+      </div>
+
+      <!-- Tingkat Meal (Small Overlay Card) -->
+      <div class="relative h-64 rounded-2xl overflow-hidden group">
+        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="Tingkat Meal" 
+             class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Tingkat Meal</h3>
+          <p class="text-gray-200 mb-4">Balanced, home-style daily dishes.</p>
+          <a href="coming-soon.html" class="bg-gray-400 text-white px-5 py-2 rounded-full cursor-not-allowed">
+            Coming Soon
+          </a>
+        </div>
+      </div>
+
+      <!-- Festive Set (Wide Hero Card) -->
+      <div class="md:col-span-2 relative h-64 md:h-80 rounded-2xl overflow-hidden group">
+        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Festive Set" 
+             class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-6">
+          <h3 class="text-3xl font-bold text-white mb-2">Festive Set</h3>
+          <p class="text-gray-200 mb-4">Celebrate with special festive menus.</p>
+          <a href="menu.html#festive" class="bg-makan-orange text-white px-6 py-2 rounded-full hover:bg-makan-orange-hover transition">
+            Explore Menu
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  
   <!-- Menu-like Tabs -->
-  <section id="menu" class="py-16 bg-gray-50">
+  <section id="menu" class="py-16 bg-gray-50 observe-fade">
     <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
       <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12" id="categories-container">
         <!-- Categories will be generated dynamically -->
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto" id="kits-grid">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" id="kits-grid">
         <!-- Cards will be injected from JSON -->
       </div>
+      
+      <!-- Pagination Container -->
+      <div id="pagination-container"></div>
     </div>
   </section>
 
   <!-- Logo Marquee -->
-  <section class="py-12 bg-white">
+  <section class="py-12 bg-white observe-fade">
     <div class="container mx-auto px-2 sm:px-4">
       <h3 class="text-center text-xl sm:text-2xl font-playfair font-medium mb-6">Trusted by our delivery partners</h3>
       <div class="logo-marquee">
@@ -471,7 +887,7 @@
         <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
         <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
         <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
-        <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
+        <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Delivery</a>
         <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
         <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
         <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
@@ -489,62 +905,231 @@
     if (closeMenuBtn && mobileMenu) closeMenuBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     if (mobileMenu) mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) mobileMenu.classList.add('hidden'); });
 
-    // Hero slider logic
+    // Hero slider configuration with advanced timeline functionality
     function initHeroSlider() {
-      const slider = document.getElementById('hero');
-      if (!slider) return;
-      const slides = Array.from(slider.querySelectorAll('.slide'));
-      const tabBtns = Array.from(slider.querySelectorAll('.tab-btn'));
-      const progressBar = slider.querySelector('.progress-bar');
-      let index = 0;
-      let timer;
+      const slides = document.querySelectorAll('#hero-slides > div');
+      const total = slides.length;
+      let idx = 1; // start at first real slide (index-1 because of clone)
+      let auto = setInterval(() => heroSlide(1), 5000);
+      const hero = document.getElementById('hero-slider');
 
-      function activate(i) {
-        slides.forEach((s, j) => s.classList.toggle('active', j === i));
-        tabBtns.forEach((btn, j) => btn.classList.toggle('active', j === i));
+      // Hero text content for different slides
+      const heroTexts = [
+        {
+          title: "Fresh, Fast, and<br>Flavorful Kits",
+          description: "Curated meal kits for modern kitchens.<br>Chef-designed recipes, ready in minutes."
+        },
+        {
+          title: "Restaurant Quality<br>at Home",
+          description: "Chef-designed kits, ready in minutes.<br>Experience fine dining in your kitchen."
+        },
+        {
+          title: "Quick & Easy<br>Meals",
+          description: "Ready in 15 minutes, perfect for busy lifestyles.<br>Fresh ingredients, minimal prep."
+        }
+      ];
+
+      // Update slide navigation
+      function updateSlideNavigation() {
+        const timelinePoints = document.querySelectorAll('.timeline-point');
+        const geoShapes = document.querySelectorAll('.geo-shape');
+        const timelineProgress = document.querySelector('.timeline-progress');
+        const timelineContainer = document.querySelector('.timeline-container');
+        const geoNav = document.querySelector('.geo-nav');
         
-        // Reset progress bar animation
-        if (progressBar) {
-          progressBar.style.animation = 'none';
-          progressBar.offsetHeight; // Trigger reflow
-          progressBar.style.animation = 'slideProgress 6s linear infinite';
+        // Calculate the correct active index (0, 1, 2 for slides 1, 2, 3)
+        let activeIndex;
+        if (idx === 1) activeIndex = 0;
+        else if (idx === 2) activeIndex = 1;
+        else if (idx === 3) activeIndex = 2;
+        else activeIndex = 0;
+        
+        // Remove all slide classes and add current slide class
+        if (timelineContainer) {
+          timelineContainer.classList.remove('slide-1', 'slide-2', 'slide-3');
+          timelineContainer.classList.add(`slide-${idx}`);
+        }
+        
+        if (geoNav) {
+          geoNav.classList.remove('slide-1', 'slide-2', 'slide-3');
+          geoNav.classList.add(`slide-${idx}`);
+        }
+        
+        // Clear all previous active states first and reset timeline
+        timelinePoints.forEach((point, index) => {
+          point.classList.remove('active', 'current-focus');
+        });
+        
+        // Reset progress bar to start fresh animation
+        if (timelineProgress) {
+          timelineProgress.style.transition = 'none';
+          timelineProgress.style.height = '0%';
+          // Force reflow to ensure the reset is applied
+          timelineProgress.offsetHeight;
+        }
+        
+        // Start progression animation with proper timing
+        setTimeout(() => {
+          if (timelineProgress) {
+            // Calculate progress: 33.33% per stage (1→33%, 2→66%, 3→100%)
+            const progressHeight = (activeIndex + 1) * 33.33;
+            timelineProgress.style.transition = 'height 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            timelineProgress.style.height = `${progressHeight}%`;
+          }
+          
+          // Activate points progressively to show movement through timeline
+          for (let i = 0; i <= activeIndex; i++) {
+            setTimeout(() => {
+              if (timelinePoints[i]) {
+                timelinePoints[i].classList.add('active');
+                
+                // Mark the current slide's point as the main focus
+                if (i === activeIndex) {
+                  timelinePoints[i].classList.add('current-focus');
+                  triggerPointAnimation(timelinePoints[i]);
+                }
+              }
+            }, i * 200); // 200ms stagger between each point activation
+          }
+          
+        }, 50); // Small delay to ensure clean reset
+        
+        // Update geometric shapes (mobile navigation)
+        geoShapes.forEach((shape, index) => {
+          shape.classList.toggle('active', index === activeIndex);
+        });
+      }
+
+      // Trigger point animation effects
+      function triggerPointAnimation(point) {
+        // Add temporary animation class
+        point.classList.add('point-activate');
+        
+        // Create ripple effect
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.top = '50%';
+        ripple.style.left = '50%';
+        ripple.style.width = '0px';
+        ripple.style.height = '0px';
+        ripple.style.background = 'rgba(255, 87, 34, 0.3)';
+        ripple.style.borderRadius = '50%';
+        ripple.style.transform = 'translate(-50%, -50%)';
+        ripple.style.animation = 'rippleEffect 1s ease-out forwards';
+        ripple.style.pointerEvents = 'none';
+        ripple.style.zIndex = '-1';
+        
+        point.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          if (ripple.parentNode) {
+            ripple.parentNode.removeChild(ripple);
+          }
+          point.classList.remove('point-activate');
+        }, 1000);
+      }
+
+      // Handle navigation clicks
+      function goToSlide(slideIndex) {
+        idx = slideIndex + 1; // +1 because of clone (0->1, 1->2, 2->3)
+        document.getElementById('hero-slides').style.transform = `translateX(-${idx * 100}%)`;
+        updateSlideNavigation();
+        updateHeroText(idx);
+        
+        // Restart the timer
+        clearInterval(auto);
+        auto = setInterval(() => heroSlide(1), 5000);
+      }
+
+      // Add slide entrance animations
+      function triggerSlideEntranceAnimation(slideIndex) {
+        const timelineContainer = document.querySelector('.timeline-container');
+        
+        // Add entrance animation classes
+        if (timelineContainer) {
+          timelineContainer.style.transform = 'translateX(-20px)';
+          timelineContainer.style.opacity = '0.7';
+          timelineContainer.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          
+          setTimeout(() => {
+            timelineContainer.style.transform = 'translateX(0)';
+            timelineContainer.style.opacity = '1';
+          }, 50);
         }
       }
 
-      function goTo(i) { 
-        index = (i + slides.length) % slides.length; 
-        activate(index); 
-        restart(); 
+      // Update hero text based on slide index
+      function updateHeroText(index) {
+        const titleElement = document.querySelector('#hero-slider h1');
+        const descriptionElement = document.querySelector('#hero-slider p');
+        
+        // Use modulo to handle the clone slides
+        const textIndex = (index - 1) % 3;
+        
+        if (titleElement && descriptionElement && heroTexts[textIndex]) {
+          titleElement.innerHTML = heroTexts[textIndex].title;
+          descriptionElement.innerHTML = heroTexts[textIndex].description;
+        }
       }
+
+      // Main hero slide function with complete navigation updates
+      function heroSlide(dir) {
+        idx = idx + dir;
+        if (idx >= total) idx = 1;
+        if (idx < 0) idx = total - 2;
+        document.getElementById('hero-slides').style.transform = `translateX(-${idx * 100}%)`;
+        
+        // Update text based on current slide
+        updateHeroText(idx);
+        
+        // Trigger entrance animations
+        triggerSlideEntranceAnimation(idx - 1);
+        
+        // Update timeline navigation
+        updateSlideNavigation();
+      }
+
+      // Setup navigation click handlers
+      const timelinePoints = document.querySelectorAll('.timeline-point');
+      timelinePoints.forEach((point, index) => {
+        point.addEventListener('click', () => {
+          triggerSlideEntranceAnimation(index);
+          goToSlide(index);
+        });
+      });
       
-      function next() { goTo(index + 1); }
-      function start() { timer = setInterval(next, 6000); }
-      function stop() { clearInterval(timer); }
-      function restart() { stop(); start(); }
-
-      // Tab button event listeners
-      tabBtns.forEach((btn, i) => {
-        btn.addEventListener('click', () => goTo(i));
+      // Geometric shapes click handlers (mobile)
+      const geoShapes = document.querySelectorAll('.geo-shape');
+      geoShapes.forEach((shape, index) => {
+        shape.addEventListener('click', () => {
+          triggerSlideEntranceAnimation(index);
+          goToSlide(index);
+        });
       });
 
-      activate(0);
-      start();
+      // Initialize first slide with animation
+      setTimeout(() => {
+        triggerSlideEntranceAnimation(0);
+        updateSlideNavigation();
+        updateHeroText(1);
+      }, 100);
 
-      // Pause on hover with progress bar
-      slider.addEventListener('mouseenter', () => {
-        stop();
-        if (progressBar) {
-          progressBar.style.animationPlayState = 'paused';
-        }
+      // Intersection Observer for fade-in animations
+      const onEntry = (entries, obs) => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
       });
-      
-      slider.addEventListener('mouseleave', () => {
-        start();
-        if (progressBar) {
-          progressBar.style.animationPlayState = 'running';
-        }
-      });
+      const io = new IntersectionObserver(onEntry, { threshold: .18 });
+      document.querySelectorAll('.observe-fade')
+              .forEach(el => io.observe(el));
     }
+
+    // Global variables for pagination
+    let allKits = [];
+    let currentPage = 1;
+    const itemsPerPage = 9;
+    let filteredKits = [];
+    let currentCategory = 'all';
 
     // Load kits from JSON and build cards
     async function loadKits() {
@@ -556,50 +1141,177 @@
         generateCategories(data.categories);
         
         // Convert items object to array with slugs
-        const kits = Object.entries(data.items).map(([slug, item]) => ({ slug, ...item }));
+        allKits = Object.entries(data.items).map(([slug, item]) => ({ slug, ...item }));
+        filteredKits = [...allKits];
         
-        // Generate kit cards
-        const grid = document.getElementById('kits-grid');
-        grid.innerHTML = kits.map(k => `
-          <a href="menu-detail.html?item=${encodeURIComponent(k.slug)}" 
-             class="menu-item block bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden hover:shadow-md transition" 
-             data-category="${k.category}" 
-             data-slug="${k.slug}" 
-             data-name="${k.name}" 
-             data-price="${k.price}" 
-             data-image="${k.image}" 
-             data-desc="${(k.description || 'Click here to view description').replace(/"/g,'\u0026quot;')}"
-            >
-            <div class="relative h-40 sm:h-48 md:h-52"><img src="${k.image}" alt="${k.name}" class="w-full h-full object-cover"></div>
-            <div class="p-3 sm:p-4 text-center">
-              <div class="text-base sm:text-lg font-bold text-makan-orange mb-2">${k.price}</div>
-              <h3 class="text-base sm:text-lg font-bold text-custom-text mb-1">${k.name}</h3>
-              ${k.description ? `<div class="text-xs text-gray-500 mb-2">${k.description}</div>` : ''}
-              <p class="text-gray-600 text-sm">${k.expect ? k.expect.substring(0, 100) + '...' : 'Click here to view description'}</p>
-            </div>
-          </a>
-        `).join('');
+        // Initial render
+        renderKits();
         
-        // Persist selected card info so description shows on detail page
-        grid.querySelectorAll('.menu-item').forEach(el => {
-          el.addEventListener('click', () => {
-            const payload = {
-              slug: el.dataset.slug,
-              name: el.dataset.name,
-              price: el.dataset.price,
-              image: el.dataset.image,
-              description: el.dataset.desc
-            };
-            try { localStorage.setItem('selectedMenuItem', JSON.stringify(payload)); } catch {}
-          });
-        });
-
         // Setup category filtering
         initializeCategoryFiltering();
         
       } catch (e) {
         console.error('Failed to load mealkits.json', e);
       }
+    }
+
+    // Render kits with pagination
+    function renderKits() {
+      const grid = document.getElementById('kits-grid');
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const kitsToShow = filteredKits.slice(startIndex, endIndex);
+      
+      grid.innerHTML = kitsToShow.map(k => `
+        <div class="menu-item bg-white rounded-lg shadow-sm border border-gray-300 overflow-hidden hover:shadow-md transition cursor-pointer" 
+             data-category="${k.category}" 
+             data-slug="${k.slug}">
+          <div class="h-40 sm:h-48 md:h-52">
+            <img src="${k.image}" alt="${k.name}" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4">
+            <!-- Special Labels -->
+            ${k.specialLabels ? `
+              <div class="flex flex-wrap gap-1 mb-2">
+                ${k.specialLabels.map(label => `
+                  <span class="text-xs px-2 py-1 rounded-full font-bold ${getSpecialLabelStyle(label)}">
+                    ${label}
+                  </span>
+                `).join('')}
+              </div>
+            ` : ''}
+            
+            <h3 class="text-lg font-bold text-custom-text mb-2">${k.name}</h3>
+            <p class="text-gray-600 text-sm mb-3">${k.description}</p>
+            
+            <!-- Meal Info Row -->
+            <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
+              <div class="flex items-center space-x-1">
+                <i class="fas fa-clock"></i>
+                <span>${k.prepTime}</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <i class="fas fa-users"></i>
+                <span>${k.servings}</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <i class="fas fa-signal"></i>
+                <span>${k.difficulty}</span>
+              </div>
+            </div>
+            
+            <!-- Ingredients Tags -->
+            <div>
+              <div class="flex flex-wrap gap-1">
+                ${k.ingredients ? k.ingredients.slice(0, 4).map(ingredient => `
+                  <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">
+                    ${ingredient}
+                  </span>
+                `).join('') : ''}
+                ${k.ingredients && k.ingredients.length > 4 ? `
+                  <span class="text-gray-500 text-xs px-2 py-1">
+                    +${k.ingredients.length - 4} more
+                  </span>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Add click handlers
+      grid.querySelectorAll('.menu-item').forEach(el => {
+        el.addEventListener('click', () => {
+          const kit = allKits.find(k => k.slug === el.dataset.slug);
+          if (kit) {
+            localStorage.setItem('selectedMenuItem', JSON.stringify(kit));
+            window.location.href = 'cooking-instructions.html?item=' + encodeURIComponent(kit.slug);
+          }
+        });
+      });
+
+      // Update pagination
+      updatePagination();
+    }
+
+    // Get special label styling
+    function getSpecialLabelStyle(label) {
+      const styles = {
+        'Best Seller': 'bg-green-500',
+        'Spicy': 'bg-red-500',
+        'Premium': 'bg-purple-500',
+        'Healthy': 'bg-green-400',
+        'Quick Meal': 'bg-blue-500',
+        'Signature': 'bg-yellow-500 text-black',
+        'Vegetarian': 'bg-green-600',
+        'Evergreen': 'bg-teal-500',
+        'Low Calorie': 'bg-green-300 text-black'
+      };
+      return styles[label] || 'bg-makan-orange';
+    }
+
+    // Update pagination controls
+    function updatePagination() {
+      const totalPages = Math.ceil(filteredKits.length / itemsPerPage);
+      const paginationContainer = document.getElementById('pagination-container');
+      
+      if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+      }
+      
+      let paginationHTML = '<div class="flex justify-center items-center space-x-2 mt-8">';
+      
+      // Previous button
+      paginationHTML += `
+        <button onclick="changePage(${currentPage - 1})" 
+                ${currentPage === 1 ? 'disabled' : ''} 
+                class="px-3 py-2 rounded-lg border ${currentPage === 1 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-white text-gray-700 hover:bg-gray-50'}">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      `;
+      
+      // Page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        if (i === currentPage) {
+          paginationHTML += `
+            <button class="px-4 py-2 rounded-lg bg-makan-orange text-white font-medium">
+              ${i}
+            </button>
+          `;
+        } else {
+          paginationHTML += `
+            <button onclick="changePage(${i})" 
+                    class="px-4 py-2 rounded-lg border bg-white text-gray-700 hover:bg-gray-50">
+              ${i}
+            </button>
+          `;
+        }
+      }
+      
+      // Next button
+      paginationHTML += `
+        <button onclick="changePage(${currentPage + 1})" 
+                ${currentPage === totalPages ? 'disabled' : ''} 
+                class="px-3 py-2 rounded-lg border ${currentPage === totalPages ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-white text-gray-700 hover:bg-gray-50'}">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      `;
+      
+      paginationHTML += '</div>';
+      paginationContainer.innerHTML = paginationHTML;
+    }
+
+    // Change page function
+    function changePage(page) {
+      const totalPages = Math.ceil(filteredKits.length / itemsPerPage);
+      if (page < 1 || page > totalPages) return;
+      
+      currentPage = page;
+      renderKits();
+      
+      // Scroll to top of menu section
+      document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
     }
 
     // Generate category buttons from JSON
@@ -621,11 +1333,14 @@
     // Initialize category filtering
     function initializeCategoryFiltering() {
       const categoryBtns = document.querySelectorAll('.menu-category-btn');
-      const menuItems = document.querySelectorAll('.menu-item');
       
       categoryBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           const category = btn.getAttribute('data-category');
+          currentCategory = category;
+          currentPage = 1; // Reset to first page when filtering
+          
+          // Update button styles
           categoryBtns.forEach(b => { 
             b.classList.remove('active', 'bg-makan-orange', 'text-white'); 
             b.classList.add('bg-white', 'text-custom-text'); 
@@ -633,17 +1348,15 @@
           btn.classList.add('active', 'bg-makan-orange', 'text-white');
           btn.classList.remove('bg-white', 'text-custom-text');
           
-          menuItems.forEach(item => {
-            // Remove any transition/transform to prevent visual shift
-            item.style.transition = 'none';
-            item.style.transform = 'none';
-            item.style.opacity = '1';
-            if (category === 'all' || item.getAttribute('data-category') === category) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
+          // Filter kits
+          if (category === 'all') {
+            filteredKits = [...allKits];
+          } else {
+            filteredKits = allKits.filter(kit => kit.category === category);
+          }
+          
+          // Re-render with filtered results
+          renderKits();
         });
       });
     }
@@ -665,6 +1378,9 @@
     initHeroSlider();
     buildLogos();
     loadKits();
+    
+    // Make changePage globally accessible for pagination buttons
+    window.changePage = changePage;
 
      let menuData = null;
 async function loadMenuData() {

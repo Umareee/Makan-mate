@@ -1,0 +1,479 @@
+{
+  "hainanese-chicken-rice": {
+    "images": [
+      "/images/home/menu/imgi_4_38810089.jpg",
+      "/images/home/menu/imgi_11_bento.jpg",
+      "/images/pexels-ella-olsson-1640772 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare the Chicken",
+        "instruction": "Rinse the chicken and pat dry. Rub with salt and let it sit for 15 minutes. This helps to firm up the skin and remove any gamey smell.",
+        "time": "15 mins",
+        "tip": "Make sure the chicken is at room temperature before cooking for even results."
+      },
+      {
+        "step": 2,
+        "title": "Poach the Chicken",
+        "instruction": "In a large pot, bring water to boil with ginger slices and salt. Gently lower the chicken and simmer for 20-25 minutes until fully cooked.",
+        "time": "25 mins",
+        "tip": "Keep the water at a gentle simmer, not a rolling boil, to keep the chicken tender."
+      },
+      {
+        "step": 3,
+        "title": "Prepare Chicken Rice",
+        "instruction": "Heat oil in a pan, fry minced garlic and ginger until fragrant. Add rice and stir-fry for 2 minutes. Add chicken stock and cook until rice is done.",
+        "time": "20 mins",
+        "tip": "Use the chicken poaching liquid as stock for extra flavor."
+      },
+      {
+        "step": 4,
+        "title": "Make the Sauce",
+        "instruction": "Mix soy sauce, sesame oil, and minced ginger. Adjust taste with sugar and salt. This is your dipping sauce for the chicken.",
+        "time": "5 mins",
+        "tip": "Let the sauce sit for 10 minutes to allow flavors to meld together."
+      },
+      {
+        "step": 5,
+        "title": "Serve and Enjoy",
+        "instruction": "Slice the chicken and arrange on plates. Serve with fragrant rice, cucumber slices, and the prepared sauce on the side.",
+        "time": "5 mins",
+        "tip": "Garnish with fresh cilantro and serve immediately while everything is still warm."
+      }
+    ]
+  },
+  "spicy-kung-pao-chicken": {
+    "images": [
+      "/images/home/menu/imgi_11_bento.jpg",
+      "/images/home/menu/imgi_12_classic-delight-2-366.jpg",
+      "/images/pexels-ash-376464 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare Ingredients",
+        "instruction": "Cut chicken into bite-sized cubes. Dice bell peppers and slice green onions. Toast peanuts in a dry pan until fragrant.",
+        "time": "10 mins",
+        "tip": "Keep all ingredients ready as stir-frying happens very quickly."
+      },
+      {
+        "step": 2,
+        "title": "Marinate Chicken",
+        "instruction": "Mix chicken with soy sauce, cornstarch, and a pinch of salt. Let marinate for 10 minutes.",
+        "time": "10 mins",
+        "tip": "Cornstarch helps create a tender texture and crispy exterior."
+      },
+      {
+        "step": 3,
+        "title": "Stir-Fry Chicken",
+        "instruction": "Heat oil in wok over high heat. Add chicken and stir-fry until golden brown and cooked through, about 5-6 minutes.",
+        "time": "6 mins",
+        "tip": "Don't overcrowd the pan - cook in batches if necessary."
+      },
+      {
+        "step": 4,
+        "title": "Add Vegetables and Sauce",
+        "instruction": "Add bell peppers, dried chilies, and peanuts. Pour in the kung pao sauce and toss everything together for 2 minutes.",
+        "time": "3 mins",
+        "tip": "Be careful with the chilies - adjust amount based on your spice tolerance."
+      },
+      {
+        "step": 5,
+        "title": "Finish and Serve",
+        "instruction": "Garnish with sliced green onions and sesame seeds. Serve immediately with steamed rice.",
+        "time": "1 min",
+        "tip": "Serve immediately while everything is hot and crispy."
+      }
+    ]
+  },
+  "honey-glazed-duck": {
+    "images": [
+      "/images/home/menu/imgi_12_classic-delight-2-366.jpg",
+      "/images/home/maken-mart/imgi_17_meat.jpg",
+      "/images/pexels-steve-3789885 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare Duck Breast",
+        "instruction": "Score the duck skin in a crosshatch pattern, being careful not to cut into the meat. Season with salt and pepper on both sides.",
+        "time": "10 mins",
+        "tip": "Scoring the skin helps render the fat and creates a crispy texture."
+      },
+      {
+        "step": 2,
+        "title": "Sear the Duck",
+        "instruction": "Place duck skin-side down in a cold pan. Cook over medium heat for 8-10 minutes until skin is golden and crispy.",
+        "time": "10 mins",
+        "tip": "Starting with a cold pan helps render the fat slowly for maximum crispiness."
+      },
+      {
+        "step": 3,
+        "title": "Flip and Continue Cooking",
+        "instruction": "Flip duck breast and cook for another 3-4 minutes for medium-rare. Adjust time based on your preference.",
+        "time": "4 mins",
+        "tip": "Use a meat thermometer - 135°F for medium-rare, 145°F for medium."
+      },
+      {
+        "step": 4,
+        "title": "Make Honey Glaze",
+        "instruction": "In the same pan, add honey, soy sauce, and orange juice. Simmer until thickened and glossy.",
+        "time": "5 mins",
+        "tip": "The glaze should coat the back of a spoon when ready."
+      },
+      {
+        "step": 5,
+        "title": "Rest and Serve",
+        "instruction": "Let duck rest for 5 minutes, then slice and drizzle with honey glaze. Garnish with fresh thyme.",
+        "time": "5 mins",
+        "tip": "Resting allows juices to redistribute for a more tender result."
+      }
+    ]
+  },
+  "steamed-fish-ginger": {
+    "images": [
+      "/images/pexels-ella-olsson-1640772 1.png",
+      "/images/home/maken-mart/imgi_18_salmon.jpg",
+      "/images/pexels-ash-376464 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare the Fish",
+        "instruction": "Clean the fish fillet and pat dry. Score the skin lightly and season with salt. Let it rest for 10 minutes.",
+        "time": "10 mins",
+        "tip": "Fresh fish should smell like the ocean, not 'fishy'. Choose the freshest available."
+      },
+      {
+        "step": 2,
+        "title": "Prepare Aromatics",
+        "instruction": "Julienne ginger into thin strips. Cut scallions into 2-inch lengths, separating white and green parts.",
+        "time": "5 mins",
+        "tip": "Younger ginger is less fibrous and has a milder flavor - perfect for steaming."
+      },
+      {
+        "step": 3,
+        "title": "Steam the Fish",
+        "instruction": "Place fish on a heatproof plate with half the ginger strips on top. Steam over boiling water for 8-12 minutes depending on thickness.",
+        "time": "12 mins",
+        "tip": "Fish is done when it flakes easily with a fork but is still moist."
+      },
+      {
+        "step": 4,
+        "title": "Prepare the Sauce",
+        "instruction": "Heat oil in a small pan. Add remaining ginger and white parts of scallions. Pour in soy sauce and heat through.",
+        "time": "3 mins",
+        "tip": "The hot oil will create a sizzling effect when poured over the fish."
+      },
+      {
+        "step": 5,
+        "title": "Finish and Serve",
+        "instruction": "Discard steaming liquid. Pour hot sauce over fish and garnish with green scallions. Serve immediately.",
+        "time": "2 mins",
+        "tip": "Serve immediately while the fish is hot and the sauce is sizzling."
+      }
+    ]
+  },
+  "chili-crab": {
+    "images": [
+      "/images/home/maken-mart/imgi_18_salmon.jpg",
+      "/images/pexels-ash-376464 1.png",
+      "/images/pexels-steve-3789885 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare the Crab",
+        "instruction": "Clean live crabs and chop into pieces. Crack claws and legs lightly to allow sauce to penetrate.",
+        "time": "15 mins",
+        "tip": "Keep crabs cold and handle carefully. Use a heavy cleaver for clean cuts."
+      },
+      {
+        "step": 2,
+        "title": "Make Chili Sauce",
+        "instruction": "Blend tomato sauce, chili sauce, rice vinegar, and sugar. Beat eggs lightly in a separate bowl.",
+        "time": "5 mins",
+        "tip": "Adjust sweetness and spice level to your preference before cooking."
+      },
+      {
+        "step": 3,
+        "title": "Stir-Fry Crab",
+        "instruction": "Heat oil in a large wok. Add crab pieces and stir-fry over high heat for 3-4 minutes until shells turn red.",
+        "time": "4 mins",
+        "tip": "The wok should be very hot to create the characteristic 'wok hei' flavor."
+      },
+      {
+        "step": 4,
+        "title": "Add Sauce",
+        "instruction": "Pour in the chili sauce mixture and toss to coat all crab pieces. Cook for 5-6 minutes until sauce thickens.",
+        "time": "6 mins",
+        "tip": "Keep stirring to prevent sauce from burning and ensure even coating."
+      },
+      {
+        "step": 5,
+        "title": "Add Egg and Serve",
+        "instruction": "Slowly drizzle beaten eggs while stirring constantly. Garnish with cilantro and serve with mantou bread.",
+        "time": "2 mins",
+        "tip": "The eggs should form silky ribbons throughout the sauce."
+      }
+    ]
+  },
+  "garlic-prawns": {
+    "images": [
+      "/images/pexels-ash-376464 1.png",
+      "/images/home/maken-mart/imgi_18_salmon.jpg",
+      "/images/pexels-ella-olsson-1640772 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare Prawns",
+        "instruction": "Peel and devein prawns, leaving tails on. Pat dry and season lightly with salt and pepper.",
+        "time": "8 mins",
+        "tip": "Don't over-season as the garlic butter will add plenty of flavor."
+      },
+      {
+        "step": 2,
+        "title": "Prepare Garlic",
+        "instruction": "Mince garlic finely and chop fresh parsley. Have white wine ready for deglazing.",
+        "time": "5 mins",
+        "tip": "Fresh garlic is essential - avoid pre-minced for the best flavor."
+      },
+      {
+        "step": 3,
+        "title": "Sear the Prawns",
+        "instruction": "Heat olive oil in a large pan over high heat. Add prawns and cook for 1-2 minutes per side until pink.",
+        "time": "4 mins",
+        "tip": "Don't overcook prawns as they'll become tough and rubbery."
+      },
+      {
+        "step": 4,
+        "title": "Add Garlic and Butter",
+        "instruction": "Add minced garlic and butter to the pan. Toss prawns to coat and cook for another minute until fragrant.",
+        "time": "2 mins",
+        "tip": "Watch the garlic carefully - it should be golden, not brown."
+      },
+      {
+        "step": 5,
+        "title": "Finish and Serve",
+        "instruction": "Deglaze with white wine, add parsley, and toss. Serve immediately with crusty bread.",
+        "time": "2 mins",
+        "tip": "Serve with bread to soak up the delicious garlic butter sauce."
+      }
+    ]
+  },
+  "mongolian-lamb": {
+    "images": [
+      "/images/home/maken-mart/imgi_17_meat.jpg",
+      "/images/home/menu/imgi_12_classic-delight-2-366.jpg",
+      "/images/pexels-steve-3789885 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare the Lamb",
+        "instruction": "Slice lamb against the grain into thin strips. Marinate with soy sauce, cornstarch, and oil for 15 minutes.",
+        "time": "15 mins",
+        "tip": "Slicing against the grain ensures tender meat that's easy to chew."
+      },
+      {
+        "step": 2,
+        "title": "Prepare Vegetables",
+        "instruction": "Slice onions into thick strips and cut scallions into 2-inch pieces, separating white and green parts.",
+        "time": "8 mins",
+        "tip": "Keep onion pieces large so they don't overcook and turn mushy."
+      },
+      {
+        "step": 3,
+        "title": "Stir-Fry Lamb",
+        "instruction": "Heat oil in wok over high heat. Add lamb and stir-fry quickly for 2-3 minutes until just cooked through.",
+        "time": "3 mins",
+        "tip": "Work in batches if necessary to avoid overcrowding the wok."
+      },
+      {
+        "step": 4,
+        "title": "Add Onions and Sauce",
+        "instruction": "Add onions and white parts of scallions. Stir-fry for 2 minutes, then add hoisin sauce mixture.",
+        "time": "3 mins",
+        "tip": "The onions should still have some crunch for the best texture."
+      },
+      {
+        "step": 5,
+        "title": "Finish and Serve",
+        "instruction": "Add green parts of scallions and toss everything together. Serve immediately over steamed rice.",
+        "time": "1 min",
+        "tip": "The dish should have a glossy sauce that coats all ingredients."
+      }
+    ]
+  },
+  "beef-black-pepper": {
+    "images": [
+      "/images/mealkit/imgi_3_38809248.jpg",
+      "/images/home/maken-mart/imgi_17_meat.jpg",
+      "/images/pexels-ella-olsson-1640772 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare the Beef",
+        "instruction": "Cut beef into thin strips against the grain. Marinate with soy sauce, cornstarch, and a little oil for 20 minutes.",
+        "time": "20 mins",
+        "tip": "Freezing beef for 30 minutes before slicing makes it easier to cut thin strips."
+      },
+      {
+        "step": 2,
+        "title": "Prepare Vegetables",
+        "instruction": "Cut bell peppers into strips and slice onions. Crush black peppercorns coarsely for maximum flavor.",
+        "time": "10 mins",
+        "tip": "Use a mix of colored bell peppers for a more visually appealing dish."
+      },
+      {
+        "step": 3,
+        "title": "Stir-Fry Beef",
+        "instruction": "Heat oil in wok over high heat. Add beef and stir-fry for 2-3 minutes until just cooked. Remove and set aside.",
+        "time": "3 mins",
+        "tip": "Don't overcook the beef or it will become tough and chewy."
+      },
+      {
+        "step": 4,
+        "title": "Stir-Fry Vegetables",
+        "instruction": "In the same wok, add vegetables and black pepper. Stir-fry for 2 minutes until vegetables are crisp-tender.",
+        "time": "2 mins",
+        "tip": "The vegetables should retain some crunch for the best texture contrast."
+      },
+      {
+        "step": 5,
+        "title": "Combine and Serve",
+        "instruction": "Return beef to wok, add sauce, and toss everything together. Serve immediately with rice.",
+        "time": "2 mins",
+        "tip": "The sauce should coat everything without being too thick or watery."
+      }
+    ]
+  },
+  "mapo-tofu": {
+    "images": [
+      "/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg",
+      "/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg",
+      "/images/pexels-ella-olsson-1640772 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare Tofu",
+        "instruction": "Cut silky tofu into 1-inch cubes. Soak in warm salted water for 10 minutes to firm up slightly.",
+        "time": "10 mins",
+        "tip": "Handle tofu gently to prevent breaking. Salted water helps maintain shape during cooking."
+      },
+      {
+        "step": 2,
+        "title": "Cook Ground Pork",
+        "instruction": "Heat oil in wok and cook ground pork until crispy and golden. Add doubanjiang and cook until fragrant.",
+        "time": "8 mins",
+        "tip": "Let the pork get really crispy for the best texture contrast with the soft tofu."
+      },
+      {
+        "step": 3,
+        "title": "Add Seasonings",
+        "instruction": "Add garlic, ginger, and fermented black beans. Stir-fry for 1 minute until aromatic.",
+        "time": "2 mins",
+        "tip": "Don't let the garlic burn or it will become bitter."
+      },
+      {
+        "step": 4,
+        "title": "Add Tofu and Sauce",
+        "instruction": "Gently add tofu cubes and pour in the sauce. Simmer for 3-4 minutes, shaking the pan gently to coat tofu.",
+        "time": "4 mins",
+        "tip": "Don't stir too vigorously to keep the tofu pieces intact."
+      },
+      {
+        "step": 5,
+        "title": "Finish and Serve",
+        "instruction": "Sprinkle with Sichuan peppercorns and chopped scallions. Serve immediately with steamed rice.",
+        "time": "1 min",
+        "tip": "The Sichuan peppercorns provide the characteristic numbing sensation."
+      }
+    ]
+  },
+  "vegetable-curry": {
+    "images": [
+      "/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg",
+      "/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg",
+      "/images/pexels-ella-olsson-1640772 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare Vegetables",
+        "instruction": "Cut all vegetables into uniform pieces. Start with harder vegetables like carrots and potatoes first.",
+        "time": "15 mins",
+        "tip": "Uniform sizing ensures even cooking times for all vegetables."
+      },
+      {
+        "step": 2,
+        "title": "Toast Spices",
+        "instruction": "In a large pot, toast curry paste and whole spices until fragrant, about 2 minutes.",
+        "time": "3 mins",
+        "tip": "Toasting spices releases their essential oils and deepens the flavor."
+      },
+      {
+        "step": 3,
+        "title": "Add Coconut Milk",
+        "instruction": "Pour in coconut milk and bring to a gentle simmer. Add harder vegetables first and cook for 10 minutes.",
+        "time": "12 mins",
+        "tip": "Don't let the coconut milk boil vigorously or it may curdle."
+      },
+      {
+        "step": 4,
+        "title": "Add Remaining Vegetables",
+        "instruction": "Add softer vegetables and cook for another 8-10 minutes until all vegetables are tender.",
+        "time": "10 mins",
+        "tip": "Add delicate vegetables like leafy greens in the last few minutes."
+      },
+      {
+        "step": 5,
+        "title": "Season and Serve",
+        "instruction": "Adjust seasoning with salt and lime juice. Garnish with fresh herbs and serve with rice or bread.",
+        "time": "3 mins",
+        "tip": "A squeeze of lime juice brightens all the flavors at the end."
+      }
+    ]
+  },
+  "default": {
+    "images": [
+      "/images/home/menu/imgi_11_bento.jpg",
+      "/images/home/menu/imgi_12_classic-delight-2-366.jpg",
+      "/images/pexels-ella-olsson-1640772 1.png"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Prepare Ingredients",
+        "instruction": "Organize all ingredients according to the provided ingredient list. Wash vegetables and prepare proteins as needed.",
+        "time": "10 mins",
+        "tip": "Having everything ready before cooking makes the process much smoother."
+      },
+      {
+        "step": 2,
+        "title": "Follow Kit Instructions",
+        "instruction": "Each meal kit comes with detailed step-by-step instructions. Follow them carefully for the best results.",
+        "time": "Variable",
+        "tip": "Don't skip steps - each one is designed to build flavors properly."
+      },
+      {
+        "step": 3,
+        "title": "Cook with Care",
+        "instruction": "Pay attention to cooking times and temperatures. Taste and adjust seasonings as you go.",
+        "time": "Variable",
+        "tip": "Trust your senses - look, smell, and taste to judge doneness."
+      },
+      {
+        "step": 4,
+        "title": "Plate and Enjoy",
+        "instruction": "Present your dish attractively and serve while hot. Enjoy the fruits of your labor!",
+        "time": "5 mins",
+        "tip": "A beautiful presentation enhances the dining experience."
+      }
+    ]
+  }
+}

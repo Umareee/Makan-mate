@@ -6,13 +6,28 @@
       "active": true
     },
     {
-      "id": "pork",
-      "name": "Pork",
+      "id": "chicken",
+      "name": "Chicken",
       "active": false
     },
     {
-      "id": "chicken",
-      "name": "Chicken",
+      "id": "duck",
+      "name": "Duck",
+      "active": false
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "active": false
+    },
+    {
+      "id": "shellfish",
+      "name": "Shellfish",
+      "active": false
+    },
+    {
+      "id": "lamb",
+      "name": "Lamb",
       "active": false
     },
     {
@@ -21,29 +36,153 @@
       "active": false
     },
     {
-      "id": "seafood",
-      "name": "Seafood",
+      "id": "vegetable",
+      "name": "Vegetable",
+      "active": false
+    },
+    {
+      "id": "tofu-egg",
+      "name": "Tofu & Egg",
+      "active": false
+    },
+    {
+      "id": "evergreen",
+      "name": "Evergreen",
       "active": false
     }
   ],
   "items": {
-    "Pongteh Pork": {
-      "name": "Pongteh Pork",
-      "price": "$18",
-      "image": "/images/mealkit/imgi_3_38809248.jpg",
-      "expect": "Pongteh Pork is a signature Peranakan dish that has been passed down for generations. Traditionally, pork belly or pork shoulder is braised in fermented soy bean sauce, creating a soft and tender texture, yet packs with bold, sweet-salty & savoury flavours.• Raw ingredients are portioned for 2 person• Dish ready in 40 minutes• Best cook within 5 daysCooking InstructionCooking Instruction Pongteh Pork",
-      "kit": "•Protein: Pork Shoulder •Sauce: Taucu, Soy Sauce, Dark Soy Sauce, Gula Melaka •Aromatics: Minced Garlic, Shallot, Green Onion for Garnish •Other Ingredients: Cooking Oil",
-      "description": "For 1-2 pax",
-      "category": "pork"
-    },
-    "Soy Sauce Chicken": {
-      "name": "Soy Sauce Chicken",
-      "price": "$22",
+    "hainanese-chicken-rice": {
+      "name": "Hainanese Chicken Rice",
       "image": "/images/mealkit/imgi_4_38810089.jpg",
-      "expect": "• Raw ingredients are portioned for 2 person• Dish ready in 25 minutes• Best cook within 6 days",
-      "kit": "•Protein: Chicken Whole Leg x 2 pcs •Sauce: Soy Sauce, Dark Soy Sauce, Oyster Sauce •Veggies & Aromatics: Ginger, Garlic, Shallot, Cilantro (for Garnish) •Other Ingredients: Cooking Oil, Rock Sugar",
-      "description": "For 2-3 Pax",
-      "category": "chicken"
+      "description": "Tender poached chicken with fragrant rice",
+      "category": "chicken",
+      "prepTime": "35 mins",
+      "servings": "2-3 pax",
+      "ingredients": ["Chicken", "Rice", "Ginger", "Garlic", "Cucumber"],
+      "specialLabels": ["Best Seller"],
+      "difficulty": "Easy"
+    },
+    "spicy-kung-pao-chicken": {
+      "name": "Spicy Kung Pao Chicken",
+      "image": "/images/home/menu/imgi_11_bento.jpg",
+      "description": "Spicy chicken stir-fry with peanuts and vegetables",
+      "category": "chicken",
+      "prepTime": "25 mins",
+      "servings": "2 pax",
+      "ingredients": ["Chicken", "Peanuts", "Bell Peppers", "Chili", "Soy Sauce"],
+      "specialLabels": ["Spicy", "Quick Meal"],
+      "difficulty": "Medium"
+    },
+    "honey-glazed-duck": {
+      "name": "Honey Glazed Duck",
+      "image": "/images/home/menu/imgi_12_classic-delight-2-366.jpg",
+      "description": "Succulent duck breast with honey glaze",
+      "category": "duck",
+      "prepTime": "45 mins",
+      "servings": "2 pax",
+      "ingredients": ["Duck Breast", "Honey", "Soy Sauce", "Orange", "Thyme"],
+      "specialLabels": ["Premium"],
+      "difficulty": "Hard"
+    },
+    "steamed-fish-ginger": {
+      "name": "Steamed Fish with Ginger",
+      "image": "/images/pexels-ella-olsson-1640772 1.png",
+      "description": "Fresh fish steamed with ginger and soy sauce",
+      "category": "fish",
+      "prepTime": "20 mins",
+      "servings": "2 pax",
+      "ingredients": ["Fish Fillet", "Ginger", "Scallions", "Soy Sauce", "Sesame Oil"],
+      "specialLabels": ["Healthy", "Low Calorie"],
+      "difficulty": "Easy"
+    },
+    "chili-crab": {
+      "name": "Singapore Chili Crab",
+      "image": "/images/home/maken-mart/imgi_18_salmon.jpg",
+      "description": "Sweet and spicy crab in tomato-chili sauce",
+      "category": "shellfish",
+      "prepTime": "40 mins",
+      "servings": "3-4 pax",
+      "ingredients": ["Mud Crab", "Tomato Sauce", "Chili", "Egg", "Cornstarch"],
+      "specialLabels": ["Signature", "Spicy"],
+      "difficulty": "Hard"
+    },
+    "garlic-prawns": {
+      "name": "Garlic Butter Prawns",
+      "image": "/images/pexels-ash-376464 1.png",
+      "description": "Succulent prawns in garlic butter sauce",
+      "category": "shellfish",
+      "prepTime": "15 mins",
+      "servings": "2 pax",
+      "ingredients": ["Prawns", "Garlic", "Butter", "Parsley", "White Wine"],
+      "specialLabels": ["Quick Meal", "Best Seller"],
+      "difficulty": "Easy"
+    },
+    "mongolian-lamb": {
+      "name": "Mongolian Lamb",
+      "image": "/images/home/maken-mart/imgi_17_meat.jpg",
+      "description": "Tender lamb with onions and scallions",
+      "category": "lamb",
+      "prepTime": "30 mins",
+      "servings": "2-3 pax",
+      "ingredients": ["Lamb", "Onions", "Scallions", "Soy Sauce", "Hoisin Sauce"],
+      "specialLabels": ["Premium"],
+      "difficulty": "Medium"
+    },
+    "beef-black-pepper": {
+      "name": "Black Pepper Beef",
+      "image": "/images/mealkit/imgi_3_38809248.jpg",
+      "description": "Tender beef strips in black pepper sauce",
+      "category": "beef",
+      "prepTime": "25 mins",
+      "servings": "2 pax",
+      "ingredients": ["Beef Strips", "Black Pepper", "Onions", "Bell Peppers", "Oyster Sauce"],
+      "specialLabels": ["Spicy"],
+      "difficulty": "Medium"
+    },
+    "mapo-tofu": {
+      "name": "Mapo Tofu",
+      "image": "/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg",
+      "description": "Silky tofu in spicy Sichuan sauce",
+      "category": "tofu-egg",
+      "prepTime": "20 mins",
+      "servings": "2 pax",
+      "ingredients": ["Silky Tofu", "Ground Pork", "Doubanjiang", "Scallions", "Sichuan Pepper"],
+      "specialLabels": ["Spicy", "Vegetarian Option"],
+      "difficulty": "Easy"
+    },
+    "vegetable-curry": {
+      "name": "Mixed Vegetable Curry",
+      "image": "/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg",
+      "description": "Rich curry with seasonal vegetables",
+      "category": "vegetable",
+      "prepTime": "30 mins",
+      "servings": "2-3 pax",
+      "ingredients": ["Mixed Vegetables", "Coconut Milk", "Curry Paste", "Lemongrass", "Lime Leaves"],
+      "specialLabels": ["Vegetarian", "Healthy"],
+      "difficulty": "Easy"
+    },
+    "fried-rice": {
+      "name": "Special Fried Rice",
+      "image": "/images/home/menu/imgi_14_healthier-choice-buffet.jpg",
+      "description": "Wok hei fried rice with mixed ingredients",
+      "category": "evergreen",
+      "prepTime": "15 mins",
+      "servings": "2 pax",
+      "ingredients": ["Rice", "Eggs", "Char Siu", "Prawns", "Vegetables"],
+      "specialLabels": ["Quick Meal", "Evergreen"],
+      "difficulty": "Easy"
+    },
+    "laksa": {
+      "name": "Singapore Laksa",
+      "image": "/images/pexels-steve-3789885 1.png",
+      "description": "Spicy coconut noodle soup",
+      "category": "evergreen",
+      "prepTime": "25 mins",
+      "servings": "2 pax",
+      "ingredients": ["Rice Noodles", "Coconut Milk", "Laksa Paste", "Prawns", "Bean Sprouts"],
+      "specialLabels": ["Signature", "Spicy", "Evergreen"],
+      "difficulty": "Medium"
     }
   }
 }
