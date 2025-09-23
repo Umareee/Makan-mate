@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add-ons & Preferences — Makan Mate</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+            'panel-blue': '#eef7fb',
+            'panel-blue-border': '#e1eef4'
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display','serif'],
+            'dm-sans': ['DM Sans','sans-serif']
+          },
+          screens: {
+      '3xl': '1596px',
+    },
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { font-family: "DM Sans", sans-serif; }
+    
+    .dotted-hr { 
+      border-bottom: 2px dotted #f4a18b; 
+      padding-bottom: 8px; 
+      display: inline-block; 
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+
+  <!-- Header -->
+  <header class="bg-gray-800 text-white">
+    <!-- Top bar with contact info -->
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <!-- Mobile Layout -->
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
+            <i class="fas fa-phone"></i>
+            <span>62642233 Ext 10-18</span>
+          </div>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-twitter text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-facebook text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-instagram text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-github text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop Layout -->
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-phone"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main navigation -->
+  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
+        <a href="weekly-meal-plan.html" class="text-makan-orange font-medium">Weekly Plan</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+        <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
+      </div>
+      <div class="lg:hidden">
+        <button class="text-custom-text hover:text-makan-orange">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container mx-auto px-4 py-8 max-w-6xl">
+    <h2 class="text-2xl font-playfair font-bold mb-6">Add-ons & Preferences</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- LEFT CONTENT -->
+      <section class="lg:col-span-9 lg:order-2">
+        
+        <!-- Optional Add-ons Section -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-semibold mb-4 text-custom-text">Optional Add-ons</h3>
+          
+          <!-- Fruits Add-on -->
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-custom-text">Fruits ($3.50/PAX)</h4>
+                <p class="text-sm text-gray-600">Seasonal fresh cut fruits of the day</p>
+              </div>
+              <label class="flex items-center">
+                <input type="checkbox" id="fruits-addon" class="text-makan-orange focus:ring-makan-orange mr-2" onchange="updateAddons()">
+                <span class="text-sm font-medium">Add to order</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Breakfast Kit Add-on -->
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4" id="breakfast-addon-container">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-custom-text">Breakfast Kit ($8.90/PAX)</h4>
+                <p class="text-sm text-gray-600">Weekly Breakfast Kit menu will be updated every Wednesday, same as Lunch/Dinner Kit</p>
+                <p class="text-xs text-orange-600 mt-1">Available only when subscribed to dinner plan</p>
+              </div>
+              <label class="flex items-center">
+                <input type="checkbox" id="breakfast-addon" class="text-makan-orange focus:ring-makan-orange mr-2" onchange="updateAddons()">
+                <span class="text-sm font-medium">Add to order</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Questionnaire Section -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-semibold mb-4 text-custom-text">Food Preferences & Information</h3>
+          
+          <!-- Food Allergy/Religious -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-custom-text mb-2">
+              Food Allergy/Religious Restrictions
+            </label>
+            <textarea 
+              id="food-allergies" 
+              rows="3" 
+              class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"
+              placeholder="e.g., no beef, allergy to nuts, halal only, vegetarian, etc."
+            ></textarea>
+            <p class="text-xs text-gray-500 mt-1">Please specify any dietary restrictions, allergies, or religious requirements</p>
+          </div>
+
+          <!-- Food Preferences -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-custom-text mb-2">
+              Food Preferences
+            </label>
+            <textarea 
+              id="food-preferences" 
+              rows="3" 
+              class="w-full p-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"
+              placeholder="e.g., don't like capsicum, prefer less spicy food, no onions, etc."
+            ></textarea>
+            <p class="text-xs text-gray-500 mt-1">Let us know your likes and dislikes to personalize your meals</p>
+          </div>
+
+          <!-- Favorite Cuisines -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-custom-text mb-3">
+              Favorite Cuisines (Select multiple)
+            </label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="oriental" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Oriental</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="western" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Western</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="international" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">International</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="healthy-lite" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Healthy Lite</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="chinese" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Chinese</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="malay" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Malay</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="indian" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Indian</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="thai" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Thai</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="japanese" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Japanese</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="cuisines" value="korean" class="text-makan-orange focus:ring-makan-orange">
+                <span class="text-sm">Korean</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms & Conditions Section -->
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-semibold mb-4 text-custom-text">Terms & Conditions</h3>
+          
+          <div class="bg-white border border-gray-300 rounded-lg p-4 mb-4 max-h-64 overflow-y-auto">
+            <div class="space-y-3 text-sm text-gray-700">
+              <p><strong>WEEKLY SUBSCRIPTION (MON-FRI, 5 DAYS/WEEK), MINIMUM 2 PAX</strong></p>
+              
+              <p><strong>DAILY DELIVERY FRESH FOR BREAKFAST/DINNER (DELIVERY FEE $7/TRIP, WITH OPTION FOR SELF PICK-UP)</strong></p>
+              
+              <p><strong>FIXED MENU DAILY, INFORM US MINIMUM 48 HOURS IN ADVANCE IN CASE OF CHANGES/CANCELLATION REQUIRE (NO REFUND BUT CAN BRING FORWARD, SUBJECTED TO APPROVAL)</strong></p>
+              
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <h4 class="font-semibold mb-2">Additional Terms:</h4>
+                <ul class="list-disc list-inside space-y-1 text-xs">
+                  <li>All meals are prepared fresh daily and delivered between 4:00 PM - 5:00 PM</li>
+                  <li>Menu items may vary based on seasonal availability</li>
+                  <li>Delivery is limited to specified areas within Singapore</li>
+                  <li>Payment is required in advance for weekly subscriptions</li>
+                  <li>Special dietary requirements will be accommodated where possible</li>
+                  <li>Customers are responsible for being available during delivery times</li>
+                  <li>Missed deliveries due to customer unavailability will not be refunded</li>
+                  <li>Changes to subscription must be made 48 hours in advance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mandatory Checkbox -->
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="terms-checkbox" class="text-makan-orange focus:ring-makan-orange mt-1" required>
+            <label for="terms-checkbox" class="text-sm text-custom-text">
+              <span class="text-red-500">*</span> I have read and agree with the Terms and Conditions stated above
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <button id="checkout-btn" class="bg-makan-orange text-white px-8 py-3 rounded-lg font-bold hover:bg-makan-orange-hover transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+            <i class="fas fa-credit-card mr-2"></i>Proceed to Checkout
+          </button>
+        </div>
+      </section>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="lg:col-span-3 lg:order-1 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+        <div class="text-xs text-makan-orange font-semibold mb-3">
+          <span class="dotted-hr">ORDER SUMMARY</span>
+        </div>
+        
+        <!-- Plan Summary -->
+        <div class="mb-6" id="plan-summary">
+          <h4 class="font-semibold text-custom-text mb-2">Selected Plan</h4>
+          <div class="bg-white p-3 rounded border border-gray-200">
+            <div class="text-sm font-semibold text-gray-800" id="plan-name">Loading...</div>
+            <div class="text-sm text-gray-600" id="plan-weeks">0 weeks selected</div>
+            <div class="text-sm text-gray-600" id="plan-pax">2 pax</div>
+          </div>
+        </div>
+        
+        <!-- Add-ons Summary -->
+        <div class="mb-6" id="addons-summary">
+          <h4 class="font-semibold text-custom-text mb-2">Add-ons</h4>
+          <div id="addons-list" class="space-y-2">
+            <div class="text-gray-500 text-sm">No add-ons selected</div>
+          </div>
+        </div>
+        
+        <!-- Total Summary -->
+        <div class="border-t border-gray-300 pt-4">
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span>Subtotal:</span>
+              <span id="subtotal">$0.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Add-ons:</span>
+              <span id="addons-total">$0.00</span>
+            </div>
+            <div class="flex justify-between font-semibold text-lg border-t pt-2">
+              <span>Total:</span>
+              <span id="final-total">$0.00</span>
+            </div>
+            <div class="text-xs text-gray-500">(excluding GST)</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">About Us</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Our Team</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Events</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Corporate</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Order Now</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Locations</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Us On Instagram -->
+        <div>
+          <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          Copyright © 2025 Makan Mate. All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+    <div class="bg-white w-64 h-full p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+        <button class="text-gray-600" id="close-menu">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+      <nav class="space-y-4">
+        <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+        <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+        <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
+        <a href="weekly-meal-plan.html" class="block text-makan-orange py-2 border-b">Weekly Plan</a>
+        <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+        <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+        <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Global variables
+    let subscriptionOrder = {};
+    let selectedAddons = [];
+
+    // Load subscription order data from previous page
+    function loadSubscriptionData() {
+      try {
+        const storedOrder = localStorage.getItem('currentSubscriptionOrder');
+        if (storedOrder) {
+          subscriptionOrder = JSON.parse(storedOrder);
+          updateOrderSummary();
+        } else {
+          // Fallback - redirect to plan selection if no data
+          Swal.fire({
+            icon: 'error',
+            title: 'No Order Found',
+            text: 'Please select a subscription plan first.'
+          }).then(() => {
+            window.location.href = 'weekly-meal-plan.html';
+          });
+        }
+      } catch (error) {
+        console.error('Error loading subscription data:', error);
+      }
+    }
+
+    // Update order summary display
+    function updateOrderSummary() {
+      if (!subscriptionOrder.plan) return;
+
+      document.getElementById('plan-name').textContent = subscriptionOrder.plan.name || 'Subscription Plan';
+      document.getElementById('plan-weeks').textContent = `${subscriptionOrder.totalWeeks || 0} weeks selected`;
+      document.getElementById('plan-pax').textContent = `${subscriptionOrder.pax || 2} pax`;
+
+      calculateTotals();
+    }
+
+    // Update add-ons when checkboxes change
+    function updateAddons() {
+      selectedAddons = [];
+      
+      // Check fruits add-on
+      if (document.getElementById('fruits-addon').checked) {
+        selectedAddons.push({
+          name: 'Fruits',
+          price: 3.50,
+          perPax: true
+        });
+      }
+      
+      // Check breakfast add-on (only if applicable)
+      if (document.getElementById('breakfast-addon').checked) {
+        selectedAddons.push({
+          name: 'Breakfast Kit',
+          price: 8.90,
+          perPax: true
+        });
+      }
+      
+      updateAddonsList();
+      calculateTotals();
+    }
+
+    // Update add-ons list display
+    function updateAddonsList() {
+      const addonsContainer = document.getElementById('addons-list');
+      
+      if (selectedAddons.length === 0) {
+        addonsContainer.innerHTML = '<div class="text-gray-500 text-sm">No add-ons selected</div>';
+        return;
+      }
+      
+      const pax = subscriptionOrder.pax || 2;
+      const weeks = subscriptionOrder.totalWeeks || 1;
+      
+      addonsContainer.innerHTML = selectedAddons.map(addon => {
+        const weeklyTotal = addon.price * pax;
+        const totalCost = weeklyTotal * weeks;
+        return `
+          <div class="bg-white p-2 rounded border border-gray-200">
+            <div class="text-sm font-medium">${addon.name}</div>
+            <div class="text-xs text-gray-600">$${addon.price}/pax × ${pax} pax = $${weeklyTotal.toFixed(2)}/week</div>
+            <div class="text-xs font-semibold text-makan-orange">Total: $${totalCost.toFixed(2)}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Calculate and update totals
+    function calculateTotals() {
+      const basePrice = parseFloat(subscriptionOrder.weeklyPrice || 0);
+      const weeks = subscriptionOrder.totalWeeks || 1;
+      const pax = subscriptionOrder.pax || 2;
+      
+      const subtotal = basePrice * weeks;
+      
+      // Calculate add-ons total
+      let addonsTotal = 0;
+      selectedAddons.forEach(addon => {
+        addonsTotal += addon.price * pax * weeks;
+      });
+      
+      const finalTotal = subtotal + addonsTotal;
+      
+      document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('addons-total').textContent = `$${addonsTotal.toFixed(2)}`;
+      document.getElementById('final-total').textContent = `$${finalTotal.toFixed(2)}`;
+    }
+
+    // Check if breakfast add-on should be available
+    function checkBreakfastAvailability() {
+      // For now, we'll assume it's available. In a real scenario, 
+      // you'd check if the plan includes dinner
+      const breakfastContainer = document.getElementById('breakfast-addon-container');
+      // This would be conditional based on plan type
+      // breakfastContainer.style.display = 'block'; // or 'none'
+    }
+
+    // Handle terms checkbox change
+    function handleTermsChange() {
+      const termsChecked = document.getElementById('terms-checkbox').checked;
+      const checkoutBtn = document.getElementById('checkout-btn');
+      
+      checkoutBtn.disabled = !termsChecked;
+    }
+
+    // Proceed to checkout
+    function proceedToCheckout() {
+      const termsChecked = document.getElementById('terms-checkbox').checked;
+      
+      if (!termsChecked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Terms & Conditions',
+          text: 'Please read and agree to the Terms & Conditions before proceeding.'
+        });
+        return;
+      }
+
+      // Collect form data
+      const formData = {
+        foodAllergies: document.getElementById('food-allergies').value,
+        foodPreferences: document.getElementById('food-preferences').value,
+        favoriteCuisines: Array.from(document.querySelectorAll('input[name="cuisines"]:checked')).map(cb => cb.value),
+        selectedAddons: selectedAddons,
+        termsAccepted: true
+      };
+
+      // Update subscription order with add-ons and preferences
+      const finalOrder = {
+        ...subscriptionOrder,
+        addons: selectedAddons,
+        preferences: formData,
+        finalTotal: document.getElementById('final-total').textContent
+      };
+
+      // Store the complete order
+      localStorage.setItem('finalSubscriptionOrder', JSON.stringify(finalOrder));
+
+      // Navigate to thank you page (or payment page if implemented)
+      window.location.href = 'thank-you.html';
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      loadSubscriptionData();
+      checkBreakfastAvailability();
+      
+      // Add event listener for terms checkbox
+      document.getElementById('terms-checkbox').addEventListener('change', handleTermsChange);
+      
+      // Add event listener for checkout button
+      document.getElementById('checkout-btn').addEventListener('click', proceedToCheckout);
+      
+      // Mobile menu functionality
+      const menuButton = document.querySelector('.lg\\:hidden button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenuButton = document.getElementById('close-menu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.remove('hidden');
+        });
+      }
+
+      if (closeMenuButton && mobileMenu) {
+        closeMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      }
+
+      if (mobileMenu) {
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

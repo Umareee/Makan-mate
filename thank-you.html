@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You — Makan Mate</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display','serif'],
+            'dm-sans': ['DM Sans','sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-in',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'bounce-in': 'bounceIn 1s ease-out',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 3s ease-in-out infinite',
+            'scale-in': 'scaleIn 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            bounceIn: {
+              '0%': { transform: 'scale(0.3)', opacity: '0' },
+              '50%': { transform: 'scale(1.05)' },
+              '70%': { transform: 'scale(0.9)' },
+              '100%': { transform: 'scale(1)', opacity: '1' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { font-family: "DM Sans", sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #FF5722 0%, #FF8A65 50%, #FFAB91 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .thank-you-text {
+      background: linear-gradient(45deg, #FF5722, #FF8A65);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .shape {
+      position: absolute;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .shape:nth-child(2) { top: 60%; right: 10%; animation-delay: 1s; }
+    .shape:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 2s; }
+    .shape:nth-child(4) { top: 40%; right: 30%; animation-delay: 3s; }
+    
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #FF5722;
+      animation: confetti-fall 3s linear infinite;
+    }
+    
+    @keyframes confetti-fall {
+      0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    
+    .btn-glow {
+      box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-glow:hover {
+      box-shadow: 0 0 30px rgba(255, 87, 34, 0.6);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen relative">
+
+  <!-- Floating Background Shapes -->
+  <div class="floating-shapes">
+    <div class="shape w-20 h-20 bg-white rounded-full opacity-10"></div>
+    <div class="shape w-16 h-16 bg-white rounded-lg opacity-10"></div>
+    <div class="shape w-12 h-12 bg-white rounded-full opacity-10"></div>
+    <div class="shape w-24 h-24 bg-white rounded-lg opacity-10"></div>
+  </div>
+
+  <!-- Confetti Elements -->
+  <div id="confetti-container" class="fixed inset-0 pointer-events-none z-10"></div>
+
+  <!-- Main Content -->
+  <div class="relative z-20 w-full max-w-2xl mx-auto px-4 py-8 min-h-screen flex flex-col justify-center">
+    <!-- Success Icon -->
+    <div class="text-center mb-8 animate-bounce-in">
+      <div class="inline-flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg mb-6">
+        <i class="fas fa-check text-4xl text-green-500 animate-scale-in" style="animation-delay: 0.5s;"></i>
+      </div>
+    </div>
+
+    <!-- Thank You Message -->
+    <div class="text-center mb-8 animate-fade-in" style="animation-delay: 0.3s;">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">
+        Thank You!
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 mb-4 animate-slide-up" style="animation-delay: 0.4s;">
+        Your order has been successfully placed
+      </p>
+      <p class="text-base text-white/80 animate-slide-up" style="animation-delay: 0.5s;">
+        We're excited to deliver delicious meals to your doorstep
+      </p>
+    </div>
+
+    <!-- Order Details Card -->
+    <div class="glass-effect rounded-2xl p-6 mb-6 animate-slide-up" style="animation-delay: 0.6s;">
+      <div class="flex items-center justify-center mb-4">
+        <i class="fas fa-utensils text-2xl text-white mr-3 animate-float"></i>
+        <h2 class="text-xl font-semibold text-white">Order Confirmed</h2>
+      </div>
+      
+      <div class="space-y-3 text-white/90 text-sm">
+        <div class="flex justify-between items-center">
+          <span>Order Status:</span>
+          <span class="font-semibold text-green-200">Confirmed</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Delivery Time:</span>
+          <span class="font-semibold">4:00 PM - 5:00 PM</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Preparation Time:</span>
+          <span class="font-semibold">Monday to Friday</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center animate-slide-up" style="animation-delay: 0.8s;">
+      <div class="glass-effect rounded-2xl p-6 mb-6">
+        <h3 class="text-xl font-semibold text-white mb-3">
+          Want Exclusive Offers?
+        </h3>
+        <p class="text-white/90 mb-4 text-sm">
+          Subscribe to our newsletter and updated with our latest offers!
+        </p>
+        
+        <!-- Email Subscription Form -->
+        <div class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto mb-4">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            class="flex-1 px-3 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm"
+            id="email-input"
+          >
+          <button 
+            onclick="subscribeToOffers()"
+            class="px-6 py-2 bg-white text-makan-orange font-semibold rounded-lg btn-glow hover:bg-gray-100 transition-all duration-300 text-sm"
+          >
+            Subscribe
+          </button>
+        </div>
+        
+        <!-- Social Media Follow -->
+        <div class="border-t border-white/20 pt-4">
+          <p class="text-white/80 mb-3 text-sm">Follow us for daily food inspiration</p>
+          <div class="flex justify-center space-x-3">
+            <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
+              <i class="fab fa-instagram text-white text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
+              <i class="fab fa-facebook text-white text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
+              <i class="fab fa-twitter text-white text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button 
+          onclick="window.location.href='weekly-meal-plan.html'"
+          class="px-6 py-2 bg-white text-makan-orange font-semibold rounded-lg btn-glow hover:bg-gray-100 transition-all duration-300 text-sm"
+        >
+          <i class="fas fa-calendar-alt mr-2"></i>
+          Order Again
+        </button>
+        <button 
+          onclick="window.location.href='index.html'"
+          class="px-6 py-2 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-makan-orange transition-all duration-300 text-sm"
+        >
+          <i class="fas fa-home mr-2"></i>
+          Back to Home
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Create confetti effect
+    function createConfetti() {
+      const confettiContainer = document.getElementById('confetti-container');
+      const colors = ['#FF5722', '#FF8A65', '#FFAB91', '#FFF', '#FFD54F', '#AED581'];
+      
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confettiContainer.appendChild(confetti);
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+    }
+
+    // Subscribe to offers function
+    function subscribeToOffers() {
+      const emailInput = document.getElementById('email-input');
+      const email = emailInput.value;
+      
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      // Simulate subscription
+      emailInput.value = '';
+      
+      // Show success message
+      const button = event.target;
+      const originalText = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-check mr-2"></i>Subscribed!';
+      button.classList.add('bg-green-500', 'text-white');
+      button.classList.remove('bg-white', 'text-makan-orange');
+      
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.classList.remove('bg-green-500', 'text-white');
+        button.classList.add('bg-white', 'text-makan-orange');
+      }, 3000);
+      
+      // Create celebration confetti
+      createConfetti();
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create initial confetti
+      setTimeout(createConfetti, 500);
+      
+      // Add entrance animations to elements
+      const elements = document.querySelectorAll('.animate-slide-up, .animate-fade-in, .animate-bounce-in');
+      elements.forEach((element, index) => {
+        element.style.animationDelay = (index * 0.1) + 's';
+      });
+    });
+
+    // Add floating animation to success icon
+    setInterval(() => {
+      const icon = document.querySelector('.fa-check');
+      if (icon) {
+        icon.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          icon.style.transform = 'scale(1)';
+        }, 200);
+      }
+    }, 3000);
+  </script>
+
+</body>
+</html>

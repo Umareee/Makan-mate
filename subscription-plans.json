@@ -1,0 +1,433 @@
+{
+  "plans": [
+    {
+      "id": "economy",
+      "name": "Economy Plan",
+      "price": "25.00",
+      "featured": false,
+      "items": [
+        "1 Soup + 2 Main dishes",
+        "1 Side dish"
+      ],
+      "choices": [
+        "Veg/Tofu",
+        "Egg dishes",
+        "Chicken/Duck"
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard Plan",
+      "price": "35.00",
+      "featured": true,
+      "items": [
+        "1 Soup + 3 Main dishes",
+        "2 Side dishes + 1 Dessert"
+      ],
+      "choices": [
+        "Veg/Tofu ",
+        "Egg dishes",
+        "Chicken/Duck ",
+        "Seafood "
+      ]
+    },
+    {
+      "id": "premium",
+      "name": "Premium Plan",
+      "price": "50.00",
+      "featured": false,
+      "items": [
+        "2 Soups + 4 Main dishes",
+        "3 Side dishes + 2 Desserts",
+        "1 Beverage"
+      ],
+      "choices": [
+        "Veg/Tofu options",
+        "Egg dishes",
+        "Chicken/Duck options",
+        "Seafood options"
+      ]
+    }
+  ],
+  "customization": {
+    "economy": {
+      "categories": [
+        {
+          "id": "soup",
+          "name": "Soup Selection",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "id": "vegetable-soup",
+              "name": "Vegetable Soup"
+            },
+            {
+              "id": "chicken-soup",
+              "name": "Chicken Soup"
+            },
+            {
+              "id": "mushroom-soup",
+              "name": "Mushroom Soup"
+            }
+          ]
+        },
+        {
+          "id": "main-dishes",
+          "name": "Main Dishes (Choose 2)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 2,
+          "options": [
+            {
+              "id": "stir-fry-tofu",
+              "name": "Stir-fried Tofu with Vegetables"
+            },
+            {
+              "id": "scrambled-eggs",
+              "name": "Scrambled Eggs with Herbs"
+            },
+            {
+              "id": "chicken-curry",
+              "name": "Chicken Curry"
+            },
+            {
+              "id": "duck-rice",
+              "name": "Duck Rice"
+            },
+            {
+              "id": "veggie-fried-rice",
+              "name": "Vegetable Fried Rice"
+            },
+            {
+              "id": "egg-noodles",
+              "name": "Egg Noodles"
+            }
+          ]
+        },
+        {
+          "id": "side-dish",
+          "name": "Side Dish",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "id": "steamed-broccoli",
+              "name": "Steamed Broccoli"
+            },
+            {
+              "id": "garlic-beans",
+              "name": "Garlic Green Beans"
+            },
+            {
+              "id": "pickled-vegetables",
+              "name": "Pickled Vegetables"
+            }
+          ]
+        }
+      ]
+    },
+    "standard": {
+      "categories": [
+        {
+          "id": "soup",
+          "name": "Soup Selection",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "id": "vegetable-soup",
+              "name": "Vegetable Soup"
+            },
+            {
+              "id": "chicken-soup",
+              "name": "Chicken Soup"
+            },
+            {
+              "id": "mushroom-soup",
+              "name": "Mushroom Soup"
+            },
+            {
+              "id": "seafood-soup",
+              "name": "Seafood Soup"
+            }
+          ]
+        },
+        {
+          "id": "main-dishes",
+          "name": "Main Dishes (Choose 3)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 3,
+          "options": [
+            {
+              "id": "stir-fry-tofu",
+              "name": "Stir-fried Tofu with Vegetables"
+            },
+            {
+              "id": "scrambled-eggs",
+              "name": "Scrambled Eggs with Herbs"
+            },
+            {
+              "id": "chicken-curry",
+              "name": "Chicken Curry"
+            },
+            {
+              "id": "duck-rice",
+              "name": "Duck Rice"
+            },
+            {
+              "id": "grilled-fish",
+              "name": "Grilled Fish"
+            },
+            {
+              "id": "veggie-fried-rice",
+              "name": "Vegetable Fried Rice"
+            },
+            {
+              "id": "egg-noodles",
+              "name": "Egg Noodles"
+            },
+            {
+              "id": "prawns-sambal",
+              "name": "Sambal Prawns"
+            }
+          ]
+        },
+        {
+          "id": "side-dishes",
+          "name": "Side Dishes (Choose 2)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 2,
+          "options": [
+            {
+              "id": "steamed-broccoli",
+              "name": "Steamed Broccoli"
+            },
+            {
+              "id": "garlic-beans",
+              "name": "Garlic Green Beans"
+            },
+            {
+              "id": "pickled-vegetables",
+              "name": "Pickled Vegetables"
+            },
+            {
+              "id": "corn-salad",
+              "name": "Corn Salad"
+            },
+            {
+              "id": "cucumber-salad",
+              "name": "Cucumber Salad"
+            }
+          ]
+        },
+        {
+          "id": "dessert",
+          "name": "Dessert Selection",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "id": "mango-pudding",
+              "name": "Mango Pudding"
+            },
+            {
+              "id": "chocolate-cake",
+              "name": "Chocolate Cake"
+            },
+            {
+              "id": "fruit-salad",
+              "name": "Fresh Fruit Salad"
+            }
+          ]
+        }
+      ]
+    },
+    "premium": {
+      "categories": [
+        {
+          "id": "soup",
+          "name": "Soup Selection (Choose 2)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 2,
+          "options": [
+            {
+              "id": "vegetable-soup",
+              "name": "Vegetable Soup"
+            },
+            {
+              "id": "chicken-soup",
+              "name": "Chicken Soup"
+            },
+            {
+              "id": "mushroom-soup",
+              "name": "Mushroom Soup"
+            },
+            {
+              "id": "seafood-soup",
+              "name": "Seafood Soup"
+            },
+            {
+              "id": "tom-yum",
+              "name": "Tom Yum Soup"
+            },
+            {
+              "id": "shark-fin-soup",
+              "name": "Shark Fin Soup (Premium)"
+            }
+          ]
+        },
+        {
+          "id": "main-dishes",
+          "name": "Main Dishes (Choose 4)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 4,
+          "options": [
+            {
+              "id": "stir-fry-tofu",
+              "name": "Stir-fried Tofu with Vegetables"
+            },
+            {
+              "id": "scrambled-eggs",
+              "name": "Scrambled Eggs with Herbs"
+            },
+            {
+              "id": "chicken-curry",
+              "name": "Chicken Curry"
+            },
+            {
+              "id": "duck-rice",
+              "name": "Duck Rice"
+            },
+            {
+              "id": "grilled-fish",
+              "name": "Grilled Fish"
+            },
+            {
+              "id": "veggie-fried-rice",
+              "name": "Vegetable Fried Rice"
+            },
+            {
+              "id": "egg-noodles",
+              "name": "Egg Noodles"
+            },
+            {
+              "id": "prawns-sambal",
+              "name": "Sambal Prawns"
+            },
+            {
+              "id": "lobster-thermidor",
+              "name": "Lobster Thermidor (Premium)"
+            },
+            {
+              "id": "wagyu-beef",
+              "name": "Wagyu Beef Steak (Premium)"
+            },
+            {
+              "id": "abalone-dish",
+              "name": "Braised Abalone (Premium)"
+            }
+          ]
+        },
+        {
+          "id": "side-dishes",
+          "name": "Side Dishes (Choose 3)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 3,
+          "options": [
+            {
+              "id": "steamed-broccoli",
+              "name": "Steamed Broccoli"
+            },
+            {
+              "id": "garlic-beans",
+              "name": "Garlic Green Beans"
+            },
+            {
+              "id": "pickled-vegetables",
+              "name": "Pickled Vegetables"
+            },
+            {
+              "id": "corn-salad",
+              "name": "Corn Salad"
+            },
+            {
+              "id": "cucumber-salad",
+              "name": "Cucumber Salad"
+            },
+            {
+              "id": "truffle-mushrooms",
+              "name": "Truffle Mushrooms (Premium)"
+            },
+            {
+              "id": "asparagus",
+              "name": "Grilled Asparagus"
+            }
+          ]
+        },
+        {
+          "id": "desserts",
+          "name": "Desserts (Choose 2)",
+          "type": "checkbox",
+          "required": true,
+          "max_selections": 2,
+          "options": [
+            {
+              "id": "mango-pudding",
+              "name": "Mango Pudding"
+            },
+            {
+              "id": "chocolate-cake",
+              "name": "Chocolate Cake"
+            },
+            {
+              "id": "fruit-salad",
+              "name": "Fresh Fruit Salad"
+            },
+            {
+              "id": "tiramisu",
+              "name": "Tiramisu"
+            },
+            {
+              "id": "cheesecake",
+              "name": "New York Cheesecake"
+            },
+            {
+              "id": "ice-cream",
+              "name": "Premium Ice Cream"
+            }
+          ]
+        },
+        {
+          "id": "beverage",
+          "name": "Beverage Selection",
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "id": "chinese-tea",
+              "name": "Chinese Tea"
+            },
+            {
+              "id": "fresh-juice",
+              "name": "Fresh Fruit Juice"
+            },
+            {
+              "id": "coffee",
+              "name": "Premium Coffee"
+            },
+            {
+              "id": "soft-drink",
+              "name": "Soft Drink"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customize Your Plan — Makan Mate</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'makan-orange': '#FF5722',
+            'makan-orange-hover': '#E64A19',
+            'custom-topbar': '#474747',
+            'custom-navbar': '#F9F9F7',
+            'custom-logo-bg': '#F9F9F71F',
+            'custom-text': '#2C2F24',
+            'panel-blue': '#eef7fb',
+            'panel-blue-border': '#e1eef4'
+          },
+          fontFamily: {
+            'playfair': ['Playfair Display','serif'],
+            'dm-sans': ['DM Sans','sans-serif']
+          },
+          screens: {
+      '3xl': '1596px',
+    },
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { font-family: "DM Sans", sans-serif; }
+    
+    .dotted-hr { 
+      border-bottom: 2px dotted #f4a18b; 
+      padding-bottom: 8px; 
+      display: inline-block; 
+    }
+    .cat-topline { 
+      height: 6px; 
+      border-bottom: 1px solid #e1edf3; 
+      margin-top: 6px; 
+    }
+    
+    .card-collapsed {
+      transition: all 0.3s ease;
+    }
+    
+    .image-container {
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .image-container.hidden {
+      max-height: 0;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .image-container.visible {
+      max-height: 200px;
+      opacity: 1;
+      margin: 1rem 0;
+      padding: 0;
+    }
+  </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-white font-dm-sans text-custom-text">
+
+  <!-- Header -->
+  <header class="bg-gray-800 text-white">
+    <!-- Top bar with contact info -->
+    <div class="bg-custom-topbar py-2 px-2">
+      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
+        <!-- Mobile Layout -->
+        <div class="flex sm:hidden justify-between items-start py-1">
+          <div class="flex items-center space-x-1">
+            <i class="fas fa-phone"></i>
+            <span>62642233 Ext 10-18</span>
+          </div>
+          <div class="flex flex-col items-end space-y-1">
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+            <div class="flex space-x-2">
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-twitter text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-facebook text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-instagram text-xs"></i>
+              </a>
+              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+                <i class="fab fa-github text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop Layout -->
+        <div class="hidden sm:flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-phone"></i>
+              <span>62642233 Ext 10-18</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>order@makanmate.com</span>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main navigation -->
+  <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
+        <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
+        <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
+        <a href="weekly-meal-plan.html" class="text-makan-orange font-medium">Weekly Plan</a>
+        <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Pages</a>
+        <a href="contact.html" class=" text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
+        <a href="order.html" class="bg-makan-orange border-2 border-makan-orange text-white px-6 py-2 rounded-full hover:bg-custom-navbar hover:text-black transition-colors font-medium">Order Now</a>
+      </div>
+      <div class="lg:hidden">
+        <button class="text-custom-text hover:text-makan-orange">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container mx-auto px-4 py-8 max-w-6xl">
+    <div class="mb-6">
+      <h2 class="text-2xl font-playfair font-bold mb-2" id="plan-title">Customize Your Plan</h2>
+      <p class="text-gray-600" id="plan-description">Select your preferred options for your weekly meal subscription.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- LEFT CONTENT -->
+      <section class="lg:col-span-9 lg:order-2">
+        <div id="customization-container" class="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3  gap-6">
+          <!-- Categories will be dynamically loaded from JSON -->
+          <div class="flex items-center justify-center p-8 text-gray-500">
+            <i class="fas fa-spinner fa-spin text-2xl mr-3"></i>
+            Loading customization options...
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <button id="add-to-cart-btn" class="bg-makan-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-makan-orange-hover transition-colors"><i class="fas fa-shopping-cart mr-2"></i>ADD TO CART</button>
+        </div>
+      </section>
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="lg:col-span-3 lg:order-1 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+        <div class="text-xs text-makan-orange font-semibold mb-3">
+          <span class="dotted-hr">SUBSCRIPTION DETAILS</span>
+        </div>
+        
+        <!-- Plan Summary -->
+        <div class="mb-6" id="plan-summary">
+          <h4 class="font-semibold text-custom-text mb-2">Selected Plan</h4>
+          <div class="bg-white p-3 rounded border border-gray-200">
+            <div class="text-sm font-semibold text-gray-800" id="selected-plan-name">Loading...</div>
+            <div class="text-lg font-bold text-makan-orange" id="selected-plan-price">$0.00</div>
+            <div class="text-xs text-gray-500">per week (excluding GST)</div>
+          </div>
+        </div>
+        
+        <!-- Delivery Schedule -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Delivery Schedule</h4>
+          <div class="space-y-2">
+            <label class="block text-sm text-gray-600 mb-1">Select Delivery Weeks (Weekdays Only):</label>
+            <div class="space-y-2" id="delivery-weeks-container">
+              <!-- Delivery weeks will be dynamically generated -->
+            </div>
+            <div class="bg-blue-50 p-3 rounded">
+              <div class="text-sm font-medium text-gray-700 mb-2">Selected Weeks:</div>
+              <div id="selected-weeks-display" class="text-sm text-gray-600">
+                No weeks selected
+              </div>
+              <div class="text-sm font-semibold text-gray-700 mt-2">
+                Total Weeks: <span id="total-weeks">0</span>
+              </div>
+            </div>
+            <div class="bg-yellow-50 p-2 rounded text-xs text-gray-600">
+              <p><strong>Delivery Time:</strong> Fixed between 4:00 PM - 5:00 PM</p>
+              <p><strong>Note:</strong> Delivery is Monday to Friday only</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Delivery Options -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Delivery Options</h4>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="delivery-option" value="delivery" class="text-makan-orange focus:ring-makan-orange" checked>
+              <span class="text-sm">Home Delivery (+$15 delivery fee)</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="delivery-option" value="pickup" class="text-makan-orange focus:ring-makan-orange">
+              <span class="text-sm">Self Pick-up (FOC) - Panseas HQ Address</span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Remarks Section -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Special Requests / Remarks</h4>
+          <textarea id="remarks" rows="3" class="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" placeholder="Enter any special requests, delivery date changes, or other remarks..."></textarea>
+          <div class="text-xs text-gray-600 mt-1">
+            <p>For skip/reschedule specific day delivery, please specify which date to change to which date.</p>
+          </div>
+        </div>
+        
+        <!-- Number of Pax -->
+        <div class="mb-6">
+          <h4 class="font-semibold text-custom-text mb-2">Number of Pax</h4>
+          <div class="flex gap-2 items-center">
+            <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changePax(-1)">▼</button>
+            <input class="flex-1 text-center border border-gray-300 h-8 rounded text-sm focus:outline-none focus:ring-2 focus:ring-makan-orange" type="number" value="2" min="2" id="pax-input">
+            <button class="w-8 h-8 bg-makan-orange rounded text-white text-sm font-bold hover:bg-makan-orange-hover transition-colors" onclick="changePax(1)">▲</button>
+          </div>
+          <p class="text-xs text-gray-500 mt-1">Minimum: 2 pax</p>
+        </div>
+        
+        
+        <!-- Cart Summary -->
+        <div class="border-t border-gray-300 pt-4">
+          <h4 class="font-semibold text-custom-text mb-2">Your Selection</h4>
+          <div id="cart-container">
+            <div class="text-gray-500 text-sm text-center py-4">
+              <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+              No items selected yet.
+            </div>
+          </div>
+          <div class="border-t border-gray-300 mt-4 pt-4" id="cart-total">
+            <!-- Add-ons and Fees Breakdown -->
+            <div id="breakdown-section" class="mb-3 text-xs text-gray-600"></div>
+            
+            <div class="text-sm font-semibold">TOTAL: <span id="total-amount" class="text-lg">$0.00</span></div>
+            <div class="text-xs text-gray-500 mt-1">(per week, excluding GST)</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">About Us</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Our Team</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Events</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Corporate</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="mx-0 sm:mx-4">
+          <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Order Now</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Locations</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Us On Instagram -->
+        <div>
+          <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-steve-3789885 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/eiliv-aceron-d5PbKQJ0Lu8-unsplash 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-ella-olsson-1640772 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img src="/images/pexels-ash-376464 1.png" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          Copyright © 2025 Makan Mate. All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+    <div class="bg-white w-64 h-full p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
+        <button class="text-gray-600" id="close-menu">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+      <nav class="space-y-4">
+        <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
+        <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+        <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
+        <a href="weekly-meal-plan.html" class="block text-makan-orange py-2 border-b">Weekly Plan</a>
+        <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+        <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
+        <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- JS -->
+<script>
+    // Global variables
+    let subscriptionData = {};
+    let selectedPlan = null;
+    let cart = [];
+    let extraItems = []; // Track extra items with topup charges
+    let totalWeeks = 0;
+
+    // Load subscription data and initialize page
+    async function loadSubscriptionData() {
+      try {
+        // Get selected plan from localStorage or URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const planId = urlParams.get('plan');
+        
+        selectedPlan = JSON.parse(localStorage.getItem('selectedSubscriptionPlan') || 'null');
+        
+        if (!selectedPlan && planId) {
+          // If no plan in localStorage but planId in URL, redirect back to plans page
+          Swal.fire({ 
+            icon: 'error', 
+            title: 'No Plan Selected', 
+            text: 'Please select a subscription plan first.' 
+          }).then(() => {
+            window.location.href = 'weekly-meal-plan.html';
+          });
+          return;
+        }
+
+        // Fetch subscription plans data
+        const response = await fetch('/subscription-plans.json');
+        if (!response.ok) {
+          throw new Error('Failed to load subscription data');
+        }
+        
+        subscriptionData = await response.json();
+        
+        // Find the customization data for this plan
+        const planCustomization = subscriptionData.customization[selectedPlan.id];
+        
+        if (!planCustomization) {
+          throw new Error(`No customization data found for ${selectedPlan.id}`);
+        }
+        
+        // Update page title and description
+        document.getElementById('plan-title').textContent = `Customize Your ${selectedPlan.name} Plan`;
+        document.getElementById('plan-description').textContent = `Select your preferences for your ${selectedPlan.name.toLowerCase()} subscription.`;
+        
+        // Update plan summary
+        document.getElementById('selected-plan-name').textContent = selectedPlan.name;
+        document.getElementById('selected-plan-price').textContent = `$${selectedPlan.price}`;
+        
+        // Build the customization interface
+        buildCustomizationInterface(planCustomization);
+        
+      } catch (error) {
+        console.error('Error loading subscription data:', error);
+        document.getElementById('customization-container').innerHTML = `
+          <div class="col-span-full flex flex-col items-center justify-center p-8 text-red-500">
+            <i class="fas fa-exclamation-triangle text-3xl mb-3"></i>
+            <p class="text-lg font-semibold mb-2">Error Loading Customization Options</p>
+            <p class="text-sm text-gray-600 mb-4">Unable to load customization data for this plan.</p>
+            <button onclick="window.location.href='weekly-meal-plan.html'" class="bg-makan-orange text-white px-4 py-2 rounded-lg hover:bg-makan-orange-hover transition-colors">
+              Back to Plans
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    // Build the customization interface from loaded data
+    function buildCustomizationInterface(data) {
+      const container = document.getElementById('customization-container');
+      container.innerHTML = '';
+      
+      data.categories.forEach(category => {
+        const categoryCard = createCategoryCard(category);
+        container.appendChild(categoryCard);
+      });
+      
+      updateCartDisplay();
+    }
+
+    // Create a category card
+    function createCategoryCard(category) {
+      const card = document.createElement('div');
+      card.className = 'bg-blue-50 border border-blue-200 rounded-lg p-4 card-collapsed';
+      
+      const titleSection = document.createElement('div');
+      titleSection.innerHTML = `
+        <div class="font-semibold text-gray-800 uppercase text-base mb-1">${category.name}</div>
+        <div class="text-xs text-gray-600 mb-2">
+          ${category.required ? 'Required selection' : 'Optional'}
+        </div>
+        <div class="cat-topline"></div>
+      `;
+      card.appendChild(titleSection);
+      
+      const optionsSection = document.createElement('div');
+      optionsSection.className = 'mt-4 space-y-2';
+      optionsSection.setAttribute('data-category-id', category.id);
+      optionsSection.setAttribute('data-category-type', category.type);
+      optionsSection.setAttribute('data-required', category.required);
+      optionsSection.setAttribute('data-max-selections', category.max_selections || 999);
+      
+      if (category.type === 'radio') {
+        // Single selection (radio buttons)
+        category.options.forEach(option => {
+          const optionElement = createRadioOption(category.id, option);
+          optionsSection.appendChild(optionElement);
+        });
+      } else {
+        // Multiple selection (checkboxes)
+        category.options.forEach(option => {
+          const optionElement = createCheckboxOption(category.id, option);
+          optionsSection.appendChild(optionElement);
+        });
+      }
+      
+      card.appendChild(optionsSection);
+      return card;
+    }
+
+    // Create radio option (for single selection categories)
+    function createRadioOption(categoryId, option) {
+      const label = document.createElement('label');
+      label.className = 'flex items-center gap-2 cursor-pointer';
+      
+      label.innerHTML = `
+        <input type="radio" name="${categoryId}" value="${option.id}" class="text-makan-orange focus:ring-makan-orange" onchange="handleSelection(this, '${categoryId}')">
+        <span class="text-sm">${option.name}</span>
+      `;
+      
+      return label;
+    }
+
+    // Create checkbox option (for multiple selection categories)
+    function createCheckboxOption(categoryId, option) {
+      const label = document.createElement('label');
+      label.className = 'flex items-center gap-2 cursor-pointer flex-wrap';
+      
+      label.innerHTML = `
+        <input type="checkbox" name="${categoryId}" value="${option.id}" class="text-makan-orange focus:ring-makan-orange shrink-0" onchange="handleCheckboxChange(this, '${categoryId}')">
+        <span class="text-sm flex-1 min-w-0">${option.name}</span>
+      `;
+      
+      return label;
+    }
+
+    // Handle radio button selection
+    function handleSelection(radioButton, category) {
+      updateCartDisplay();
+    }
+
+    // Handle checkbox selection with limit logic
+    function handleCheckboxChange(checkbox, category) {
+      console.log('handleCheckboxChange called:', category, checkbox.checked);
+      
+      const optionsSection = checkbox.closest('[data-category-id]');
+      const maxSelections = parseInt(optionsSection.getAttribute('data-max-selections') || 999);
+      
+      console.log('Max selections for', category, ':', maxSelections);
+      
+      if (checkbox.checked) {
+        // Count checked items in this category
+        const categoryChecked = optionsSection.querySelectorAll('input[type="checkbox"]:checked').length;
+        
+        console.log('Current checked count:', categoryChecked, 'Max allowed:', maxSelections);
+        
+        if (categoryChecked > maxSelections) {
+          console.log('LIMIT EXCEEDED! Showing popup...');
+          // Temporarily uncheck to show popup
+          checkbox.checked = false;
+          
+          const categoryName = category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+          console.log('About to show SweetAlert for:', categoryName);
+          Swal.fire({
+            icon: 'info',
+            title: 'Selection Limit Reached',
+            text: `You can only select ${maxSelections} item${maxSelections === 1 ? '' : 's'} from ${categoryName}. Additional items will incur extra charges of $3 each.`,
+            showCancelButton: true,
+            confirmButtonText: 'Add as Extra (+$3)',
+            cancelButtonText: 'Cancel',
+            confirmButtonColor: '#FF5722'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Check the box again and add as extra item
+              checkbox.checked = true;
+              addExtraItem(category, checkbox.value, checkbox.nextElementSibling.textContent.trim());
+              
+              // Show confirmation
+              Swal.fire({
+                icon: 'success',
+                title: 'Extra Item Added',
+                text: `"${checkbox.nextElementSibling.textContent.trim()}" added as extra item (+$3)`,
+                timer: 2000,
+                showConfirmButton: false
+              });
+            }
+          });
+          return;
+        } else {
+          // Within limit, remove from extra items if it was there
+          removeExtraItem(category, checkbox.value);
+        }
+      } else {
+        // Unchecked, remove from extra items if it was there
+        removeExtraItem(category, checkbox.value);
+      }
+      
+      updateCartDisplay();
+    }
+
+    // Add extra item with surcharge
+    function addExtraItem(category, itemId, itemName) {
+      const existingExtra = extraItems.find(item => item.category === category && item.itemId === itemId);
+      if (!existingExtra) {
+        extraItems.push({
+          category: category,
+          itemId: itemId,
+          name: itemName,
+          price: 3 // $3 per extra item
+        });
+        console.log('Added extra item:', itemName, extraItems); // Debug log
+      }
+      updateCartDisplay();
+    }
+
+    // Remove extra item
+    function removeExtraItem(category, itemId) {
+      const index = extraItems.findIndex(item => item.category === category && item.itemId === itemId);
+      if (index > -1) {
+        extraItems.splice(index, 1);
+        console.log('Removed extra item:', extraItems); // Debug log
+      }
+    }
+
+    // Generate delivery weeks based on current date
+    function generateDeliveryWeeks(weeksToShow = 8) {
+      const container = document.getElementById('delivery-weeks-container');
+      const today = new Date();
+      const weeks = [];
+      
+      // Start from next Monday (or today if it's Monday)
+      let startDate = new Date(today);
+      const daysUntilMonday = (8 - startDate.getDay()) % 7;
+      if (daysUntilMonday > 0) {
+        startDate.setDate(startDate.getDate() + daysUntilMonday);
+      }
+      
+      // Generate weeks starting from next Monday
+      for (let i = 0; i < weeksToShow; i++) {
+        const weekStart = new Date(startDate);
+        weekStart.setDate(startDate.getDate() + (i * 7));
+        
+        const weekEnd = new Date(weekStart);
+        weekEnd.setDate(weekStart.getDate() + 4); // Friday
+        
+        const startStr = weekStart.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        const endStr = weekEnd.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        
+        weeks.push({
+          value: `week${i + 1}`,
+          name: `${startStr} - ${endStr}`,
+          display: `${startStr} - ${endStr} (Monday to Friday)`
+        });
+      }
+      
+      // Clear container and add new weeks
+      container.innerHTML = '';
+      weeks.forEach(week => {
+        const label = document.createElement('label');
+        label.className = 'flex items-center gap-2';
+        label.innerHTML = `
+          <input type="checkbox" name="delivery-weeks" value="${week.value}" data-week-name="${week.name}" class="text-makan-orange focus:ring-makan-orange">
+          <span class="text-sm">${week.display}</span>
+        `;
+        container.appendChild(label);
+      });
+      
+      // Add "Show More Weeks" button if showing default 8 weeks
+      if (weeksToShow === 8) {
+        const showMoreButton = document.createElement('div');
+        showMoreButton.className = 'mt-3 text-center';
+        showMoreButton.innerHTML = `
+          <button onclick="showMoreWeeks()" class="text-makan-orange hover:text-makan-orange-hover text-sm font-medium underline">
+            Show More Weeks (${weeksToShow + 8} more available)
+          </button>
+        `;
+        container.appendChild(showMoreButton);
+      } else if (weeksToShow > 8) {
+        // Add "Show Less" button if showing more than 8 weeks
+        const showLessButton = document.createElement('div');
+        showLessButton.className = 'mt-3 text-center';
+        showLessButton.innerHTML = `
+          <button onclick="showLessWeeks()" class="text-gray-600 hover:text-gray-800 text-sm font-medium underline">
+            Show Less Weeks
+          </button>
+        `;
+        container.appendChild(showLessButton);
+      }
+      
+      // Re-attach event listeners
+      document.querySelectorAll('input[name="delivery-weeks"]').forEach(checkbox => {
+        checkbox.addEventListener('change', updateDeliveryWeeksDisplay);
+      });
+    }
+
+    // Show more weeks function
+    function showMoreWeeks() {
+      generateDeliveryWeeks(16); // Show 16 weeks total
+    }
+
+    // Show less weeks function  
+    function showLessWeeks() {
+      generateDeliveryWeeks(8); // Back to 8 weeks
+    }
+
+    // Update delivery weeks display
+    function updateDeliveryWeeksDisplay() {
+      const selectedWeeks = document.querySelectorAll('input[name="delivery-weeks"]:checked');
+      const displayDiv = document.getElementById('selected-weeks-display');
+      const totalWeeksSpan = document.getElementById('total-weeks');
+      
+      totalWeeks = selectedWeeks.length;
+      
+      if (selectedWeeks.length === 0) {
+        displayDiv.textContent = 'No weeks selected';
+        totalWeeksSpan.textContent = '0';
+      } else {
+        let weeksList = [];
+        selectedWeeks.forEach(week => {
+          weeksList.push(week.getAttribute('data-week-name'));
+        });
+        displayDiv.innerHTML = weeksList.map(week => `<div>• ${week}</div>`).join('');
+        totalWeeksSpan.textContent = totalWeeks.toString();
+      }
+      
+      updateCartDisplay();
+    }
+
+    // Change pax (renamed from changeWeeks)
+    function changePax(change) {
+      const paxInput = document.getElementById('pax-input');
+      const newPax = Math.max(2, Number(paxInput.value) + change);
+      paxInput.value = newPax;
+      updateCartDisplay();
+    }
+
+
+    // Update cart display
+    function updateCartDisplay() {
+      const cartContainer = document.getElementById('cart-container');
+      const totalAmountEl = document.getElementById('total-amount');
+      const breakdownSection = document.getElementById('breakdown-section');
+
+      // Get number of pax
+      const paxInput = document.getElementById('pax-input');
+      const pax = parseInt(paxInput?.value || 2);
+
+      // Calculate base price per week = plan price × pax
+      const basePricePerWeek = parseFloat(selectedPlan.price) * pax;
+      
+      // Calculate delivery fee per week if delivery option is selected
+      const deliveryOption = document.querySelector('input[name="delivery-option"]:checked')?.value;
+      const deliveryFeePerWeek = deliveryOption === 'delivery' ? 15 : 0;
+      
+      // Calculate extra items cost per week
+      const extraItemsCostPerWeek = extraItems.reduce((total, item) => total + item.price, 0);
+      
+      // Total per week
+      const totalPerWeek = basePricePerWeek + deliveryFeePerWeek + extraItemsCostPerWeek;
+      
+      // Total for all weeks
+      const grandTotal = totalPerWeek * totalWeeks;
+      
+      // Update breakdown
+      let breakdownHtml = '';
+      if (extraItems.length > 0 || deliveryFeePerWeek > 0 || totalWeeks > 1) {
+        breakdownHtml += '<div class="text-xs font-medium text-gray-700 mb-2">Cost Breakdown:</div>';
+        
+        // Base cost breakdown
+        breakdownHtml += `<div class="flex justify-between mb-1">
+          <span>• Base plan (${pax} pax × $${selectedPlan.price})</span>
+          <span>$${basePricePerWeek.toFixed(2)}/week</span>
+        </div>`;
+        
+        // Extra items
+        if (extraItems.length > 0) {
+          const extraItemsTotal = extraItems.length * 3;
+          breakdownHtml += `<div class="flex justify-between mb-1">
+            <span>• Extra items (${extraItems.length} × $3)</span>
+            <span>$${extraItemsTotal.toFixed(2)}/week</span>
+          </div>`;
+          
+          // Show individual extra items
+          extraItems.forEach(item => {
+            breakdownHtml += `<div class="flex justify-between mb-1 text-xs text-gray-500 ml-4">
+              <span>- ${item.name}</span>
+              <span>+$3</span>
+            </div>`;
+          });
+        }
+        
+        // Delivery fee
+        if (deliveryFeePerWeek > 0) {
+          breakdownHtml += `<div class="flex justify-between mb-1">
+            <span>• Delivery Fee</span>
+            <span>$${deliveryFeePerWeek.toFixed(2)}/week</span>
+          </div>`;
+        }
+        
+        // Weekly total
+        if (totalWeeks > 0) {
+          breakdownHtml += `<div class="flex justify-between font-semibold border-t pt-1 mt-1">
+            <span>• Weekly Total × ${totalWeeks} weeks</span>
+            <span>$${grandTotal.toFixed(2)}</span>
+          </div>`;
+        }
+      }
+      breakdownSection.innerHTML = breakdownHtml;
+
+      // Collect all selected items
+      let selectedItems = [];
+
+      // Radio selections
+      document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+        const categoryName = radio.name;
+        const optionName = radio.nextElementSibling.textContent;
+        selectedItems.push({
+          name: optionName,
+          category: categoryName
+        });
+      });
+
+      // Checkbox selections
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        const categoryName = checkbox.name;
+        const optionName = checkbox.nextElementSibling.textContent;
+        selectedItems.push({
+          name: optionName,
+          category: categoryName
+        });
+      });
+
+      // Build cart UI
+      if (selectedItems.length > 0) {
+        cartContainer.innerHTML = selectedItems.map(item => `
+          <div class="bg-white p-3 rounded border border-gray-200 mb-2">
+            <div class="text-sm font-semibold text-gray-800">${item.name}</div>
+            <div class="text-xs text-gray-500">${item.category}</div>
+          </div>
+        `).join('');
+      } else {
+        cartContainer.innerHTML = `
+          <div class="text-gray-500 text-sm text-center py-4">
+            <i class="fas fa-shopping-cart text-xl mb-2"></i><br>
+            No preferences selected yet.
+          </div>
+        `;
+      }
+
+      // Update total
+      totalAmountEl.textContent = `$${grandTotal.toFixed(2)}`;
+    }
+
+    // Initialize page
+    document.addEventListener("DOMContentLoaded", () => {
+      loadSubscriptionData();
+      
+      // Generate delivery weeks based on current date
+      generateDeliveryWeeks();
+      
+      // Add event listeners for delivery option changes
+      document.querySelectorAll('input[name="delivery-option"]').forEach(radio => {
+        radio.addEventListener('change', updateCartDisplay);
+      });
+      
+      // Add to cart button functionality
+      document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+        // Validate delivery weeks selection
+        const selectedWeeks = document.querySelectorAll('input[name="delivery-weeks"]:checked');
+        
+        if (selectedWeeks.length === 0) {
+          Swal.fire({ 
+            icon: 'error', 
+            title: 'Missing Information', 
+            text: 'Please select at least one delivery week.' 
+          });
+          return;
+        }
+
+        // Validate required selections
+        const requiredCategories = document.querySelectorAll('[data-required="true"]');
+        let missingSelections = [];
+        
+        requiredCategories.forEach(category => {
+          const categoryId = category.getAttribute('data-category-id');
+          const categoryType = category.getAttribute('data-category-type');
+          
+          let hasSelection = false;
+          if (categoryType === 'radio') {
+            hasSelection = category.querySelector('input[type="radio"]:checked') !== null;
+          } else {
+            hasSelection = category.querySelector('input[type="checkbox"]:checked') !== null;
+          }
+          
+          if (!hasSelection) {
+            const categoryName = category.parentElement.querySelector('.font-semibold').textContent;
+            missingSelections.push(categoryName);
+          }
+        });
+        
+        if (missingSelections.length > 0) {
+          Swal.fire({ 
+            icon: 'warning', 
+            title: 'Required Selections Missing', 
+            text: `Please make selections for: ${missingSelections.join(', ')}` 
+          });
+          return;
+        }
+
+        // Calculate total and create subscription order
+        const paxInput = document.getElementById('pax-input');
+        const pax = parseInt(paxInput.value);
+        const basePrice = parseFloat(selectedPlan.price);
+        const deliveryOption = document.querySelector('input[name="delivery-option"]:checked')?.value;
+        const deliveryFee = deliveryOption === 'delivery' ? 15 : 0;
+        const remarks = document.getElementById('remarks').value;
+        
+        const basePricePerWeek = basePrice * pax;
+        const extraItemsCostPerWeek = extraItems.reduce((total, item) => total + item.price, 0);
+        const weeklyPrice = basePricePerWeek + deliveryFee + extraItemsCostPerWeek;
+        const totalPrice = weeklyPrice * totalWeeks;
+
+        // Collect selected delivery weeks
+        let deliveryWeeks = [];
+        selectedWeeks.forEach(week => {
+          deliveryWeeks.push({
+            value: week.value,
+            name: week.getAttribute('data-week-name')
+          });
+        });
+
+        // Collect selections
+        let selections = {};
+        document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked').forEach(input => {
+          // Skip delivery weeks and delivery options
+          if (input.name === 'delivery-weeks' || input.name === 'delivery-option') return;
+          
+          const category = input.name;
+          const value = input.nextElementSibling.textContent;
+          
+          if (!selections[category]) {
+            selections[category] = [];
+          }
+          selections[category].push(value);
+        });
+
+        const subscriptionOrder = {
+          id: Date.now(),
+          type: 'subscription',
+          plan: selectedPlan,
+          pax: pax,
+          deliveryWeeks: deliveryWeeks,
+          totalWeeks: totalWeeks,
+          deliveryOption: deliveryOption,
+          deliveryTime: '4:00 PM - 5:00 PM',
+          selections: selections,
+          extraItems: extraItems,
+          remarks: remarks,
+          weeklyPrice: weeklyPrice,
+          totalPrice: totalPrice
+        };
+        
+        // Store current subscription order for add-ons page
+        localStorage.setItem('currentSubscriptionOrder', JSON.stringify(subscriptionOrder));
+        
+        // Navigate to add-ons page
+        window.location.href = 'add-ons.html';
+      });
+    });
+    
+    // Multi-order cart functions
+    function getMultiOrderCart() {
+      try {
+        const stored = localStorage.getItem('multiOrderCart');
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        console.warn('Error parsing multi-order cart', e);
+        return [];
+      }
+    }
+
+    function saveMultiOrderCart(cart) {
+      localStorage.setItem('multiOrderCart', JSON.stringify(cart));
+    }
+
+    function addOrderToMultiCart(order) {
+      const cart = getMultiOrderCart();
+      cart.push(order);
+      saveMultiOrderCart(cart);
+    }
+  </script>
+
+</body>
+</html>

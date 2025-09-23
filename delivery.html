@@ -264,6 +264,13 @@
                 <div id="discount-amount" class="text-md">-$0.00</div>
               </div>
             </div>
+            <!-- High-rise Surcharge -->
+            <div id="highrise-surcharge" class="hidden">
+              <div class="flex justify-between items-center text-makan-orange">
+                <div class="text-md">High-rise Surcharge:</div>
+                <div id="surcharge-amount" class="text-md">+$5.00</div>
+              </div>
+            </div>
             <div class="flex justify-between items-center">
               <div class="text-md">GST (9%):</div>
               <div id="order-gst" class="text-md">$0.00</div>
@@ -307,7 +314,80 @@
             </div>
           </div>
 
-          <!-- Discount Code / Gift Card -->
+         
+
+          <!-- Contact Information -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-user mr-2 text-makan-orange"></i>
+              Contact Information
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Name -->
+              <div class="sm:col-span-2">
+                <label class="block text-sm font-medium mb-1">Name (surname, last name)*</label>
+                <input type="text" id="full-name" placeholder="Enter your full name" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              
+              <!-- Mobile Number -->
+              <div>
+                <label class="block text-sm font-medium mb-1">Mobile Number*</label>
+                <input type="tel" id="mobile" placeholder="Enter your mobile number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+              
+              <!-- Email -->
+              <div>
+                <label class="block text-sm font-medium mb-1">Email*</label>
+                <input type="email" id="email" placeholder="Enter your email address" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-truck mr-2 text-makan-orange"></i>
+              Delivery Address*
+            </h3>
+            <div class="space-y-4">
+              <!-- Address Field -->
+              <div>
+                <label class="block text-sm font-medium mb-1">Delivery Address*</label>
+                <textarea id="delivery-address" rows="2" placeholder="Enter your full delivery address" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required></textarea>
+              </div>
+              
+              <!-- Property Type -->
+              <div>
+                <label class="block text-sm font-medium mb-2">Property Type*</label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="property-type" value="landed" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
+                    <span>Landed</span>
+                  </label>
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="property-type" value="high-rise" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
+                    <span>High-rise (surcharge applies automatically)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <!-- Special Remarks -->
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-clipboard-list mr-2 text-makan-orange"></i>
+              Special Remarks (if any):
+            </h3>
+            <textarea id="remarks" maxlength="200" rows="3" placeholder="Any special instructions or remarks" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"></textarea>
+            <div class="text-xs text-gray-500 mt-1 text-right">
+              <span id="char-count">0</span>/200
+            </div>
+          </div>
+
+           <!-- Discount Code / Gift Card -->
           <div class="p-6 bg-white border border-gray-200 rounded-lg">
             <h3 class="text-xl font-semibold mb-4 flex items-center">
               <i class="fas fa-tag mr-2 text-makan-orange"></i>
@@ -326,148 +406,10 @@
             </div>
           </div>
 
-          <!-- Personal Information -->
-          <div class="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-user mr-2 text-makan-orange"></i>
-              Personal Information
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div>
-                <label class="block text-sm font-medium mb-1">Salutation*</label>
-                <select id="salutation" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-                  <option value="">Select...</option>
-                  <option value="Mr.">Mr.</option>
-                  <option value="Mrs.">Mrs.</option>
-                  <option value="Ms.">Ms.</option>
-                  <option value="Mdm.">Mdm.</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Surname*</label>
-                <input type="text" id="surname" placeholder="Your Surname" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Given Name*</label>
-                <input type="text" id="givenName" placeholder="Your Given Name" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-            </div>
-            <label class="flex items-center space-x-3 mt-4 cursor-pointer">
-              <input type="checkbox" id="corporate-order" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
-              <span class="font-medium">Corporate Order</span>
-            </label>
-          </div>
-
-          <!-- Contact Information -->
-          <div class="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-phone mr-2 text-makan-orange"></i>
-              Contact Information
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium mb-1">Email Address*</label>
-                <input type="email" id="email" placeholder="your@email.com" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Mobile Number*</label>
-                <input type="tel" id="mobile" maxlength="8" placeholder="Mobile" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Alternative Number*</label>
-                <input type="tel" id="alternative" maxlength="8" placeholder="Home" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-            </div>
-          </div>
-
-          <!-- Billing Address -->
-          <div class="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-home mr-2 text-makan-orange"></i>
-              Billing Address
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium mb-1">Zip Code*</label>
-                <input type="text" id="billing-zipcode" maxlength="6" placeholder="Zip Code" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Unit No.</label>
-                <input type="text" id="billing-unit" placeholder="Unit No." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent">
-              </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-              <div>
-                <label class="block text-sm font-medium mb-1">Block/Home No*</label>
-                <input type="text" id="billing-block" class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100" readonly>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Street Name*</label>
-                <input type="text" id="billing-street" class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100" readonly>
-              </div>
-            </div>
-            <label class="flex items-center space-x-3 mt-4 cursor-pointer">
-              <input type="checkbox" id="landed-house" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
-              <span class="font-medium">Landed House</span>
-            </label>
-          </div>
-
-          <!-- Delivery Address -->
-          <div class="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-truck mr-2 text-makan-orange"></i>
-              Delivery Address
-            </h3>
-            <label class="flex items-center space-x-3 mb-4 cursor-pointer">
-              <input type="checkbox" id="same-address" class="w-5 h-5 text-makan-orange border-gray-300 rounded focus:ring-2 focus:ring-makan-orange">
-              <span class="font-medium">Same as Billing Address</span>
-            </label>
-            <div id="delivery-address-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium mb-1">Zip Code*</label>
-                <input type="text" id="delivery-zipcode" maxlength="6" placeholder="Zip Code" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Unit No*</label>
-                <input type="text" id="delivery-unit" placeholder="Unit No." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent" required>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional Information -->
-          <div class="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-clipboard-list mr-2 text-makan-orange"></i>
-              Additional Information
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <p class="text-sm font-medium mb-3">Is this your first order?*</p>
-                <div class="flex space-x-6">
-                  <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="firstOrder" value="yes" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
-                    <span>Yes</span>
-                  </label>
-                  <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="firstOrder" value="no" class="w-4 h-4 text-makan-orange focus:ring-2 focus:ring-makan-orange" required>
-                    <span>No</span>
-                  </label>
-                </div>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Special Instructions</label>
-                <textarea id="remarks" maxlength="200" rows="3" placeholder="Any special requests or dietary requirements..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-makan-orange focus:border-transparent"></textarea>
-                <div class="text-xs text-gray-500 mt-1 text-right">
-                  <span id="char-count">0</span>/200
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Submit -->
           <div class="pt-6">
             <button type="submit" class="bg-makan-orange hover:bg-makan-orange-hover text-white px-8 py-3 rounded-lg shadow-md transition-colors font-bold text-lg">
-              Next <i class="fa fa-angle-double-right ml-2"></i>
+              Proceed to Payment <i class="fa fa-angle-double-right ml-2"></i>
             </button>
           </div>
         </form>
@@ -508,6 +450,8 @@
 <script>
 /* Global variables for discount tracking */
 let appliedDiscount = null;
+let highriseSurcharge = 5.00; // $5 surcharge for high-rise
+let isHighrise = false;
 
 /* =========  DOM READY  ========= */
 document.addEventListener('DOMContentLoaded', () => {
@@ -611,9 +555,13 @@ function loadOrderSummary() {
     discountAmount = Math.min(discountAmount, grandTotal);
   }
   
+  // Add high-rise surcharge if applicable
+  let surchargeAmount = isHighrise ? highriseSurcharge : 0;
+  
   const discountedSubtotal = grandTotal - discountAmount;
-  const gstAmount = discountedSubtotal * 0.09;
-  const totalWithGst = discountedSubtotal + gstAmount;
+  const subtotalWithSurcharge = discountedSubtotal + surchargeAmount;
+  const gstAmount = subtotalWithSurcharge * 0.09;
+  const totalWithGst = subtotalWithSurcharge + gstAmount;
   
   // Update display
   $subtotal.textContent = `$${grandTotal.toFixed(2)}`;
