@@ -440,12 +440,12 @@
       
       return mealData;
     }
-document.addEventListener('DOMContentLoaded', async () => {
-  await loadCookingInstructions();   // 1. get the data
-  populatePage();                    // 2. now render everything
-});
     // Populate page with meal data
-    function populatePage() {
+    async function populatePage() {
+      // Ensure cooking instructions are loaded first
+      if (!cookingStepsData || Object.keys(cookingStepsData).length === 0) {
+        await loadCookingInstructions();
+      }
       const meal = loadMealData();
       
       // Update page content
@@ -502,11 +502,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Populate cooking steps
     function populateCookingSteps(mealSlug) {
-      const steps = cookingStepsData[mealSlug] || cookingStepsData['default'];
+      if (!cookingStepsData) {
+        return;
+      }
+      
+      const mealData = cookingStepsData[mealSlug] || cookingStepsData['default'];
+      if (!mealData) {
+        return;
+      }
+      
+      const steps = mealData.steps || mealData;
       const stepsContainer = document.getElementById('cooking-steps');
       
+      if (!steps || !Array.isArray(steps)) {
+        return;
+      }
+      
       stepsContainer.innerHTML = steps.map(step => `
-        <div class="step-item border-l-4 border-makan-orange pl-6 pb-6">
+        <div class="step-item border-l-4 border-makan-orange pl-6 pb-6 is-visible">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-8 h-8 bg-makan-orange text-white rounded-full flex items-center justify-center font-bold text-sm">
               ${step.step}
@@ -568,8 +581,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Initialize page
-    document.addEventListener('DOMContentLoaded', () => {
-      populatePage();
+    document.addEventListener('DOMContentLoaded', async () => {
+      await populatePage();
     });
   </script>
 </body>

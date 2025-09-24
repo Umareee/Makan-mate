@@ -344,10 +344,11 @@
     // Create a plan card
     function createPlanCard(plan) {
       const card = document.createElement('div');
-      card.className = `plan-card bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 ${plan.featured ? 'featured-plan' : ''}`;
+      const featuredStyles = plan.featured ? 'transform scale-105 -translate-y-1 z-10 shadow-xl' : '';
+      card.className = `plan-card bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 flex flex-col h-full ${plan.featured ? 'featured-plan' : ''} ${featuredStyles}`;
       
       card.innerHTML = `
-        ${plan.featured ? '<div class="text-center mb-4"><span class="bg-makan-orange text-white px-3 py-1 rounded-full text-sm font-semibold">Most Popular</span></div>' : ''}
+        ${plan.featured ? '<div class="text-center mb-4"><span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Most Popular</span></div>' : ''}
         
         <div class="text-center mb-6">
           <h3 class="text-2xl font-playfair font-bold text-custom-text mb-2">${plan.name}</h3>
@@ -361,14 +362,14 @@
           `).join('')}
         </div>
         
-        <div class="mb-6">
+        <div class="mb-6 flex-grow">
           <h4 class="font-semibold text-custom-text mb-2">Choose from:</h4>
           <div class="text-sm text-gray-600 space-y-1">
             ${plan.choices.map(choice => `<div>${choice}</div>`).join('')}
           </div>
         </div>
         
-        <button onclick="bookPlan('${plan.id}')" class="w-full bg-makan-orange text-white py-3 px-6 rounded-lg font-semibold hover:bg-makan-orange-hover transition-colors">
+        <button onclick="bookPlan('${plan.id}')" class="w-full bg-makan-orange text-white py-3 px-6 rounded-lg font-semibold hover:bg-makan-orange-hover transition-colors mt-auto">
           Book Now
         </button>
       `;
