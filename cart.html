@@ -255,7 +255,6 @@ function loadCartSummary() {
         <div class="bg-gray-50 border-b border-gray-200 p-4">
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
-              <img src="${order.image || '/images/festive/imgi_6_Something Special.jpg'}" alt="${menuName}" class="w-12 h-12 object-cover rounded-lg">
               <div>
                 <h3 class="text-lg font-semibold text-gray-800">${menuName}</h3>
                 <p class="text-sm text-makan-orange font-medium">${packs} ${packs === 1 ? 'Pack' : 'Packs'} - $${orderTotal.toFixed(2)}</p>
@@ -278,11 +277,9 @@ function loadCartSummary() {
     if (order.items && order.items.length > 0) {
       order.items.forEach(item => {
         const itemName = item.name || item.title || 'Item';
-        const itemImage = item.image || '/images/festive/imgi_6_Something Special.jpg';
         
         cartHTML += `
           <div class="flex items-center space-x-2 p-2 bg-gray-50 rounded-lg border border-gray-200">
-            <img src="${itemImage}" alt="${itemName}" class="w-8 h-8 object-cover rounded">
             <div class="flex-1">
               <div class="text-xs font-medium text-gray-800">${itemName}</div>
             </div>
@@ -362,7 +359,6 @@ function migrateExistingOrders() {
       const order = {
         id: Date.now(),
         menuName: selectedMenuItem.name || 'Previous Order',
-        image: selectedMenuItem.image || '/images/festive/imgi_6_Something Special.jpg',
         packs: deliveryInfo.packs || 0,
         total: orderTotal,
         items: cart,
