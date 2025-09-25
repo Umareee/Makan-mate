@@ -108,13 +108,75 @@
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                <a href="menu.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
-                <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Meal Kits</a>
-                <a href="blog.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Blog</a>
+                <div class="group">
+                    <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
+                    <!-- Full-width mega panel -->
+                    <div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
+                        <div class="px-4 lg:px-128">
+                            <div class="max-w-4xl mx-auto py-4">
+                                <!-- Menu Grid -->
+                                <div class="flex justify-center">
+                                    <div id="menu-grid" class="grid grid-cols-3 gap-4 max-w-4xl w-full">
+                                        <!-- 1. Seminar -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('seminar')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Seminar</span>
+                                        </a>
+                                        <!-- 2. Wedding -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('wedding')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Wedding</span>
+                                        </a>
+                                        <!-- 3. Festive Special -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('festive')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Festive Special</span>
+                                        </a>
+                                        <!-- 4. Vegan/Healthy -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('vegan')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Vegan/Healthy</span>
+                                        </a>
+                                        <!-- 5. Mini-Buffet -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('mini-buffet')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Mini-Buffet</span>
+                                        </a>
+                                        <!-- 6. Buffet -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('buffet')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Buffet</span>
+                                        </a>
+                                        <!-- 7. Bento Set -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('bento')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Bento Set</span>
+                                        </a>
+                                        <!-- 8. Plated Meal -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('plated')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Plated Meal</span>
+                                        </a>
+                                        <!-- 9. Live Station -->
+                                        <a href="javascript:void(0)" onclick="goToMenuCategory('live-station')"
+                                           class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
+                                            <span class="text-sm text-custom-text hover:text-makan-orange">Live Station</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- CTA Button -->
+                                <div class="text-center py-6">
+                                    <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">See All Menu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Delivery</a>
+                <a href="weekly-meal-plan.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Plans</a>
+                <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Mart</a>
+                <a href="past-events.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Gallery</a>
                 <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
-                <a href="order.html" class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
-                    Order Now
-                </a>
             </div>
 
             <!-- Mobile menu button -->
@@ -585,11 +647,48 @@
             }
         }
 
+        // Function to navigate to menu page with selected category
+        function goToMenuCategory(categoryId) {
+            console.log('Storing category for navigation:', categoryId);
+            localStorage.setItem('selectedMenuCategory', categoryId);
+            window.location.href = 'menu.html';
+        }
+
         // Document ready
         document.addEventListener('DOMContentLoaded', () => {
             initializePage();
             setupMobileMenu();
         });
+
+          // Hover menu with delay
+const menuTrigger = document.getElementById('menu-trigger');
+const menuPanel = document.querySelector('.group .absolute');
+
+if (menuTrigger && menuPanel) {
+    let menuTimeout;
+    
+    menuTrigger.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        menuPanel.classList.remove('hidden');
+    });
+    
+    menuTrigger.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            menuPanel.classList.add('hidden');
+        }, 1000); // 1 second delay
+    });
+    
+    menuPanel.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        menuPanel.classList.remove('hidden');
+    });
+    
+    menuPanel.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            menuPanel.classList.add('hidden');
+        }, 200); 
+    });
+}
     </script>
 
     <style>
