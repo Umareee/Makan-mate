@@ -178,24 +178,6 @@
           <p class="text-xs text-gray-500 mt-1">Minimum: 10 packs</p>
         </div>
 
-        <!-- Optional Add-ons -->
-        <div class="mb-6">
-          <h4 class="font-semibold text-custom-text mb-3">Optional Add-ons</h4>
-          <div class="space-y-3">
-            <!-- Disposable Plates & Cutleries -->
-            <div class="bg-white p-3 rounded border border-gray-200">
-              <div class="flex items-center justify-between mb-2">
-                <label class="text-sm font-medium text-gray-700">Disposable Plates & Cutleries (10 sets)</label>
-                <span class="text-sm font-semibold text-makan-orange">$15</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <button class="w-6 h-6 bg-gray-300 rounded text-gray-600 text-xs font-bold hover:bg-gray-400 transition-colors" onclick="changeAddonQty('disposable', -1)">-</button>
-                <input class="flex-1 text-center border border-gray-300 h-6 rounded text-xs focus:outline-none focus:ring-1 focus:ring-makan-orange" type="number" value="0" min="0" id="disposable-qty">
-                <button class="w-6 h-6 bg-makan-orange rounded text-white text-xs font-bold hover:bg-makan-orange-hover transition-colors" onclick="changeAddonQty('disposable', 1)">+</button>
-              </div>
-            </div>
-          </div>
-        </div>
         
         <!-- Delivery & Setup Fees -->
         <div class="mb-6">
@@ -740,39 +722,6 @@ if (previousContainer) {
       updateCartDisplay();
     }
 
-    // Change add-on quantity
-    function changeAddonQty(addonType, change) {
-      const input = document.getElementById(`${addonType}-qty`);
-      const newQty = Math.max(0, Number(input.value) + change);
-      input.value = newQty;
-      updateAddonInCart(addonType, newQty);
-    }
-
-    // Update add-on in cart
-    function updateAddonInCart(addonType, qty) {
-      const addonMap = {
-        'disposable': { name: 'Disposable Plates & Cutleries (10 sets)', price: 15 }
-      };
-      
-      if (!addonMap[addonType]) return;
-      
-      const addon = addonMap[addonType];
-      
-      // Remove existing addon from cart
-      cart = cart.filter(item => item.category !== `addon-${addonType}`);
-      
-      // Add new addon if quantity > 0
-      if (qty > 0) {
-        cart.push({
-          category: `addon-${addonType}`,
-          name: addon.name,
-          quantity: qty,
-          price: addon.price
-        });
-      }
-      
-      updateCartDisplay();
-    }
 
     function updatePreviousSelectionDisplay() {
       const previousContainer = document.getElementById('previous-selections-container');
@@ -852,9 +801,6 @@ if (previousContainer) {
         });
       }
       
-      // Add cutlery add-on cost
-      const disposableQty = parseInt(document.getElementById('disposable-qty')?.value || 0);
-      total += disposableQty * 15; // $15 per set
       
       // Add non-ground floor fee if checked
       const nonGroundFloorChecked = document.getElementById('non-ground-floor')?.checked || false;
@@ -863,7 +809,7 @@ if (previousContainer) {
       }
       
       // Update breakdown section
-      updateBreakdownDisplay(disposableQty, nonGroundFloorChecked);
+      updateBreakdownDisplay(0, nonGroundFloorChecked);
       
       totalAmount.textContent = `${total.toFixed(2)}`;
     }
@@ -1014,8 +960,8 @@ if (previousContainer) {
       
       addOrderToMultiCart(order);
       
-      // Navigate to cart page
-      window.location.href = 'cart.html';
+      // Navigate to add-ons page
+      window.location.href = 'add-ons.html';
     });
     
     // Multi-order cart functions
