@@ -88,25 +88,25 @@
       {
         "id": "10",
         "title": "Western Premium Bento Set $16.99 /pax (minimum of 10 pax)",
-        "image": "/images/bento/western-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "20", 
         "title": "Western Premium Bento Set $16.50 /pax (minimum of 20 pax)",
-        "image": "/images/bento/western-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "50",
         "title": "Western Premium Bento Set $16.00 /pax (minimum of 50 pax)", 
-        "image": "/images/bento/western-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "100",
         "title": "Western Premium Bento Set $15.50 /pax (minimum of 100 pax)",
-        "image": "/images/bento/western-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       }
     ]

@@ -37,7 +37,7 @@
       "name": "Standard Bento",
       "price": 12.55,
       "description": "Ready-to-eat bento boxes with carefully selected ingredients and balanced nutrition.",
-      "image": "/images/bento/standard-bento.jpg",
+      "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
       "category": "bento",
       "customizable": false,
       "data_source": "non-customizable-data.json",
@@ -87,7 +87,7 @@
           "name": "Western Premium Bento",
           "price": 16.99,
           "description": "Premium Western-style bento with international flavors and customizable options.",
-          "image": "/images/bento/western-bento.jpg",
+          "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
           "customizable": true,
           "data_source": "menu-customization-data.json"
         }
