@@ -1061,31 +1061,40 @@ if (clearAllBtn) {
             });
 
             // Menu item click handling
-            menuGrid.addEventListener('click', (e) => {
-                const menuItem = e.target.closest('.menu-item');
-                if (!menuItem) return;
+        menuGrid.addEventListener('click', (e) => {
+    const menuItem = e.target.closest('.menu-item');
+    if (!menuItem) return;
 
-                const itemId = menuItem.getAttribute('data-item-id');
-                const item = menuData.items.find(i => i.id === itemId);
-                
-                if (!item) {
-                    Swal.fire({ icon: 'info', title: 'Coming soon', text: 'This item is not configured yet.' });
-                    return;
-                }
+    const itemId = menuItem.getAttribute('data-item-id');
+    const item = menuData.items.find(i => i.id === itemId);
+    
+    if (!item) {
+        Swal.fire({ icon: 'info', title: 'Coming soon', text: 'This item is not configured yet.' });
+        return;
+    }
 
-                const selected = { 
-                    name: item.name, 
-                    id: item.id, 
-                    image: item.image, 
-                    price: item.price,
-                    description: item.description,
-                    customizable: item.customizable,
-                    data_source: item.data_source
-                };
-                localStorage.setItem('selectedMenuItem', JSON.stringify(selected));
-                window.location.href = 'quantity-selection.html';
-            });
-        }
+    const selected = { 
+        name: item.name, 
+        id: item.id, 
+        image: item.image, 
+        price: item.price,
+        description: item.description,
+        customizable: item.customizable,
+        data_source: item.data_source,
+        has_subcategories: item.has_subcategories || false
+    };
+    
+    localStorage.setItem('selectedMenuItem', JSON.stringify(selected));
+    
+    // Check if item has subcategories
+    if (item.has_subcategories && item.subcategories && item.subcategories.length > 0) {
+        // Redirect to subcategory selection page
+        window.location.href = 'subcategory-selection.html';
+    } else {
+        // Directly go to quantity selection
+        window.location.href = 'quantity-selection.html';
+    }
+});}
 
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {

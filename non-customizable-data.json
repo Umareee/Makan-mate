@@ -1,82 +1,67 @@
 {
+  "standard-bento": {
+    "name": "Standard Bento",
+    "image": "/images/bento/standard-bento.jpg",
+    "price": 12.55,
+    "items": [
+      "Teriyaki Chicken with Steamed Rice",
+      "Vegetable Tempura (3 pieces)",
+      "Japanese Pickled Vegetables",
+      "Miso Soup",
+      "Fresh Fruit"
+    ]
+  },
+  "western-seminar": {
+    "name": "Western Seminar Package",
+    "image": "/images/seminar/western-seminar.jpg",
+    "price": 19.99,
+    "items": [
+      "Grilled Chicken Breast with Herbs",
+      "Roasted Seasonal Vegetables",
+      "Garlic Mashed Potatoes",
+      "Mixed Green Salad with Vinaigrette",
+      "Dinner Roll with Butter",
+      "Chocolate Mousse Cup"
+    ]
+  },
+  "western-wedding": {
+    "name": "Western Wedding Package",
+    "image": "/images/wedding/western-wedding.jpg",
+    "price": 38.00,
+    "items": [
+      "Pan-Seared Salmon with Lemon Butter",
+      "Beef Tenderloin with Red Wine Reduction",
+      "Lobster Bisque Soup",
+      "Caesar Salad with Parmesan",
+      "Roasted Root Vegetables",
+      "Truffle Mashed Potatoes",
+      "Wedding Cake Slice",
+      "Coffee and Petit Fours"
+    ]
+  },
+  "halloween": {
+    "name": "Halloween Special",
+    "image": "/images/festive/halloween.jpg",
+    "price": 19.99,
+    "items": [
+      "\"Bloody\" Beetroot Soup",
+      "\"Monster\" Meatballs with Spaghetti",
+      "\"Pumpkin\" Stuffed Bell Peppers",
+      "\"Spider\" Deviled Eggs",
+      "\"Witch Hat\" Chocolate Brownies",
+      "\"Poison\" Apple Cider"
+    ]
+  },
   "premium-bento": {
-    "name": "Premium Bento",
+    "name": "Premium Bento Selection",
     "image": "/images/bento/imgi_46_Original-Delight-in-the-Box-1152x1536.jpg",
     "price": 15.99,
     "items": [
-      "Sautéed Hong Kong Noodles with Prawn in Premium Sauce",
-      "Braised Fish Maw, Sea cucumber & Mushroom",
-      "Homemade Smoked Duck in Plum Sauce",
-      "Cod Fillet with Crabmeat Sauce",
-      "Sautéed Broccoli with Scallop",
-      "Panna Cotta",
-      "Bottled Lime Juice"
-    ]
-  },
-  "vegetarian-catering": {
-    "name": "Vegetarian Catering",
-    "image": "/images/pexels-nadin-sh-12956424 1.png",
-    "price": 7.25,
-    "items": [
-      "Vegetarian Fried Rice",
-      "Tofu Curry",
-      "Spring Rolls (4 pcs)",
-      "Mixed Salad"
-    ]
-  },
-  "bento-special": {
-    "name": "Bento Special Menu",
-    "image": "/images/pexels-ruslan-khmelevsky-7845121 1.png",
-    "price": 20.99,
-    "items": [
-      "Wagyu Beef Teriyaki",
-      "Tempura Assortment",
-      "Japanese Pickles",
-      "Premium Sushi Rice"
-    ]
-  },
-  "mini-catering": {
-    "name": "Mini Catering",
-    "image": "/images/pexels-bam-awey-5335918 1.png",
-    "price": 5.89,
-    "items": [
-      "Mini Sandwiches (6 pcs)",
-      "Chicken Skewers (4 pcs)",
-      "Vegetable Wraps (4 pcs)",
-      "Mixed Nuts"
-    ]
-  },
-  "korean-street": {
-    "name": "Korean Street Bento",
-    "image": "/images/pexels-roman-odintsov-5061254 1.png",
-    "price": 18.05,
-    "items": [
-      "Korean BBQ Chicken",
-      "Kimchi",
-      "Korean Bean Sprouts",
-      "Korean Purple Rice"
-    ]
-  },
-  "indian-cuisine": {
-    "name": "Indian Menu",
-    "image": "/images/pexels-nicola-barts-7937386 1.png",
-    "price": 12.99,
-    "items": [
-      "Butter Chicken",
-      "Dal Tadka",
-      "Basmati Rice",
-      "Naan Bread (2 pcs)"
-    ]
-  },
-  "international-delight": {
-    "name": "Delight Menu",
-    "image": "/images/pexels-nicola-barts-7937386 1.png",
-    "price": 12.99,
-    "items": [
-      "Grilled Salmon",
-      "Chicken Caesar Salad",
-      "Garlic Bread (2 slices)",
-      "Chocolate Mousse"
+      "Choose Your Premium Bento Style",
+      "Oriental: Asian fusion with premium ingredients",
+      "Western: International flavors with gourmet touch",
+      "Both options include customizable main and sides",
+      "Elevated presentation and premium packaging"
     ]
   }
 }

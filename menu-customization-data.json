@@ -13,27 +13,11 @@
           { "id": "steamed-lotus-bun", "name": "Steamed Lotus Bun", "price": 1.20, "image": "/images/high-tea/imgi_76_Steamed-Lotus-Bun-edit-100x100.png", "description": "" },
           { "id": "yasai-gyoza", "name": "Yasai Gyoza", "price": 1.50, "image": "/images/high-tea/imgi_77_Yasai-Gyoza-edit-100x100.png", "description": "" },
           { "id": "golden-hash-brown", "name": "Golden Hash Brown", "price": 1.20, "image": "/images/high-tea/imgi_79_golden-harsh-brown-100x100.png", "description": "" },
-          { "id": "rice-roll", "name": "Rice Roll", "price": 1.20, "image": "/images/high-tea/imgi_78_Rice-Roll-edit-1-100x100.png", "description": "" },
-          { "id": "mini-custard-bun", "name": "Mini Custard Bun", "price": 1.20, "image": "/images/high-tea/imgi_80_Mini-Custard-Bun-edit-100x100.png", "description": "" },
-          { "id": "pan-fried-yam-cake", "name": "Pan Fried Yam Cake", "price": 1.20, "image": "/images/high-tea/imgi_82_Pan-Fried-Yam-Cake-100x100.png", "description": "" },
-          { "id": "steamed-yam-cake", "name": "Steamed Yam Cake", "price": 1.20, "image": "/images/high-tea/imgi_81_Steamed-Yam-Cake-100x100.png", "description": "" },
-          { "id": "tuna-mayo-sandwich", "name": "MM Semi Wholemeal Sandwich with Tuna Mayonnaise", "price": 1.50, "image": "/images/high-tea/imgi_84_MM-Semi-Whoelemeal-Sandwich-with-Tuna-Mayonaise-100x100.png", "description": "" },
-          { "id": "egg-mayo-sandwich", "name": "MM Semi Wholemeal Sandwich with Egg Mayonnaise", "price": 1.50, "image": "/images/high-tea/imgi_83_MM-Semi-Whoelemeal-Sandwich-with-Egg-Mayonaise-100x100.png", "description": "" },
-          { "id": "rice-cake-preserved-radish", "name": "Rice Cake With Preserved Radish", "price": 1.20, "image": "/images/high-tea/imgi_85_Rice-Cake-With-Preserved-Radish-100x100.png", "description": "" },
-          { "id": "mini-chicken-char-siew-bun", "name": "Mini Chicken Char Siew Bun", "price": 1.20, "image": "/images/high-tea/imgi_86_mini-chicken-char-siew-bun-edit-100x100.png", "description": "" },
-          { "id": "vegetable-samosa", "name": "Vegetable Samosa", "price": 1.20, "image": "/images/high-tea/imgi_87_Vegetable-Samosa-100x100.png", "description": "" },
-          { "id": "vegetable-spring-roll", "name": "Vegetable Spring Roll", "price": 1.20, "image": "/images/high-tea/imgi_88_Vegetable-Spring-Roll-100x100.png", "description": "" },
-          { "id": "mini-curry-puff", "name": "Mini Curry Puff", "price": 1.20, "image": "/images/high-tea/imgi_89_Mini-Curry-Puff-100x100.png", "description": "" },
-          { "id": "steamed-chicken-xiao-long-bao", "name": "Steamed Chicken Xiao Long Bao", "price": 1.50, "image": "/images/high-tea/imgi_90_Steamed-Chicken-Xiao-Long-Bao-100x100.png", "description": "" },
-          { "id": "bagedel", "name": "Bagedel (potato ball)", "price": 1.20, "image": "/images/high-tea/imgi_91_bagedel-potato-ball-edit-100x100.png", "description": "" },
-          { "id": "deep-fried-seafood-gyozas", "name": "Deep Fried Seafood Gyozas", "price": 1.50, "image": "/images/high-tea/imgi_92_deep-fried-seafood-gyoza-edit-100x100.png", "description": "" },
-          { "id": "fried-fish-balls", "name": "Fried Fish Balls", "price": 1.20, "image": "/images/high-tea/imgi_93_fried-fish-ball-edit-100x100.png", "description": "" },
-          { "id": "fried-sotong-balls", "name": "Fried Sotong Balls", "price": 1.20, "image": "/images/high-tea/imgi_94_fried-sotong-balls-edit-100x100.png", "description": "" },
-          { "id": "breaded-scallop", "name": "Breaded Scallop", "price": 1.50, "image": "/images/high-tea/imgi_95_breaded-scallop-edit-100x100.png", "description": "" }
+          { "id": "rice-roll", "name": "Rice Roll", "price": 1.20, "image": "/images/high-tea/imgi_78_Rice-Roll-edit-1-100x100.png", "description": "" }
         ]
       },
       {
-        "id": "Sweet-Delight",
+        "id": "sweet-delight",
         "name": "Sweet Delight",
         "type": "radio",
         "min_selections": 1,
@@ -41,86 +25,208 @@
         "options": [
           { "id": "golden-sesame-ball", "name": "Golden Sesame Ball", "price": 1.50, "image": "/images/high-tea/imgi_96_golden-sesame-ball-edit-100x100.png", "description": "" },
           { "id": "mini-chocolate-eclair", "name": "Mini Chocolate Éclair", "price": 1.50, "image": "/images/high-tea/imgi_97_mini-chocolate-eclair-edit-100x100.png", "description": "" },
-          { "id": "mini-cream-puff", "name": "Mini Cream Puff", "price": 1.50, "image": "/images/high-tea/imgi_99_mini-cream-puff-edit-100x100.png", "description": "" },
-          { "id": "mini-custard-puff", "name": "Mini Custard Puff", "price": 1.50, "image": "/images/high-tea/imgi_98_Mini-Custard-Puff-100x100.png", "description": "" },
-          { "id": "mini-muffins", "name": "Mini Muffins", "price": 1.20, "image": "/images/high-tea/imgi_100_Mini-Muffinis-100x100.png", "description": "" },
-          { "id": "marbles-butter-cake", "name": "Marbles Butter Cake", "price": 1.20, "image": "/images/high-tea/imgi_101_marbles-butter-cake-edit-100x100.png", "description": "" },
-          { "id": "hokkaido-cup-cake", "name": "Hokkaido Cup Cake", "price": 1.50, "image": "/images/high-tea/imgi_102_hokkaido-cup-cake-edit-100x100.png", "description": "" },
-          { "id": "banana-cake", "name": "Banana Cake", "price": 1.20, "image": "/images/high-tea/imgi_103_sliced-banana-cake-edit-100x100.png", "description": "" },
-          { "id": "sliced-walnut-cake", "name": "Sliced Walnut Cake", "price": 1.20, "image": "/images/high-tea/imgi_104_Sliced-Walnut-Cake-100x100.png", "description": "" },
-          { "id": "cheng-tng", "name": "Cheng Tng (hot/cold)", "price": 1.50, "image": "/images/high-tea/imgi_105_cheng-tng-edit-100x100.png", "description": "" },
-          { "id": "mini-swiss-roll", "name": "Mini Swiss Roll", "price": 1.20, "image": "/images/high-tea/imgi_106_MinI-Swiss-Roll-100x100.png", "description": "" },
-          { "id": "iced-grass-jelly-longan", "name": "Iced Grass Jelly With Longan", "price": 1.50, "image": "/images/high-tea/imgi_107_iced-grass-jelly-with-longan-edit-100x100.png", "description": "" },
-          { "id": "red-bean-yam", "name": "Red Bean With Yam", "price": 1.50, "image": "/images/high-tea/imgi_108_Red-Bean-With-Yam-100x100.png", "description": "" },
-          { "id": "beancurd-barley-gingko", "name": "Beancurd, Barley With Gingko", "price": 1.50, "image": "/images/high-tea/imgi_110_beancurd-barley-with-gingko-edit-100x100.png", "description": "" },
-          { "id": "almond-jelly-longan", "name": "Almond Jelly With Longan", "price": 1.50, "image": "/images/high-tea/imgi_112_almond-jelly-with-longan-edit-100x100.png", "description": "" },
-          { "id": "almond-jelly-fruit-cocktail", "name": "Almond Jelly With Fruit Cocktail", "price": 1.50, "image": "/images/high-tea/imgi_111_almond-jelly-with-fruit-cocktail-edit-100x100.png", "description": "" },
-          { "id": "baked-taro-puff", "name": "Baked Taro Puff", "price": 1.50, "image": "/images/high-tea/imgi_113_baked-taro-puff-edit-100x100.png", "description": "" },
-          { "id": "baked-sweet-potato-delight", "name": "Baked Sweet Potato Delight", "price": 1.50, "image": "/images/high-tea/imgi_114_baked-sweet-potato-delight-100x100.png", "description": "" },
-          { "id": "baked-tuna-puff", "name": "Baked Tuna Puff", "price": 1.50, "image": "/images/high-tea/imgi_115_baked-tuna-puff-edit-100x100.png", "description": "" },
-          { "id": "baked-char-siew-delight", "name": "Baked Char Siew Delight", "price": 1.50, "image": "/images/high-tea/imgi_116_baked-char-siew-delight-edit-100x100.png", "description": "" },
-          { "id": "baked-apple-strudel", "name": "Baked Apple Strudel", "price": 1.50, "image": "/images/high-tea/imgi_117_Baked-Apple-Strudel-edit-100x100.png", "description": "" }
+          { "id": "mini-cream-puff", "name": "Mini Cream Puff", "price": 1.50, "image": "/images/high-tea/imgi_99_mini-cream-puff-edit-100x100.png", "description": "" }
         ]
       },
       {
-        "id": "Beverage",
+        "id": "beverage",
         "name": "Beverage",
         "type": "radio",
         "min_selections": 1,
         "max_selections": 1,
         "options": [
           { "id": "coffee-tea", "name": "Coffee & Tea", "price": 0, "image": "/images/high-tea/imgi_118_coffee-n-tea-edit-100x100.png", "description": "" },
-          { "id": "fruit-punch", "name": "Fruit Punch", "price": 1.00, "image": "/images/high-tea/imgi_119_icy-fruit-punch-edit-1-100x100.png", "description": "" },
-          { "id": "grapefruit-pomelo", "name": "Grapefruit Pomelo", "price": 1.00, "image": "/images/high-tea/imgi_120_Orange-Cordial-100x100.png", "description": "" },
-          { "id": "pandan-lemon-grass", "name": "Pandan Lemon Grass Drinks", "price": 1.00, "image": "/images/high-tea/imgi_121_icy-soursop-edit-100x100.png", "description": "" }
-        ]
-      },
-      {
-        "id": "Hot Serve",
-        "name": "Hot Serve",
-        "type": "radio",
-        "min_selections": 1,
-        "max_selections": 1,
-        "options": [
-          { "id": "fried-kway-teow", "name": "Fried Kway Teow", "price": 2.50, "image": "/images/high-tea/imgi_64_fried-kway-teow-edit-100x100.png", "description": "" },
-          { "id": "mee-goreng", "name": "Mee Goreng", "price": 2.50, "image": "/images/high-tea/imgi_65_mee-goreng-edit-100x100.png", "description": "" },
-          { "id": "fried-tanghoon", "name": "Fried Tanghoon", "price": 2.50, "image": "/images/high-tea/imgi_66_fried-tanghoon-edit-100x100.png", "description": "" },
-          { "id": "fried-hongkong-noodles", "name": "Fried Hongkong Noodles", "price": 2.50, "image": "/images/high-tea/imgi_67_fried-hongkong-noodles-edit-100x100.png", "description": "" },
-          { "id": "sin-chow-fried-bee-hoon", "name": "Sin Chow Fried Bee Hoon", "price": 2.50, "image": "/images/high-tea/imgi_68_Sin-Chow-Fried-Bee-Hoon-edit-100x100.png", "description": "" },
-          { "id": "braised-ee-fu-noodles", "name": "Braised Ee Fu Noodles", "price": 2.50, "image": "/images/high-tea/imgi_69_braised-ee-fu-noodles-edit-100x100.png", "description": "" },
-          { "id": "yang-chow-fried-rice", "name": "Yang Chow Fried Rice", "price": 2.50, "image": "/images/high-tea/imgi_70_Yang-Chow-Fried-Rice-edit-100x100.png", "description": "" },
-          { "id": "thai-pineapple-fried-rice", "name": "Thai Pineapple Fried Rice", "price": 2.50, "image": "/images/high-tea/imgi_71_Thai-Pineapple-Fried-Rice-edit-100x100.png", "description": "" },
-          { "id": "fried-carrot-cake-egg", "name": "Fried Carrot Cake With Egg", "price": 2.50, "image": "/images/high-tea/imgi_72_FRIED-CARROT-CAKE-WITH-EGG-EDIT-100x100.png", "description": "" },
-          { "id": "traditional-fried-mee-siam", "name": "Traditional Fried Mee Siam", "price": 2.50, "image": "/images/high-tea/imgi_73_Traditional-Fried-Mee-Siam-edit-100x100.png", "description": "" },
-          { "id": "pandan-nasi-lemak-rice", "name": "Pandan Nasi Lemak (rice only)", "price": 2.00, "image": "/images/high-tea/imgi_74_Pandan-Nasi-Lemak-rice-only-edit-100x100.png", "description": "" }
+          { "id": "fruit-punch", "name": "Fruit Punch", "price": 1.00, "image": "/images/high-tea/imgi_119_icy-fruit-punch-edit-1-100x100.png", "description": "" }
         ]
       }
     ]
   },
-  "bento-set": {
+  "oriental-bento": {
     "categories": [
       {
-        "id": "protein",
-        "name": "Protein",
+        "id": "main-protein",
+        "name": "Main Protein",
         "type": "radio",
         "min_selections": 1,
         "max_selections": 1,
         "options": [
-          { "id": "grilled-chicken", "name": "Grilled Chicken", "image": "/images/menu/imgi_110_grilled-chicken-768x768.png", "price": 16.99, "description": "Perfectly grilled chicken breast" },
-          { "id": "pork-katsu", "name": "Pork Katsu", "image": "/images/menu/imgi_111_pork-katsu-768x768.png", "price": 18.99, "description": "Crispy breaded pork cutlet" },
-          { "id": "tofu-teriyaki", "name": "Tofu Teriyaki", "image": "/images/menu/imgi_112_tofu-teriyaki-768x768.png", "price": 14.99, "description": "Grilled tofu with teriyaki sauce" }
+          { "id": "teriyaki-chicken", "name": "Teriyaki Chicken", "image": "/images/bento/teriyaki-chicken.jpg", "price": 0, "description": "Grilled chicken glazed with sweet teriyaki sauce" },
+          { "id": "braised-pork", "name": "Braised Pork Belly", "image": "/images/bento/braised-pork.jpg", "price": 2.00, "description": "Slow-cooked pork belly in soy sauce" },
+          { "id": "grilled-salmon", "name": "Grilled Salmon", "image": "/images/bento/grilled-salmon.jpg", "price": 3.50, "description": "Fresh salmon fillet with miso glaze" }
         ]
       },
       {
-        "id": "vegetables",
-        "name": "Vegetables",
+        "id": "sides",
+        "name": "Side Dishes",
         "type": "checkbox",
-        "min_selections": 1,
-        "max_selections": 2,
+        "min_selections": 2,
+        "max_selections": 3,
         "options": [
-          { "id": "steamed-broccoli", "name": "Steamed Broccoli", "image": "/images/menu/imgi_113_steamed-broccoli-768x768.png", "price": 2.99, "description": "Fresh steamed broccoli" },
-          { "id": "sauteed-spinach", "name": "Sautéed Spinach", "image": "/images/menu/imgi_114_sauteed-spinach-768x768.png", "price": 3.49, "description": "Spinach sautéed with garlic" },
-          { "id": "carrot-medley", "name": "Carrot Medley", "image": "/images/menu/imgi_115_carrot-medley-768x768.png", "price": 2.79, "description": "Colorful carrot medley" }
+          { "id": "gyoza", "name": "Pork Gyoza (3pcs)", "image": "/images/bento/gyoza.jpg", "price": 1.50, "description": "Pan-fried dumplings" },
+          { "id": "vegetable-tempura", "name": "Vegetable Tempura", "image": "/images/bento/veggie-tempura.jpg", "price": 1.20, "description": "Crispy battered vegetables" },
+          { "id": "agedashi-tofu", "name": "Agedashi Tofu", "image": "/images/bento/agedashi-tofu.jpg", "price": 1.00, "description": "Lightly fried tofu in dashi broth" },
+          { "id": "pickled-vegetables", "name": "Pickled Vegetables", "image": "/images/bento/pickles.jpg", "price": 0.50, "description": "Assorted Japanese pickles" }
+        ]
+      }
+    ]
+  },
+  "western-bento": {
+    "categories": [
+      {
+        "id": "main-protein",
+        "name": "Main Protein",
+        "type": "radio",
+        "min_selections": 1,
+        "max_selections": 1,
+        "options": [
+          { "id": "grilled-chicken-breast", "name": "Grilled Chicken Breast", "image": "/images/bento/grilled-chicken-breast.jpg", "price": 0, "description": "Herb-seasoned grilled chicken breast" },
+          { "id": "beef-steak", "name": "Beef Sirloin Steak", "image": "/images/bento/beef-steak.jpg", "price": 4.00, "description": "Tender beef sirloin with black pepper sauce" },
+          { "id": "pan-seared-fish", "name": "Pan-Seared Fish", "image": "/images/bento/pan-seared-fish.jpg", "price": 2.50, "description": "Fresh fish fillet with lemon butter sauce" }
+        ]
+      },
+      {
+        "id": "sides",
+        "name": "Side Dishes",
+        "type": "checkbox",
+        "min_selections": 2,
+        "max_selections": 3,
+        "options": [
+          { "id": "roasted-vegetables", "name": "Roasted Seasonal Vegetables", "image": "/images/bento/roasted-vegetables.jpg", "price": 1.00, "description": "Colorful roasted vegetables" },
+          { "id": "garlic-mashed-potato", "name": "Garlic Mashed Potato", "image": "/images/bento/mashed-potato.jpg", "price": 1.20, "description": "Creamy mashed potatoes with roasted garlic" },
+          { "id": "caesar-salad", "name": "Mini Caesar Salad", "image": "/images/bento/caesar-salad.jpg", "price": 1.50, "description": "Fresh romaine with caesar dressing" },
+          { "id": "dinner-roll", "name": "Artisan Dinner Roll", "image": "/images/bento/dinner-roll.jpg", "price": 0.80, "description": "Freshly baked dinner roll with butter" }
+        ]
+      }
+    ]
+  },
+  "oriental-seminar": {
+    "categories": [
+      {
+        "id": "main-course",
+        "name": "Main Course",
+        "type": "checkbox",
+        "min_selections": 2,
+        "max_selections": 4,
+        "options": [
+          { "id": "sweet-sour-pork", "name": "Sweet & Sour Pork", "image": "/images/seminar/sweet-sour-pork.jpg", "price": 2.50, "description": "Classic Chinese dish with pineapple" },
+          { "id": "kung-pao-chicken", "name": "Kung Pao Chicken", "image": "/images/seminar/kung-pao-chicken.jpg", "price": 2.00, "description": "Spicy chicken with peanuts and vegetables" },
+          { "id": "mapo-tofu", "name": "Mapo Tofu", "image": "/images/seminar/mapo-tofu.jpg", "price": 1.80, "description": "Silky tofu in spicy Sichuan sauce" },
+          { "id": "beef-broccoli", "name": "Beef with Broccoli", "image": "/images/seminar/beef-broccoli.jpg", "price": 2.80, "description": "Tender beef stir-fried with fresh broccoli" }
+        ]
+      },
+      {
+        "id": "rice-noodles",
+        "name": "Rice & Noodles",
+        "type": "radio",
+        "min_selections": 1,
+        "max_selections": 1,
+        "options": [
+          { "id": "steamed-rice", "name": "Steamed Jasmine Rice", "image": "/images/seminar/steamed-rice.jpg", "price": 0, "description": "Fragrant jasmine rice" },
+          { "id": "fried-rice", "name": "Yang Chow Fried Rice", "image": "/images/seminar/fried-rice.jpg", "price": 1.50, "description": "Classic fried rice with char siu and shrimp" },
+          { "id": "lo-mein", "name": "Chicken Lo Mein", "image": "/images/seminar/lo-mein.jpg", "price": 2.00, "description": "Soft noodles with chicken and vegetables" }
+        ]
+      }
+    ]
+  },
+  "oriental-wedding": {
+    "categories": [
+      {
+        "id": "appetizers",
+        "name": "Appetizers",
+        "type": "checkbox",
+        "min_selections": 2,
+        "max_selections": 4,
+        "options": [
+          { "id": "roasted-duck", "name": "Roasted Duck with Pancakes", "image": "/images/wedding/roasted-duck.jpg", "price": 8.00, "description": "Crispy roasted duck with hoisin sauce" },
+          { "id": "abalone-soup", "name": "Abalone Soup", "image": "/images/wedding/abalone-soup.jpg", "price": 12.00, "description": "Premium abalone in clear broth" },
+          { "id": "shark-fin-soup", "name": "Shark Fin Soup", "image": "/images/wedding/shark-fin-soup.jpg", "price": 15.00, "description": "Traditional wedding soup (imitation)" },
+          { "id": "cold-appetizer-platter", "name": "Cold Appetizer Platter", "image": "/images/wedding/cold-appetizers.jpg", "price": 6.00, "description": "Assorted jellyfish, century egg, and cold cuts" }
+        ]
+      },
+      {
+        "id": "main-courses",
+        "name": "Main Courses",
+        "type": "checkbox",
+        "min_selections": 3,
+        "max_selections": 5,
+        "options": [
+          { "id": "whole-fish", "name": "Steamed Whole Fish", "image": "/images/wedding/steamed-fish.jpg", "price": 10.00, "description": "Fresh fish steamed with ginger and soy" },
+          { "id": "lobster-ginger-scallion", "name": "Lobster with Ginger & Scallion", "image": "/images/wedding/lobster.jpg", "price": 18.00, "description": "Fresh lobster in aromatic sauce" },
+          { "id": "roasted-chicken", "name": "Roasted Chicken", "image": "/images/wedding/roasted-chicken.jpg", "price": 5.00, "description": "Crispy skin roasted chicken" },
+          { "id": "braised-sea-cucumber", "name": "Braised Sea Cucumber", "image": "/images/wedding/sea-cucumber.jpg", "price": 12.00, "description": "Premium sea cucumber with mushrooms" },
+          { "id": "sweet-sour-ribs", "name": "Sweet & Sour Pork Ribs", "image": "/images/wedding/sweet-sour-ribs.jpg", "price": 6.00, "description": "Tender ribs in tangy sauce" }
+        ]
+      }
+    ]
+  },
+  "mid-autumn": {
+    "categories": [
+      {
+        "id": "traditional-dishes",
+        "name": "Traditional Dishes",
+        "type": "checkbox",
+        "min_selections": 3,
+        "max_selections": 5,
+        "options": [
+          { "id": "lotus-root-soup", "name": "Lotus Root Soup", "image": "/images/festive/lotus-soup.jpg", "price": 2.50, "description": "Nourishing soup with lotus root and pork ribs" },
+          { "id": "steamed-whole-fish", "name": "Steamed Whole Fish", "image": "/images/festive/steamed-fish.jpg", "price": 8.00, "description": "Symbol of abundance and prosperity" },
+          { "id": "taro-duck", "name": "Braised Duck with Taro", "image": "/images/festive/taro-duck.jpg", "price": 6.50, "description": "Traditional combination for Mid-Autumn" },
+          { "id": "osmanthus-chicken", "name": "Osmanthus Flower Chicken", "image": "/images/festive/osmanthus-chicken.jpg", "price": 5.00, "description": "Fragrant chicken with osmanthus flowers" },
+          { "id": "stuffed-crab-shell", "name": "Stuffed Crab Shell", "image": "/images/festive/stuffed-crab.jpg", "price": 4.50, "description": "Crab meat and roe in shell" }
+        ]
+      },
+      {
+        "id": "desserts",
+        "name": "Festival Desserts",
+        "type": "radio",
+        "min_selections": 1,
+        "max_selections": 1,
+        "options": [
+          { "id": "traditional-mooncakes", "name": "Traditional Mooncakes", "image": "/images/festive/traditional-mooncakes.jpg", "price": 3.00, "description": "Assorted traditional mooncakes" },
+          { "id": "snow-skin-mooncakes", "name": "Snow Skin Mooncakes", "image": "/images/festive/snow-skin-mooncakes.jpg", "price": 3.50, "description": "Modern no-bake mooncakes" },
+          { "id": "lotus-seed-paste-mooncakes", "name": "Lotus Seed Paste Mooncakes", "image": "/images/festive/lotus-mooncakes.jpg", "price": 4.00, "description": "Premium lotus seed paste filling" }
+        ]
+      }
+    ]
+  },
+  "christmas": {
+    "categories": [
+      {
+        "id": "main-courses",
+        "name": "Christmas Mains",
+        "type": "checkbox",
+        "min_selections": 2,
+        "max_selections": 4,
+        "options": [
+          { "id": "roasted-turkey", "name": "Herb-Roasted Turkey", "image": "/images/festive/roasted-turkey.jpg", "price": 8.00, "description": "Classic Christmas turkey with stuffing" },
+          { "id": "glazed-ham", "name": "Honey Glazed Ham", "image": "/images/festive/glazed-ham.jpg", "price": 6.50, "description": "Spiral-cut ham with honey glaze" },
+          { "id": "beef-wellington", "name": "Beef Wellington", "image": "/images/festive/beef-wellington.jpg", "price": 12.00, "description": "Tender beef wrapped in pastry" },
+          { "id": "stuffed-chicken", "name": "Stuffed Roasted Chicken", "image": "/images/festive/stuffed-chicken.jpg", "price": 5.00, "description": "Chicken stuffed with herbs and breadcrumbs" }
+        ]
+      },
+      {
+        "id": "sides",
+        "name": "Holiday Sides",
+        "type": "checkbox",
+        "min_selections": 2,
+        "max_selections": 3,
+        "options": [
+          { "id": "roasted-vegetables", "name": "Roasted Root Vegetables", "image": "/images/festive/roasted-root-vegetables.jpg", "price": 2.00, "description": "Carrots, parsnips, and Brussels sprouts" },
+          { "id": "mashed-potatoes", "name": "Garlic Mashed Potatoes", "image": "/images/festive/garlic-mashed-potatoes.jpg", "price": 1.50, "description": "Creamy potatoes with roasted garlic" },
+          { "id": "cranberry-sauce", "name": "Cranberry Sauce", "image": "/images/festive/cranberry-sauce.jpg", "price": 1.00, "description": "Tart and sweet cranberry compote" },
+          { "id": "green-bean-casserole", "name": "Green Bean Casserole", "image": "/images/festive/green-bean-casserole.jpg", "price": 1.80, "description": "Classic holiday casserole" }
+        ]
+      },
+      {
+        "id": "desserts",
+        "name": "Christmas Desserts",
+        "type": "radio",
+        "min_selections": 1,
+        "max_selections": 1,
+        "options": [
+          { "id": "christmas-pudding", "name": "Traditional Christmas Pudding", "image": "/images/festive/christmas-pudding.jpg", "price": 3.50, "description": "Rich fruit pudding with brandy sauce" },
+          { "id": "yule-log", "name": "Chocolate Yule Log", "image": "/images/festive/yule-log.jpg", "price": 4.00, "description": "Chocolate sponge cake rolled with cream" },
+          { "id": "gingerbread-cake", "name": "Gingerbread Cake", "image": "/images/festive/gingerbread-cake.jpg", "price": 2.50, "description": "Spiced cake with cream cheese frosting" }
         ]
       }
     ]
