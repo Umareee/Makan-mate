@@ -32,25 +32,25 @@
       {
         "id": "10",
         "title": "Standard Bento Set $12.55 /pax (minimum of 10 pax)",
-        "image": "/images/bento/standard-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "20", 
         "title": "Standard Bento Set $12.00 /pax (minimum of 20 pax)",
-        "image": "/images/bento/standard-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "50",
         "title": "Standard Bento Set $11.50 /pax (minimum of 50 pax)", 
-        "image": "/images/bento/standard-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       },
       {
         "id": "100",
         "title": "Standard Bento Set $11.00 /pax (minimum of 100 pax)",
-        "image": "/images/bento/standard-bento.jpg",
+        "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
         "multiplier": 1
       }
     ]
