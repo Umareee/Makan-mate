@@ -1,0 +1,76 @@
+{
+  "items": {
+    "tantalizing-meat": {
+      "name": "Tantalizing Meat",
+      "image": "/images/home/maken-mart/imgi_17_meat.jpg",
+      "description": "Premium marinated meat ready for cooking",
+      "type": "ready-to-cook",
+      "prepTime": "15 mins",
+      "servings": "2-3 pax",
+      "ingredients": ["Premium Beef", "Special Marinade", "Herbs", "Spices"],
+      "specialLabels": ["Premium", "Ready to Cook"],
+      "difficulty": "Easy",
+      "price": "$18.90"
+    },
+    "oceans-delight": {
+      "name": "Ocean's Delight",
+      "image": "/images/home/maken-mart/imgi_18_salmon.jpg",
+      "description": "Fresh seafood selection with premium cuts",
+      "type": "ready-to-cook",
+      "prepTime": "12 mins",
+      "servings": "2 pax",
+      "ingredients": ["Fresh Salmon", "Prawns", "Scallops", "Lemon", "Herbs"],
+      "specialLabels": ["Fresh", "Premium", "Best Seller"],
+      "difficulty": "Easy",
+      "price": "$24.90"
+    },
+    "delicious-dim-sum": {
+      "name": "Delicious Dim Sum",
+      "image": "/images/home/menu/imgi_11_bento.jpg",
+      "description": "Assorted frozen dim sum varieties",
+      "type": "frozen-food",
+      "prepTime": "8 mins",
+      "servings": "3-4 pax",
+      "ingredients": ["Pork Dumplings", "Shrimp Har Gow", "Siu Mai", "Vegetable Buns"],
+      "specialLabels": ["Frozen", "Traditional", "Family Size"],
+      "difficulty": "Easy",
+      "price": "$16.90"
+    },
+    "frozen-beef-patties": {
+      "name": "Frozen Beef Patties",
+      "image": "/images/mealkit/imgi_3_38809248.jpg",
+      "description": "Premium frozen beef patties for burgers",
+      "type": "frozen-food",
+      "prepTime": "10 mins",
+      "servings": "4 pax",
+      "ingredients": ["Ground Beef", "Seasonings", "Natural Binding"],
+      "specialLabels": ["Frozen", "Quick Meal"],
+      "difficulty": "Easy",
+      "price": "$12.90"
+    },
+    "ready-chicken-wings": {
+      "name": "Ready Chicken Wings",
+      "image": "/images/mealkit/imgi_4_38810089.jpg",
+      "description": "Marinated chicken wings ready for grilling",
+      "type": "ready-to-cook",
+      "prepTime": "20 mins",
+      "servings": "3-4 pax",
+      "ingredients": ["Chicken Wings", "BBQ Marinade", "Honey", "Spices"],
+      "specialLabels": ["Ready to Cook", "BBQ Style"],
+      "difficulty": "Easy",
+      "price": "$14.90"
+    },
+    "frozen-mixed-vegetables": {
+      "name": "Frozen Mixed Vegetables",
+      "image": "/images/home/menu/imgi_16_photo-1598449526978-cd11daa040c9-scaled.jpg",
+      "description": "Premium frozen vegetable medley",
+      "type": "frozen-food",
+      "prepTime": "5 mins",
+      "servings": "2-3 pax",
+      "ingredients": ["Broccoli", "Carrots", "Corn", "Green Beans", "Peas"],
+      "specialLabels": ["Frozen", "Healthy", "Vegetarian"],
+      "difficulty": "Easy",
+      "price": "$8.90"
+    }
+  }
+}
