@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Makan Mate</title>
+    <title>Brand Story - Makan Mate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,67 +29,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-white font-dm-sans text-custom-text">
-    <!-- Header -->
-    <header class="bg-gray-800 text-white">
-        <!-- Top bar with contact info -->
-        <div class="bg-custom-topbar py-2 px-2">
-      <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
-        <!-- Mobile Layout -->
-        <div class="flex sm:hidden justify-between items-start py-1">
-          <div class="flex items-center space-x-1">
-            <i class="fas fa-phone"></i>
-            <span>62642233 Ext 10-18</span>
-          </div>
-          <div class="flex flex-col items-end space-y-1">
-            <div class="flex items-center space-x-1">
-              <i class="fas fa-envelope"></i>
-              <span>order@makanmate.com</span>
-            </div>
-            <div class="flex space-x-2">
-              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                <i class="fab fa-twitter text-xs"></i>
-              </a>
-              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                <i class="fab fa-facebook text-xs"></i>
-              </a>
-              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                <i class="fab fa-instagram text-xs"></i>
-              </a>
-              <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                <i class="fab fa-github text-xs"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Desktop Layout -->
-        <div class="hidden sm:flex justify-between items-center">
-          <div class="flex items-center space-x-6">
-            <div class="flex items-center space-x-2">
-              <i class="fas fa-phone"></i>
-              <span>62642233 Ext 10-18</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <i class="fas fa-envelope"></i>
-              <span>order@makanmate.com</span>
-            </div>
-          </div>
-          <div class="flex space-x-3">
-          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-twitter text-xs sm:text-sm"></i>
-          </a>
-          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-facebook text-xs sm:text-sm"></i>
-          </a>
-          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-instagram text-xs sm:text-sm"></i>
-          </a>
-          <a href="#" class="w-6 h-6 sm:w-8 sm:h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-            <i class="fab fa-github text-xs sm:text-sm"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    </header>
+
 
     <!-- Main navigation -->
     <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
@@ -191,75 +131,196 @@
         </div>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="relative py-20">
-        <div class="container mx-auto px-2 sm:px-4 text-center">
-            <h1 class="text-5xl md:text-6xl font-medium text-black font-playfair mb-6">About Us</h1>
-            <p class="text-xl text-black/90 max-w-2xl mx-auto">
-                Discover the story behind Singapore's most beloved culinary destination.
-            </p>
+    <!-- Brand Story Section -->
+    <section class="py-20 bg-gradient-to-br from-orange-50 via-white to-yellow-50 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <circle cx="25" cy="25" r="2" fill="#FF5722"/>
+                        <circle cx="75" cy="75" r="2" fill="#FF5722"/>
+                        <circle cx="50" cy="10" r="1.5" fill="#FF5722"/>
+                        <circle cx="10" cy="60" r="1.5" fill="#FF5722"/>
+                        <circle cx="90" cy="40" r="1.5" fill="#FF5722"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grain)"/>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-2 sm:px-4 lg:px-8 relative">
+            <div class="max-w-5xl mx-auto text-center">
+                <!-- Story Title with Icon -->
+                <div class="flex items-center justify-center mb-8">
+                    <div class="w-12 h-12 bg-makan-orange rounded-full flex items-center justify-center mr-4 shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-custom-text leading-tight">
+                        Our Brand Story
+                    </h2>
+                </div>
+                
+                <!-- Subtitle -->
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-medium text-makan-orange mb-12 leading-relaxed">
+                    From Bugis Street's Humble Stall to Your Table of Hearty, Healthy Goodness
+                </h3>
+                
+                <!-- Story Content -->
+                <div class="space-y-8 text-gray-700 leading-relaxed text-lg max-w-4xl mx-auto">
+                    <p class="font-medium">
+                        It all began with a simple dream on Bugis Street—one small stall, a few beloved recipes, and a big desire to serve food that feels like home. That's how Makan Mate started: not with grand plans, but with the joy of seeing someone take a bite, smile, and say, <em class="text-makan-orange font-semibold">"This tastes good, like how my mom makes it."</em>
+                    </p>
+                    
+                    <p>
+                        Over time, that little stall grew—slowly, steadily, fueled by the people who kept coming back. Today, we're still rooted in that same heart, but now we get to share our food with even more folks: the hardworking industrial workers who need a filling, satisfying meal to power their days; the families and teams planning functions who want food that's kind to both budgets and bellies; and the growing group of friends in Singapore's West who've made us their go-to for no-fuss, delicious eats.
+                    </p>
+                    
+                    <p>
+                        What hasn't changed? Our promise to keep things real. Every dish we make skips the MSG, uses just a touch of salt, and keeps oil light—not because it's a "trend," but because we believe good food shouldn't make you choose between taste, health, and value.
+                    </p>
+                    
+                    <p class="font-medium text-makan-orange text-xl">
+                        We're grateful for every face that's sat at our stall, every order that's come through, and every "thank you" that's made our day. Here's to more good food, more full bellies, and more smiles—together.
+                    </p>
+                </div>
+                
+            </div>
         </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="py-16 bg-white">
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-2 sm:px-4 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-                <div class="relative max-w-lg mx-auto lg:mx-0">
-                    <div class="rounded-3xl overflow-hidden shadow-lg">
-                        <img
-                            src="/images/about-us.jpg"
-                            alt="Delicious Food"
-                            class="w-full h-96 object-cover"
-                        />
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-custom-text mb-4">Our Edge: Why Makan Mate</h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="flex items-center p-6">
+                    <div class="w-20 h-20 bg-makan-orange/20 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                        <svg class="w-10 h-10 text-makan-orange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
                     </div>
-                    <div class="absolute -bottom-4 -right-4 sm:bottom-0 sm:right-0 sm:translate-x-1/4 sm:translate-y-1/4 bg-makan-orange text-white p-3 sm:p-4 md:p-6 rounded-2xl shadow-xl max-w-xs sm:max-w-sm">
-                        <h3 class="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">Come and visit us</h3>
-                        <div class="space-y-1 sm:space-y-2 md:space-y-3 text-xs sm:text-sm md:text-sm">
-                            <div class="flex items-center">
-                                <i class="fas fa-phone text-sm md:text-base mr-2 md:mr-3"></i>
-                                <span>62642233 Ext 10-18</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-sm md:text-base mr-2 md:mr-3"></i>
-                                <span>order@makanmate.com</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-sm md:text-base mt-1 mr-2 md:mr-3"></i>
-                                <div>
-                                    <p>35-B Fishery Port Road, Jurong</p>
-                                    <p>Central Fish Market, Singapore,</p>
-                                    <p>619744</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-custom-text mb-3">Fresh, Wholesome Goodness</h3>
+                        <p class="text-gray-600 leading-relaxed">We pride ourselves on using ingredients with minimal preservatives and no artificial additives. Each bite is bursting with natural flavor and packed with nutrients, so you get both taste and wellness in every meal.</p>
                     </div>
                 </div>
-                <!-- Right side – Content -->
-                <div class="lg:pr-8">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-medium text-custom-text mb-6 leading-tight">
-                        We provide healthy food for your family.
-                    </h2>
-                    <div class="space-y-6 text-gray-600 leading-relaxed">
-                        <p class="font-medium">
-                            Our story began with a vision to create a unique dining experience
-                            that merges fine dining, exceptional service, and a vibrant
-                            ambiance. Rooted in city's rich culinary culture, we aim to
-                            honor our local roots while infusing a global palate.
-                        </p>
-                        <p class="font-normal">
-                            At place, we believe that dining is not just about food, but also about the
-                            overall experience. Our staff, renowned for their warmth and dedication,
-                            strives to make every visit an unforgettable event.
-                        </p>
+                <div class="flex items-center p-6">
+                    <div class="w-20 h-20 bg-makan-orange/20 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                        <svg class="w-10 h-10 text-makan-orange" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
                     </div>
-                    <div class="mt-8">
-                        <a
-                            href="menu.html"
-                            class="inline-block px-8 py-3 border-2 border-makan-orange text-makan-orange rounded-full font-medium transition-colors hover:bg-makan-orange hover:text-white"
-                        >
-                            Explore Our Menu
-                        </a>
+                    <div>
+                        <h3 class="text-xl font-bold text-custom-text mb-3">Thoughtfully Curated Menus</h3>
+                        <p class="text-gray-600 leading-relaxed">Our menus spotlight seasonal, locally-sourced ingredients. Whether you have specific dietary needs or just crave diverse, delicious flavors, we craft options that cater to every preference—from classic comfort foods to innovative, health-conscious creations.</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-6">
+                    <div class="w-20 h-20 bg-makan-orange/20 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                        <svg class="w-10 h-10 text-makan-orange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-custom-text mb-3">Artful, Instagram-Worthy Plating</h3>
+                        <p class="text-gray-600 leading-relaxed">Dining with us is a feast for the eyes too! We blend vibrant colors, varied textures, and creative plating techniques to turn each dish into a little work of art—making your meals as visually delightful as they are tasty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-playfair font-medium text-custom-text mb-4">Our Products & Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From catering to meal kits, we've got all your food needs covered</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-makan-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-utensils text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-text mb-3">Catering Services</h3>
+                    <p class="text-gray-600">Perfect for corporate events, weddings, and family gatherings with customizable menu options.</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-makan-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-box text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-text mb-3">Meal Kits</h3>
+                    <p class="text-gray-600">Ready-to-cook meals delivered to your doorstep with fresh ingredients and easy instructions.</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <div class="w-12 h-12 bg-makan-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-text mb-3">Delivery Service</h3>
+                    <p class="text-gray-600">Fast and reliable delivery across Singapore's West, bringing our flavors right to your table.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <img src="/images/certification/haccp.png" alt="HACCP Certification" class="w-full h-24 object-contain">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <img src="/images/certification/halal.png" alt="Food halal" class="w-full h-24 object-contain">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <img src="/images/certification/panseas.png" alt="Pan seas" class="w-full h-24 object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-playfair font-medium text-custom-text mb-6">Ready to Experience Makan Mate?</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Whether you're planning a corporate event, family gathering, or just want to enjoy our delicious meals at home, we're here to serve you. Let's create memorable dining experiences together.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-makan-orange mr-3"></i>
+                            <span class="text-gray-600">Fresh, healthy ingredients</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-makan-orange mr-3"></i>
+                            <span class="text-gray-600">Customizable menu options</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-makan-orange mr-3"></i>
+                            <span class="text-gray-600">Reliable delivery service</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="inline-block bg-makan-orange text-white px-8 py-4 rounded-full font-medium hover:bg-makan-orange-hover transition-colors">
+                        Contact Us Today
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-lg">
+                        <img src="/images/about-us.jpg" alt="Contact Makan Mate" class="w-full h-96 object-cover">
                     </div>
                 </div>
             </div>
@@ -303,7 +364,7 @@
                     <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">Brand Story</a></li>
                         <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
@@ -366,7 +427,7 @@
             </div>
             <nav class="space-y-4">
                 <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
-                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
+                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Brand Story</a>
                 <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
                 <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
                 <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
