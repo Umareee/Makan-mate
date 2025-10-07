@@ -1086,6 +1086,9 @@ if (clearAllBtn) {
     
     localStorage.setItem('selectedMenuItem', JSON.stringify(selected));
     
+    // Clear any existing breadcrumb trail when starting fresh from menu
+    localStorage.removeItem('breadcrumbTrail');
+    
     // Check if item has subcategories
     if (item.has_subcategories && item.subcategories && item.subcategories.length > 0) {
         // Redirect to subcategory selection page

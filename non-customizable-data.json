@@ -63,5 +63,20 @@
       "Both options include customizable main and sides",
       "Elevated presentation and premium packaging"
     ]
-  }
+  },
+  "buffet-ld-occasion-funeral-nonveg": {
+  "name": "Funeral Non-Veg Buffet",
+  "image": "/images/bento/imgi_46_Original-Delight-in-the-Box-1152x1536.jpg",
+  "price": 31.0,
+  "items": [
+    "Steamed White Rice",
+    "Stir-Fried Noodles with Chicken & Vegetables",
+    "Black Pepper Chicken",
+    "Sweet & Sour Fish Fillet",
+    "Mixed Vegetables with Garlic",
+    "Clear Soup with Meatballs",
+    "Fresh Fruit Platter",
+    "Mineral Water"
+  ]
+}
 }

@@ -1,0 +1,94 @@
+{
+  "specialties": [
+    {
+      "id": "gourmet-deluxe",
+      "name": "Gourmet Deluxe",
+      "description": "Premium selection of artisanal dishes crafted with the finest ingredients. Perfect for special occasions and intimate gatherings.",
+      "image": "/images/specialty/gourmet-deluxe.jpg",
+      "price": 45.99,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "features": [
+        "Premium ingredients",
+        "Chef's special preparation",
+        "Elegant presentation",
+        "Wine pairing suggestions"
+      ]
+    },
+    {
+      "id": "fusion-experience",
+      "name": "Fusion Experience",
+      "description": "Innovative blend of Eastern and Western cuisines that creates a unique culinary journey. Features bold flavors and creative presentations.",
+      "image": "/images/specialty/fusion-experience.jpg",
+      "price": 38.50,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "features": [
+        "East-West fusion",
+        "Creative flavor combinations",
+        "Modern presentation",
+        "Dietary adaptations available"
+      ]
+    },
+    {
+      "id": "traditional-heritage",
+      "name": "Traditional Heritage",
+      "description": "Authentic recipes passed down through generations, featuring time-honored cooking techniques and classic flavors.",
+      "image": "/images/specialty/traditional-heritage.jpg",
+      "price": 32.75,
+      "customizable": false,
+      "data_source": "non-customizable-data.json",
+      "features": [
+        "Authentic recipes",
+        "Traditional cooking methods",
+        "Cultural significance",
+        "Family-style serving"
+      ]
+    },
+    {
+      "id": "healthy-wellness",
+      "name": "Healthy Wellness",
+      "description": "Nutritionally balanced meals designed for health-conscious diners. Features organic ingredients and superfood additions.",
+      "image": "/images/specialty/healthy-wellness.jpg",
+      "price": 35.25,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "features": [
+        "Organic ingredients",
+        "Superfood inclusions",
+        "Nutritionally balanced",
+        "Allergen-friendly options"
+      ]
+    },
+    {
+      "id": "chef-signature",
+      "name": "Chef's Signature",
+      "description": "Exclusive creations by our head chef, featuring seasonal ingredients and innovative cooking techniques.",
+      "image": "/images/specialty/chef-signature.jpg",
+      "price": 52.00,
+      "customizable": false,
+      "data_source": "non-customizable-data.json",
+      "features": [
+        "Seasonal ingredients",
+        "Chef's exclusive recipes",
+        "Limited availability",
+        "Premium presentation"
+      ]
+    },
+    {
+      "id": "comfort-classics",
+      "name": "Comfort Classics",
+      "description": "Hearty, soul-warming dishes that bring back childhood memories. Perfect for cozy gatherings and family meals.",
+      "image": "/images/specialty/comfort-classics.jpg",
+      "price": 28.90,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "features": [
+        "Home-style cooking",
+        "Generous portions",
+        "Familiar flavors",
+        "Family-friendly"
+      ]
+    }
+  ]
+}

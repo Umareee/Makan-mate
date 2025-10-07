@@ -577,7 +577,11 @@
                         minimumPax: minimumPax, // Store the minimum pax requirement
                         totalPrice: (perPaxPrice * multiplier).toFixed(2)
                     };
-                    localStorage.setItem('selectedItemWithQuantity', JSON.stringify(quantityData));
+                    const itemToStore = {
+  ...selectedMenuItem,
+  categoryKey: selectedMenuItem.id   // same string you used in non-customizable-data.json
+};
+localStorage.setItem('selectedMenuItem', JSON.stringify(itemToStore));
 
                     // Determine next page based on customizable property from menu-items.json
                     const isCustomizable = selectedMenuItem.customizable;
@@ -664,7 +668,11 @@ document.addEventListener('click', async (e) => {
      // Function to navigate to menu page with selected category
   function goToMenuCategory(categoryId) {
     console.log('Storing category for navigation:', categoryId);
-    localStorage.setItem('selectedMenuCategory', categoryId);
+    const itemToStore = {
+  ...selectedMenuItem,
+  categoryKey: selectedMenuItem.id   // same string you used in non-customizable-data.json
+};
+localStorage.setItem('selectedMenuItem', JSON.stringify(itemToStore));
     window.location.href = 'menu.html';
   }
 

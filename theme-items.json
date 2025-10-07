@@ -1,0 +1,125 @@
+{
+  "themes": [
+    {
+      "id": "asian-fusion",
+      "name": "Asian Fusion",
+      "description": "A delightful blend of traditional Asian flavors with modern culinary techniques. Features dishes from various Asian cuisines with contemporary twists.",
+      "image": "/images/themes/asian-fusion.jpg",
+      "price": 42.80,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "cuisine_types": [
+        "Japanese",
+        "Korean",
+        "Thai",
+        "Vietnamese",
+        "Chinese"
+      ],
+      "highlights": [
+        "Sushi and sashimi selections",
+        "Korean BBQ options",
+        "Thai curry varieties",
+        "Vietnamese pho bar"
+      ]
+    },
+    {
+      "id": "mediterranean-escape",
+      "name": "Mediterranean Escape",
+      "description": "Transport your guests to the Mediterranean coast with fresh seafood, olive oils, and herb-infused dishes from Greece, Italy, and Spain.",
+      "image": "/images/themes/mediterranean-escape.jpg",
+      "price": 39.95,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "cuisine_types": [
+        "Greek",
+        "Italian",
+        "Spanish",
+        "Turkish"
+      ],
+      "highlights": [
+        "Fresh seafood platters",
+        "Authentic pasta stations",
+        "Greek mezze selection",
+        "Spanish tapas variety"
+      ]
+    },
+    {
+      "id": "local-heritage",
+      "name": "Local Heritage",
+      "description": "Celebrate local traditions with authentic regional dishes that showcase the rich culinary heritage of Singapore and Malaysia.",
+      "image": "/images/themes/local-heritage.jpg",
+      "price": 35.50,
+      "customizable": false,
+      "data_source": "non-customizable-data.json",
+      "cuisine_types": [
+        "Singaporean",
+        "Malaysian",
+        "Peranakan"
+      ],
+      "highlights": [
+        "Laksa and bak kut teh",
+        "Hainanese chicken rice",
+        "Peranakan kueh selection",
+        "Traditional kopi corner"
+      ]
+    },
+    {
+      "id": "international-buffet",
+      "name": "International Buffet",
+      "description": "A global culinary journey featuring popular dishes from around the world. Perfect for diverse crowds with varied taste preferences.",
+      "image": "/images/themes/international-buffet.jpg",
+      "price": 45.75,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "cuisine_types": [
+        "American",
+        "European",
+        "Middle Eastern",
+        "Indian",
+        "Mexican"
+      ],
+      "highlights": [
+        "Live cooking stations",
+        "International dessert bar",
+        "Halal and vegetarian options",
+        "Kids-friendly selections"
+      ]
+    },
+    {
+      "id": "vegan-paradise",
+      "name": "Vegan Paradise",
+      "description": "Plant-based culinary excellence featuring creative and nutritious vegan dishes that satisfy all dietary preferences without compromising on taste.",
+      "image": "/images/themes/vegan-paradise.jpg",
+      "price": 38.25,
+      "customizable": true,
+      "data_source": "menu-customization-data.json",
+      "cuisine_types": [
+        "Plant-based International"
+      ],
+      "highlights": [
+        "Organic vegetable selections",
+        "Plant-based protein options",
+        "Raw food selections",
+        "Vegan dessert corner"
+      ]
+    },
+    {
+      "id": "corporate-executive",
+      "name": "Corporate Executive",
+      "description": "Sophisticated and professional catering designed for business events, meetings, and corporate functions with elegant presentation.",
+      "image": "/images/themes/corporate-executive.jpg",
+      "price": 48.90,
+      "customizable": false,
+      "data_source": "non-customizable-data.json",
+      "cuisine_types": [
+        "International Business"
+      ],
+      "highlights": [
+        "Premium ingredient selections",
+        "Elegant presentation",
+        "Business lunch formats",
+        "Professional service"
+      ]
+    }
+  ]
+}

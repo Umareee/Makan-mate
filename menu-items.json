@@ -232,6 +232,146 @@
       "food_restriction": "halal",
       "health": "lesssalt",
       "spice_level": "mild"
-    }
+    },
+  {
+    "id": "buffet-lunch-dinner",
+    "name": "Lunch / Dinner Buffet",
+    "price": 28.0,
+    "description": "Hearty buffet spread perfect for lunch or dinner events.",
+    "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+    "category": "buffet",
+    "customizable": false,
+    "data_source": "non-customizable-data.json",
+    "cuisine": "international",
+    "meal_time": "lunch",
+    "cooking_method": "mixed",
+    "flavor": "savory",
+    "temperature": "warm",
+    "minimum_packs": 30,
+    "dietary": "halal",
+    "food_restriction": "halal",
+    "health": "healthyoption",
+    "spice_level": "mild",
+    "has_subcategories": true,
+    "subcategories": [
+      {
+        "id": "buffet-ld-oriental",
+        "name": "Oriental",
+        "price": 28.0,
+        "description": "Classic Chinese & Asian buffet line-up.",
+        "image": "/images/buffet/oriental.jpg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-western",
+        "name": "Western",
+        "price": 30.0,
+        "description": "International Western favourites.",
+        "image": "/images/buffet/western.jpg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-korean",
+        "name": "Korean",
+        "price": 32.0,
+        "description": "Authentic Korean buffet selection.",
+        "image": "/images/buffet/korean.jpg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-bbq",
+        "name": "BBQ",
+        "price": 35.0,
+        "description": "Live BBQ station with marinated meats.",
+        "image": "/images/buffet/bbq.jpg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-occasion",
+        "name": "Occasion",
+        "price": 33.0,
+        "description": "Tailored for special life events.",
+        "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+        "customizable": false,
+        "data_source": "non-customizable-data.json",
+        "has_subcategories": true,
+        "subcategories": [
+          {
+            "id": "buffet-ld-occasion-birthday",
+            "name": "Birthday",
+            "price": 33.0,
+            "description": "Festive birthday buffet spread.",
+            "image": "/images/buffet/birthday.jpg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json"
+          },
+          {
+            "id": "buffet-ld-occasion-wedding",
+            "name": "Wedding",
+            "price": 38.0,
+            "description": "Elegant wedding banquet buffet.",
+            "image": "/images/buffet/wedding.jpg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json"
+          },
+          {
+            "id": "buffet-ld-occasion-funeral",
+            "name": "Funeral",
+            "price": 29.0,
+            "description": "Respectful funeral reception buffet.",
+            "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+            "customizable": false,
+            "data_source": "non-customizable-data.json",
+            "has_subcategories": true,
+            "subcategories": [
+              {
+                "id": "buffet-ld-occasion-funeral-veg",
+                "name": "Veg",
+                "price": 29.0,
+                "description": "Vegetarian funeral buffet.",
+                "image": "/images/buffet/funeral-veg.jpg",
+                "customizable": false,
+                "data_source": "non-customizable-data.json"
+              },
+              {
+                "id": "buffet-ld-occasion-funeral-nonveg",
+                "name": "Non-Veg",
+                "price": 31.0,
+                "description": "Non-vegetarian funeral buffet.",
+                "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "buffet-breakfast-hightea",
+    "name": "Breakfast / High-Tea Buffet",
+    "price": 18.0,
+    "description": "Light morning or tea-time buffet selection.",
+    "image": "/images/buffet/breakfast-hightea.jpg",
+    "category": "buffet",
+    "customizable": false,
+    "data_source": "non-customizable-data.json",
+    "cuisine": "international",
+    "meal_time": "hightea",
+    "cooking_method": "baked",
+    "flavor": "sweet",
+    "temperature": "warm",
+    "minimum_packs": 20,
+    "dietary": "vegetarian",
+    "food_restriction": "vegetarian",
+    "health": "healthyoption",
+    "spice_level": "mild"
+  }
   ]
 }

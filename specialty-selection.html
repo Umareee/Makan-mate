@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Option - Makan Mate</title>
+    <title>Select Specialty - Makan Mate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -124,22 +124,15 @@
         </div>
     </nav>
 
-    <!-- Subcategory Selection Section -->
+    <!-- Specialty Selection Section -->
     <section class="py-12 sm:py-16 min-h-screen">
         <div class="container mx-auto px-4">
             <!-- Back Button -->
             <div class="mb-8">
                 <button onclick="history.back()" class="flex items-center space-x-2 text-custom-text hover:text-makan-orange transition-colors">
                     <i class="fas fa-arrow-left"></i>
-                    <span>Back</span>
+                    <span>Back to Menu</span>
                 </button>
-            </div>
-
-            <!-- Breadcrumb Trail - Centered above title -->
-            <div class="text-center mb-8">
-                <nav id="breadcrumb-trail" class="inline-flex items-center justify-center flex-wrap gap-1 text-sm bg-white border border-gray-200 px-4 py-3 rounded-full shadow-sm">
-                    <!-- Breadcrumb items will be dynamically loaded here -->
-                </nav>
             </div>
 
             <!-- Menu Item Info -->
@@ -152,9 +145,9 @@
                 </p>
             </div>
 
-            <!-- Subcategory Selection Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto" id="subcategories-grid">
-                <!-- Subcategory cards will be loaded here -->
+            <!-- Specialty Selection Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto" id="specialties-grid">
+                <!-- Specialty cards will be loaded here -->
             </div>
         </div>
     </section>
@@ -250,89 +243,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        let menuData = null;
+        let specialtyData = null;
         let selectedMenuItem = null;
-        let breadcrumbTrail = [];
 
-        // Load menu data
-        async function loadMenuData() {
+        // Load specialty data
+        async function loadSpecialtyData() {
             try {
-                const response = await fetch('/menu-items.json');
-                menuData = await response.json();
+                const response = await fetch('/specialty-items.json');
+                specialtyData = await response.json();
             } catch (error) {
-                console.error('Error loading menu data:', error);
+                console.error('Error loading specialty data:', error);
             }
         }
 
-        // Initialize breadcrumb trail from localStorage or create new one
-        function initializeBreadcrumb() {
-            const storedTrail = localStorage.getItem('breadcrumbTrail');
-            if (storedTrail) {
-                breadcrumbTrail = JSON.parse(storedTrail);
-            } else {
-                // Initialize with the main menu item
-                breadcrumbTrail = [{
-                    name: selectedMenuItem.name,
-                    id: selectedMenuItem.id,
-                    level: 0
-                }];
-            }
-            updateBreadcrumbDisplay();
-        }
-
-        // Update breadcrumb display
-        function updateBreadcrumbDisplay() {
-            const breadcrumbElement = document.getElementById('breadcrumb-trail');
-            if (!breadcrumbElement) return;
-
-            breadcrumbElement.innerHTML = '';
-            
-            breadcrumbTrail.forEach((item, index) => {
-                const breadcrumbItem = document.createElement('span');
-                breadcrumbItem.className = 'flex items-center';
-                
-                if (index === breadcrumbTrail.length - 1) {
-                    // Current item (last in trail) - more prominent styling
-                    breadcrumbItem.innerHTML = `<span class="text-makan-orange font-semibold px-2 py-1 bg-makan-orange bg-opacity-10 rounded-md">${item.name}</span>`;
-                } else {
-                    // Previous items (clickable) - improved styling
-                    breadcrumbItem.innerHTML = `
-                        <span class="text-gray-700 hover:text-makan-orange cursor-pointer transition-colors px-2 py-1 rounded-md hover:bg-gray-100" onclick="navigateToBreadcrumb(${index})">${item.name}</span>
-                        <i class="fas fa-chevron-right text-xs text-gray-400 mx-2"></i>
-                    `;
-                }
-                
-                breadcrumbElement.appendChild(breadcrumbItem);
-            });
-        }
-
-        // Navigate to a specific breadcrumb level
-        function navigateToBreadcrumb(index) {
-            // Remove items after the clicked index
-            breadcrumbTrail = breadcrumbTrail.slice(0, index + 1);
-            localStorage.setItem('breadcrumbTrail', JSON.stringify(breadcrumbTrail));
-            
-            // Reload the page to show the correct level
-            location.reload();
-        }
-
-        // Find subcategories at the current breadcrumb level
-        function findCurrentSubcategories() {
-            let currentData = menuData.items.find(item => item.id === selectedMenuItem.id);
-            
-            // Navigate through the breadcrumb trail to find current level subcategories
-            for (let i = 1; i < breadcrumbTrail.length; i++) {
-                const trailItem = breadcrumbTrail[i];
-                if (currentData && currentData.subcategories) {
-                    currentData = currentData.subcategories.find(sub => sub.id === trailItem.id);
-                }
-            }
-            
-            return currentData;
-        }
-
-        // Load selected menu item and generate subcategory cards
-        async function loadSubcategoryData() {
+        // Load selected menu item and generate specialty cards
+        async function loadSpecialtySelection() {
             const storedItem = localStorage.getItem('selectedMenuItem');
             if (!storedItem) {
                 window.location.href = 'menu.html';
@@ -341,124 +266,86 @@
 
             selectedMenuItem = JSON.parse(storedItem);
             
-            // Load menu data first
-            await loadMenuData();
+            // Update page content
+            document.getElementById('item-name').textContent = selectedMenuItem.name;
+            document.getElementById('item-description').textContent = selectedMenuItem.description;
+
+            // Load specialty data
+            await loadSpecialtyData();
             
-            // Initialize breadcrumb
-            initializeBreadcrumb();
-            
-            // Find current level data
-            const currentData = findCurrentSubcategories();
-            
-            if (!currentData) {
-                window.location.href = 'menu.html';
-                return;
-            }
-            
-            // Update page content with current level data
-            document.getElementById('item-name').textContent = currentData.name;
-            document.getElementById('item-description').textContent = currentData.description;
-            
-            // Check if current level has subcategories
-            if (!currentData.has_subcategories || !currentData.subcategories) {
-                // If no subcategories, redirect to quantity selection
+            if (!specialtyData || !specialtyData.specialties) {
+                // If no specialty data, redirect to quantity selection
                 window.location.href = 'quantity-selection.html';
                 return;
             }
 
-            generateSubcategoryCards(currentData.subcategories);
+            generateSpecialtyCards(specialtyData.specialties);
         }
 
-        // Generate subcategory cards
-        function generateSubcategoryCards(subcategories) {
-            const subcategoriesGrid = document.getElementById('subcategories-grid');
-            subcategoriesGrid.innerHTML = '';
+        // Generate specialty cards
+        function generateSpecialtyCards(specialties) {
+            const specialtiesGrid = document.getElementById('specialties-grid');
+            specialtiesGrid.innerHTML = '';
 
-            subcategories.forEach(subcategory => {
+            specialties.forEach(specialty => {
                 const cardHTML = `
-                    <div class="subcategory-card bg-white border-2 border-gray-200 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-makan-orange" data-subcategory-id="${subcategory.id}">
+                    <div class="specialty-card bg-white border-2 border-gray-200 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-makan-orange" data-specialty-id="${specialty.id}">
                         <div class="w-full h-48 mx-auto mb-4 rounded-lg overflow-hidden">
-                            <img src="${subcategory.image}" alt="${subcategory.name}" class="w-full h-full object-cover">
+                            <img src="${specialty.image}" alt="${specialty.name}" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="text-xl font-bold text-custom-text mb-3">${subcategory.name}</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">${subcategory.description}</p>
+                        <h3 class="text-xl font-bold text-custom-text mb-3">${specialty.name}</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">${specialty.description}</p>
                         <div class="text-lg font-bold text-makan-orange mb-4">
-                            Starting from $${subcategory.price.toFixed(2)}
+                            Starting from $${specialty.price.toFixed(2)}
                         </div>
                         <button class="w-full bg-makan-orange text-white py-2 px-4 rounded-full font-medium transition-all duration-300 hover:bg-makan-orange-hover">
-                            Select This Option
+                            Select This Specialty
                         </button>
                     </div>
                 `;
                 
-                subcategoriesGrid.innerHTML += cardHTML;
+                specialtiesGrid.innerHTML += cardHTML;
             });
         }
 
-        // Handle subcategory selection
-        function initializeSubcategorySelection() {
-            const subcategoriesGrid = document.getElementById('subcategories-grid');
+        // Handle specialty selection
+        function initializeSpecialtySelection() {
+            const specialtiesGrid = document.getElementById('specialties-grid');
 
-            subcategoriesGrid.addEventListener('click', async (e) => {
-                const card = e.target.closest('.subcategory-card');
+            specialtiesGrid.addEventListener('click', async (e) => {
+                const card = e.target.closest('.specialty-card');
                 if (!card) return;
 
-                const subcategoryId = card.dataset.subcategoryId;
+                const specialtyId = card.dataset.specialtyId;
                 
-                // Find the subcategory data from current level
-                const currentData = findCurrentSubcategories();
-                let selectedSubcategory = null;
-                
-                if (currentData && currentData.subcategories) {
-                    selectedSubcategory = currentData.subcategories.find(sub => sub.id === subcategoryId);
-                }
+                // Find the specialty data
+                const selectedSpecialty = specialtyData.specialties.find(specialty => specialty.id === specialtyId);
 
-                if (!selectedSubcategory) {
-                    console.error('Subcategory not found:', subcategoryId);
+                if (!selectedSpecialty) {
+                    console.error('Specialty not found:', specialtyId);
                     return;
                 }
 
-                // Check if this subcategory has further subcategories
-                if (selectedSubcategory.has_subcategories && selectedSubcategory.subcategories) {
-                    // Add to breadcrumb trail
-                    breadcrumbTrail.push({
-                        name: selectedSubcategory.name,
-                        id: selectedSubcategory.id,
-                        level: breadcrumbTrail.length
-                    });
-                    
-                    // Store updated breadcrumb trail
-                    localStorage.setItem('breadcrumbTrail', JSON.stringify(breadcrumbTrail));
-                    
-                    // Update the page to show the next level subcategories
-                    document.getElementById('item-name').textContent = selectedSubcategory.name;
-                    document.getElementById('item-description').textContent = selectedSubcategory.description;
-                    updateBreadcrumbDisplay();
-                    generateSubcategoryCards(selectedSubcategory.subcategories);
-                } else {
-                    // Store the selected subcategory and proceed to quantity selection
-                    const subcategoryData = {
-                        name: selectedSubcategory.name,
-                        id: selectedSubcategory.id,
-                        image: selectedSubcategory.image,
-                        price: selectedSubcategory.price,
-                        description: selectedSubcategory.description,
-                        customizable: selectedSubcategory.customizable || false,
-                        data_source: selectedSubcategory.data_source || 'non-customizable-data.json'
-                    };
-                    
-                    // Clear breadcrumb trail when moving to quantity selection
-                    localStorage.removeItem('breadcrumbTrail');
-                    localStorage.setItem('selectedMenuItem', JSON.stringify(subcategoryData));
-                    window.location.href = 'quantity-selection.html';
-                }
+                // Store the selected specialty and proceed to quantity selection
+                const specialtySelectionData = {
+                    name: selectedSpecialty.name,
+                    id: selectedSpecialty.id,
+                    image: selectedSpecialty.image,
+                    price: selectedSpecialty.price,
+                    description: selectedSpecialty.description,
+                    customizable: selectedSpecialty.customizable || false,
+                    data_source: selectedSpecialty.data_source || 'non-customizable-data.json'
+                };
+                
+                localStorage.setItem('selectedMenuItem', JSON.stringify(specialtySelectionData));
+                window.location.href = 'quantity-selection.html';
             });
         }
 
         // Initialize page when DOM is loaded
         document.addEventListener('DOMContentLoaded', async () => {
-            await loadSubcategoryData();
-            initializeSubcategorySelection();
+            await loadSpecialtySelection();
+            initializeSpecialtySelection();
         });
     </script>
 </body>
