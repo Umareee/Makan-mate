@@ -312,19 +312,55 @@
     {
       "id": "set-a",
       "title": "Funeral Non-Veg Set A @ $31.00 per pax (minimum 30 pax)",
-      "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
+      "image": "/images/buffet/nonveg-funeral.jpeg",
       "multiplier": 1
     },
     {
       "id": "set-b",
       "title": "Funeral Non-Veg Set B @ $31.00 per pax (minimum 30 pax)",
-      "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
+      "image": "/images/buffet/nonveg-funeral.jpeg",
       "multiplier": 1
     },
     {
       "id": "set-c",
       "title": "Funeral Non-Veg Set C @ $31.00 per pax (minimum 30 pax)",
-      "image": "/images/bento/imgi_2_Original-Delight-in-the-Box-300x300.jpg",
+      "image": "/images/buffet/nonveg-funeral.jpeg",
+      "multiplier": 1
+    }
+    ,
+    {
+      "id": "set-d",
+      "title": "Funeral Non-Veg Set D @ $31.00 per pax (minimum 30 pax)",
+      "image": "/images/buffet/nonveg-funeral.jpeg",
+      "multiplier": 1
+    }
+    ,
+    {
+      "id": "set-e",
+      "title": "Funeral Non-Veg Set E @ $31.00 per pax (minimum 30 pax)",
+      "image": "/images/buffet/nonveg-funeral.jpeg",
+      "multiplier": 1
+    }
+  ]
+},
+  "buffet-ld-occasion-funeral-veg": {
+  "packs": [
+    {
+      "id": "set-a",
+      "title": "Funeral Veg Set A @ $31.00 per pax (minimum 30 pax)",
+      "image": "/images/buffet/vegetarian-buffet.jpeg",
+      "multiplier": 1
+    },
+    {
+      "id": "set-b",
+      "title": "Funeral Veg Set B @ $31.00 per pax (minimum 30 pax)",
+      "image": "/images/buffet/vegetarian-buffet.jpeg",
+      "multiplier": 1
+    },
+    {
+      "id": "set-c",
+      "title": "Funeral Veg Set C @ $31.00 per pax (minimum 30 pax)",
+      "image": "/images/buffet/vegetarian-buffet.jpeg",
       "multiplier": 1
     }
   ]

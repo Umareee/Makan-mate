@@ -238,7 +238,7 @@
     "name": "Lunch / Dinner Buffet",
     "price": 28.0,
     "description": "Hearty buffet spread perfect for lunch or dinner events.",
-    "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+    "image": "/images/buffet/lunch-dinner.jpeg",
     "category": "buffet",
     "customizable": false,
     "data_source": "non-customizable-data.json",
@@ -259,43 +259,45 @@
         "name": "Oriental",
         "price": 28.0,
         "description": "Classic Chinese & Asian buffet line-up.",
-        "image": "/images/buffet/oriental.jpg",
+        "image": "/images/buffet/oriental-buffet.jpeg",
         "customizable": false,
-        "data_source": "non-customizable-data.json"
+        "data_source": "non-customizable-data.json",
+        "has_subcategories": true,
+        "subcategories": [
+          {
+            "id": "buffet-ld-crystal",
+            "name": "Delight Crystal",
+            "price": 33.0,
+            "description": "Festive birthday buffet spread.",
+            "image": "/images/buffet/western-buffet.jpeg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json"
+          },
+          {
+            "id": "buffet-ld-silver",
+            "name": "Delight Silver",
+            "price": 38.0,
+            "description": "Elegant wedding banquet buffet.",
+            "image": "/images/buffet/oriental-buffet.jpeg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json"
+          }]
       },
       {
         "id": "buffet-ld-western",
         "name": "Western",
         "price": 30.0,
         "description": "International Western favourites.",
-        "image": "/images/buffet/western.jpg",
+        "image": "/images/buffet/western-buffet.jpeg",
         "customizable": false,
         "data_source": "non-customizable-data.json"
       },
-      {
-        "id": "buffet-ld-korean",
-        "name": "Korean",
-        "price": 32.0,
-        "description": "Authentic Korean buffet selection.",
-        "image": "/images/buffet/korean.jpg",
-        "customizable": false,
-        "data_source": "non-customizable-data.json"
-      },
-      {
-        "id": "buffet-ld-bbq",
-        "name": "BBQ",
-        "price": 35.0,
-        "description": "Live BBQ station with marinated meats.",
-        "image": "/images/buffet/bbq.jpg",
-        "customizable": false,
-        "data_source": "non-customizable-data.json"
-      },
-      {
+        {
         "id": "buffet-ld-occasion",
-        "name": "Occasion",
+        "name": "Special Occasion",
         "price": 33.0,
         "description": "Tailored for special life events.",
-        "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
+        "image": "/images/buffet/special-occassion-buffet.jpeg",
         "customizable": false,
         "data_source": "non-customizable-data.json",
         "has_subcategories": true,
@@ -305,7 +307,228 @@
             "name": "Birthday",
             "price": 33.0,
             "description": "Festive birthday buffet spread.",
-            "image": "/images/buffet/birthday.jpg",
+            "image": "/images/buffet/birthday-buffet.jpeg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json",
+                 "has_subcategories": true,
+            "subcategories": [
+              {
+                "id": "buffet-id-fullmoon",
+                "name": "Full Moon Party",
+                "price": 29.0,
+                "description": "Vegetarian funeral buffet.",
+                "image": "/images/buffet/fullmoon.jpeg",
+                "customizable": false,
+                "data_source": "non-customizable-data.json"
+              },
+              {
+                "id": "buffet-ld-kidsbirthday",
+                "name": "Kids Birthday Party",
+                "price": 31.0,
+                "description": "Non-vegetarian funeral buffet.",
+                "image": "/images/buffet/kidsbirthday.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              },
+              {
+                "id": "buffet-ld-eldersbirthday",
+                "name": "Elderly Birthday Party",
+                "price": 31.0,
+                "description": "Non-vegetarian funeral buffet.",
+                "image": "/images/buffet/elderlybirthday.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              }
+            ]
+          },
+          {
+            "id": "buffet-ld-occasion-wedding",
+            "name": "Wedding",
+            "price": 38.0,
+            "description": "Elegant wedding banquet buffet.",
+            "image": "/images/buffet/wedding-buffet.jpeg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json",
+            "has_subcategories": true,
+            "subcategories": [
+              {
+                "id": "buffet-id-blissfulwedding",
+                "name": "BlissFul Begginnings",
+                "price": 29.0,
+                "description": "Blissfull.",
+                "image": "/images/buffet/blissfull.jpeg",
+                "customizable": false,
+                "data_source": "non-customizable-data.json"
+              },
+              {
+                "id": "buffet-ld-golden",
+                "name": "Golden Vows",
+                "price": 31.0,
+                "description": "Golden Vows event.",
+                "image": "/images/buffet/goldenvows.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              },
+              {
+                "id": "buffet-ld-veggiefeast",
+                "name": "Wedding Veggie Feast",
+                "price": 31.0,
+                "description": "Wedding Feast event.",
+                "image": "/images/buffet/weddingfeast.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              }
+            ]
+          },
+          {
+            "id": "buffet-ld-occasion-funeral",
+            "name": "Funeral",
+            "price": 29.0,
+            "description": "Respectful funeral reception buffet.",
+            "image": "/images/buffet/funneral-buffet.jpeg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json",
+            "has_subcategories": true,
+            "subcategories": [
+              {
+                "id": "buffet-ld-occasion-funeral-veg",
+                "name": "Vegetarian",
+                "price": 29.0,
+                "description": "Vegetarian funeral buffet.",
+                "image": "/images/buffet/vegetarian-buffet.jpeg",
+                "customizable": false,
+                "data_source": "non-customizable-data.json"
+              },
+              {
+                "id": "buffet-ld-occasion-funeral-nonveg",
+                "name": "Non-Vegetarian",
+                "price": 31.0,
+                "description": "Non-vegetarian funeral buffet.",
+                "image": "/images/buffet/nonveg-funeral.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              }
+            ]
+          },
+           {
+            "id": "buffet-ld-others",
+            "name": "Others",
+            "price": 38.0,
+            "description": "For special events.",
+            "image": "/images/buffet/graduation.jpeg",
+            "customizable": false,
+            "data_source": "non-customizable-data.json",
+            "has_subcategories": true,
+            "subcategories": [
+              {
+                "id": "buffet-id-graduation",
+                "name": "Graduation Party",
+                "price": 29.0,
+                "description": "Vegetarian funeral buffet.",
+                "image": "/images/buffet/graduation.jpeg",
+                "customizable": false,
+                "data_source": "non-customizable-data.json"
+              },
+              {
+                "id": "buffet-ld-aniversarry",
+                "name": "Anniversary Party",
+                "price": 31.0,
+                "description": "For anniversary",
+                "image": "/images/buffet/anniversary.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              },
+              {
+                "id": "buffet-ld-welcomeparty",
+                "name": "Welcome/Farewell Party",
+                "price": 31.0,
+                "description": "Welcome back",
+                "image": "/images/buffet/welcome.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              },
+               {
+                "id": "buffet-ld-grandopen",
+                "name": "Grand Opening",
+                "price": 31.0,
+                "description": "New in the town.",
+                "image": "/images/buffet/opening.jpeg",
+                "customizable": false,
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "buffet-ld-korean",
+        "name": "Korean",
+        "price": 32.0,
+        "description": "Authentic Korean buffet selection.",
+        "image": "/images/buffet/korean-buffet.jpeg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-bbq",
+        "name": "BBQ",
+        "price": 35.0,
+        "description": "Live BBQ station with marinated meats.",
+        "image": "/images/buffet/bbq buffet.jpeg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+        {
+        "id": "buffet-ld-veg",
+        "name": "Vegetarian",
+        "price": 35.0,
+        "description": "Vegetarians only",
+        "image": "/images/buffet/vegetarian-buffet.jpeg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+        {
+        "id": "buffet-ld-healthier",
+        "name": "Healthier Choice",
+        "price": 35.0,
+        "description": "Healthy living",
+        "image": "/images/buffet/healthier choice.jpeg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-seminar",
+        "name": "Seminar",
+        "price": 35.0,
+        "description": "For Seminars",
+        "image": "/images/buffet/seminar-buffet.jpeg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json"
+      },
+      {
+        "id": "buffet-ld-festive",
+        "name": "Festive Promo",
+        "price": 35.0,
+        "description": "For Festive Season.",
+        "image": "/images/buffet/festive-promo-buffet.jpeg",
+        "customizable": false,
+        "data_source": "non-customizable-data.json",
+        "has_subcategories": true,
+        "subcategories": [
+          {
+            "id": "buffet-ld-occasion-birthday",
+            "name": "Birthday",
+            "price": 33.0,
+            "description": "Festive birthday buffet spread.",
+            "image": "/images/buffet/kidsbirthday.jpeg",
             "customizable": false,
             "data_source": "non-customizable-data.json"
           },
@@ -314,42 +537,10 @@
             "name": "Wedding",
             "price": 38.0,
             "description": "Elegant wedding banquet buffet.",
-            "image": "/images/buffet/wedding.jpg",
+            "image": "/images/buffet/weddingfeast.jpeg",
             "customizable": false,
             "data_source": "non-customizable-data.json"
-          },
-          {
-            "id": "buffet-ld-occasion-funeral",
-            "name": "Funeral",
-            "price": 29.0,
-            "description": "Respectful funeral reception buffet.",
-            "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
-            "customizable": false,
-            "data_source": "non-customizable-data.json",
-            "has_subcategories": true,
-            "subcategories": [
-              {
-                "id": "buffet-ld-occasion-funeral-veg",
-                "name": "Veg",
-                "price": 29.0,
-                "description": "Vegetarian funeral buffet.",
-                "image": "/images/buffet/funeral-veg.jpg",
-                "customizable": false,
-                "data_source": "non-customizable-data.json"
-              },
-              {
-                "id": "buffet-ld-occasion-funeral-nonveg",
-                "name": "Non-Veg",
-                "price": 31.0,
-                "description": "Non-vegetarian funeral buffet.",
-                "image": "/images/menuu/imgi_2_High-Tea-Select-4-Items-Menu-300x300.png",
-                "customizable": false,
-                "data_source": "quantity-configs.json",
-                "has_subcategories": false
-              }
-            ]
-          }
-        ]
+          }]
       }
     ]
   },
@@ -358,7 +549,7 @@
     "name": "Breakfast / High-Tea Buffet",
     "price": 18.0,
     "description": "Light morning or tea-time buffet selection.",
-    "image": "/images/buffet/breakfast-hightea.jpg",
+    "image": "/images/buffet/breakfast-highte.jpeg",
     "category": "buffet",
     "customizable": false,
     "data_source": "non-customizable-data.json",

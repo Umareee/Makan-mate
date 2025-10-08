@@ -78,5 +78,21 @@
     "Fresh Fruit Platter",
     "Mineral Water"
   ]
+},
+  "buffet-ld-occasion-funeral-veg": {
+  "name": "Funeral Veg Buffet",
+  "image": "/images/buffet/vegetarian.jpeg",
+  "price": 31.0,
+  "items": [
+    "Steamed White Rice",
+    "Stir-Fried Noodles with Chicken & Vegetables",
+    "Black Pepper Chicken",
+    "Sweet & Sour Fish Fillet",
+    "Mixed Vegetables with Garlic",
+    "Clear Soup with Meatballs",
+    "Fresh Fruit Platter",
+    "Mineral Water"
+  ]
 }
+
 }

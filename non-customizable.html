@@ -568,9 +568,6 @@ if (previousContainer) {
       card.innerHTML = `
         <div class="font-semibold text-gray-800 uppercase text-base mb-1">${categoryData.name}</div>
         <div class="cat-topline mb-3"></div>
-        <div class="w-full h-36 rounded overflow-hidden mb-3">
-          <img src="${categoryData.image}" alt="${categoryData.name}" class="w-full h-full object-cover">
-        </div>
         <div class="text-sm text-orange-500 font-semibold mb-2">What's included:</div>
         <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
           ${categoryData.items.map(item => `<li>${item}</li>`).join('')}
