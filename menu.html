@@ -29,69 +29,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-white font-dm-sans text-custom-text">
-    <!-- Header -->
-    <header class="bg-gray-800 text-white">
-        <!-- Top bar with contact info -->
-        <div class="bg-custom-topbar py-2 px-2">
-            <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
-                <!-- Mobile Layout -->
-                <div class="flex sm:hidden justify-between items-start py-1">
-                    <div class="flex items-center space-x-1">
-                        <i class="fas fa-phone"></i>
-                        <span>62642233 Ext 10-18</span>
-                    </div>
-                    <div class="flex flex-col items-end space-y-1">
-                        <div class="flex items-center space-x-1">
-                            <i class="fas fa-envelope"></i>
-                            <span>order@makanmate.com</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-twitter text-xs"></i>
-                            </a>
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-facebook text-xs"></i>
-                            </a>
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-instagram text-xs"></i>
-                            </a>
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-github text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Desktop Layout -->
-                <div class="hidden sm:flex justify-between items-center">
-                    <div class="flex items-center space-x-6">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-phone"></i>
-                            <span>62642233 Ext 10-18</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-envelope"></i>
-                            <span>order@makanmate.com</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Main navigation -->
     <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
@@ -109,12 +46,13 @@
                 <a href="index.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
                 <a href="menu.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Catering</a>
-                <a href="weekly-meal-plan.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Plans</a>
-                <a href="delivery.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Delivery</a>
-                  <a href="#" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Mart</a>
+                <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Delivery</a>
+                  <a href="mart.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Mart</a>
                     <a href="past-events.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Gallery</a>
                 <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
-    
+                    <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer"  class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
+                    Order Now
+                </a>
             </div>
 
             <!-- Mobile menu button -->
@@ -486,20 +424,25 @@
 
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12 sm:py-16">
-        <div class="container mx-auto px-2 sm:px-4">
+    <footer class="bg-gray-800 text-white py-16 observe-fade  ">
+        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <!-- Logo and Description -->
                 <div class="lg:col-span-1">
-                    <div class="flex items-center space-x-3 mb-6">
+                    <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
                             <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
                         </div>
                         <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
                     </div>
+                    <p class="text-gray-300 leading-relaxed mb-6 ml-16">(196600200W)</p>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        In the new era of technology we look into the future with certainty and pride to for our company and.
+                         35-B Fishery Port Road, Jurong Central
+ Fish Market, Singapore, 619744
                     </p>
+                    <p class="text-gray-300 leading-relaxed mb-6"><b>Tel: </b>6264 2233 ext 10-23</p>
+                    <p class="text-gray-300 leading-relaxed mb-6"><b> Email: </b>order@makanmate.com</p>
+                    <p class="text-gray-300 leading-relaxed mb-6"><b> Working days/hours: </b><br> Mon-Sun / 9:00 AM - 8:00 PM</p>
                     <!-- Social Media Icons -->
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
@@ -519,50 +462,48 @@
 
                 <!-- Pages Links -->
                 <div class="mx-0 sm:mx-4">
-                    <h4 class="text-lg font-bold text-white mb-6">Pages</h4>
+                    <h4 class="text-lg font-bold text-white mb-6">Site Map</h4>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
                         <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
                         <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Pricing</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="mealkits.html" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
+                        <li><a href="mart.html" class="text-gray-300 hover:text-makan-orange transition-colors">Mart</a></li>
+                        <li><a href="past-events.html" class="text-gray-300 hover:text-makan-orange transition-colors">Gallery</a></li>
                         <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
                     </ul>
                 </div>
 
                 <!-- Utility Pages -->
                 <div class="mx-0 sm:mx-4">
-                    <h4 class="text-lg font-bold text-white mb-6">Utility Pages</h4>
+                    <h4 class="text-lg font-bold text-white mb-6">Customer Care</h4>
                     <ul class="space-y-3">
-                                <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Start Here</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Styleguide</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Password Protected</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">404 Not Found</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Licenses</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Changelog</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">View More</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-makan-orange transition-colors">Certifications</a></li>
                     </ul>
                 </div>
 
-                <!-- Follow Us On Instagram -->
+                <!-- Our Location -->
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6">Follow Us On Instagram</h4>
-                    <div class="grid grid-cols-2 gap-3">
-                         <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/home/imgi_11_bento.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/home/imgi_12_classic-delight-2-366.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/home/imgi_14_healthier-choice-buffet.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <div class="aspect-square rounded-lg overflow-hidden">
-                            <img src="/images/home/imgi_21_sauce.jpg" alt="Instagram Food Post" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
+                    <h4 class="text-lg font-bold text-white mb-6">Our Location</h4>
+                    <div class="rounded-lg overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7792989583027!2d103.72047341475392!3d1.2971300990587043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da107ffa1b4fe5%3A0x1b4d4e4e1b4d4e4e!2s35B%20Fishery%20Port%20Rd%2C%20Singapore%20619744!5e0!3m2!1sen!2ssg!4v1641234567890!5m2!1sen!2ssg"
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-lg">
+                        </iframe>
                     </div>
                 </div>
+
+         
             </div>
 
             <!-- Copyright -->
@@ -587,14 +528,25 @@
                 <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
                 <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
                 <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
-                <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Meal Kits</a>
-                <a href="blog.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Blog</a>
-                <a href="#" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Pages</a>
+                <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Delivery</a>
+                <a href="mart.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Mart</a>
+                <a href="past-events.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Gallery</a>
                 <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
-                <a href="order.html" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
+                <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
             </nav>
         </div>
     </div>
+
+      <!-- Floating WhatsApp Icon -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer"
+       class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      <span class="absolute right-full mr-3 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        Chat with us on WhatsApp
+      </span>
+    </a>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
