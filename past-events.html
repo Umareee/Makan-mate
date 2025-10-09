@@ -30,68 +30,6 @@
 </head>
 
 <body class="bg-white font-dm-sans text-custom-text">
-    <!-- Header -->
-    <header class="bg-gray-800 text-white">
-        <!-- Top bar with contact info -->
-        <div class="bg-custom-topbar py-2 px-2">
-            <div class="container mx-auto px-2 sm:px-4 text-xs sm:text-sm">
-                <!-- Mobile Layout -->
-                <div class="flex sm:hidden justify-between items-start py-1">
-                    <div class="flex items-center space-x-1">
-                        <i class="fas fa-phone"></i>
-                        <span>62642233 Ext 10-18</span>
-                    </div>
-                    <div class="flex flex-col items-end space-y-1">
-                        <div class="flex items-center space-x-1">
-                            <i class="fas fa-envelope"></i>
-                            <span>order@makanmate.com</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-twitter text-xs"></i>
-                            </a>
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-facebook text-xs"></i>
-                            </a>
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-instagram text-xs"></i>
-                            </a>
-                            <a href="#" class="w-6 h-6 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                                <i class="fab fa-github text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Desktop Layout -->
-                <div class="hidden sm:flex justify-between items-center">
-                    <div class="flex items-center space-x-6">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-phone"></i>
-                            <span>62642233 Ext 10-18</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-envelope"></i>
-                            <span>order@makanmate.com</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-custom-logo-bg rounded-full flex items-center justify-center hover:text-makan-orange transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
  <!-- Main navigation -->
     <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
@@ -211,102 +149,370 @@
     <!-- Beautiful Image Gallery -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <!-- Masonry Style Gallery -->
-            <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="filter-btn active bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition-all" data-filter="all">
+                    All Events
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="buffet">
+                    Buffet
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="mini-buffet">
+                    Mini Buffet
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="bento">
+                    Bento Set
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="live-station">
+                    Live Station
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="wedding">
+                    Wedding
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="birthday">
+                    Birthday
+                </button>
+                <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="festive">
+                    Festive
+                </button>
+            </div>
+            
+            <!-- Uniform Grid Gallery -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 
-                <!-- Image 1 - Large -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 1 - Wedding -->
+                <div class="gallery-item group cursor-pointer" data-category="wedding">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/occasions/imgi_31_WhatsApp-Image-2024-11-08-at-9.45.35-AM-3.jpg" alt="Wedding Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Grand Wedding Celebration</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Wedding Reception</p>
+                                    <p><span class="font-semibold">Guests:</span> 250 People</p>
+                                    <p><span class="font-semibold">Service:</span> Full Buffet & Live Station</p>
+                                    <p><span class="font-semibold">Venue:</span> Garden Pavilion</p>
+                                    <p><span class="font-semibold">Duration:</span> 6 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Grand Wedding Celebration</h3>
+                            <p class="text-xs text-gray-200">Wedding Event • 250 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 2 - Medium -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 2 - Buffet -->
+                <div class="gallery-item group cursor-pointer" data-category="buffet">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/imgi_10_53ff2385cc14c838e4fccaa48086fe82.png" alt="Buffet Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Corporate Buffet Lunch</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Corporate Meeting</p>
+                                    <p><span class="font-semibold">Guests:</span> 120 People</p>
+                                    <p><span class="font-semibold">Service:</span> Premium Buffet Spread</p>
+                                    <p><span class="font-semibold">Venue:</span> Conference Center</p>
+                                    <p><span class="font-semibold">Duration:</span> 3 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Corporate Buffet Lunch</h3>
+                            <p class="text-xs text-gray-200">Buffet Service • 120 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 3 - Small -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 3 - Birthday -->
+                <div class="gallery-item group cursor-pointer" data-category="birthday">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/imgi_30_WhatsApp-Image-2024-11-08-at-9.45.35-AM.jpg" alt="Birthday Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">50th Birthday Bash</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Birthday Celebration</p>
+                                    <p><span class="font-semibold">Guests:</span> 80 People</p>
+                                    <p><span class="font-semibold">Service:</span> Mini Buffet & Dessert Bar</p>
+                                    <p><span class="font-semibold">Venue:</span> Private Residence</p>
+                                    <p><span class="font-semibold">Duration:</span> 4 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">50th Birthday Bash</h3>
+                            <p class="text-xs text-gray-200">Birthday Party • 80 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 4 - Large -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/imgi_20_spring-roll.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 4 - Live Station -->
+                <div class="gallery-item group cursor-pointer" data-category="live-station">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/imgi_20_spring-roll.jpg" alt="Live Station Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Asian Live Cooking</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Interactive Dining</p>
+                                    <p><span class="font-semibold">Guests:</span> 100 People</p>
+                                    <p><span class="font-semibold">Service:</span> Live Cooking Stations</p>
+                                    <p><span class="font-semibold">Venue:</span> Event Hall</p>
+                                    <p><span class="font-semibold">Duration:</span> 5 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Asian Live Cooking</h3>
+                            <p class="text-xs text-gray-200">Live Station • 100 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 5 - Medium -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/imgi_23_vegetable.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 5 - Festive -->
+                <div class="gallery-item group cursor-pointer" data-category="festive">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/imgi_23_vegetable.jpg" alt="Festive Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Chinese New Year Feast</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Cultural Celebration</p>
+                                    <p><span class="font-semibold">Guests:</span> 180 People</p>
+                                    <p><span class="font-semibold">Service:</span> Traditional Feast</p>
+                                    <p><span class="font-semibold">Venue:</span> Community Hall</p>
+                                    <p><span class="font-semibold">Duration:</span> 6 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Chinese New Year Feast</h3>
+                            <p class="text-xs text-gray-200">Festive Event • 180 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 6 - Small -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 6 - Bento Set -->
+                <div class="gallery-item group cursor-pointer" data-category="bento">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/menu/imgi_11_bento.jpg" alt="Bento Set Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Business Meeting Lunch</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Business Meeting</p>
+                                    <p><span class="font-semibold">Guests:</span> 45 People</p>
+                                    <p><span class="font-semibold">Service:</span> Individual Bento Boxes</p>
+                                    <p><span class="font-semibold">Venue:</span> Corporate Office</p>
+                                    <p><span class="font-semibold">Duration:</span> 2 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Business Meeting Lunch</h3>
+                            <p class="text-xs text-gray-200">Bento Set • 45 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 7 - Additional image -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 7 - Mini Buffet -->
+                <div class="gallery-item group cursor-pointer" data-category="mini-buffet">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/menu/imgi_12_classic-delight-2-366.jpg" alt="Mini Buffet Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Team Building Lunch</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Team Event</p>
+                                    <p><span class="font-semibold">Guests:</span> 60 People</p>
+                                    <p><span class="font-semibold">Service:</span> Mini Buffet Selection</p>
+                                    <p><span class="font-semibold">Venue:</span> Meeting Room</p>
+                                    <p><span class="font-semibold">Duration:</span> 3 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Team Building Lunch</h3>
+                            <p class="text-xs text-gray-200">Mini Buffet • 60 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 8 - Additional image -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 8 - Wedding -->
+                <div class="gallery-item group cursor-pointer" data-category="wedding">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/menu/imgi_13_pexels-wenbin-5684696-2.jpg" alt="Wedding Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Garden Wedding Reception</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Wedding Reception</p>
+                                    <p><span class="font-semibold">Guests:</span> 200 People</p>
+                                    <p><span class="font-semibold">Service:</span> Full Buffet & Live Station</p>
+                                    <p><span class="font-semibold">Venue:</span> Garden Pavilion</p>
+                                    <p><span class="font-semibold">Duration:</span> 6 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Garden Wedding Reception</h3>
+                            <p class="text-xs text-gray-200">Wedding Event • 200 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 9 - Additional image -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 9 - Buffet -->
+                <div class="gallery-item group cursor-pointer" data-category="buffet">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/menu/imgi_14_healthier-choice-buffet.jpg" alt="Buffet Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Healthy Choice Buffet</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Corporate Meeting</p>
+                                    <p><span class="font-semibold">Guests:</span> 90 People</p>
+                                    <p><span class="font-semibold">Service:</span> Premium Buffet Spread</p>
+                                    <p><span class="font-semibold">Venue:</span> Conference Center</p>
+                                    <p><span class="font-semibold">Duration:</span> 3 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Healthy Choice Buffet</h3>
+                            <p class="text-xs text-gray-200">Buffet Service • 90 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 10 - Additional image -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/occasions/imgi_29_WhatsApp-Image-2024-11-08-at-9.45.35-AM-1.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 10 - Birthday -->
+                <div class="gallery-item group cursor-pointer" data-category="birthday">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/occasions/imgi_29_WhatsApp-Image-2024-11-08-at-9.45.35-AM-1.jpg" alt="Birthday Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Sweet 16 Celebration</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Birthday Celebration</p>
+                                    <p><span class="font-semibold">Guests:</span> 65 People</p>
+                                    <p><span class="font-semibold">Service:</span> Mini Buffet & Dessert Bar</p>
+                                    <p><span class="font-semibold">Venue:</span> Private Residence</p>
+                                    <p><span class="font-semibold">Duration:</span> 4 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Sweet 16 Celebration</h3>
+                            <p class="text-xs text-gray-200">Birthday Party • 65 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 11 - Additional image -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/occasions/imgi_32_WhatsApp-Image-2024-11-08-at-9.45.35-AM-2.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 11 - Festive -->
+                <div class="gallery-item group cursor-pointer" data-category="festive">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/occasions/imgi_32_WhatsApp-Image-2024-11-08-at-9.45.35-AM-2.jpg" alt="Festive Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Deepavali Celebration</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Cultural Celebration</p>
+                                    <p><span class="font-semibold">Guests:</span> 140 People</p>
+                                    <p><span class="font-semibold">Service:</span> Traditional Feast</p>
+                                    <p><span class="font-semibold">Venue:</span> Community Hall</p>
+                                    <p><span class="font-semibold">Duration:</span> 5 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Deepavali Celebration</h3>
+                            <p class="text-xs text-gray-200">Festive Event • 140 Guests</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Image 12 - Additional image -->
-                <div class="group cursor-pointer break-inside-avoid">
-                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="Event Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Image 12 - Live Station -->
+                <div class="gallery-item group cursor-pointer" data-category="live-station">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
+                        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="Live Station Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <h3 class="text-xl font-bold font-playfair mb-3">Interactive Food Station</h3>
+                                <div class="space-y-2 text-sm">
+                                    <p><span class="font-semibold">Event Type:</span> Interactive Dining</p>
+                                    <p><span class="font-semibold">Guests:</span> 110 People</p>
+                                    <p><span class="font-semibold">Service:</span> Live Cooking Stations</p>
+                                    <p><span class="font-semibold">Venue:</span> Event Hall</p>
+                                    <p><span class="font-semibold">Duration:</span> 4 Hours</p>
+                                </div>
+                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-lg font-bold font-playfair mb-1">Interactive Food Station</h3>
+                            <p class="text-xs text-gray-200">Live Station • 110 Guests</p>
+                        </div>
                     </div>
                 </div>
 
@@ -322,10 +528,10 @@
                 Let us help you create unforgettable moments with our exceptional catering services
             </p>
             <div class="space-x-4">
-                <a href="order.html" class="bg-white text-makan-orange px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block">
+                <a href="contact.html" class="bg-white text-makan-orange px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block">
                     Get Quote
                 </a>
-                <a href="contact.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-makan-orange transition-colors inline-block">
+                <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-makan-orange transition-colors inline-block">
                     Contact Us
                 </a>
             </div>
@@ -496,6 +702,44 @@ if (menuTrigger && menuPanel) {
         }, 200); 
     });
 }
+
+        // Gallery Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(button => {
+                        button.classList.remove('active', 'bg-makan-orange', 'text-white');
+                        button.classList.add('bg-gray-100', 'text-custom-text');
+                    });
+
+                    // Add active class to clicked button
+                    btn.classList.add('active', 'bg-makan-orange', 'text-white');
+                    btn.classList.remove('bg-gray-100', 'text-custom-text');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            // Add fade-in animation
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                                item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            }, 50);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
     </script>
 </body>
 </html>
