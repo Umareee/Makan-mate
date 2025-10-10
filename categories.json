@@ -3,14 +3,14 @@
     "service_style": {
        "Bento Set": ["Standard", "Premium"],
       "Special Set": ["Steamboat", "BBQ"],
-      "Live Station": ["Sweet", "Savory"],
+      "Healthier Choice": ["Sweet", "Savory"],
       "Mini-Buffet": [],
       "Buffet": [],
-      "Plated Meal": []
+      "Funneral": []
     },
     "event_type": {
-      "Birthday": ["Mini-Buffet", "Buffet", "Plated Meal"],
-      "Wedding": ["Mini-Buffet", "Buffet", "Plated Meal"],
+      "Birthday": ["Mini-Buffet", "Buffet", "Funneral"],
+      "Wedding": ["Mini-Buffet", "Buffet", "Funneral"],
       "Seminar Package": [],
       "Parent Day Special": [],
       "Funeral Buffet": []
@@ -45,9 +45,9 @@
       ">$50"
     ],
     "pax_range": {
-      "10–24": ["Bento Set", "Special Set", "Mini-Buffet", "Plated Meal"],
-      "25–40": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Plated Meal"],
-      "41+": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Plated Meal"]
+      "10–24": ["Bento Set", "Special Set", "Mini-Buffet", "Funneral"],
+      "25–40": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Funneral"],
+      "41+": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Funneral"]
     },
     "meal_period": {
       "Breakfast": [],
