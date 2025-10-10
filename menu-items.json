@@ -3,13 +3,13 @@
     { "id": "all", "name": "All", "active": true },
     { "id": "seminar", "name": "Seminar", "active": false },
     { "id": "wedding", "name": "Wedding", "active": false },
-    { "id": "festive", "name": "Festive Special", "active": false },
-    { "id": "vegan", "name": "Vegan/Healthy", "active": false },
+    { "id": "festive", "name": "Festive Promo", "active": false },
+    { "id": "vegan", "name": "Vegetarian", "active": false },
     { "id": "mini-buffet", "name": "Mini-Buffet", "active": false },
     { "id": "buffet", "name": "Buffet", "active": false },
     { "id": "bento", "name": "Bento Set", "active": false },
-    { "id": "plated", "name": "Plated Meal", "active": false },
-    { "id": "live-station", "name": "Live Station", "active": false }
+    { "id": "plated", "name": "Funneral", "active": false },
+    { "id": "live-station", "name": "Healthier Choice", "active": false }
   ],
   "items": [
     {
