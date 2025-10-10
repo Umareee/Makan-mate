@@ -563,6 +563,27 @@
     "food_restriction": "vegetarian",
     "health": "healthyoption",
     "spice_level": "mild"
-  }
+  },
+  {
+                "id": "buffet-ld-occasion-funeral-veg",
+                "name": "Vegetarian",
+                "price": 29.0,
+                "description": "Vegetarian funeral buffet.",
+                "image": "/images/buffet/vegetarian-buffet.jpeg",
+                "customizable": false,
+                "data_source": "non-customizable-data.json",
+                "category": "plated"
+              },
+              {
+                "id": "buffet-ld-occasion-funeral-nonveg",
+                "name": "Non-Vegetarian",
+                "price": 31.0,
+                "description": "Non-vegetarian funeral buffet.",
+                "image": "/images/buffet/nonveg-funeral.jpeg",
+                "customizable": false,
+                "category": "plated",
+                "data_source": "quantity-configs.json",
+                "has_subcategories": false
+              }
   ]
 }
