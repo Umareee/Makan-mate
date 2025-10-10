@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | Makan Mate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-12">
+    <h1 class="text-4xl font-bold mb-3">Our Certifications</h1>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      We take pride in our accreditations and certifications, showcasing our dedication to quality and food safety standards.
+    </p>
+  </header>
+
+  <!-- Certifications Section -->
+  <main class="max-w-6xl mx-auto px-6 space-y-20 pb-20">
+
+    <!-- Section 1 -->
+    <section class="text-center">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">
+        Halal Certification
+      </h2>
+      <img src="images/certification/halal-off.png" alt="Quality Excellence Award"
+           class="mx-auto w-40 sm:w-52 md:w-56 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-contain"
+           onclick="openLightbox(this.src)">
+    </section>
+    
+    <!-- Section 2 -->
+    <section class="text-center">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">
+        ISO Certification
+      </h2>
+      <div class="flex flex-col md:flex-row justify-center">
+        <img src="images/certification/pan-sea-off-1.png" alt="ISO 22000 Certificate"
+             class="w-40 sm:w-52 md:w-56 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-contain"
+             onclick="openLightbox(this.src)">
+        <img src="images/certification/pan-sea-off-2.png" alt="HACCP Certificate"
+             class="w-40 sm:w-52 md:w-56 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-contain"
+             onclick="openLightbox(this.src)">
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="text-center">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">
+        Healthier Food Certification
+      </h2>
+      <img src="images/certification/healthier-off.png" alt="Environmental Certificate"
+           class="mx-auto w-40 sm:w-52 md:w-56 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-contain"
+           onclick="openLightbox(this.src)">
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 fade-in" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" class="max-w-[90%] max-h-[90%] object-contain">
+    <button class="absolute top-5 right-5 text-white text-3xl font-bold" onclick="closeLightbox()">×</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600">
+    &copy; 2025 Makan Mate. All rights reserved.
+  </footer>
+
+  <!-- JS Lightbox -->
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.getElementById('lightbox-img').src = src;
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
