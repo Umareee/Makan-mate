@@ -27,6 +27,13 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Hide bottom-left text on card hover */
+        .gallery-item:hover .absolute.bottom-4.left-4 {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
 </head>
 
 <body class="bg-white font-dm-sans text-custom-text">
@@ -91,15 +98,15 @@
                                class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
                                 <span class="text-sm text-custom-text hover:text-makan-orange">Bento Set</span>
                             </a>
-                            <!-- 8. Funneral -->
+                            <!-- 8. Funeral -->
                             <a href="javascript:void(0)" onclick="goToMenuCategory('plated')"
                                class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-                                <span class="text-sm text-custom-text hover:text-makan-orange">Funneral</span>
+                                <span class="text-sm text-custom-text hover:text-makan-orange">Funeral</span>
                             </a>
-                            <!-- 9. Healthier Choice -->
+                            <!-- 9. Live Station -->
                             <a href="javascript:void(0)" onclick="goToMenuCategory('live-station')"
                                class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-                                <span class="text-sm text-custom-text hover:text-makan-orange">Healthier Choice</span>
+                                <span class="text-sm text-custom-text hover:text-makan-orange">Live Station</span>
                             </a>
                         </div>
                     </div>
@@ -133,20 +140,34 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="bg-gradient-to-r from-makan-orange to-makan-orange-hover text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-4">Past Events</h1>
-            <p class="text-lg text-orange-100 max-w-2xl mx-auto">
-                Relive the memorable moments from our past catering events and celebrations
-            </p>
-            <nav class="flex items-center justify-center space-x-2 text-sm text-orange-200 mb-8 mt-6">
-                <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                <span>/</span>
-                <span class="text-white">Past Events</span>
-            </nav>
-        </div>
-    </section>
+  <!-- Hero Section -->
+<section id="hero-slider" class="relative min-h-screen overflow-hidden observe-fade grid">
+
+  <!-- background image -->
+  <div id="hero-slides" class="absolute inset-0 flex transition-transform duration-700 ease-in-out">
+    <div class="min-w-full h-full bg-cover bg-center bg-no-repeat"
+         style="background-image:url('/images/hero/hero-past-events.png')"></div>
+  </div>
+
+  <!-- SINGLE SQUARE OVERLAY (left half, full section height) -->
+  <div class="absolute inset-0 grid grid-cols-2">
+    <div class="bg-black/60"></div>
+    <div></div>
+  </div>
+
+  <!-- hero content -->
+  <div class="container relative mx-auto px-28 flex items-center">
+    <div class="max-w-3xl text-left">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">Past Events</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed font-medium">
+        From corporate functions to
+ festive celebrations, <br> here’s a
+ glimpse of the events we’ve helped
+ bring to life
+      </p>
+    </div>
+  </div>
+</section>
 
     <!-- Beautiful Image Gallery -->
     <section class="py-16 bg-white">
@@ -166,7 +187,7 @@
                     Bento Set
                 </button>
                 <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="live-station">
-                    Healthier Choice
+                    Live Station
                 </button>
                 <button class="filter-btn bg-gray-100 text-custom-text px-6 py-3 rounded-full font-medium hover:bg-makan-orange hover:text-white transition-all" data-filter="wedding">
                     Wedding
@@ -194,13 +215,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Wedding Reception</p>
                                     <p><span class="font-semibold">Guests:</span> 250 People</p>
-                                    <p><span class="font-semibold">Service:</span> Full Buffet & Healthier Choice</p>
-                                    <p><span class="font-semibold">Venue:</span> Garden Pavilion</p>
-                                    <p><span class="font-semibold">Duration:</span> 6 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -222,13 +237,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Corporate Meeting</p>
                                     <p><span class="font-semibold">Guests:</span> 120 People</p>
-                                    <p><span class="font-semibold">Service:</span> Premium Buffet Spread</p>
-                                    <p><span class="font-semibold">Venue:</span> Conference Center</p>
-                                    <p><span class="font-semibold">Duration:</span> 3 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -250,13 +259,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Birthday Celebration</p>
                                     <p><span class="font-semibold">Guests:</span> 80 People</p>
-                                    <p><span class="font-semibold">Service:</span> Mini Buffet & Dessert Bar</p>
-                                    <p><span class="font-semibold">Venue:</span> Private Residence</p>
-                                    <p><span class="font-semibold">Duration:</span> 4 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -266,10 +269,10 @@
                     </div>
                 </div>
 
-                <!-- Image 4 - Healthier Choice -->
+                <!-- Image 4 - Live Station -->
                 <div class="gallery-item group cursor-pointer" data-category="live-station">
                     <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
-                        <img src="/images/home/imgi_20_spring-roll.jpg" alt="Healthier Choice Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="/images/home/imgi_20_spring-roll.jpg" alt="Live Station Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -278,18 +281,12 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Interactive Dining</p>
                                     <p><span class="font-semibold">Guests:</span> 100 People</p>
-                                    <p><span class="font-semibold">Service:</span> Live Cooking Stations</p>
-                                    <p><span class="font-semibold">Venue:</span> Event Hall</p>
-                                    <p><span class="font-semibold">Duration:</span> 5 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
                             <h3 class="text-lg font-bold font-playfair mb-1">Asian Live Cooking</h3>
-                            <p class="text-xs text-gray-200">Healthier Choice • 100 Guests</p>
+                            <p class="text-xs text-gray-200">Live Station • 100 Guests</p>
                         </div>
                     </div>
                 </div>
@@ -306,13 +303,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Cultural Celebration</p>
                                     <p><span class="font-semibold">Guests:</span> 180 People</p>
-                                    <p><span class="font-semibold">Service:</span> Traditional Feast</p>
-                                    <p><span class="font-semibold">Venue:</span> Community Hall</p>
-                                    <p><span class="font-semibold">Duration:</span> 6 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -334,13 +325,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Business Meeting</p>
                                     <p><span class="font-semibold">Guests:</span> 45 People</p>
-                                    <p><span class="font-semibold">Service:</span> Individual Bento Boxes</p>
-                                    <p><span class="font-semibold">Venue:</span> Corporate Office</p>
-                                    <p><span class="font-semibold">Duration:</span> 2 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -362,13 +347,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Team Event</p>
                                     <p><span class="font-semibold">Guests:</span> 60 People</p>
-                                    <p><span class="font-semibold">Service:</span> Mini Buffet Selection</p>
-                                    <p><span class="font-semibold">Venue:</span> Meeting Room</p>
-                                    <p><span class="font-semibold">Duration:</span> 3 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -390,13 +369,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Wedding Reception</p>
                                     <p><span class="font-semibold">Guests:</span> 200 People</p>
-                                    <p><span class="font-semibold">Service:</span> Full Buffet & Healthier Choice</p>
-                                    <p><span class="font-semibold">Venue:</span> Garden Pavilion</p>
-                                    <p><span class="font-semibold">Duration:</span> 6 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -418,13 +391,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Corporate Meeting</p>
                                     <p><span class="font-semibold">Guests:</span> 90 People</p>
-                                    <p><span class="font-semibold">Service:</span> Premium Buffet Spread</p>
-                                    <p><span class="font-semibold">Venue:</span> Conference Center</p>
-                                    <p><span class="font-semibold">Duration:</span> 3 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -446,13 +413,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Birthday Celebration</p>
                                     <p><span class="font-semibold">Guests:</span> 65 People</p>
-                                    <p><span class="font-semibold">Service:</span> Mini Buffet & Dessert Bar</p>
-                                    <p><span class="font-semibold">Venue:</span> Private Residence</p>
-                                    <p><span class="font-semibold">Duration:</span> 4 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -474,13 +435,7 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Cultural Celebration</p>
                                     <p><span class="font-semibold">Guests:</span> 140 People</p>
-                                    <p><span class="font-semibold">Service:</span> Traditional Feast</p>
-                                    <p><span class="font-semibold">Venue:</span> Community Hall</p>
-                                    <p><span class="font-semibold">Duration:</span> 5 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -490,10 +445,10 @@
                     </div>
                 </div>
 
-                <!-- Image 12 - Healthier Choice -->
+                <!-- Image 12 - Live Station -->
                 <div class="gallery-item group cursor-pointer" data-category="live-station">
                     <div class="relative rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] aspect-square">
-                        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="Healthier Choice Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="/images/home/menu/imgi_15_360_F_183394887_vwLjNWmwbkF6uIIcdiLncnyCn7297nBt.jpg" alt="Live Station Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -502,18 +457,12 @@
                                 <div class="space-y-2 text-sm">
                                     <p><span class="font-semibold">Event Type:</span> Interactive Dining</p>
                                     <p><span class="font-semibold">Guests:</span> 110 People</p>
-                                    <p><span class="font-semibold">Service:</span> Live Cooking Stations</p>
-                                    <p><span class="font-semibold">Venue:</span> Event Hall</p>
-                                    <p><span class="font-semibold">Duration:</span> 4 Hours</p>
                                 </div>
-                                <button class="mt-4 bg-makan-orange text-white px-4 py-2 rounded-full text-xs hover:bg-makan-orange-hover transition-colors">
-                                    View Details
-                                </button>
                             </div>
                         </div>
                         <div class="absolute bottom-4 left-4 text-white">
                             <h3 class="text-lg font-bold font-playfair mb-1">Interactive Food Station</h3>
-                            <p class="text-xs text-gray-200">Healthier Choice • 110 Guests</p>
+                            <p class="text-xs text-gray-200">Live Station • 110 Guests</p>
                         </div>
                     </div>
                 </div>

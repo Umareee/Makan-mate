@@ -64,15 +64,33 @@
         </div>
     </nav>
 
-    <!-- Menu Hero Section -->
-    <section class="relative  py-20">
-        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black font-playfair mb-6">Our Catering Menu</h1>
-            <p class="text-base sm:text-lg md:text-xl text-black/90 max-w-2xl mx-auto">
-                We consider all the drivers of change gives you the components you need to change to create a truly happening.
-            </p>
-        </div>
-    </section>
+  <!-- Hero Section -->
+<section id="hero-slider" class="relative min-h-screen overflow-hidden observe-fade grid">
+
+  <!-- background image -->
+  <div id="hero-slides" class="absolute inset-0 flex transition-transform duration-700 ease-in-out">
+    <div class="min-w-full h-full bg-cover bg-center bg-no-repeat"
+         style="background-image:url('/images/hero/hero-catering.png')"></div>
+  </div>
+
+  <!-- SINGLE SQUARE OVERLAY (left half, full section height) -->
+  <div class="absolute inset-0 grid grid-cols-2">
+    <div class="bg-black/60"></div>
+    <div></div>
+  </div>
+
+  <!-- hero content -->
+  <div class="container relative mx-auto px-28 flex items-center">
+    <div class="max-w-3xl text-left">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">Catering Menu</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed font-medium">
+        From hearty buffets to convenient
+ bentos, <br> discover halal catering options
+ made to <br> delight every guest.
+      </p>
+    </div>
+  </div>
+</section>
 
     <!-- Menu Section -->
     <section class="py-16 bg-gray-50">

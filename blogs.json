@@ -1,8 +1,8 @@
 [
   {
     "id": "delectable-cuisines",
-    "title": "Are you in search of an extensive selection of delectable and budget-friendly cuisines?",
-    "excerpt": "Look no further – Makan Mate is your solution. At Makan Mate, we make it our mission to solve your food catering services woes while enticing your palate!",
+    "title": "Are you in search of an extensive selection of delectable and budget-friendly catering?",
+    "excerpt": "Good food can make or break an event — but how do you balance taste, budget, and variety? We share what really matters.",
     "content": {
       "introduction": "Finding the perfect catering service that combines variety, quality, and affordability can be challenging. At Makan Mate, we understand the importance of providing delicious meals that don't break the bank.",
       "sections": [
@@ -33,8 +33,8 @@
       ],
       "conclusion": "We believe that good food should be accessible to everyone, which is why we've structured our pricing to be competitive while maintaining the quality our customers expect. Whether you're ordering for 10 people or 500, we have packages that can accommodate your needs and budget."
     },
-    "image": "/images/home/imgi_20_spring-roll.jpg",
-    "date": "January 3, 2023",
+    "image": "/images/blog/blog-5.png",
+    "date": "October 21, 2025",
     "readTime": "5 min read",
     "category": "Catering Tips",
     "author": {
@@ -47,7 +47,7 @@
   {
     "id": "french-fries",
     "title": "How to prepare the perfect french fries in an air fryer",
-    "excerpt": "Discover the secret to making crispy, golden french fries using an air fryer with less oil and maximum flavor. Learn our professional techniques for restaurant-quality results at home.",
+    "excerpt": "Golden, crunchy, guilt‑free fries — here’s how to get them right every time.",
     "content": {
       "introduction": "French fries are a beloved comfort food, but traditional deep-frying can be unhealthy and messy. Enter the air fryer – a game-changing appliance that delivers crispy, golden fries with minimal oil.",
       "sections": [
@@ -96,8 +96,8 @@
       ],
       "conclusion": "With these professional techniques, you can create restaurant-quality french fries at home using your air fryer. The result is crispy, golden fries that are healthier and just as delicious as their deep-fried counterparts."
     },
-    "image": "/images/home/imgi_23_vegetable.jpg",
-    "date": "January 3, 2023",
+    "image": "/images/blog/blog-0.jpeg",
+    "date": "October 23, 2025",
     "readTime": "4 min read",
     "category": "Recipes",
     "author": {
@@ -110,7 +110,7 @@
   {
     "id": "chicken-tenders",
     "title": "How to prepare delicious chicken tenders",
-    "excerpt": "Learn the art of creating tender, juicy chicken tenders with our step-by-step guide and special seasoning tips. Perfect for family meals and gatherings.",
+    "excerpt": "Think fried chicken is tricky? These easy steps make tenders crunchy outside, tender inside.",
     "content": {
       "introduction": "Chicken tenders are a family favorite that can be both nutritious and delicious when prepared correctly. Our method ensures juicy, flavorful chicken with a perfectly crispy coating.",
       "sections": [
@@ -172,8 +172,8 @@
       ],
       "conclusion": "Perfect chicken tenders require attention to detail in every step, from selecting quality chicken to the final cooking process. With these professional techniques, you'll create restaurant-quality chicken tenders that your family will love."
     },
-    "image": "/images/home/imgi_24_untitled-1.jpg",
-    "date": "January 3, 2023",
+    "image": "/images/blog/blog-9.jpeg",
+    "date": "October 22, 2025",
     "readTime": "6 min read",
     "category": "Recipes",
     "author": {
@@ -183,107 +183,361 @@
     "tags": ["chicken", "recipes", "family meals", "cooking tips"],
     "featured": false
   },
-  {
-    "id": "healthy-meal-prep",
-    "title": "Healthy Meal Prep Ideas for Busy Professionals",
-    "excerpt": "Discover time-saving meal prep strategies that help busy professionals maintain a healthy diet throughout the week. Simple, nutritious recipes included.",
-    "content": {
-      "introduction": "Meal prepping is a game-changer for busy professionals who want to maintain a healthy diet without spending hours in the kitchen daily. With proper planning and preparation, you can enjoy nutritious, home-cooked meals all week long.",
-      "sections": [
-        {
-          "title": "Benefits of Meal Prepping",
-          "content": "Meal prepping offers numerous advantages for busy lifestyles:",
-          "list": [
-            "Saves time during busy weekdays",
-            "Reduces food waste and grocery costs",
-            "Helps maintain portion control",
-            "Ensures balanced nutrition",
-            "Reduces stress around meal decisions",
-            "Prevents unhealthy fast food choices"
-          ]
-        },
-        {
-          "title": "Essential Meal Prep Equipment",
-          "content": "Having the right tools makes meal prepping efficient and enjoyable:",
-          "list": [
-            "Glass meal prep containers in various sizes",
-            "Sharp knives and cutting boards",
-            "Sheet pans for batch cooking",
-            "Food scale for accurate portions",
-            "Labels and permanent markers",
-            "Freezer-safe bags and containers"
-          ]
-        },
-        {
-          "title": "Weekly Meal Prep Strategy",
-          "content": "Follow this systematic approach for successful meal prep:",
-          "list": [
-            "Plan your menu for the week",
-            "Create a detailed shopping list",
-            "Prep ingredients on Sunday",
-            "Cook proteins in batches",
-            "Prepare grains and vegetables",
-            "Assemble meals in containers",
-            "Label everything with dates"
-          ]
-        }
-      ],
-      "conclusion": "Successful meal prepping is about finding a system that works for your lifestyle. Start small, be consistent, and gradually expand your meal prep repertoire as you become more comfortable with the process."
-    },
-    "image": "/images/meal-prep-healthy.jpg",
-    "date": "January 10, 2023",
-    "readTime": "7 min read",
-    "category": "Catering Tips",
-    "author": {
-      "name": "Nutritionist Sarah Chen",
-      "avatar": "/images/nutritionist-sarah.jpg"
-    },
-    "tags": ["meal prep", "healthy eating", "time management", "nutrition"],
-    "featured": true
+ {
+  "id": "guide-singapore-catering-services",
+  "title": "Guide to Singapore’s Catering Services by Makan Mate",
+  "excerpt": "Discover the perfect catering solution for every occasion in Singapore—from intimate parties to grand weddings, corporate events, and festive celebrations—with Makan Mate’s diverse halal-certified menus.",
+  "content": {
+    "introduction": "Singapore is a land of foodies. Every milestone, family gathering, friend reunion and celebration is centred around food. To meet the growing demand for catering services, more establishments have been diversifying their offerings. Catering services have emerged as a popular choice for various occasions. The range of Singapore’s catering services can scale up or down for small parties, weddings, corporate events, holidays, and special celebrations. Choosing the right catering service is crucial as it can greatly enhance the overall experience of any event.",
+    "sections": [
+      {
+        "title": "Small Party Catering in Singapore",
+        "content": "For intimate gatherings, you might want to avoid over-ordering to avoid food wastage. At the same time, cooking might not be your forte. Small party catering is the perfect middle ground to ensure warm, quality meals at a convenience you can afford. These services can provide a variety of menu options, take care of the setup and cleanup, and ensure that guests have an enjoyable dining experience. When selecting a small party catering service, it is important to consider factors such as budget, menu customisation options, and the reputation of the catering company."
+      },
+      {
+        "title": "Wedding Catering in Singapore",
+        "content": "When preparing for the big day, couples tend to get overwhelmed with all the logistics that go into planning such a large-scale event. Catering plays a significant role in creating a memorable experience for the couple and their guests. It is important to choose a wedding catering service that can accommodate the unique preferences and dietary requirements of the couple and their guests. Factors to consider include menu customisation, quality of food and presentation, level of service, and the ability to handle large guest numbers."
+      },
+      {
+        "title": "Corporate Catering in Singapore",
+        "content": "At a corporate gathering, every decision can affect the reputation of your brand. Whether it is to partners, visitors, conference attendees or your own staff, delicious corporate catering can be a welcome respite after a long seminar. Providing high-quality food and service at corporate events can enhance the overall professional impression and create a positive atmosphere for networking and discussions. When selecting a corporate catering service in Singapore, it is crucial to consider factors such as reliability, flexibility, menu options suitable for various dietary restrictions, and the ability to handle large-scale events."
+      },
+      {
+        "title": "Halal Catering in Singapore",
+        "content": "Halal catering is crucial to make sure everyone feels included at an event. Most caterers in Singapore are halal to reach a wider audience. Having a meal together is what brings people together and serving halal food makes sure that everyone gets a seat at the table. When searching for halal catering services, it is advisable to seek out certified and reputable providers known for their commitment to quality and adherence to halal standards."
+      },
+      {
+        "title": "Buffet Catering in Singapore",
+        "content": "With the rise of food delivery services islandwide, you might wonder if buffet catering still has its place. Buffet catering carries a lot of the burden of hosting an event off your shoulders. You will not have an estimate of how much food to order for the number of people you have. There will be no concern if the food arrives on time and is warm. You also don’t have to worry about the presentation of the food. There are also new innovations that make the dining experience as close to dining-in as possible. For example, many buffet catering services in Singapore offer self-heating packaging to keep the food hot and steamy when you are ready to eat. Buffet catering is a popular choice for various events in Singapore due to its versatility and the wide range of options it offers to guests. When selecting a buffet catering service, it is important to consider factors such as menu variety, dietary options, the quality of food, and the ability to accommodate specific themes or preferences."
+      },
+      {
+        "title": "Party Catering in Singapore",
+        "content": "Elevating any event, a party catering service should tailor its offerings to suit the chosen theme. Going beyond mere sustenance, it serves as a welcome distraction for guests who may tire of continuous mingling. Understanding that a party might serve as a cheat day for some attendees, the catering service ensures that the menu is a worthwhile indulgence. With a focus on delicious and convenient options that accommodate diverse dietary preferences, the culinary experience becomes a standout feature of any celebration. Guests are invited to savour flavours that not only complement the occasion but also create lasting memories."
+      },
+      {
+        "title": "Catering for Holidays and Special Celebrations",
+        "content": "Catering for holidays and special celebrations transcends the realm of ordinary dining, transforming gatherings into extraordinary experiences. A skilled catering service plays a pivotal role in infusing these occasions with culinary delight and thematic sophistication. From the vibrant hues of a Christmas feast to the romantic ambience of a Valentine’s Day soirée, catering for holidays and special celebrations involves meticulous planning and creative flair. Selecting a catering service that specialises in these unique events is essential, as it ensures a tailored menu that complements the festive spirit. A seasoned caterer brings more to the table than just exquisite dishes—they craft an immersive dining experience that enhances the joy and significance of the occasion. Whether it’s a family reunion, a milestone birthday, or a corporate holiday party, the right catering service elevates the event, leaving a lasting impression on guests and hosts alike."
+      },
+      {
+        "title": "Choose Makan Mate For Your Catering Needs",
+        "content": "For a culinary journey that truly encapsulates the spirit of your event, Makan Mate stands out as the ideal catering partner in Singapore. In a city that revolves around food, Makan Mate takes pride in delivering a diverse range of halal catering services tailored to fit any occasion. From small, intimate gatherings to grand weddings, corporate events, and festive celebrations, Makan Mate understands that the right catering can significantly enhance the overall experience. We serve a wide variety of cuisines, including Chinese, Korean, Indian, Malay, Western, Vegetarian and more. Do not worry about having too much food at your event, as the food will keep your guests coming back for a second and third round. Check out our full menu range at https:/catering-menu/ and get your next event sorted."
+      }
+    ],
+    "conclusion": "No matter the size or theme of your event, Makan Mate’s comprehensive halal-certified catering services ensure every guest leaves satisfied. Explore our full menu today and let us turn your next gathering into an unforgettable culinary celebration."
   },
-  {
-    "id": "asian-fusion-trends",
-    "title": "Asian Fusion Cuisine: Modern Trends in Traditional Flavors",
-    "excerpt": "Explore how traditional Asian flavors are being reimagined in modern cuisine. Discover the latest trends in Asian fusion cooking and popular flavor combinations.",
-    "content": {
-      "introduction": "Asian fusion cuisine continues to evolve, blending traditional flavors with modern cooking techniques and international influences. This culinary movement celebrates the diversity of Asian cuisines while creating exciting new taste experiences.",
-      "sections": [
-        {
-          "title": "Popular Fusion Combinations",
-          "content": "Creative chefs are combining Asian flavors with various international cuisines:",
-          "list": [
-            "Korean-Mexican fusion (Korean BBQ tacos)",
-            "Japanese-Italian fusion (Ramen carbonara)",
-            "Thai-French fusion (Pad Thai with French herbs)",
-            "Chinese-American classics reimagined",
-            "Vietnamese-Mediterranean combinations",
-            "Indian-British fusion dishes"
-          ]
-        },
-        {
-          "title": "Key Flavor Profiles",
-          "content": "Understanding these fundamental Asian flavor profiles helps in creating successful fusion dishes:",
-          "list": [
-            "Umami-rich ingredients (miso, soy sauce, fish sauce)",
-            "Sweet and sour combinations",
-            "Spicy heat from chilies and peppers",
-            "Fresh herbs and aromatics",
-            "Fermented flavors for depth",
-            "Balance of textures and temperatures"
-          ]
-        }
-      ],
-      "conclusion": "Asian fusion cuisine represents the beautiful evolution of traditional cooking, creating new and exciting dining experiences while honoring cultural heritage."
-    },
-    "image": "/images/asian-fusion-dish.jpg",
-    "date": "January 15, 2023",
-    "readTime": "5 min read",
-    "category": "Catering Tips",
-    "author": {
-      "name": "Chef Takeshi Yamamoto",
-      "avatar": "/images/chef-takeshi.jpg"
-    },
-    "tags": ["Asian fusion", "trends", "flavors", "international cuisine"],
-    "featured": false
-  }
+  "image": "/images/blog/blog-1.png",
+  "date": "August 19, 2025",
+  "readTime": "7 min read",
+  "category": "Catering Guide",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["catering", "Singapore", "halal", "buffet", "wedding", "corporate", "party", "holidays"],
+  "featured": false
+},{
+  "id": "mini-high-tea-buffet-catering",
+  "title": "Indulge in Mini High Tea Buffet Catering Options from Makan Mate",
+  "excerpt": "Treat your guests to a delightful mini high tea buffet—savoury finger sandwiches, warm scones, petite pastries and premium teas—delivered by Makan Mate’s halal-certified team.",
+  "content": {
+    "introduction": "Providing delicious food and drinks is essential for creating a memorable experience when hosting events and gatherings. In recent years, mini high tea catering and buffet services have gained immense popularity in Singapore. They are the perfect opportunity for your guests to take a break and socialise over light bites during the event. There is something for everyone with savoury delights and sweet treats that can satisfy every tastebud.",
+    "sections": [
+      {
+        "title": "Benefits of Mini High Tea Catering and Buffet Services",
+        "content": "Mini high tea catering and buffet services offer numerous advantages for events and gatherings:"
+      },
+      {
+        "title": "Convenience and Ease",
+        "content": "Opting for mini high tea catering and buffet services means handing over the responsibility of food and drinks to professionals. This allows you to focus on other aspects of your event while ensuring that your guests are treated to a delightful culinary experience."
+      },
+      {
+        "title": "Variety of Options",
+        "content": "Mini high tea catering and buffet services provide a wide range of food and beverage options. From finger sandwiches and scones to delectable pastries and teas, there is something for everyone to enjoy. Guests can indulge in a variety of flavours and choose their favourites, creating a personalised dining experience."
+      },
+      {
+        "title": "Opportunity to Mingle",
+        "content": "Mini high tea catering and buffet services create a conducive environment for socialising and mingling among guests. As they navigate the delectable food and beverage stations, guests can converse and bond over their favourite treats. This interactive dining setup encourages networking, fostering a lively and vibrant atmosphere that enhances the overall enjoyment of the event."
+      },
+      {
+        "title": "Order Mini High Tea Catering and Buffets from Makan Mate",
+        "content": "At Makan Mate, we pride ourselves on delivering high-quality mini high tea catering and buffet services with a variety of options. We are a halal caterer with an experienced team that can handle adjustments for dietary requirements. From preparing delicious bites to providing impeccable service, we ensure that your guests will have an unforgettable dining experience. Don’t hesitate to consider Makan Mate for your next event or gathering. Let us take care of the food and drinks while you focus on creating cherished memories with your loved ones. Contact us today to explore our package options and experience the delight of mini high tea catering and buffet services."
+      }
+    ],
+    "conclusion": "Mini high tea catering and buffet services have become a popular choice for events and gatherings in Singapore. They offer convenience, a variety of options and can adjust to dietary preferences. Makan Mate is an excellent choice for mini high tea catering and buffet services if you’re considering hosting an event or gathering."
+  },
+  "image": "/images/blog/blog-2.png",
+  "date": "October 12, 2025",
+  "readTime": "4 min read",
+  "category": "High Tea",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/blog/blog-2.png"
+  },
+  "tags": ["high-tea", "buffet", "halal", "mini-catering", "finger-food", "pastries"],
+  "featured": false
+},{
+  "id": "vegetarian-catering-small-parties",
+  "title": "Vegetarian Catering for Small Parties: Delightful Menus to Impress Your Guests",
+  "excerpt": "Serve a vibrant, inclusive and eco-friendly spread—Makan Mate’s vegetarian party sets handle every dietary need so you can focus on hosting.",
+  "content": {
+    "introduction": "With a wave of eco- and health-conscious subgroups choosing to forgo meat, choosing vegetarian catering for your next party could be a smart choice. This article will explain the benefits of serving a delicious vegetarian meal at your next gathering.",
+    "sections": [
+      {
+        "title": "Opt for catering for smoother party planning",
+        "content": "Food is at the heart of every gathering, so getting the menu right is crucial for any party. From buying ingredients, adjusting recipes to meet dietary needs, and cleaning up, making a home-cooked meal for your guests can be draining. The next best option is to order a catering service into the comfort of your home. This will give guests the warmth of eating around your dining table while freeing you of the hassle of preparing the food on top of your host duties."
+      },
+      {
+        "title": "Why choose vegetarian catering?",
+        "content": "Getting vegetarian catering might not be the first instinct for most Singaporeans. Here are a few reasons to consider getting vegetarian catering for your next party."
+      },
+      {
+        "title": "Meet a wide range of dietary restrictions",
+        "content": "Singapore is a melting pot of cultures, with many groups following their unique dietary guidelines. Consuming beef, pork or any other meat is prohibited for followers of certain religions. Other guests might also avoid meat on certain days for health or ethical reasons. Getting vegetarian catering can be a one size fits all approach to meet the needs of many different subgroups at once. This can make it easier to plan a party menu when there are various dietary restrictions to accommodate."
+      },
+      {
+        "title": "Create an inclusive party",
+        "content": "Often when there are vegetarians joining a party, a host might choose to get separate food arrangements for them or ensure that a certain proportion of dishes are vegetarian-friendly. Take a step further in thoughtfulness by allowing your vegetarian guests to feel included in the whole spread of dishes that is served during the party. By opting for vegetarian catering, everyone can share food and eat together without being cautious about accidentally mixing utensils or cross-contamination with meat dishes."
+      },
+      {
+        "title": "Take a step in sustainability",
+        "content": "The demand for meat consumption has fueled the animal agriculture industry to bear a significant carbon footprint, contributing to deforestation, water pollution, and greenhouse gas emissions. With the choice of vegetarian catering, you can take a small step to reduce your environmental impact and introduce your guests to the goodness of vegetarian food."
+      },
+      {
+        "title": "Order Makan Mate’s Vegetarian Catering",
+        "content": "At Makan Mate, we know the importance of good food to keep your guests happy and healthy. Our vegetarian catering options offer a wide range of dishes your meat lover friends will love. From mains to drinks and desserts, we cover a full course meal so you can focus on entertaining your guests. Head to our website, pick a party set, indicate your dietary preferences and get it delivered to your doorstep on your selected date. Satisfying your guests with a wholesome meal is just one click away."
+      }
+    ],
+    "conclusion": "Choosing vegetarian catering is an easy way to accommodate diverse dietary needs, foster inclusivity and support sustainability—while still delighting every palate. Let Makan Mate handle the cooking, so you can simply enjoy the party."
+  },
+  "image": "/images/blog/blog-3.png",
+  "date": "November 11, 2025",
+  "readTime": "4 min read",
+  "category": "Vegetarian",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["vegetarian", "small-party", "sustainable", "inclusive", "halal", "home-delivery"],
+  "featured": false
+},{
+  "id": "steamboat-buffet-catering-unique-dining",
+  "title": "Healthy and Tasty: How Steamboat Buffet Catering Offers a Unique Dining Experience",
+  "excerpt": "Gather around a bubbling pot of nourishing broth and hand-picked ingredients—Makan Mate’s steamboat sets deliver healthy, hassle-free hotpot fun straight to your door.",
+  "content": {
+    "introduction": "Steamboat buffet catering, being a delightful option, serves as a perfect addition to any gathering and has the ability to please any crowd. With a bubbling pot filled with nourishing broth and a wide range of ingredients, everyone gets to decide what they want to eat from the selection. Steamboats are a delicious and convenient opportunity for fostering quality time while eating to bring your friends and family close.",
+    "sections": [
+      {
+        "title": "What is Steamboat Buffet Catering?",
+        "content": "Steamboat buffet catering delivers a set of steamboat essentials to your doorstep to take the burden off you when deciding how to curate the perfect hotpot. When getting ingredients for a steamboat, it can be challenging to find the sweet spot between too few ingredients that can leave your guests hungry and too much food that will be difficult to keep for the next day. By getting a steamboat buffet catering set, you will not have to worry about getting the right ingredients. Your caterer will be able to determine a suitable package to please your guests. At Makan Mate, our package includes seasonal greens, whole prawns, scallops, enoki and shitake mushrooms, ebiko fish balls, sea cucumber, meatballs, and so much more in a hearty collagen herbal chicken broth."
+      },
+      {
+        "title": "Why get Steamboat Buffet Catering?",
+        "content": "Steamboat buffet catering is a popular choice for parties. Let’s take a look at why it is a crowd favourite."
+      },
+      {
+        "title": "Healthy & Fresh Option",
+        "content": "When catering for parties, it is common to go for something indulgent to impress your guests. Steamboats are the perfect way to go a healthier route while satisfying your guests. With the addition of leafy greens, fresh seafood, lean proteins, and staples, steamboats offer a balanced and satisfying way to fill stomachs and hearts."
+      },
+      {
+        "title": "Easy to Prepare",
+        "content": "With steamboat buffet catering, you get portions perfect for your groups’ size with pre-prepared broths and pre-cut ingredients. Once you get a catering package, simply prepare a pot and utensils and you are ready for your guests to arrive."
+      },
+      {
+        "title": "Inclusive Dining Experience",
+        "content": "Steamboats are perfect for bringing people together. With a central pot that everyone is digging into, help your loved ones fish out ingredients once they have been perfectly cooked and pass around the condiments to share. If your guests are meeting each other for the first time, the steamboat will give them opportunities to interact."
+      },
+      {
+        "title": "Get Steamboat Buffet Catering with Makan Mate",
+        "content": "For your next gathering, impress your guests with fresh and flavourful ingredients without worrying that the food will get cold when your guests arrive. At Makan Mate, our soups are made daily, simmering for hours on the stove to extract the best nutrients and flavours for a rich broth. Our steamboat buffet catering sets are great for intimate gatherings, huddled over a warm comforting soup. There’s something for everyone with our range of sets brimmed with varieties of seafood, leafy vegetables, mushrooms, meat, noodles, and condiments. Browse our selection of Makan Mate steamboat buffet catering sets to prepare for your next party."
+      }
+    ],
+    "conclusion": "Steamboat buffet catering combines health, convenience and communal fun—perfect for any occasion. Let Makan Mate deliver a piping-hot spread so you can simply enjoy the conversation."
+  },
+  "image": "/images/blog/blog-4.png",
+  "date": "October 18, 2025",
+  "readTime": "4 min read",
+  "category": "Hotpot",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["steamboat", "hotpot", "healthy", "buffet", "halal", "communal-dining"],
+  "featured": false
+},{
+  "id": "excellent-party-experience-customized-buffet-menu",
+  "title": "Create An Excellent Party Experience with a Customized Makan Mate Buffet Menu",
+  "excerpt": "From mini buffet sets to fully tailored spreads, Makan Mate delivers halal-certified, diet-friendly dishes so you can relax and enjoy your own party.",
+  "content": {
+    "introduction": "Hosting a party can be a blast, but let’s be honest – it can also be exhausting. From the guest list to the decorations to the menu, it’s easy to feel overwhelmed. On the big day, there’s also the added stress of making small talk with your acquaintances, in-laws and other guests. To help you through the process of hosting a party, this guide will cover everything from mini buffet catering, and how it can help you handle all your guests’ needs, to preparations you can make beforehand to make your party the talk of the town. We’ll introduce the benefits of mini buffet catering in Singapore so you don’t have to spend time figuring out a complicated grocery list. So grab a drink (or five), take a deep breath, and let’s dive into how to host the best party – starting with the food.",
+    "sections": [
+      {
+        "title": "What is mini buffet catering?",
+        "content": "Mini buffet catering is an option for meals or bite-sized dishes that can be served either as refreshments or as the main course. This type of catering is ideal for more intimate gatherings like small-scale office parties, birthday parties and family reunions with less than 20 guests. Depending on the type of mini buffet you are looking for, the menu items can range from light bites for high-tea or full 5-course meals with drinks and desserts."
+      },
+      {
+        "title": "Mini Buffet Catering: Hosting Made Convenient",
+        "content": "When you’re in a time crunch, catering food can save you hours of time. Even if a recipe only takes 45 minutes to cook, there is a list of hidden tasks that recipe blogs don’t account for. This is what preparing a home-cooked meal would look like. First, you consider everyone’s dietary restrictions and preferences, next decide on what to cook, and then figure out the ideal portion size so that you can fill everyone without too much leftovers. Once that is clear, you make a grocery list and find out which supermarkets you can find the ingredients at and make a trip there. Then, you prepare the ingredients and start cooking ahead of time. Once you’ve cleaned up, you can focus on the final touches to get your party ready. When the guests arrive, it’s time to reheat the food and serve it. Fingers crossed that they enjoy the spread! Let’s compare it to engaging mini buffet catering. You simply go to the caterer’s website, choose the menu, fill in your special requests, book a date and time and wait for the food, cutlery and disposables to arrive on the day. Be worry-free and leave the cooking and delivery to Makan Mate so you can save your time and energy for mingling with your guests and enjoying the festivities."
+      },
+      {
+        "title": "Mini Buffet Catering: Pleasing every Palate",
+        "content": "Bring your guests on a culinary adventure to the destination of your choice with the wide range of cuisines that mini buffet catering provides. From enjoying classic Western dishes to indulging in the bold flavours of Korean food, the spice of Indian curries, delicious Malay food and authentic Chinese food, you will be spoiled for choice. When you pick the right caterer, you will not have to choose between getting a feast that caters to dietary restrictions and one that serves a wide range of cuisines. Cooked in a halal-certified kitchen, you can get the most out of Korean soups, salads, meats, and noodles while making sure it is completely halal and that dishes can be swapped out to provide vegan or vegetarian options at your request. At the dining table, no one’s needs should get left behind. Give your guests peace of mind knowing that they are able to enjoy the spread in front of them. At Makan Mate, our years of catering experience have allowed us to truly understand Singaporean taste buds. That’s why we never skimp on taste even while serving food that has no MSG, less oil and salt. When choosing between our range of cuisines, it’s impossible to make the wrong choice. From our Korean menu, enjoy a well-balanced diet with beef bulgogi bibimbap served with sauteed shimeji mushrooms, seasoned spinach, soybean sprouts, kimchi and egg. From our vegan options, enjoy golden crispy yasai gyoza, prosperous snow fungus and mushrooms on seasonal vegetables, sauteed basil beancurd and braised ee-fu noodles with golden mushrooms. Letting your guests know what each dish contains helps them decide what to fill their plate with. You can put up labels so they know what they can eat, and what they should avoid based on their dietary requirements. It’s the little things like this that make your guests feel cared for so they can dig in without worry."
+      },
+      {
+        "title": "Finding the Right Mini Buffet Catering Service",
+        "content": "Living in a food haven, there are so many catering options available so it can be overwhelming to choose the right one for your needs. But don’t worry, we’ve got you covered! Here are some tips to help you find the perfect mini buffet catering service for your event. Consider your budget: Determine how much you can afford to spend on catering and make sure to find a caterer that fits nicely within your budget. With the right caterer, you can spend well within your means while serving your guests the best. Know your party: Next, think about the type of event you’re hosting. Will it be a formal or casual affair? Will there be a specific theme or cuisine that you want to serve? Make sure to choose a catering service that can accommodate what your party is about. Get a reputable caterer: When it comes to choosing a caterer, reputation is key. Do your research and read reviews on Google and Facebook to get a sense of previous clients’ experience with the caterer. Ask your friends and family for caterers they have engaged in the past. Another important factor to consider is the quality of the food. Look for a caterer that uses fresh, high-quality ingredients and is flexible to accommodate dietary restrictions or preferences. Logistics: Don’t forget about the logistics! Make sure that the catering service can deliver to your venue at the date and time that you need. Check the terms of the delivery to see if the caterer provides disposable plates, utensils and cups so you can make the necessary arrangements. If the caterer also has a full table set-up with warmers, they may have a cut-off time when they will collect the trays back so keep that in mind when deciding when to serve the food. For mini catering services, you may not need all the fancy table set-ups since it is a small party. With these tips in mind, finding the right mini buffet catering service for your event should be a breeze. At Makan Mate, we are honoured to be the trusted catering partner for many corporate events, birthday parties, festive celebrations and family gatherings through the years. With a long list of menu options, you are sure to find a mini buffet catering option that sits within your budget, and suits your guests’ requirements. Our mini catering is served in aluminium trays so you don’t have to worry about a collection time to return anything."
+      },
+      {
+        "title": "Tips for Hosting an Intimate Gathering",
+        "content": "Here’s a guide to all the other elements that go into planning and hosting a party so you won’t miss out on anything: Plan ahead of time: Don’t just wing it, plan it. Decide on the vibe you want to create and make sure you have everything you need to pull it off. Whether it’s a cozy gathering or a funky costume party, make sure you have the right decor, guest list and music to set the tone. Let your guests know ahead of time how to get to the venue and inform them of the parking options available. Get the place ready: Taking the time to decorate your venue helps to put you in the mood to party. There is something about getting the ladder out of the storeroom to hang up lights and streamers that signals to your mind that it is time for celebration. Getting simple decorations from Daiso or setting up a photo wall can transform your space into a party venue from the moment your guests step in. Choosing a Spotify playlist to play through the party does so much more than set the mood. When guests are streaming in and the party hasn’t quite started yet, it helps to fill in awkward silences – especially between guests who don’t know each other well. Welcome your guests: Once the doorbell starts ringing, it’s time to swing into action. As your guests arrive, be sure to be the familiar face that greets them and shows them around the space. Along the way, make introductions if necessary so they can start mingling. Have simple activities: Giving your guests something to do (apart from eating and drinking) will bring life to the party – even if they do not know each other. Your guests have the chance to bond with each other as they play simple card games, board games or Nintendo Switch games that can be suitable for all ages. If you see someone looking out of place, you can ask them to accompany you to do simple tasks like following you to buy more ice cubes for the party. Hopefully, they will feel more at ease when they are with a familiar face. Thank your guests: Last but not least, don’t forget to say your thanks to your guests on their way out. Let them know that you appreciate that they have carved out time in their day to celebrate with you. Offer to give them some of the leftovers to bring to their families so they know that you thought of them. Pat yourself on the back: You did it. You hosted the party that you’d been planning for months. Whether things went according to plan or not, you shared your gift of hospitality with your friends and family. It’s time to clean up and relax."
+      },
+      {
+        "title": "Get the party started with Makan Mate!",
+        "content": "When it comes to hosting an event or party, there is no denying that the food can make or break the experience for your guests. Singapore is a melting pot of cultures and cuisines, so choosing Makan Mate as your caterer goes a long way in providing your guests with a wide variety of options that cater to different tastes and preferences. At Makan Mate, we pride ourselves on offering personalized and outstanding cuisine to our hungry clients. Our team of experienced chefs is committed to creating dishes that are not only delicious but also visually appealing, so your guests are impressed from the first bite to the last. You can take your intimate gathering as a testing ground to see if you and your loved ones enjoy the food we serve. Once you get a taste of the goodness of our dishes, you can consider engaging us for much larger events like weddings, seminars and other major corporate events. If a buffet style is not what you are looking for, we even have bento sets available so you can customise a fuss-free option when serving a large group. Makan Mate offers an extensive selection of dishes that range from local Singaporean favourites to international cuisine. If you are looking for a catering service that can take your event to the next level, you have come to the right place. With our exceptional food and attentive service, you can sit back and relax, knowing that your guests are in good hands. It’s time to get the party started! Get your invites ready and head on over to our menus page to see what’s in store for your guests. In just 5 minutes, you can have a delectable spread of food ready to serve at your party without the need to worry about leftovers. Let us cater for your next party."
+      }
+    ],
+    "conclusion": "Great food sets the tone for great memories. Choose Makan Mate’s customizable mini buffet and enjoy halal, diet-friendly dishes—so you can focus on being the host with the most."
+  },
+  "image": "/images/blog/blog-5.png",
+  "date": "August 09, 2025",
+  "readTime": "9 min read",
+  "category": "Party Planning",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["mini-buffet", "party-planning", "custom-menu", "halal", "intimate-gathering", "stress-free-hosting"],
+  "featured": true
+},{
+  "id": "guide-vegan-catering-singapore",
+  "title": "Guide to Vegan Catering in Singapore to Plan for Your Next Event",
+  "excerpt": "Discover how vegan catering boosts health, sustainability and inclusivity—plus how Makan Mate crafts colourful, 100 % plant-based menus that every guest will love.",
+  "content": {
+    "introduction": "Singapore is known for its diverse culture, which is also reflected in its food. However, the food industry has significantly shifted in recent years. More and more people are opting for plant-based meals, and vegan catering services are on the rise. Vegan catering has numerous benefits— for individuals, the environment, and even the economy. Here are some of the significant benefits of vegan catering in Singapore.",
+    "sections": [
+      {
+        "title": "Health Benefits",
+        "content": "Many studies have shown that plant-based diets and veganism can help in reducing the risk of chronic diseases. Vegan food contains high amounts of fruits, vegetables, whole grains, legumes, and nuts that are rich in vitamins, minerals, and nutrients. A vegan diet also contains high amounts of fiber and lower levels of saturated and trans fats, making it a healthier choice than the average meat-based diet. Thus, catering vegan meals can help individuals maintain a healthy lifestyle without compromising on taste and flavor."
+      },
+      {
+        "title": "Environmentally Sustainable",
+        "content": "The primary aim of vegan catering is to promote environmental sustainability. Meat consumption is one of the leading causes of deforestation, water pollution, greenhouse emissions, and loss of biodiversity. Commercial livestock farming requires deforestation for pastures, consumes large amounts of water, and causes significant greenhouse gas emissions. Individuals can reduce their carbon footprint by choosing vegan catering and promoting a sustainable environment. Studies have shown that adopting a vegan diet can reduce an individual’s carbon footprint by up to 50%."
+      },
+      {
+        "title": "Ethical Reasons",
+        "content": "Some individuals choose to follow a vegan lifestyle for ethical reasons. Commercial livestock farming involves cruelty to animals, and vegan catering helps individuals avoid contributing to this inhumane industry. By selecting vegan catering, event organizers can ensure that their menu is cruelty-free and that their food choices align with their ethical values."
+      },
+      {
+        "title": "Variety of Options",
+        "content": "Another significant benefit of opting for vegan catering is the variety of options available. Vegan food can be just as diverse as meat-based meals. Catering companies can prepare an array of vegan meals that are both aesthetically pleasing and delicious. From vegan sushi rolls to vegan pizzas, caterers have a wide variety of options to choose from. Veganism allows individuals to explore various foods and cuisines which they would not have been exposed to otherwise."
+      },
+      {
+        "title": "Increases Inclusivity",
+        "content": "Vegan catering in Singapore accommodates all kinds of preferences by offering a wide variety of plant-based dishes that cater to different dietary requirements and lifestyles. Most vegan catering services in Singapore provide customizable menus that allow customers to choose the dishes that best suit their preferences. Vegan caterers in Singapore also offer a variety of vegan dishes, including local and international cuisines, which cater to different tastes and preferences, such as Chinese, Malay, Western, Indian, and many more. You can also expect them to provide personalized services, which means caterers can work closely with customers to create menus that suit their needs, preferences, and budgets."
+      },
+      {
+        "title": "Experience the Goodness of Vegan Catering in Singapore with Makan Mate",
+        "content": "Vegan catering has numerous benefits, from promoting a healthier lifestyle to promoting sustainable, ethical choices. In Singapore’s ever-changing food industry, Makan Mate believes that catering to the growing trend of veganism is a wise choice. Event organizers and individuals alike can consider vegan catering as a more sustainable and conscious option in their daily lives. Having been in the vegan catering business showed us that it is not only good for individuals but for the wider environment and the local economy. With the increasing demand for plant-based meals, it is clear that vegan catering is here to stay."
+      }
+    ],
+    "conclusion": "Vegan catering delivers wins all round—better health, a lighter carbon footprint, ethical peace of mind and vibrant dishes that please every palate. Let Makan Mate design a colourful, 100 % plant-based menu for your next event and taste the future of responsible dining today."
+  },
+  "image": "/images/blog/blog-6.png",
+  "date": "September 10, 2025",
+  "readTime": "5 min read",
+  "category": "Vegan",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["vegan", "plant-based", "sustainable", "healthy", "inclusive", "halal"],
+  "featured": false
+},{
+  "id": "5-reasons-halal-catering-next-party",
+  "title": "5 Reasons to Choose Halal Catering for Your Next Party",
+  "excerpt": "Respect religious beliefs, include every guest and enjoy wider menu choices—discover why halal catering is the smartest (and tastiest) party solution in Singapore.",
+  "content": {
+    "introduction": "Hosting a party in Singapore can be a delightful experience, but choosing the right catering service can be a daunting task when there are so many dietary preferences to consider. Make your party planning easier by choosing halal catering to serve your guests.",
+    "sections": [
+      {
+        "title": "What is Halal Catering?",
+        "content": "Halal refers to food and drink that is permissible under Islamic dietary laws. Halal meat must be prepared in a specific way, where the animal is slaughtered in a humane and ethical manner. Halal catering, therefore, refers to catering services that provide food and drink that are halal-certified."
+      },
+      {
+        "title": "Halal Catering Adheres to Religious Beliefs",
+        "content": "Choosing to serve Halal food at an event for Muslim visitors is an ideal way to respect their religious practices. It is essential for those who practice Islam to consume Halal cuisine. However, it’s best to leave it to the professionals if you’re not familiar with the rules that define what constitutes permitted cuisine. Using utensils and cookware that have come into contact with non-halal food can make your guests uncomfortable, even if you don’t serve pork at your event. When you engage a halal caterer, you can be sure that the food will be handled and prepared in accordance with Islamic law and religious dietary requirements. Therefore, let your Muslim guests unwind and savor the food without worrying about its permissibility."
+      },
+      {
+        "title": "Halal Catering is Inclusive",
+        "content": "Halal catering is an excellent choice for a diverse group of people with different dietary requirements. Halal cuisine is suited for those who follow a kosher diet and is free from pork and alcohol that are prohibited in Islam. By engaging a halal catering for your event, you can be confident that everyone will be able to eat well and feel welcome. Considering our cuisine doesn’t include alcohol, it is also safe for nursing mothers and pregnant women who may be abstaining from alcohol. Let everyone enjoy the food together at your party!"
+      },
+      {
+        "title": "Halal Catering has Wide Menu Options",
+        "content": "Many consumers mistakenly believe that choosing halal catering implies sacrificing variety and flavor. You don’t have to give up your favourite foods just because you want halal options. There are halal options that are just as delectable as their non-halal counterparts for every type of food, from Korean to Western, Indian to Chinese, and Thai. It’s possible that your visitors won’t even be aware they’re eating halal food! Don’t compromise on flavour or variety when you go halal."
+      },
+      {
+        "title": "Halal Catering Follows Ethical Standards",
+        "content": "Halal meat handling and slaughtering practices are rooted in respect and compassion for animals and the environment. Animals must be handled with care throughout their lives, ensuring proper nutrition, clean water, and adequate shelter. This is one of the fundamental tenets of halal cuisine. When animals are slaughtered for food, it must be done in a way that minimizes their pain and suffering. The Islamic method of animal sacrifice is regarded as one of the most compassionate because it entails a quick, precise slash to the neck that results in instantaneous death. You may opt for ethical standards that put animal welfare first by choosing halal catering."
+      },
+      {
+        "title": "Halal Catering for Improved Food Quality and Safety",
+        "content": "By hiring halal catering, you can be confident that the food will be of great quality and safe to eat while also showing your respect for your guests’ religious views. Halal cuisine is made using fresh ingredients under sanitary circumstances, making it safe and healthy to consume. The blood must be drained from the carcass during Islamic slaughtering procedures in order to eliminate poisons and stop the growth of bacteria, making the meat safer to consume. Catered food is usually consumed over a few hours during an event, so choosing halal catering is a smart choice for better food safety. Don’t compromise on quality or safety at your next event – choose halal catering."
+      },
+      {
+        "title": "Book Makan Mate’s Halal Catering for Your Next Event",
+        "content": "If you are ready to get halal catering for your next party, head on to Makan Mate for our wide range of cuisines that will please every palate. As a halal caterer in Singapore, we prepare our food following Islamic guidelines and Singaporean taste buds. Our delicious meals will be delivered to your venue with a full table set-up with warmers and disposable cornware cutlery for easy serving and dining. Let everyone at your party enjoy a meal together regardless of their race or religion with halal catering."
+      }
+    ],
+    "conclusion": "Halal catering checks every box: religious compliance, total inclusivity, endless variety, ethical integrity and enhanced food safety. Book Makan Mate’s halal-certified buffet and let every guest—regardless of faith or diet—eat happily from the same abundant spread."
+  },
+  "image": "/images/blog/blog-7.png",
+  "date": "October 12, 2025",
+  "readTime": "5 min read",
+  "category": "Halal Catering",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["halal", "inclusive", "ethical", "safe", "variety", "singapore-catering"],
+  "featured": false
+},{
+  "id": "elevate-party-mini-party-sets",
+  "title": "Elevate Your Party Experience in Singapore with Makan Mate’s Mini Party Sets",
+  "excerpt": "From halal & veggie delights to disposable cornware and seasonal menus—Makan Mate’s Mini Party Sets (8-20 pax) let you host stress-free while keeping every guest happy.",
+  "content": {
+    "introduction": "Feasting is our national pastime, so it’s no wonder that food is central to every party in Singapore. For the same reason, deciding on what to serve your guests is an uphill task, especially when managing different preferences and dietary restrictions.",
+    "sections": [
+      {
+        "title": "What is a Mini Party Set?",
+        "content": "A Mini Party Set is an essential item to have if you’re planning to host or attend a special event. It’s a collection of the essential items you need for a successful get-together, all in one convenient package. Apart from delicious food, Mini Party sets include conveniences like disposable cutlery, cups, plates and napkins. You can customise your Mini Party Set to suit the size of your event, the theme of your celebration, or any other special requests. If you are planning to host a small party of 8 to 20 people, let Makan Mate’s variety of Mini Party sets come to your rescue so you can focus on entertaining your guests. Our mini catering and buffet services offer a high-quality and affordable option for every occasion. From classic local favourites to cuisines from around the world, we can cater to your guests’ taste buds."
+      },
+      {
+        "title": "Inclusive Range of Dishes",
+        "content": "At Makan Mate, we understand that food is more than just fuel for the body. It’s a labour of love that brings people together. That’s why we take great pride in creating party menus that cater to all dietary needs, without sacrificing on taste. When you serve a meal that considers everyone’s preferences, it shows your guests that you value their needs and happiness. There’s something special about sharing a meal together, and we want to make that experience as joyful and stress-free as possible. That’s why we’re always open to adding or removing dishes based on your requests. Makan Mate’s Mini Party Sets are perfect for those who want to offer an inclusive range of dishes from halal to vegetarian-friendly menus, so no guest feels like the odd one out."
+      },
+      {
+        "title": "Convenient and Easy to Serve",
+        "content": "We know that hosting a party can be a daunting task. There are so many details to consider, and even with careful planning, things can often go wrong on the big day. When you order one of Makan Mate’s Mini Party Sets, you get to take one thing off your checklist and breathe easy. All you need to do is select your delivery timing, and we’ll take care of the rest. On the day of your party, we’ll arrive at your doorstep with disposable cornware crockery, and cutlery to go with a full range of courses that you selected. From appetizers to dessert, we’ve got you covered. Let us take care of the food, so you can focus on making memories with your loved ones."
+      },
+      {
+        "title": "High Quality Food and Ingredients",
+        "content": "Makan Mate’s Mini Party Sets are made with only the freshest and highest quality ingredients, carefully prepared to capture authentic flavours. With a wide range of menus to choose from, including dishes like sliced imperial abalone, sautéed scallop, and cereal prawn, your guests will be talking about the food long after the party is over. Makan Mate’s Mini Party Set menus refresh every season, so you can celebrate every festivity with a bundle of dishes that is perfectly suited to the occasion."
+      },
+      {
+        "title": "Create a Memorable Mini Party Experience with Makan Mate",
+        "content": "For your next gathering, don’t sweat the small stuff. At Makan Mate, we believe that every party – no matter how small – deserves the best. That’s why we offer a range of affordable, high-quality, and healthy meals that are sure to satisfy your guests’ taste buds without compromising on nutrition. All our meals have no MSG, low salt, and low oil to put your mind at ease and keep your stomach happy."
+      }
+    ],
+    "conclusion": "Great things come in small packages. With Makan Mate’s Mini Party Sets you get premium seasonal dishes, full disposables and diet-inclusive options—so you can simply greet guests, press play on your playlist and enjoy the party."
+  },
+  "image": "/images/blog/blog-8.png",
+  "date": "September 14, 2025",
+  "readTime": "4 min read",
+  "category": "mini-party-set",
+  "author": {
+    "name": "Makan Mate Team",
+    "avatar": "/images/author-makan-mate.jpg"
+  },
+  "tags": ["mini-party-set", "inclusive", "halal", "vegetarian", "seasonal-menu", "stress-free-hosting"],
+  "featured": false
+}
 ]

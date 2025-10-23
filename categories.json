@@ -6,11 +6,11 @@
       "Healthier Choice": ["Sweet", "Savory"],
       "Mini-Buffet": [],
       "Buffet": [],
-      "Funneral": []
+      "Funeral": []
     },
     "event_type": {
-      "Birthday": ["Mini-Buffet", "Buffet", "Funneral"],
-      "Wedding": ["Mini-Buffet", "Buffet", "Funneral"],
+      "Birthday": ["Mini-Buffet", "Buffet", "Funeral"],
+      "Wedding": ["Mini-Buffet", "Buffet", "Funeral"],
       "Seminar Package": [],
       "Parent Day Special": [],
       "Funeral Buffet": []
@@ -45,9 +45,9 @@
       ">$50"
     ],
     "pax_range": {
-      "10–24": ["Bento Set", "Special Set", "Mini-Buffet", "Funneral"],
-      "25–40": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Funneral"],
-      "41+": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Funneral"]
+      "10–24": ["Bento Set", "Special Set", "Mini-Buffet", "Funeral"],
+      "25–40": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Funeral"],
+      "41+": ["Bento Set", "Buffet", "Seminar", "Live Stations", "Funeral"]
     },
     "meal_period": {
       "Breakfast": [],
