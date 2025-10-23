@@ -1,14 +1,15 @@
 {
   "categories": [
     { "id": "all", "name": "All", "active": true },
-    { "id": "seminar", "name": "Seminar", "active": false },
-    { "id": "wedding", "name": "Wedding", "active": false },
-    { "id": "festive", "name": "Festive Promo", "active": false },
-    { "id": "vegan", "name": "Vegetarian", "active": false },
-    { "id": "mini-buffet", "name": "Mini-Buffet", "active": false },
     { "id": "buffet", "name": "Buffet", "active": false },
+    { "id": "mini-buffet", "name": "Mini-Buffet", "active": false },
     { "id": "bento", "name": "Bento Set", "active": false },
+    { "id": "steamboat-set", "name": "Steamboat Set", "active": false },
+    { "id": "festive", "name": "Festive Promo", "active": false },
+    { "id": "wedding", "name": "Wedding", "active": false },
+    { "id": "seminar", "name": "Seminar", "active": false },
     { "id": "plated", "name": "Funeral", "active": false },
+    { "id": "vegan", "name": "Vegetarian", "active": false },
     { "id": "live-station", "name": "Healthier Choice", "active": false }
   ],
   "items": [
