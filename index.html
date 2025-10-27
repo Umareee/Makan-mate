@@ -5,26 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makan Mate - Best food for your taste</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'makan-orange': '#FF5722',
-                        'makan-orange-hover': '#E64A19',
-                        'custom-topbar': '#474747',
-                        'custom-navbar': '#F9F9F7',
-                        'custom-logo-bg': '#F9F9F71F',
-                        'custom-text': '#2C2F24',
-                    },
-                    fontFamily: {
-                        'playfair': ['Playfair Display', 'serif'],
-                        'dm-sans': ['DM Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -32,119 +13,8 @@
 
 <body class="bg-white font-dm-sans text-custom-text">
 
-    <!-- Main navigation -->
-    <nav class="bg-custom-navbar text-custom-text py-4 px-2 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-2 sm:px-4 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer" onclick="window.location.href='index.html'">
-          <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
-        </div>
-        <div>
-          <h1 class="text-xl sm:text-2xl font-bold text-makan-orange font-playfair cursor-pointer" onclick="window.location.href='index.html'">Makan Mate</h1>
-        </div>
-            </div>
-            <!-- Navigation Links -->
-            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
-                <a href="index.html" class="bg-makan-orange text-white px-4 py-2 rounded-full hover:bg-makan-orange-hover transition-colors">Home</a>
-                <a href="about.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">About</a>
-                 <div class="group">
-        <a href="menu.html" id="menu-trigger" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Catering</a>
-        <!-- Full-width mega panel -->
-<div class="absolute inset-x-0 top-full bg-white hidden group-hover:block border-t border-gray-200 shadow-sm z-50">
-  <div class="px-4 lg:px-128">
-<div class="max-w-4xl mx-auto py-4">
-
-    <!-- Menu Grid -->
-     <div class="flex justify-center">
-    <div id="menu-grid" 
-     class="grid grid-cols-3 gap-4 max-w-4xl w-full">
-
-<!-- 1. Buffet -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('buffet')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Buffet</span>
-      </a>
-
-       <!-- 2. Mini-Buffet -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('mini-buffet')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Mini-Buffet</span>
-      </a>
-
-      <!-- 3. Bento Set -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('bento')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Bento Set</span>
-      </a>
-
-      <!-- 4. Wedding -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('wedding')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Wedding</span>
-      </a>
-
-      <!-- 5. Seminar -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('seminar')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Seminar</span>
-      </a>
-
-      <!-- 6. Funeral -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('plated')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Funeral</span>
-      </a>
-
-      <!-- 7. Festive Promo -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('festive')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Festive Promo</span>
-      </a>
-
-      <!-- 8. Vegetarian -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('vegan')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Vegetarian</span>
-      </a>
-
-      <!-- 9. Healthier Choice -->
-      <a href="javascript:void(0)" onclick="goToMenuCategory('live-station')"
-         class="menu-item block text-center p-3 hover:bg-gray-50 rounded">
-        <span class="text-sm text-custom-text hover:text-makan-orange">Healthier Choice</span>
-      </a>
-    </div>
-    </div>
-    </div>
-    <!-- CTA Button -->
-    <div class="text-center py-6">
-      <a href="menu.html" class="inline-block bg-makan-orange text-white px-6 py-3 rounded-full font-medium hover:bg-makan-orange-hover transition">
-        See All Menu
-      </a>
-    </div>
-  </div>
-</div>
-
-
- 
-
-      </div>
-                      <a href="mealkits.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Delivery</a>
-                <a href="mart.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Mart</a>
-                <a href="past-events.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Gallery</a>
-                <a href="contact.html" class="text-custom-text hover:text-makan-orange transition-colors font-medium">Contact</a>
-                <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer"  class="border-2 border-makan-orange text-makan-orange px-6 py-2 rounded-full hover:bg-makan-orange hover:text-white transition-colors font-medium">
-                    Order Now
-                </a>
-            </div>
-
-            <!-- Mobile menu button -->
-            <div class="lg:hidden">
-                <button class="text-custom-text hover:text-makan-orange">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Container -->
+    <div id="navbar-container" class="sticky top-0 z-50"></div>
 
 <!-- Hero Section -->
 <section
@@ -375,8 +245,8 @@
         <p class="text-gray-500 text-sm mt-2">Respectful and compassionate catering services for funeral gatherings and memorial services.</p>
       </div>
       </a>
-
-      <!-- 8. Meal Kit Delivery -->
+      
+      <!-- 8. Meal Kit Delivery --> 
        <a href="mealkits.html">
       <div class="bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer card-pop" data-item-id="meal-kit-delivery">
         <div class="relative w-full h-48 overflow-hidden rounded-t-2xl transition-transform duration-500 group-hover:scale-105 mb-4">
@@ -880,124 +750,11 @@ With years of experience, we’ve honed our expertise in creating
   </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-16 observe-fade  ">
-        <div class="container mx-auto px-2 sm:px-4 md:px-8 lg:px-16">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <!-- Logo and Description -->
-                <div class="lg:col-span-1">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                            <img src="/images/mate-logo.png" alt="Makan Mate Logo" class="w-10 h-10 rounded-full">
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white font-playfair">Makan Mate</h3>
-                    </div>
-                    <p class="text-gray-300 leading-relaxed ml-16">by Pan Seas Enterprises Pte Ltd</p>
-                    <p class="text-gray-300 leading-relaxed mb-6 ml-16">(196600200W)</p>
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                         35-B Fishery Port Road, Jurong Central
- Fish Market, Singapore, 619744
-                    </p>
-                    <p class="text-gray-300 leading-relaxed mb-6"><b>Tel: </b>6264 2233 ext 10-23</p>
-                    <p  class="text-gray-300 leading-relaxed mb-6"><b> Email: <a href="mailto:order@makanmate.com"></b>order@makanmate.com</p></a> 
-                    <p class="text-gray-300 leading-relaxed mb-6"><b> Working days/hours: </b><br> Mon-Sun / 9:00 AM - 8:00 PM</p>
-                    <!-- Social Media Icons -->
-                    <div class="flex space-x-4">
-                     
-                        <a href="https://www.facebook.com/makanmatecatering/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
-                            <i class="fab fa-facebook text-white"></i>
-                        </a>
-                        <a href="https://www.instagram.com/makanmatecatering/?hl=en" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
-                            <i class="fab fa-instagram text-white"></i>
-                        </a>
-                         <a href="mailto:order@makanmate.com" 
-       class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
-        <i class="fas fa-envelope text-white"></i>
-    </a>
-                        <a href="https://www.google.com/maps/place/Makan+Mate+Catering+By+Pan+Seas+Enterprises/@1.308441,103.7199394,17z/data=!4m6!3m5!1s0x31da053606e160c5:0x374fc41683107834!8m2!3d1.307229!4d103.722922!16s%2Fg%2F1ptvywt45?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D" 
-       target="_blank" 
-       class="w-10 h-10 bg-makan-orange rounded-full flex items-center justify-center hover:bg-makan-orange-hover transition-colors">
-        <i class="fas fa-map-marker-alt text-white"></i>
-    </a>
-                    </div>
-                </div>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
-                <!-- Pages Links -->
-                <div class="mx-0 sm:mx-4">
-                    <h4 class="text-lg font-bold text-white mb-6">Site Map</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-300 hover:text-makan-orange transition-colors">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-makan-orange transition-colors">About</a></li>
-                        <li><a href="menu.html" class="text-gray-300 hover:text-makan-orange transition-colors">Catering</a></li>
-                        <li><a href="mealkits.html" class="text-gray-300 hover:text-makan-orange transition-colors">Delivery</a></li>
-                        <li><a href="mart.html" class="text-gray-300 hover:text-makan-orange transition-colors">Mart</a></li>
-                        <li><a href="past-events.html" class="text-gray-300 hover:text-makan-orange transition-colors">Gallery</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-makan-orange transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Utility Pages -->
-                <div class="mx-0 sm:mx-4">
-                    <h4 class="text-lg font-bold text-white mb-6">Customer Care</h4>
-                    <ul class="space-y-3">
-                        <li><a href="terms-and-conditions.html" target="_blank" class="text-gray-300 hover:text-makan-orange transition-colors">Terms & Conditions</a></li>
-                        <li><a href="faq.html" target="_blank" class="text-gray-300 hover:text-makan-orange transition-colors">FAQ</a></li>
-                        <li><a href="blog.html" target="_blank" class="text-gray-300 hover:text-makan-orange transition-colors">Blog</a></li>
-                        <li><a href="policy.html" target="_blank" class="text-gray-300 hover:text-makan-orange transition-colors">Privacy Policy</a></li>
-                        <li><a href="certification.html" target="_blank" class="text-gray-300 hover:text-makan-orange transition-colors">Certifications</a></li>
-                    </ul>
-                </div>
-
-                <!-- Our Location -->
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-6">Our Location</h4>
-                    <div class="rounded-lg overflow-hidden">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7792989583027!2d103.72047341475392!3d1.2971300990587043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da107ffa1b4fe5%3A0x1b4d4e4e1b4d4e4e!2s35B%20Fishery%20Port%20Rd%2C%20Singapore%20619744!5e0!3m2!1sen!2ssg!4v1641234567890!5m2!1sen!2ssg"
-                            width="100%" 
-                            height="200" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="rounded-lg">
-                        </iframe>
-                    </div>
-                </div>
-
-         
-            </div>
-
-            <!-- Copyright -->
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
-                <p class="text-gray-400">
-                    Copyright © 2025 Makan Mate. All Rights Reserved
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile menu (hidden by default) -->
-    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
-        <div class="bg-white w-64 h-full p-6">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-xl font-bold text-makan-orange">Menu</h2>
-                <button class="text-gray-600" id="close-menu">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <nav class="space-y-4">
-                <a href="index.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Home</a>
-                <a href="about.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">About</a>
-                <a href="menu.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Catering</a>
-                <a href="mealkits.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Delivery</a>
-                <a href="mart.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Mart</a>
-                <a href="past-events.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Gallery</a>
-                <a href="contact.html" class="block text-custom-text hover:text-makan-orange transition-colors py-2 border-b">Contact</a>
-                <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer" class="block bg-makan-orange text-white px-4 py-2 rounded-full text-center mt-6">Order Now</a>
-            </nav>
-        </div>
-    </div>
+    <!-- Mobile Menu Container (loaded dynamically) -->
+    <div id="mobile-menu-container"></div>
 <style>
 @keyframes scroll {
   0%   { transform: translateX(0); }
@@ -1737,31 +1494,7 @@ section.is-visible {
 const io = new IntersectionObserver(onEntry, { threshold: .18 });
 document.querySelectorAll('.observe-fade, .stagger, .card-pop')
         .forEach(el => io.observe(el));
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.lg\\:hidden button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu');
 
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-            });
-        }
-
-        if (closeMenuBtn && mobileMenu) {
-            closeMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        }
-
-        // Close menu when clicking outside
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target === mobileMenu) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        }
         let menuData = null;
 
 async function loadMenuData() {
@@ -2078,66 +1811,6 @@ function heroSlide(dir) {
 // Initialize text on page load
 updateHeroText(1);
 
-// Hover menu with delay
-const menuTrigger = document.getElementById('menu-trigger');
-const menuPanel = document.querySelector('.group .absolute');
-
-if (menuTrigger && menuPanel) {
-    let menuTimeout;
-    
-    menuTrigger.addEventListener('mouseenter', () => {
-        clearTimeout(menuTimeout);
-        menuPanel.classList.remove('hidden');
-    });
-    
-    menuTrigger.addEventListener('mouseleave', () => {
-        menuTimeout = setTimeout(() => {
-            menuPanel.classList.add('hidden');
-        }, 1000); // 1 second delay
-    });
-    
-    menuPanel.addEventListener('mouseenter', () => {
-        clearTimeout(menuTimeout);
-        menuPanel.classList.remove('hidden');
-    });
-    
-    menuPanel.addEventListener('mouseleave', () => {
-        menuTimeout = setTimeout(() => {
-            menuPanel.classList.add('hidden');
-        }, 200); 
-    });
-}
- <!-- Filtering Script -->
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const menuItems = document.querySelectorAll('.menu-item');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-
-      menuItems.forEach(item => {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.style.display = 'flex'; // show
-        } else {
-          item.style.display = 'none'; // hide
-        }
-      });
-
-      // Active button style
-      filterBtns.forEach(b => b.classList.remove('bg-makan-orange', 'text-white'));
-      btn.classList.add('bg-makan-orange', 'text-white');
-    });
-  });
-
-  // Function to navigate to menu page with selected category
-  function goToMenuCategory(categoryId) {
-    console.log('Storing category for navigation:', categoryId);
-    // Store the selected category in localStorage
-    localStorage.setItem('selectedMenuCategory', categoryId);
-    // Navigate to menu page
-    window.location.href = 'menu.html';
-  }
-
   // Discount Popup Functions
   function showDiscountPopup() {
     document.getElementById('discountPopup').classList.remove('hidden');
@@ -2234,16 +1907,8 @@ if (menuTrigger && menuPanel) {
     </div>
   </div>
 
-  <!-- Floating WhatsApp Icon -->
-  <div class="fixed bottom-6 right-6 z-50">
-    <a href="https://wa.me/6593620073" target="_blank" rel="noopener noreferrer"
-       class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group">
-      <i class="fab fa-whatsapp text-2xl"></i>
-      <span class="absolute right-full mr-3 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Chat with us on WhatsApp
-      </span>
-    </a>
-  </div>
+  <!-- WhatsApp Float Container (loaded dynamically) -->
+  <div id="whatsapp-container"></div>
 
 <script>
   // Load and display blog posts from blogs.json
@@ -2292,6 +1957,9 @@ if (menuTrigger && menuPanel) {
   // Load blogs when the page loads
   document.addEventListener('DOMContentLoaded', loadBlogs);
 </script>
+
+<!-- Component Loader -->
+<script src="/js/componentLoader.js"></script>
 
 </body>
 </html>
